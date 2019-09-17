@@ -4,7 +4,7 @@
 
 ## Download and Import the Unity package into your project
 
-You can find the latest version of the Unity plugin here: [https://github.com/spilgames/spil_event_unity_plugin/releases](https://github.com/spilgames/spil_event_unity_plugin/releases)
+You can find the latest version of the Unity plugin here: [https://github.com/azerion/gamedock-sdk/releases](https://github.com/azerion/gamedock-sdk/releases)
 
 Unpack the downloaded archive, inside you will find the native library folders and a Unity package. You can ignore the folder for now and just import the Unity package.
 
