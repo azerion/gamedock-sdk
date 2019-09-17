@@ -4,7 +4,7 @@ The Gamedock SDK Unity Plugin is designed to give developers access to Gamedock 
 
 ## Download
 
-The SDK can be downloaded [here](https://github.com/spilgames/spil_event_unity_plugin/releases).
+The SDK can be downloaded [here](https://github.com/azerion/gamedock-sdk/releases).
 
 ## Change Log
 
