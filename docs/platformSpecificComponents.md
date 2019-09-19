@@ -1,5 +1,7 @@
 # Platform specific components
 
+> This section is only targeted at the Unity platform.
+
 ## Android
 
 ### Requirements

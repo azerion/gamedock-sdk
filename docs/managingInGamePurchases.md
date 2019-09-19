@@ -8,11 +8,15 @@ It is important to understand that within the Gamedock platform in-app purchases
 
 1. The game producer should define various price packages with your game store submission. For example, Starter Pack A for $0.99, Starter Pack B for $1.99, and so on. The contents of each package (for example, the number of coins that the user receives) should also be defined.
 1. Your Gamedock Account Manager will then coordinate with Gamedock LiveOps to ensure that the promotions, and the packages associated with them, are set up on the Gamedock server. Typically, this includes any discounts that users should receive as part of the promotions, and the period during which specific promotions should be available.
-1. Using the Gamedock SDK, developers can request information from SLOT about the active promotions and packages to implement and manage the in-game shop.
+1. Using the Gamedock SDK, developers can request information from the Console about the active promotions and packages to implement and manage the in-game shop.
 
 ## Retrieving IAP Packages Information
 
 The IAP Packages feature within the Gamedock SDK can automatically request IAP package information when the game starts. To retrieve this information, use the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 // Retrieve Packages from the SDK (locally)
@@ -25,7 +29,7 @@ List<Package> Packages;
 // Request package by Store ID.
 Package package = helper.GetPackageByPackageId(string packageId);
 
-// Request package by SLOT ID.
+// Request package by Console ID.
 Package package = helper.GetPackageById(string id);
 
 // Check package has a promotion.
@@ -39,6 +43,17 @@ Gamedock.Instance.PackagesCallbacks.OnPackagesAvailable += OnPackagesAvailable;
 Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable -= OnPackagesNotAvailable;
 Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable += OnPackagesNotAvailable;
 ~~~
+
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
 
 ## IAP Tools/Libraries
 

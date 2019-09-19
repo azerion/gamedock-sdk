@@ -12,6 +12,10 @@ The Gamedock SDK (iOS) automatically ask users for their permission to receive p
 
 You can use the method described below to automatically block the Gamedock SDK from asking permission for push notifications. This is useful when your game has a logical time to ask for the push notifications. For example, when the player needs to harvest something in the game, and it is helpful that they are notified when the task has been completed.
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 // Disable asking automatically for Push notification permissions
 DisableAutomaticRegisterForPushNotifications();
@@ -20,30 +24,19 @@ DisableAutomaticRegisterForPushNotifications();
 Gamedock.Instance.RegisterForPushNotifications();
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 ## Adding Custom Notification Icons
 
 If you want to set your own custom notification icon, you can do so by adding the appropriate image file to the following location (if it does not exist, you will need to create it): PROJECT_PATH/Assets/Plugins/Android/res/drawable/ The image file should have the name “notify_icon_small.png”. Important The image file must comply with the Android notification standards. These are described at the location [https://developer.android.com/guide/practices/ui_guidelines/icon_design_status_bar.html](https://developer.android.com/guide/practices/ui_guidelines/icon_design_status_bar.html).
-
-## Example Implementation
-
-The example described below illustrates the reward of players with in-game currency when they receive a push notification. When a push notification with a reward attached is sent from the Gamedock platform, an event called OnReward will be triggered in the SDK on startup. A PushNotificationRewardResponse will then be passed with that event. The following is an example of how to obtain the reward, and save it for the player. In a class that is present at the start of the game, listen for the OnReward event.
-
-~~~C#
-void Start () {
-          Gamedock.Instance.AdvertisementCallbacks.OnReward += Gamedock_Instance_OnReward;
-}
-~~~
-
-Then handle the reward event as follows:
-
-~~~C#
-void Gamedock_Instance_OnReward (PushNotificationRewardResponse rewardResponse)
-{
-  Gamedock.PlayerData.Wallet.Add (rewardResponse.data.eventData.currencyId,rewardResponse.data.eventData.reward, PlayerDataUpdateReasons.EventReward );
-}
-~~~
-
-Specific game requirements should be discussed with your Gamedock Account Manager.
 
 ## iOS capabilities & entitlements
 

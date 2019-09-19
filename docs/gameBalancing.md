@@ -1,7 +1,7 @@
 # Game Balancing
 
 Balance is key to a successful game. In single-player games, it determines whether the challenge level is appropriate to the audience. If there are multiple strategies or paths within your game to victory, it controls whether following one strategy is better or worse than following another. Within games that have several similar objects (such as cards in a trading card game or weapons in a role-playing game), it regulates the objects themselves and, specifically, whether different objects have the same cost/benefit ratio.
-The Gamedock platform makes use of configuration files to support the dynamic balancing of your games. These are JavaScript Object Notation (JSON) files that allow you to change all required parameters in a human-readable format without updating the published game.
+The Gamedock platform makes use of configuration files to support the dynamic balancing of your games. These are JSON files that allow you to change all required parameters in a human-readable format without updating the published game.
 
 The parameter configuration requirements are identified and agreed between the game’s designers and the Gamedock Account Manager. Once finalized, they are communicated to the game’s developers. A default JSON is provided as part of the Gamedock SDK. After publication, the configuration file is maintained by Gamedock LiveOps.
 
@@ -11,22 +11,20 @@ We recommend the following:
 * Balancing issues are best left until you have a good set of game core mechanics.
 * Pricing should not be managed using the game configuration file. Generally, this is better managed through the shop features. For more information, see “Supporting Wallet, Shop and Inventory Control”.
 
-## Understanding How It Work
-
-Your game should start by it requesting the latest version of the configuration file. The Gamedock SDK will try to retrieve this from the Gamedock back-end server. If there is no network connection, the Gamedock SDK will fall back to its last known version. The configuration file and all its parameter values can be managed using SLOT (Gamedock Live Operations Tool). The procedure and requirements for this are described in the rest of this chapter.
-
-![github pages](_images/sdk_game_config.png)
-
 ## Requesting a Configuration File
 
 The Gamedock SDK provides two methods for retrieving a game’s configuration file from the Gamedock server. You can retrieve the entire file using the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ### Parsing the JSON Configuration File
 
 You can use the following methods for working with the Game Config:
 
 ~~~C#
-//Method that returns the whole game config as defined in SLOT as a JSON string
+//Method that returns the whole game config as defined in the Gamedock Console as a JSON string
 Gamedock.Instance.GetConfigAll();
 
 //Method that returns a first level node in the game config as a JSON string
@@ -45,7 +43,7 @@ By default, game configuration calls will always return the last saved value. Ho
 
 If there is no network connection, the Gamedock SDK will use a default configuration file. In addition, users might open the app for the first time and not have an Internet connection. For those situations, a default configuration file called **“defaultGameConfig.json”** needs to be added to your project’s root folder. The following is an example of a simple configuration file for the game Pixel Wizard.
 
-## Using Firebase Remote Config
+### Using Firebase Remote Config
 
 The Gamedock SDK offers the possibility to work with the Firebase Remote Config. For Android, you need to make sure that the Firebase module is included. For more information on how to set up the values in Firebase, check the following link:
 
@@ -78,3 +76,14 @@ Dictionary<string, object> value5 = Gamedock.Instance.GetFirebaseRemoteConfig().
 Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated -= OnFirebaseRemoteConfigUpdated;
 Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated += OnFirebaseRemoteConfigUpdated;
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+

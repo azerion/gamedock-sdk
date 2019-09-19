@@ -10,6 +10,10 @@ The latest versions of the states are retrieved automatically by the Gamedock SD
 
 To operate game state support, use the following code:
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 // Set public and private game states.
 Gamedock.Instance.SetPublicGameState(gameState);
@@ -32,5 +36,15 @@ public delegate void OtherUsersGameStateDataLoaded(OtherUsersGameStateData data)
 //Check the Handling errors page for a list of error messages
 public delegate void UserDataError(GamedockErrorMessage errorMessage);
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
 
 > There is a 2mb limit for the gamestate, sending bigger gamestates will be ignored by the backend.

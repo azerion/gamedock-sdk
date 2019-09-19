@@ -15,6 +15,10 @@ Splash screens can be triggered in one of two ways. They can either be fired aut
 
 Before requesting the splash screen, you should implement the callback listener using the following code:
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenOpen -= OnSplashScreenOpen;
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenOpen += OnSplashScreenOpen;
@@ -42,7 +46,21 @@ Gamedock.Instance.SplashScreenCallbacks.OnIAPRequestPurchase -= OnIAPRequestPurc
 Gamedock.Instance.SplashScreenCallbacks.OnIAPRequestPurchase += OnIAPRequestPurchase;
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 To work with splash screens during game time, use the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 Gamedock.Instance.RequestSplashScreen(string type);
@@ -52,11 +70,25 @@ Gamedock.Instance.RequestSplashScreen(string type);
 Gamedock.Instance.ShowSplashScreen();
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 ## Controlling Daily Bonus Screens
 
 The reward received by users through the daily bonus screen can be handled in one of two ways. If the game implements the wallet and inventory control system provided by the Gamedock SDK, then it is handled automatically, and a callback is fired when the user’s wallet and inventory have been updated with the correct values. If the game does not use these mechanisms, then the DailyBonusReward callback will be fired returning a string list of rewards, and then the developer must implement the logic necessary for updating the game’s wallet and inventory.
 
 Before requesting the daily bonus screen, you should implement the callback listener using the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusAvailable -= OnDailyBonusAvailable;
@@ -66,19 +98,61 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusNotAvailable -= OnDailyBonus
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusNotAvailable += OnDailyBonusNotAvailable;
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 To request the daily bonus screen during the game, use the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 Gamedock.Instance.RequestDailyBonus();
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 If the daily bonus screen is available call the following method to show it:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 Gamedock.Instance.ShowDailyBonus();
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 To listen to status updates of the daily bonus screen listen to the following events:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusOpen -= OnDailyBonusOpen;
@@ -94,6 +168,16 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusError += OnDailyBonusError;
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusReward -= OnDailyBonusReward;
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusReward += OnDailyBonusReward;
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
 
 It’s also possible to create a daily bonus screen using Unity’s asset bundle system, for that the raw daily bonus config data can be used:
 

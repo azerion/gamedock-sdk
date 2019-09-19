@@ -6,9 +6,9 @@
 
 This section describes the structure of the objects used within the Gamedock SDK to manage wallet, shop, and inventory functionality.
 
-The requirements for the items shown in Table 5 must be defined by the Game’s producer. Once finalized, the Gamedock Account Manager will coordinate with Gamedock LiveOps to have them set up and managed within SLOT. Note that changes to any of these objects can only be made via SLOT, and not the Gamedock SDK.
+The requirements for the items shown in Table 5 must be defined by the Game’s producer. Once finalized, the Gamedock Account Manager will coordinate with Gamedock LiveOps to have them set up and managed within the Gamedock Console. Note that changes to any of these objects can only be made via the Gamedock Console, and not the Gamedock SDK.
 
-Table 5: SLOT-Managed Objects
+Table 5: Console-Managed Objects
 
 | Item         | Description                                                                                                                                                                                                                                                                                                                                                       |
 |:-------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -33,6 +33,10 @@ Table 6: SDK-Managed Objects.
 
 The Gamedock SDK provides the functionality to individually reset the player’s wallet or inventory. They are reset to the new player’s state. Alternatively, they can both be reset simultaneously. Use the following code:
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 // Reset the wallet data.
 Gamedock.Instance.ResetWallet();
@@ -44,233 +48,37 @@ Gamedock.Instance.ResetInventory();
 Gamedock.Instance.ResetPlayerData();
 ~~~
 
-Note that a user’s wallet information will be reset both locally (on the user’s device) and within SLOT. 
+#### ** Android **
 
-### Image Loading and Processing Support
 
-The item and bundle objects defined for a game (see Table 5) can also contain images to be displayed inside your game. To download and display these images, use the following code: This page describes how the Gamedock SDK handles a users wallet an in-game shop and the user’s inventory. Wallet The wallet feature is holding a user’s virtual balance of a particular currency. E.g. the user has 100 coins in his wallet. A wallet can contain multiple currencies, e.g. coins and diamonds. In-game shop A user can buy items or bundles (a pack of multiple items) with his virtual currency. Let’s say a user can buy a sword with 100 coins. Inventory When a user bought an item in the in-game shop it will be added to his personal inventory.
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
+Note that a user’s wallet information will be reset both locally (on the user’s device) and within the Gamedock Console. 
 
 ## Implementation
 
-If there is no network connection, then the SDK will use the latest known defaults. In exceptional cases, people will open the app for the first time and don’t have an Internet connection. For this specific case we need to add two defaults JSON files in the assets/streaming assets folder of the project: Add a file named ‘defaultGameData.json‘ in the assets/streaming assets folder of your project. Here is an example of a simple example file:
+If there is no network connection, then the SDK will use the latest known defaults. In exceptional cases, people will open the app for the first time and don’t have an Internet connection.
 
-~~~JSON
-{
-  "items": [
-      {
-          "id": 1,
-          "name": "Sword",
-          "type": 0,
-          "initialValue": 0,
-          "imageUrl": "SOME_URL"
-      }, {
-          "id": 2,
-          "name": "Shield",
-          "type": 0,
-          "initialValue": 0,
-          "imageUrl": "SOME_URL"
-      }, {
-          "id": 3,
-          "name": "Axe",
-          "type": 0,
-          "initialValue": 0,
-          "imageUrl": "SOME_URL"
-      }, {
-          "id": 4,
-          "name": "Spear",
-          "type": 0,
-          "initialValue": 0,
-          "imageUrl": "SOME_URL"
-      }
-  ],
-  "bundles": [
-      {
-          "id": 1,
-          "name": "Sword",
-          "prices": [
-              {
-                "currencyId": 1, 
-                "value": 2
-              }
-          ],
-          "items": [
-            {
-              "id": 1, 
-              "amount": 1
-            }
-          ],
-          "imageUrl": "SOME_URL"
-      }, 
-      {
-          "id": 2,
-          "name": "Shield",
-          "prices": [
-              {
-                "currencyId": 1, 
-                "value": 4
-              }
-          ],
-          "items": [
-            {
-              "id": 2, 
-              "amount": 1
-            }
-          ],
-          "imageUrl": "SOME_URL"
-      }, 
-      {
-          "id": 3,
-          "name": "Weapons",
-          "prices": [
-              {
-                "currencyId": 2, 
-                "value": 50
-              }
-          ],
-          "items": [
-            {
-              "id": 1, 
-              "amount": 1
-            }, 
-            {
-              "id": 3, 
-              "amount": 1
-            }, 
-            {
-              "id": 4, 
-              "amount": 1
-            }
-          ],
-          "imageUrl": "SOME_URL"
-      }, 
-      {
-          "id": 4,
-          "name": "Warior",
-          "prices": [
-              {
-                "currencyId": 1, 
-                "value": 20
-              }
-          ],
-          "items": [
-            {
-              "id": 4, 
-              "amount": 1
-            }
-          ],
-          "imageUrl": "SOME_URL"
-      }
-  ],
-  "currencies": [
-      {
-          "id": 1,
-          "name": "Coins",
-          "type": 0
-      }, {
-          "id": 2,
-          "name": "Diamonds",
-          "type": 1
-      }
-  ],
-  "shop": [
-      {
-          "name": "tab1",
-          "entries": [
-              {
-                  "bundleId": 1,
-                  "label": "someLabel",
-                  "position": 1
-              }, {
-                  "bundleId": 2,
-                  "label": "someLabel",
-                  "position": 2
-              }
-          ]
-      }, {
-          "name": "tab2",
-          "entries": [
-              {
-                  "bundleId": 3,
-                  "label": "someLabel",
-                  "position": 1
-              }, {
-                  "bundleId": 4,
-                  "label": "someLabel",
-                  "position": 2
-              }
-          ]
-      }
-  ],
-  "promotions": [
-      {
-          "bundleId": 1,
-          "amount": 5,
-          "prices": [{
-              "currencyId": 1,
-              "value": 100
-          }],
-          "discount": "20",
-          "startDate": "2016-01-01 19:00:00",
-          "endDate": "2016-01-01 20:00:00"
-      }, {
-          "bundleId": 3,
-          "amount": 1,
-          "prices": [{
-              "currencyId": 1,
-              "value": 100
-          }],
-          "discount": "50%",
-          "startDate": "2016-01-01 19:00:00",
-          "endDate": "2016-01-01 20:00:00"
-      }
-  ]
-}
-~~~
+<!-- tabs:start -->
 
-Add a file named ‘defaultPlayerData.json‘ in the assets/streaming assets folder of your project.
-Here is an example of a simple example file:
+#### ** Unity **
 
-~~~JSON
-
-{
-  "wallet":
-    {
-      "currencies":[
-        {
-          "id": 22,
-          "currentBalance": 0,
-          "delta": 0
-        },
-        {
-          "id": 13,
-          "currentBalance": 0,
-          "delta": 0
-        }
-      ],
-      "offset": 0,
-      "logic": "CLIENT"
-    },
-  "inventory":
-    {
-      "items":[
-      ],
-      "offset":0,
-      "logic": ""
-    }
-}
-~~~
-
-The Gamedock Unity classes “GamedockGameDataHelper.cs” and “PlayerDataHelper.cs” contain all methods for the wallet, in-game shop and inventory features. These classes are instantiated on “Awake ()” in the “Gamedock.cs” file and automatically retrieve the data from the Gamedock SDK, so you can start using the methods immediately. See below code snippets to use the wallet, in-game shop and inventory features:
+The Gamedock Unity classes “GamedockGameDataHelper.cs” and “PlayerDataHelper.cs” contain all methods for the wallet, in-game shop and inventory features. These classes are instantiated on “Awake()” in the “Gamedock.cs” file and automatically retrieve the data from the Gamedock SDK, so you can start using the methods immediately. See below code snippets to use the wallet, in-game shop and inventory features:
 
 ~~~C#
 //Retrieving Gamedock Game Data
-//List of currencies configured in SLOT
+//List of currencies configured in the Gamedock Console
 List<Currency> Currencies = Gamedock.GameData.Currencies;
 
-//List of items configured in SLOT
+//List of items configured in the Gamedock Console
 List<Item> Items = Gamedock.GameData.Items;
 
-//List of bundles configured in SLOT and that are used in the Shop
+//List of bundles configured in the Gamedock Console and that are used in the Shop
 List<Bundle> Bundles = Gamedock.GameData.Bundles;
 
 //Shop object that defines the configuration
@@ -332,7 +140,7 @@ Gamedock.PlayerData.OpenGacha(Gacha ID, Reason, Location, ReasonDetail = null, L
 Gamedock.Instance.SetItemLimit(int itemId, int limit);
 
 //Create Unique Item
-//Be sure to check the "is unique" checkbox for your item in SLOT, this will make the item non-stackable and allows you to create unique items from it.
+//Be sure to check the "is unique" checkbox for your item in the Gamedock Console, this will make the item non-stackable and allows you to create unique items from it.
 UniquePlayerItem uniqueItem = Gamedock.PlayerData.Inventory.CreateUniqueItem(itemId);
 UniquePlayerItem uniqueItem = Gamedock.PlayerData.Inventory.CreateUniqueItem(itemId, uniqueId);
 
@@ -351,7 +159,7 @@ Gamedock.PlayerData.Inventory.RemoveUnqiueItemFromInventory(uniqueItem, reason, 
 //Method to request user data
 Gamedock.Instance.RequestUserData();
 
-//Method used to refresh the data from SLOT
+//Method used to refresh the data from the Gamedock Console
 Gamedock.Instance.UpdatePlayerData();
 
 //Events to register to
@@ -398,31 +206,87 @@ Reset = "Reset";
 InitialValue = "Initial Value";
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 ## Reseting data
 
 The SDK also provides the functionality to reset the player’s data, or just specifically the player’s Wallet and Inventory.
 
 In order to reset the Wallet data use the following code:
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 Gamedock.Instance.ResetWallet();
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 In order to reset the Inventory data use the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 Gamedock.Instance.ResetInventory();
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 In order to reset the whole Player data use the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 Gamedock.Instance.ResetPlayerData();
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 ## Item and Bundles Image Processing and Loading
 
 The Items and Bundles objects provided by the SDK can also contain images that can be displayed inside your game. In order to download and display these images use the following information:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 //Retrieve the image path for an item
@@ -451,3 +315,13 @@ Gamedock.Instance.ImageLoadingCallbacks.OnImageLoaded;
 //Clear the local cache
 Gamedock.Instance.ClearDiskCache();
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->

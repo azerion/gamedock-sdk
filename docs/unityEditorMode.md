@@ -1,5 +1,7 @@
 # Unity editor mode
 
+> This section is only targeted at the Unity platform.
+
 > By default, most of the Gamedock SDK features are also functional from within the Unity editor. This is useful to minimize the amount of platform-specific builds needed to fully test a feature. Some features require a bit different flow or might behave or look a bit different than on an actual device, those cases are discussed in more details in the individual features sections.
 
 ## Configuring the Unity editor mode

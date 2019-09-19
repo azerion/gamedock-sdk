@@ -4,7 +4,11 @@ Certain games are required to have an age gate at the start of the game before i
 
 ![github pages](_images/agegate-popup.png)
 
-## Enable or disable the age gate popup
+<!-- tabs:start -->
+
+#### ** Unity **
+
+### Enable or disable the age gate popup
 
 The age gate popup can be enabled using the "GamedockSDK" object or through the Gamedock SDK Configuration menu. If enabled, the age gate will always appear first time the user opens the game **before** the GDPR/Privacy Policy popup. In order to configure the age gate popup with, you can edit it in the "GamedockSDK" object. The following options are available:
 
@@ -14,7 +18,7 @@ The SDK gives the possibility for blocking the user from continuing to the game 
 
 **If you use the Unity prefab, make sure to drag the prefab from the Assets/Resources/Gamedock/AgeGate folder on to the GamedockSDK object.**
 
-## Handling age gate callbacks
+### Handling age gate callbacks
 
 Regardless of which option you choose (native or prefab), the SDK provides feedback information for the choice that the user has made when presented with the age gate. In order to get that feedback, register the following callback:
 
@@ -29,7 +33,7 @@ The variables returned are the following:
  * *age* - Returns the age that was chosen by the user. Can be: **0-12, 13-15, 16+**.
  * *checkPrivacyPolicy* - Informs if the user should be exposed to GDPR compliency. You are not required to do anything manual with the actual GDPR popup, though if the flag is false, you might want to hide the GDPR button in your Settings screen for example.
 
-## Changing the header image
+### Changing the header image
 
 If you want to set your own custom header image instead of the Azerion logo, you can do so by overwriting the appropriate image file to the following location (if it does not exist, you will need to create it):
 
@@ -41,6 +45,18 @@ For iOS, the header image can be replaced at Gamedock.framework/PrivacyPolicyHea
 
 For Unity 2017.1 and above you can use the supplied project found in the SDK bundle under NativeLibraries/Android/Resources. Build this project in Android Studio and make sure to replace the necessary images.
 
-## Changing the age gate popup text
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
+
+### Changing the age gate popup text
 
 Note that the text and translations of the popup are kept in the Gamedock SDK Game config feature, which should be by default integrated into your game. Note that in case you are working on an update you can fetch the new game config in Unity (we already updated the game config contents). Only in case of explicit requests by your account manager the default text and translations may be changed. Please don’t change this text on your own as this must be legally correct.

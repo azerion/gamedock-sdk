@@ -12,6 +12,10 @@ The Promotions feature offers the possibility to award users with additional cur
 
 In order to work the Promotions feature in the game implement the following code:
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 //Returns a helper class that can be used to handle promotion operations
 PromotionsHelper promotionsHelper = Gamedock.Instance.GetPromotions();
@@ -80,3 +84,13 @@ for (int i = 0; i < helper.Packages.Count; i++) {
   }
 }
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->

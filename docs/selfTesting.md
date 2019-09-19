@@ -5,9 +5,9 @@
 * Test on iOS/Android devices.
 * Use device logging (Android Studio / XCode/Console) to look for error messages and exceptions.
 * Use Crashlytics to find out more information on crashes and ANR’s. See: [https://get.fabric.io/](https://get.fabric.io/).
-* Use the SLOT event dashboard’s live stream tab to debug your events implementation.
+* Use the Gamedock Console event dashboard’s live stream tab to debug your events implementation.
 * Alternatively, use Charles to inspect your network traffic to make sure events are being sent properly. A Charles testing manual is included below.
-* Use SLOT’s wallet/inventory/gamestate viewer to validate or debug implementations using items/currencies.
+* Use Gamedock Console’s wallet/inventory/gamestate viewer to validate or debug implementations using items/currencies.
 * If you have any questions, ask the Gamedock SDK team on Slack.
 * Check Gamedock’s TestRail for a list of tests and test results, ask your Gamedock representative for access.
 * For debugging on device, ask the Gamedock SDK team for the Gamedock SDK Sample App.This app allows you to unlock Gamedock SDK features on a device for logging/debugging.

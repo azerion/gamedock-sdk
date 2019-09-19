@@ -40,11 +40,15 @@ Do the following:
 
 ##  Implementing the Reward-Claiming Logic
 
-Deep links can have rewards added to them via SLOT, this adds a reward token to the link. When the app receives a deep link the Gamedock SDK notifies the developer that a reward token is available for claiming, the developer can then proceed to claim it and show a message for the user. When a user clicks a deep link (such as a Facebook campaign or an advertisement) within the Gamedock framework, the reward-claiming mechanism is shown in Figure 6.
+Deep links can have rewards added to them via the Gamedock Consoel, this adds a reward token to the link. When the app receives a deep link the Gamedock SDK notifies the developer that a reward token is available for claiming, the developer can then proceed to claim it and show a message for the user. When a user clicks a deep link (such as a Facebook campaign or an advertisement) within the Gamedock framework, the reward-claiming mechanism is shown in Figure 6.
 
 ![github pages](_images/deeplink_reward.png)
 
 Figure 6: Reward-Claiming Mechanism. If the app already exists, they are taken directly to it. Otherwise, they are directed to the appropriate store and, after installing it, the app is opened. In either case, the reward is then triggered. Within your game, use the following code to listen for the callbacks and claim the reward attached to the link. 
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 // Claiming a token
@@ -83,6 +87,16 @@ void OnRewardTokenClaimFailed (string rewardType, GamedockErrorMessage error)
 }
 ~~~
 
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
 > This code can be used for all the Gamedock SDK features that use a reward-token mechanism.
 
 ## Passing data to your app via deep link
@@ -91,11 +105,11 @@ The Gamedock SDK offers the “deepLinkReceived” event (Gamedock.Instance.OnDe
 
 ## Showing a splash screen when clicking a deep link
 
-If a splash screen parameter was added when creating the DeepLink, for instance, “&splashscreen=splashScreen1”, then the Gamedock SDK will automatically request and show the splash screen (“splashScreen1” in this case). A splash screen campaign must be configured in SLOT with a trigger for requestSplashScreen and value “splashScreen1” in this case.
+If a splash screen parameter was added when creating the DeepLink, for instance, “&splashscreen=splashScreen1”, then the Gamedock SDK will automatically request and show the splash screen (“splashScreen1” in this case). A splash screen campaign must be configured in the Console with a trigger for requestSplashScreen and value “splashScreen1” in this case.
 
-## Setting up deep links via SLOT
+## Setting up deep links via the Gamedock Console
 
-Documentation for setting up deep links via SLOT is currently only available for Gamedock employees. If you need help setting up a new deep link, please contact your Gamedock representative.
+Documentation for setting up deep links via the Console is currently only available for Gamedock employees. If you need help setting up a new deep link, please contact your Gamedock representative.
 
 ## Facebook SDK deep linking
 
@@ -109,7 +123,11 @@ FB.GetAppLink(DeepLinkCallback);
 FB.Mobile.FetchDeferredAppLinkData(DeepLinkCallback);
 ~~~
 
-In your DeepLinkCallback handler, you’ll have to fetch the deeplink, parse its parameters and pass them to the revelant Gamedock SDK / game methods.
+In your DeepLinkCallback handler, you’ll have to fetch the deeplink, parse its parameters and pass them to the relevant Gamedock SDK / game methods.
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 private void AppStart()
@@ -170,3 +188,13 @@ static Dictionary<string, string> GetParams(string uri)
   );
 }
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->

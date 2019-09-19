@@ -19,6 +19,10 @@ The receipt for a game or an in-game purchase is a record of the sale of the gam
 
 The Gamedock SDK offers server-side IAP validation for your games. Whenever an iapPurchased event is triggered, a server validation occurs, and a response is sent back to the game. To listen to the response from the server regarding IAP validation, use the following code:
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 Gamedock.Instance.IAPValidationCallbacks.OnIAPValid -= OnIAPValid;
 Gamedock.Instance.IAPValidationCallbacks.OnIAPValid += OnIAPValid;
@@ -43,17 +47,27 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 }
 ~~~
 
-Optionally, the Gamedock Games SDK can also send the receipt to the game’s backend. In this way, corrective action can be taken against false purchases or other suspicious activity. This is shown in Figure 7.
+#### ** Android **
 
-![github pages](_images/receipt_validation-300x167.png)
 
-Figure 7: Receipt Handling
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
+Optionally, the Gamedock Games SDK can also send the receipt to the game’s backend. In this way, corrective action can be taken against false purchases or other suspicious activity.
 
 > Note that the operation of this support depends on the connection between the game and its backend. Further information about possible connection options is available from your Gamedock Account Manager.
 
 ## Retrieving Server-Time Information
 
 The Gamedock SDK also offers the possibility to retrieve the game’s server time. This can prove useful for anti-cheating measures. For example, if the user changes the device time or clock this does affect the execution of the game’s logic. To retrieve the server time, use the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
 
 ~~~C#
 // Request server time
@@ -74,3 +88,13 @@ void OnServerTimeRequestFailed (GamedockErrorMessage errorMessage)
   Debug.Log ("Server failed to retrieve with error: " + errorMessage.message);
 }
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
