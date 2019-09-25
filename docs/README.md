@@ -1,12 +1,4 @@
-# Gamedock SDK V3.6.0
-
-The Gamedock SDK Unity Plugin is designed to give developers access to Gamedock Console functions and communicate with the Gamedock backend. The plugin also provides developers with an easy way to connect to ad networks and implement features like video's, interstitials and tracking of users' behaviours.
-
-## Download
-
-The SDK can be downloaded [here](https://github.com/azerion/gamedock-sdk/releases).
-
-## Change Log
+# Change Log
 
 ### Version 3.6.0 *(29-09-2019)*
 
