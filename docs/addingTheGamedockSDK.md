@@ -16,9 +16,7 @@ Unpack the downloaded archive, inside you will find the native library folders a
 
 1. Attach the script named “Gamedock.cs” to a new GameObject in your startup scene, and name that GameObject "GamedockSDK".
 1. Make sure to check set the Bundle identifier (iOS) and Package Name (Android) of your game in the Unity PlayerSettings.
-1. Go to the Gamedock SDK menu in the top bar of Unity and select Configuration, the following screen will appear:
-
-![github pages](_images/Screen-Shot-2018-10-16-at-13.45.55-300x191.png)
+1. Go to the Gamedock SDK menu in the top bar of Unity and select Configuration.
 
 Make sure the fields are configured correctly and press the ‘Create default configuration files’ button to retrieve the latest configurations for your game. This step should be repeated before every build delivered to make sure that the latest offline configs are included in the build.
 

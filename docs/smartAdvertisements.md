@@ -145,7 +145,7 @@ When the user clicks the button, the following code is triggered:
 public void ShowRewardedVideo(){
     Gamedock.Instance.AdvertisementCallbacks.OnAdStarted += AdOpened;
     Gamedock.Instance.AdvertisementCallbacks.OnAdFinished += AdFinished;
-    Gamedock.Instance.PlayVideo ();
+    Gamedock.Instance.PlayRewardVideo ();
 }
 
 void AdOpened(){

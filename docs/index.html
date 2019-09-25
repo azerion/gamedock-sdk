@@ -14,22 +14,25 @@
   :root {
     --content-max-width                 : 100em;
     --code-font-family                  : 'Open Sans',Helvetica,Arial,Lucida,sans-serif;
-    --heading-h1-color                  : #272727;
+    --heading-h1-color                  : #006A97;
 
     --sidebar-width                     : 27rem;
     --sidebar-name-color                : #FFFFFF;
     --sidebar-name-font-weight          : bold;
 
-    --sidebar-nav-strong-color          : #FFFFFF;
-    --sidebar-nav-link-color            : #FFFFFF;
-    --sidebar-nav-link-color--active    : #FFFFFF;
-    --sidebar-nav-link-color--hover     : #FFFFFF;
-    --sidebar-nav-link-border-color     : #FFFFFF;
-    --sidebar-nav-link-border-color--active     : #FFFFFF;
-    --sidebar-nav-link-border-color--hover      : #FFFFFF;
+    --blockquote-border-color           : #006A97;
+    
+    --sidebar-nav-strong-color          : #006A97;
+    --sidebar-nav-link-color            : #006A97;
+    --sidebar-nav-link-color--active    : #006A97;
+    --sidebar-nav-link-color--hover     : #006A97;
+    --sidebar-nav-link-border-style     : none;
+    --sidebar-nav-link-border-color     : #006A97;
+    --sidebar-nav-link-border-color--active     : #006A97;
+    --sidebar-nav-link-border-color--hover      : #006A97;
     --sidebar-nav-link-font-weight--active      : bold;
 
-    --sidebar-background                : #0169A8;
+    --sidebar-background                : #F7F7F7;
 
     --sidebar-nav-link-text-decoration--active    : none;
     --sidebar-nav-link-text-decoration--hover     : underline;
@@ -39,9 +42,9 @@
     --sidebar-nav-pagelink-background-image--collapse   : ;
     --sidebar-nav-pagelink-background-image--loaded     : ;
 
-    --search-result-heading-color            : #FFFFFF;
+    --search-result-heading-color            : #006A97;
     --search-result-heading-font-weight      : bold;
-    --search-result-item-color               : #FFFFFF;
+    --search-result-item-color               : #006A97;
   }
   </style>
 </head>
@@ -51,6 +54,7 @@
     window.$docsify = {
       name: 'Gamedock SDK',
       repo: 'https://github.com/azerion/gamedock-sdk',
+      logo: '/_images/GamedockLogoSmall.png',
       loadSidebar: true,
       autoHeader: true,
       externalLinkTarget: '_blank',
