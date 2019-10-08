@@ -1,19 +1,30 @@
 # Change Log
 
-### Version 3.6.0 *(29-09-2019)*
+### Version 3.6.0 *(08-10-2019)*
 
-**IMPORTANT!**
-
+**IMPORTANT! The SDK has been migrated from Spil to the new Gamedock brand. This means that all API calls and references have been changed to Gamedock. Make sure to update all your references in order to get the SDK working again.**
 
 **New Features**
-
+ * _Migration to Gamedock_: The SDK has been rebranded to Gamedock meaning that all Spil/Spilgames references have been removed (as much as possible). Make sure to update your API calls/Gameobjects/Prefabs accordingly.
+ * _AppsFlyer Module_: The AppsFlyer SDK has been added as a module. The module can be enabled/disabled in the Configuration screen under each platform.
+ * _External Partner Ids_: The SDK now accepts the passing of external partner ids, either when initializing or at a later stage, in order to better connect tracking between the different SDK that you might be using (AppsFlyer, Steam, Facebook, etc.).
 
 **Bug fixes**
-
+ * Android: Fixed several ad related crashes and ANR issues.
+ * Android: Fixed isolated cases where the SDK will fail to initialize properly.
+ * Android: Fixed issue with GCM key retrieval causing ANRs; it has been replaced with FCM and now requires the Firebase module.
+ * iOS: Fixed crash that could happen if certain Ad networks were enabled.
+ * iOS: Fixed crash for WebView javascript data injection on iOS 13.
+ * Unity: Fixed build errors caused by switching to WebGL/Standalone.
+ * Unity: Fixed gradle script to include symbol uploading to Crashlytics.
 
 **Other**
-
-
+ * Android/iOS: Updated all Ad networks.
+ * Android/iOS: Added myTarget mediation network.
+ * Unity (experimental): Added Standalone support for SDK tracking and features (at the moment the following features are not supported: Splashscreens, Daily Bonus, Tiered Events, Ads).
+ * Unity (experimental): Fixed WebGL support for the SDK tracking and features (at the moment the following features are not supported: Splashscreens, Daily Bonus, Tiered Events, Ads).
+ * Unity: Added toggle to easily override the AppController for iOS.
+ * Unity: Exposed the Android Crashlytics/Fabric api key to the manifest. If you are using a different Fabric account then the old Spilgames one, make sure to update this key.
 
 
 ### Version 3.5.0 *(29-07-2019)*
