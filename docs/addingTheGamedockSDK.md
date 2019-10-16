@@ -42,7 +42,7 @@ Gamedock.MonoInstance.Initialize();
 
 ### Download and Import the AIR ANE's into your project
 
-You can find the latest version of the AIR plugin here: <url to be added>
+You can find the latest version of the AIR plugin here: url to be added
 
 Unpack the downloaded archive, inside you'll find 9 ANE's that you can import into your projects:
 
@@ -50,7 +50,7 @@ Unpack the downloaded archive, inside you'll find 9 ANE's that you can import in
 - GameDock-x.x.x.ANE: The main GameDock ANE, required for all platforms. For iOS, this also includes most dependencies, for Android, there are other ANE's that can be added as modules. 
 
 #### For iOS
-- com.distriqt.Core: Prevents crashes on iOS devices caused by dependencies using compiler flags that AIR doesn't recognise. Always include this for iOS.
+- com.distriqt.Core.ANE: Prevents crashes on iOS devices caused by dependencies using compiler flags that AIR doesn't recognise. Always include this for iOS.
 
 #### For Android:
 - GameDockAdjust-x.x.x.ANE: Optional, used for Adjust tracking and deeplinking.
@@ -67,11 +67,14 @@ Unpack the downloaded archive, inside you'll find 9 ANE's that you can import in
 1. Import the ANE's into your project via your prefered IDE and link them via your app.xml.
 2. Make sure your game version and app identifier (f.e. com.yourcompany.yourgame) match those configured in the GameDock Console, this way your game will receive the correct configurations/data.
 3. Make sure you include the required .json files in the project root when packaging a build. These files should be provided to you by your GameDock representative and are downloadable via the GameDock Console.
+
 These include:
 - defaultGameConfig.json: Required, used for GameConfig and SDKConfig features.
 - defaultGameData.json: optional, used for wallet/inventory features.
-- defaultMissionConfig.json: optional, used for missions features. 
-4. For Android, be sure to add the correct ManifestAdditions, depending on the features you're using. See the Example app included with the GameDock AIR download for examples, or see: <url to be added>.
+- defaultPlayerData.json used for GameState feature.
+- defaultMissionConfig.json: optional, used for missions features.
+
+4. For Android, be sure to add the correct ManifestAdditions, depending on the features you're using. See the Example app included with the GameDock AIR download for examples, or see: url to be added.
 
 The Gamedock SDK is now ready to use, most Gamedock SDK features will be configured automatically when the SDK initializes, see the specific feature sections to see which integration parts still have to be implemented. Please make sure to also follow the next section ‘GDPR & Privacy Policy’ to make your game GDPR compliant.
 
