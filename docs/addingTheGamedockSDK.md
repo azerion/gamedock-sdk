@@ -93,7 +93,7 @@ Example (including privacy policy / GDPR and Google Play Games for Android):
           		return;
       		}
   
-      		// Attach event handlers for GameDock features your app uses.
+      		// Attach event handlers for GameDock features used by your app.
   
       		// Such as ads
       		GameDock.GetInstance().addEventListener(GameDockEvents.AD_AVAILABLE, onAdAvailableEvent);
@@ -132,13 +132,13 @@ Example (including privacy policy / GDPR and Google Play Games for Android):
   
 ~~~
 
-* Be sure to also check the example project included with the GameDock AIR SDK download, it provides examples for most features.
+* Be sure to also check the example project included with the GameDock AIR SDK download, as it provides examples for most features.
 
 ### Publishing an app with the GameDock AIR SDK
 
 - When publishing your app, you'll likely want to replace any Azerion branding (logo's, background images etc) with your own. For AIR, you'll need to have a Windows device with WinRar (or similar) in order to replace the assets contained in  GameDockResources.x.x.x.ANE. If you don't have a Windows device, ask your GameDock representative to create a custom ANE for you via Slack. 
 
-- For iOS, make sure that the InfoAdditions and Entitlements match those in the provisioning profile, or you may have trouble punblishing/uploading to App Stores. You can check what's defined in your provisioning profile via console/terminal commands (see also: https://stackoverflow.com/questions/11834650/ios-look-inside-provisioning-profile).
+- For iOS, make sure that the InfoAdditions and Entitlements match those in the provisioning profile, or you may have trouble publishing/uploading to App Stores. You can check what's defined in your provisioning profile via console/terminal commands (see also: https://stackoverflow.com/questions/11834650/ios-look-inside-provisioning-profile).
 
 - For iOS, when using push notifications, make sure that the "aps-environment" entitlement is set to the correct environment (development/production).
 
