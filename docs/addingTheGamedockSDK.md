@@ -79,7 +79,7 @@ The Gamedock SDK is now ready to use, most Gamedock SDK features will be configu
 
 In your app's main entry-point, before making any other calls or initialising other libraries, do the following:
 1. Check if GameDock is supported for the current platform (mobile/pc etc).
-2. Attach event handlers for any GameDock events that your app should requires.
+2. Attach event handlers for any GameDock events that your app requires.
 3. Initialise GameDock.
 
 Example (including privacy policy / GDPR and Google Play Games for Android):
