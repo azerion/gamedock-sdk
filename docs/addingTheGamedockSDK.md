@@ -66,15 +66,14 @@ Unpack the downloaded archive, inside you'll find 9 ANE's that you can import in
 
 1. Import the ANE's into your project via your prefered IDE and link them via your app.xml.
 2. Make sure your game version and app identifier (f.e. com.yourcompany.yourgame) match those configured in the GameDock Console, this way your game will receive the correct configurations/data.
-3. Make sure you include the required .json files in the project root when packaging a build. These files should be provided to you by your GameDock representative and are downloadable via the GameDock Console.
+3. For Android, be sure to add the correct ManifestAdditions, depending on the features you're using. See the Example app included with the GameDock AIR download for examples, or see: url to be added.
+4. Make sure you include the required .json files in the project root when packaging a build. These files should be provided to you by your GameDock representative and are downloadable via the GameDock Console.
 
 These include:
 - defaultGameConfig.json: Required, used for GameConfig and SDKConfig features.
 - defaultGameData.json: optional, used for wallet/inventory features.
 - defaultPlayerData.json used for GameState feature.
 - defaultMissionConfig.json: optional, used for missions features.
-
-4. For Android, be sure to add the correct ManifestAdditions, depending on the features you're using. See the Example app included with the GameDock AIR download for examples, or see: url to be added.
 
 The Gamedock SDK is now ready to use, most Gamedock SDK features will be configured automatically when the SDK initializes, see the specific feature sections to see which integration parts still have to be implemented. Please make sure to also follow the next section ‘GDPR & Privacy Policy’ to make your game GDPR compliant.
 
