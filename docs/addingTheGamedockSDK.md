@@ -84,50 +84,50 @@ In your app's main entry-point, before making any other calls or initialising ot
 
 Example (including privacy policy / GDPR and Google Play Games for Android):
 ~~~C#
-  public function Main()
-  {
-      // Initialise GameDock and show Privacy Policy / GDPR popup.
-      if (!GameDock.isSupported())
-      {
-          trace("GameDock is not supported on this platform."); // When not Android or iOS
-          return;
-      }
+	public function Main()
+	{
+		// Initialise GameDock and show Privacy Policy / GDPR popup.
+      		if (!GameDock.isSupported())
+      		{
+          		trace("GameDock is not supported on this platform."); // When not Android or iOS
+          		return;
+      		}
   
-      // Attach event handlers for GameDock features your app uses.
+      		// Attach event handlers for GameDock features your app uses.
   
-      // Such as ads
-      GameDock.GetInstance().addEventListener(GameDockEvents.AD_AVAILABLE, onAdAvailableEvent);
-      GameDock.GetInstance().addEventListener(GameDockEvents.AD_FINISHED, onAdFinishedEvent);
-      GameDock.GetInstance().addEventListener(GameDockEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
-      GameDock.GetInstance().addEventListener(GameDockEvents.AD_STARTED, onAdStartedEvent);
+      		// Such as ads
+      		GameDock.GetInstance().addEventListener(GameDockEvents.AD_AVAILABLE, onAdAvailableEvent);
+      		GameDock.GetInstance().addEventListener(GameDockEvents.AD_FINISHED, onAdFinishedEvent);
+      		GameDock.GetInstance().addEventListener(GameDockEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
+      		GameDock.GetInstance().addEventListener(GameDockEvents.AD_STARTED, onAdStartedEvent);
 	
-      // And GDPR / Privacy policy popup.
-      GameDock.GetInstance().addEventListener(GameDockEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
-	    GameDock.GetInstance().addEventListener(GameDockEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
+      		// And GDPR / Privacy policy popup.
+      		GameDock.GetInstance().addEventListener(GameDockEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
+      		GameDock.GetInstance().addEventListener(GameDockEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
   
-      // Disable automatic registering for Push Notifications for iOS so users don't get a pop-up.
-      GameDock.GetInstance().DisableAutomaticRegisterForPushNotificationsiOS();
+      		// Disable automatic registering for Push Notifications for iOS so users don't get a pop-up.
+      		GameDock.GetInstance().DisableAutomaticRegisterForPushNotificationsiOS();
   
-      // Initialise GameDock with the prefered privacy policy / GDPR settings. 
-      // After the user passes the privacy policy / GDPR menu, GameDock will start requesting/processing data and firing events.
-      GameDock.GetInstance().Init(true, true, true, 16, false, GCMProjectId);
-  }
+      		// Initialise GameDock with the prefered privacy policy / GDPR settings. 
+      		// After the user passes the privacy policy / GDPR menu, GameDock will start requesting/processing data and firing events.
+      		GameDock.GetInstance().Init(true, true, true, 16, false, GCMProjectId);
+  	}
   
-  private function onPrivacyPolicyStatusEvent(evt:PrivacyPolicyStatusEvent) : void
-  {
-      // If the user accepted the policy, initialise other libraries, such as Google Play Games.
-			if(evt.accepted)
+  	private function onPrivacyPolicyStatusEvent(evt:PrivacyPolicyStatusEvent) : void
+  	{
+      		// If the user accepted the policy, initialise other libraries, such as Google Play Games.
+		if(evt.accepted)
+		{
+          		if (GameDockGPG.isSupported())
 			{
-          if (GameDockGPG.isSupported())
-			    {
-              // Initialise Google Play Games and log in the user.
+              			// Initialise Google Play Games and log in the user.
 			        trace("Starting GameDock Google Play Games");
-		    		  GameDockGPG.create(false, false, null);
-    				  GameDockGPG.games.signIn();
-          } else {
-		          trace("Google Play Games is not supported on this platform (not Android!)");
-			    }      
-			}
+		    		GameDockGPG.create(false, false, null);
+    				GameDockGPG.games.signIn();
+          		} else {
+		        	trace("Google Play Games is not supported on this platform (not Android!)");
+			}      
+		}
 	}
   
 ~~~
