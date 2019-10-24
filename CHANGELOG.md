@@ -1,10 +1,5 @@
 Change Log
 ==========
-Full change logs for the native SDKs:
-* <a href="https://github.com/spilgames/spil-ios-sdk/releases">iOS</a>
-* <a href="https://github.com/spilgames/spil-android-sdk/blob/master/CHANGELOG.md">Android</a>
-
-## Change Log
 
 Version 3.6.1 *(24-10-2019)*
 ----------------------------
