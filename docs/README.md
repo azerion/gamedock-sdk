@@ -1,5 +1,18 @@
 # Change Log
 
+### Version 3.6.1 *(24-10-2019)*
+
+**Bug fixes**
+ * Android: Fixed issue with reward video initialization causing ANRs.
+ * Android: Removed pre-caching of reward videos.
+ * iOS: Fixed issue with native Age Gate and GDPR popups not displaying properly on iOS 13 and Night Mode.
+ * iOS: Fixed issue with Age Gate not returning the correct age group in the callback.
+ * Unity: Fixed several issues when requesting default configuration files
+
+**Other**
+ * Android: Updated Unity Ads SDK to 3.3.0.
+
+
 ### Version 3.6.0 *(08-10-2019)*
 
 **IMPORTANT! The SDK has been migrated from Spil to the new Gamedock brand. This means that all API calls and references have been changed to Gamedock. Make sure to update all your references in order to get the SDK working again.**

@@ -1,4 +1,4 @@
-<h1>Gamedock SDK V3.6.0</h1>
+<h1>Gamedock SDK V3.6.1</h1>
 
 The Gamedock SDK is designed to give developers access to Gamedock Console functions and communicate with the Gamedock backend. The plugin also provides developers with an easy way to connect to ad networks and implement features like video's, interstitials and tracking of users' behaviours.
 

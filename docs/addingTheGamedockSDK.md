@@ -6,6 +6,8 @@
 
 #### ** Unity **
 
+> The minimum recommended Unity version in order for the SDK to work properly is **2018.3.+ or higher**.
+
 ### Download and Import the GameDock Unity package into your project
 
 You can find the latest version of the Unity plugin here: [https://github.com/azerion/gamedock-sdk/releases](https://github.com/azerion/gamedock-sdk/releases)

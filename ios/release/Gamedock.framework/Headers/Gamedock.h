@@ -47,7 +47,7 @@
 #import "HookBridge.h"
 #import "GAI.h"
 
-#define GAMEDOCK_SDK_VERSION @"3.6.0"
+#define GAMEDOCK_SDK_VERSION @"3.6.1"
 
 @class Gamedock;
 @class ImageContext;
@@ -176,7 +176,7 @@
 -(void)privacyPolicyStatus:(BOOL)accepted;
 
 // Age gate
--(void)ageGateStatus:(BOOL)passed withAge:(int)age withCheckPrivacyPolicy:(BOOL)checkPrivacyPolicy;
+-(void)ageGateStatus:(BOOL)passed withAge:(nonnull NSString*)age withCheckPrivacyPolicy:(BOOL)checkPrivacyPolicy;
 
 // Tiered events
 -(void)tieredEventsAvailable;
