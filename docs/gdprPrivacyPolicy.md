@@ -65,11 +65,11 @@ For Unity 2017.1 and above you can use the supplied project found in the SDK bun
 
 ### Enable or disable the privacy policy popup
 
-The privacy policy popup can be enabled/configured via parameters when calling Init():
-- showAgeGate: Boolean, if enabled, the age gate popup will always appear the first time the user opens the game **before** the GDPR/Privacy Policy popup. 
-- ageGateShouldBlock: Boolean, gives the possibility for blocking the user from continuing to the game if the minimum age requirement is not met. 
-- ageGateMinimumAgeRequirement: Number, minimum age in years for users to be able to pass the age gate popup.  
-- coppaEnabled: Boolean, if enabled, follows COPPA law for protection of minors and makes sure the game never shows a privacy policy menu, age gate menu or ads.
+The privacy policy popup can be enabled/configured via parameters when calling GameDock.GetInstance().Init():
+* *showAgeGate* Boolean - If enabled, the age gate popup will always appear the first time the user opens the game **before** the GDPR/Privacy Policy popup. 
+* *ageGateShouldBlock* Boolean - Gives the possibility for blocking the user from continuing to the game if the minimum age requirement is not met. 
+* *ageGateMinimumAgeRequirement* Number - Minimum age in years for users to be able to pass the age gate popup.  
+* *coppaEnabled* Boolean - If enabled, follows COPPA law for protection of minors and makes sure the game never shows a privacy policy menu, age gate menu or ads.
 
 ### Handling privacy policy callbacks / initialising 3rd party libraries
 
@@ -90,7 +90,7 @@ private function onPrivacyPolicyStatusEvent(evt:PrivacyPolicyStatusEvent) : void
 ~~~
 
 The variables returned are:
- * *accepted* - Informs the game if the privacy policy was accepted.
+ * *accepted* Boolean - Informs the game if the privacy policy was accepted.
 
 ### Changing the header image
 

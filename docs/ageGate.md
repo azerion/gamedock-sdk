@@ -64,11 +64,11 @@ For Unity 2017.1 and above you can use the supplied project found in the SDK bun
 
 ### Enable/disable the age gate popup or COPPA
 
-The age gate popup can be enabled/configured via parameters when calling Init():
-- showAgeGate: Boolean, if enabled, the age gate popup will always appear the first time the user opens the game **before** the GDPR/Privacy Policy popup. 
-- ageGateShouldBlock: Boolean, gives the possibility for blocking the user from continuing to the game if the minimum age requirement is not met. 
-- ageGateMinimumAgeRequirement: Number, minimum age in years for users to be able to pass the age gate popup.  
-- coppaEnabled: Boolean, if enabled, follows COPPA law for protection of minors and makes sure the game never shows a privacy policy menu, age gate menu or ads.
+The age gate popup can be enabled/configured via parameters when calling GameDock.GetInstance().Init():
+* *showAgeGate* Boolean - If enabled, the age gate popup will always appear the first time the user opens the game **before** the GDPR/Privacy Policy popup. 
+* *ageGateShouldBlock* Boolean - Gives the possibility for blocking the user from continuing to the game if the minimum age requirement is not met. 
+* *ageGateMinimumAgeRequirement* Number - Minimum age in years for users to be able to pass the age gate popup.  
+* *coppaEnabled* Boolean - If enabled, follows COPPA law for protection of minors and makes sure the game never shows a privacy policy menu, age gate menu or ads.
 
 ### Handling age gate callbacks
 
@@ -85,9 +85,9 @@ private function onAgeGateStatusEvent(evt:AgeGateStatusEvent) : void
 ~~~
 
 The variables returned are:
- * *passed* - Informs the game if the age gate was passed based on the minimum age requirement.
- * *age* - Returns the age that was chosen by the user. Can be: **0-12, 13-15, 16+**.
- * *checkPrivacyPolicy* - Informs if the user should be exposed to GDPR compliancy. You are not required to do anything manual with the actual GDPR popup, though if the flag is false, you might want to hide the GDPR button in your Settings screen for example.
+ * *passed* Boolean - Informs the game if the age gate was passed based on the minimum age requirement.
+ * *age* Number - Returns the age that was chosen by the user. Can be: **0-12, 13-15, 16+**.
+ * *checkPrivacyPolicy* Boolean - Informs if the user should be exposed to GDPR compliancy. You are not required to do anything manual with the actual GDPR popup, though if the flag is false, you might want to hide the GDPR button in your Settings screen for example.
 
 ### Changing the header image
 
