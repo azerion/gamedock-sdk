@@ -2,7 +2,7 @@
 
 Certain games are required to have an age gate at the start of the game before it allows the players to continue. This functionality is provided by the Gamedock SDK and it comes in two flavours: a native popup where you can only configure the banner image or a Unity prefab which can be full customizable as long as no elements or scripts are removed.
 
-![github pages](_images/agegate-popup.png)
+![github pages](_images/AgeGatePopup.png)
 
 <!-- tabs:start -->
 
@@ -12,7 +12,7 @@ Certain games are required to have an age gate at the start of the game before i
 
 The age gate popup can be enabled using the "GamedockSDK" object or through the Gamedock SDK Configuration menu. If enabled, the age gate will always appear first time the user opens the game **before** the GDPR/Privacy Policy popup. In order to configure the age gate popup with, you can edit it in the "GamedockSDK" object. The following options are available:
 
-![github pages](_images/agegate-config.png)
+![github pages](_images/AgeGateConfig.png)
 
 The SDK gives the possibility for blocking the user from continuing to the game if the minimum age requirement is not met. You also can select to either use the native popup or the Unity prefab. 
 

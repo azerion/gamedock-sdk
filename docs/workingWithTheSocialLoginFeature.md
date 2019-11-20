@@ -38,7 +38,7 @@ The auth details can be passed to the UserLogin method in a dictionary as 4th pa
 
 ## Implementing the Gamedock SDK Login
 
-![github pages](_images/Social-Login-Feature-768x797.png)
+![github pages](_images/SocialLoginFeature.png)
 
 Use the following method to login the user:
 
@@ -321,7 +321,7 @@ string deviceId = Gamedock.Instance.GetDeviceId();
 
 ## Implementing Cross-Device Data Synchronization
 
-![github pages](_images/Sync-Feature-768x443.png)
+![github pages](_images/SyncFeature.png)
 
 The user data synchronization feature can be used to enable the synchronizing of user data when a logged in user is playing across multiple devices.
 

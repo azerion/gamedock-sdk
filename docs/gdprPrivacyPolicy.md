@@ -4,7 +4,7 @@ Before we can use any feature of the Gamedock SDK the user needs to approve and 
 
 > IMPORTANT: It is not allowed to have any network calls before the user accepts the popup.
 
-![github pages](_images/IMG_3130-300x210.png)
+![github pages](_images/PrivacyPolicyPopup.png)
 
 <!-- tabs:start -->
 
@@ -15,7 +15,7 @@ Before we can use any feature of the Gamedock SDK the user needs to approve and 
 GDPR implementation has a hard deadline for May 2018 for all apps to show a consent popup for certain data usage. Next to GDPR Google has set their date to 1 Feb 2018. Apple hasn’t communicated a hard deadline yet other than May, however, we want to take the same approach as for Google.
 Meaning as of 1 Feb 2018. All games must have the checkmark and GDPR popup enabled unless explicitly asked by your account manager not to enable it. Please align closely with your account manager regards this matter. By default, the Gamedock SDK will use the default native template screens, in case you want to use custom Unity screens select ‘Use unity prefabs’ on the GamedockSDK GameObject, also make sure to specify the correct orientation. There are 2 default template prefabs provided by the Gamedock SDK, those can be found in the ‘Resources/Gamedock/PrivacyPolicy’ directory. The 2 prefabs both have to be added to the GamedockSDK gameobject in the privacy policy slots when selecting the ‘Use unity prefabs’ option.
 
-![github pages](_images/Screen-Shot-2018-11-08-at-10.52.40-300x111.png)
+![github pages](_images/PrivacyPolicyEditorSettings.png)
 
 The user should have an option to change their settings later on while playing the game. The game should offer a button for this which opens the GDPR settings screen, a default settings screen is provided by the Gamedock SDK and can be opened by calling:
 	
@@ -23,11 +23,10 @@ The user should have an option to change their settings later on while playing t
 Gamedock.Instance.ShowPrivacyPolicySettings();
 ~~~
 
-![github pages](_images/IMG_3132-300x210.png)
+![github pages](_images/PrivacyPolicySettingsPopup.png)
 
 The user has to restart the app after making changes to the GDPR settings before they take effect.
 
-![github pages](_images/IMG_3134-300x210.png)
 
 ### Handling network calls and 3rd party SDK’s
 
@@ -66,3 +65,27 @@ For Unity 2017.1 and above you can use the supplied project found in the SDK bun
 ## Changing the consent popup text
 
 Note that the text and translations of the popup are kept in the Gamedock SDK Game config feature, which should be by default integrated into your game. Note that in case you are working on an update you can fetch the new game config in Unity (we already updated the game config contents). Only in case of explicit requests by your account manager the default text and translations may be changed. Please don’t change this text on your own as this must be legally correct.
+
+## Manually passing GDPR information
+
+If you don't intend on using the SDK popups, you can also pass and retrieve the GDPR information to the SDK using the following methods:
+
+<!-- tabs:start -->
+
+#### ** Unity **
+
+~~~C#
+Gamedock.Instance.SetGDPRSettings(withPersonalisedAds, withPersonalisedContent);
+//Dictionary contains two keys (withPersonalisedAds, withPersonalisedContent) with the information.
+Dictionary<string, bool> gdprSettings = Gamedock.Instance.GetGDPRSettings();
+~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->

@@ -85,6 +85,9 @@ Interstitial ads are full-screen ads that cover the interface of their host app.
 #### ** Unity **
 
 ~~~C#
+//Request an interstitial ad
+Gamedock.Instance.RequestInterstitial();
+
 //Show an interstitial ad
 Gamedock.Instance.ShowInterstitial();
 
@@ -211,6 +214,30 @@ void MoreAppsButtonOnClick()
 {
   Gamedock.Instance.PlayMoreApps();
 }
+~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+<!-- tabs:end -->
+
+## Checking if an ad is available
+
+You can also directly check if an ad is available by using the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
+
+~~~C#
+bool isBannerAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Banner);
+bool isInterstitialAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Interstitial));
+bool isRewardedVideoAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.RewardVideo));
 ~~~
 
 #### ** Android **

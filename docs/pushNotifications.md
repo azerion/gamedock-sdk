@@ -42,8 +42,8 @@ If you want to set your own custom notification icon, you can do so by adding th
 
 Before submitting a build to QA please make sure in XCode to enable the Push Notifications capability:
 
-![github pages](_images/Screen-Shot-2017-07-21-at-12.30.36-300x70.png)
+![github pages](_images/PushNotifications1.png)
 
 Also set the push notifications environment entitlement to ‘production’. XCode does not do this automatically for you, but it is required to be able to get a valid push token from iOS:
 
-![github pages](_images/Screen-Shot-2017-07-21-at-12.31.11-300x51.png)  
+![github pages](_images/PushNotifications1.png)  

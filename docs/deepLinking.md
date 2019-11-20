@@ -42,7 +42,7 @@ Do the following:
 
 Deep links can have rewards added to them via the Gamedock Consoel, this adds a reward token to the link. When the app receives a deep link the Gamedock SDK notifies the developer that a reward token is available for claiming, the developer can then proceed to claim it and show a message for the user. When a user clicks a deep link (such as a Facebook campaign or an advertisement) within the Gamedock framework, the reward-claiming mechanism is shown in Figure 6.
 
-![github pages](_images/deeplink_reward.png)
+![github pages](_images/DeeplinkReward.png)
 
 Figure 6: Reward-Claiming Mechanism. If the app already exists, they are taken directly to it. Otherwise, they are directed to the appropriate store and, after installing it, the app is opened. In either case, the reward is then triggered. Within your game, use the following code to listen for the callbacks and claim the reward attached to the link. 
 

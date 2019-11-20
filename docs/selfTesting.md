@@ -40,11 +40,11 @@ Charles is a tool to inspect network calls and discover the data being transferr
 * In order to see the https traffic we need install a Charles ssl certificate. Go to the safari browser on your iPhone and visit the page:  [http://www.charlesproxy.com/getssl](http://www.charlesproxy.com/getssl). Follow the steps to install the charles ssl certificate.
     Validate if the install went correct by going to the iphone settings -> General -> Profiles -> Charles proxy. You should see a screen like below:
     
-    ![github pages](_images/IMG_3885-169x300.png)
+    ![github pages](_images/SelfTesting1.png)
 
 * Connect your phone with Charles. Make sure you are on a wifi network. Click the wifi network in the top menu bar holding the ALT key to see your IP address.
 
-    ![github pages](_images/IMG_3886-169x300.png)
+    ![github pages](_images/SelfTesting2.png)
     
     Open the WIFI settings app on you iPhone. Make sure you are connected to the same WIFI hotspot.
     1. Press the info icon to see the details.
@@ -52,7 +52,7 @@ Charles is a tool to inspect network calls and discover the data being transferr
     1. Type in your IP Address you just looked up on your Mac in the “server” field.
     1. Type in 8888 in the “Port” field.
 
-    ![github pages](_images/Screen-Shot-2016-03-23-at-12.10.41-PM-292x300.png)
+    ![github pages](_images/SelfTesting3.png)
     
     Now return to the settings screen so the settings are saved.
 
@@ -60,14 +60,14 @@ Charles is a tool to inspect network calls and discover the data being transferr
 
     > By default Charles should start recording the traffic. Otherwise simply press the record button.
     
-    ![github pages](_images/Screen-Shot-2016-03-23-at-12.16.08-PM-300x119.png)
+    ![github pages](_images/SelfTesting4.png)
     
     You should see all traffic from your WIFI network. Note that this now includes traffic from both your iPhone and Mac.
     
     Enable the ssl proxy by right clicking a https:// domain:
     
-    ![github pages](_images/Screen-Shot-2016-03-23-at-12.26.27-PM-235x300.png)
+    ![github pages](_images/SelfTesting5.png)
     
     You should now be able to validate the requests and their responses. You can use this for example to validate all Gamedock tracking events and all its properties.
     
-    ![github pages](_images/Screen-Shot-2016-03-23-at-12.18.42-PM-300x120.png)
+    ![github pages](_images/SelfTesting6.png)

@@ -59,22 +59,15 @@ For Unity 2017.1 and above you can use the supplied project found in the SDK bun
 
 Additional settings can be configured via the “Gamedock SDK -> Configuration -> Android” menu, the page looks like this:
 
-![github pages](_images/Screen-Shot-2018-10-16-at-13.56.13-300x201.png)
+![github pages](_images/PlatformSpecificUnityAndroid.png)
 
 It allows switching between using “.aar” files or the recommended Gradle build system. After selecting the build system it’s possible to add or remove modules, based on which features your game requires. The screen also shows useful information such as recommended updates.
 
 ## iOS
 
-Extra components for iOS need to be added in Xcode after building from Unity.
+Extra components for iOS can be enabled/disabled in Unity via this configuration windows (Gamedock SDK -> Configuration -> iOS):
 
-## WebGL
-
-WebGL is similar to Android with a few minor differences:
-
-* A template for WebGL pages is included under “/assets/webgltemplates/gamedockdefaulttemplate”. This template can be customised or you can create your own, be careful not to break the javascript though.
-* Some SDK components currently don’t work for WebGL: Adjust, AdMob, ChartBoost.
-* A WebGL-specific ad provider for rewarded videos / interstitials will be added a.s.a.p. There is currently no ad provider for WebGL (SDK version 3.2.0).
-* Google Play Games achievements and leaderboards do not work for WebGL, either remove achievements/leaderboards or re-implement them with a WebGL-/Facebook-specific library.
+![github pages](_images/PlatformSpecificUnityIOS.png)
 
 ## Building and publishing
 

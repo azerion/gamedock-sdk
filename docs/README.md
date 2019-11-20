@@ -1,5 +1,29 @@
 # Change Log
 
+### Version 3.7.0 *(20-11-2019)*
+
+**New Features**
+ * _Fyber Mediation and Awesome Ads_: Two new mediation networks have been added to the AdMob stack.
+ * _Chartboost Refactoring_: The Chartboost module has been removed and Chartboost has been moved as a mediation inside AdMob.
+
+**Bug fixes**
+ * Unity: Fixed issue with FPS tracking creating an infinite value list.
+ * Unity: Fixed issue with SDK Windows throwing exceptions when appearing in the editor.
+
+**Other**
+ * Android/iOS: Added new initialization flow (builder) for native initialization which can be used for native implementations of the SDK or for new engine plugins.
+ * Android/iOS/Unity: Added new method to directly request an interstitial. The flow matches the requesting of rewarded videos.
+ * Android/iOS/Unity: Added new method to directly check if an ad is available (banner, interstitial, rewarded video).
+ * Android/iOS/Unity: Added new method to retrieve the Firebase Instance Id. 
+ * Android/iOS: Added additional mediation information to be sent with the SDK event when an interstitial is displayed (similar to rewarded videos).
+ * Android/iOS/Unity: Added two new methods for passing GDPR (Privacy Policy) information and retrieving it.
+ * Unity: Reduced size of the example assets for Privacy Policy and Age Gate.
+ * Unity: Moved the JSONObject class to the Gamedock namespace.
+ * Unity: Removed the Android Project Id value as that is not used anymore.
+ * Android/iOS: Updated AdMob mediation networks.
+ * Android/iOS: Added CCPA AdMob compliancy.
+
+
 ### Version 3.6.1 *(24-10-2019)*
 
 **Bug fixes**
