@@ -24,6 +24,8 @@ Make sure the fields are configured correctly and press the ‘Create default co
 
 The Gamedock SDK is now ready to use, most Gamedock SDK features will be configured automatically when the SDK initializes, see the specific feature sections to see which integration parts still have to be implemented. Please make sure to also follow the next section ‘GDPR & Privacy Policy’ to make your game GDPR compliant.
 
+> If you have issues with missing Prefab scripts please download the following folder and replace it in "Assets/Gamedock/Editor/" : [Prefab missing script fix](https://splashscreens.cdn.spilcloud.com/files/1574351079_Prefabs.zip)
+
 ### Initializing the GameDock Unity SDK
 
 By default, the Gamedock SDK will automatically initialize on Awake(). You can disable that functionality on the "GamedockSDK" object and initialize the SDK at a later stage. Initializing the SDK can be done using the following code:
