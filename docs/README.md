@@ -2,6 +2,8 @@
 
 ### Version 3.7.0 *(20-11-2019)*
 
+**IMPORTANT! If you are experiencing issues with missing scripts on some of our Editor prefabs, it is caused by Unity not importing properly some of it's components. In order to fix it please download [this](https://splashscreens.cdn.spilcloud.com/files/1574351079_Prefabs.zip) package and overwrite the folder "Assets/Gamedock/Editor/Prefabs".** 
+
 **New Features**
  * _Fyber Mediation and Awesome Ads_: Two new mediation networks have been added to the AdMob stack.
  * _Chartboost Refactoring_: The Chartboost module has been removed and Chartboost has been moved as a mediation inside AdMob.
