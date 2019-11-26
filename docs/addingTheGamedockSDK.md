@@ -7,6 +7,7 @@
 #### ** Unity **
 
 > The minimum recommended Unity version in order for the SDK to work properly is **2018.3.+ or higher**.
+> Xcode 11 is required in order to build for iOS.
 
 ### Download and Import the GameDock Unity package into your project
 
