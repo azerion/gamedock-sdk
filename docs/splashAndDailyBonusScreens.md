@@ -42,8 +42,8 @@ Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenOpenShop += OnSplashScreen
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenData -= OnSplashScreenData;
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenData += OnSplashScreenData;
 
-Gamedock.Instance.SplashScreenCallbacks.OnIAPRequestPurchase -= OnIAPRequestPurchase;
-Gamedock.Instance.SplashScreenCallbacks.OnIAPRequestPurchase += OnIAPRequestPurchase;
+Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase -= OnIAPRequestPurchase;
+Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase += OnIAPRequestPurchase;
 ~~~
 
 #### ** Android **
