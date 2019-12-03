@@ -57,6 +57,7 @@ void OnAdAvailable(enumAdType adType) {
         }
 }
 
+// TODO: Should be adnotavailable?
 void OnAdAvailable(enumAdType adType) {
         if (adType == enumAdType.Banner) {
             ...Hide Ad Container...
@@ -71,6 +72,46 @@ void OnAdAvailable(enumAdType adType) {
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+~~~C#
+//Request banner ads
+//A new request is required if you want to change positon or ad size,
+//f.e., one of the following:
+Gamedock.GetInstance().RequestBannerAd("BOTTOM", "BANNER");
+Gamedock.GetInstance().RequestBannerAd("TOP", "BANNER");
+Gamedock.GetInstance().RequestBannerAd("BOTTOM", "LEADERBOARD");
+Gamedock.GetInstance().RequestBannerAd("TOP", "LEADERBOARD");
+Gamedock.GetInstance().RequestBannerAd("BOTTOM", "FULL_BANNER");
+Gamedock.GetInstance().RequestBannerAd("TOP", "FULL_BANNER");
+Gamedock.GetInstance().RequestBannerAd("BOTTOM", "LARGE_BANNER");
+Gamedock.GetInstance().RequestBannerAd("TOP", "LARGE_BANNER");
+Gamedock.GetInstance().RequestBannerAd("BOTTOM", "SMART_BANNER");
+Gamedock.GetInstance().RequestBannerAd("TOP", "SMART_BANNER");
+Gamedock.GetInstance().RequestBannerAd("BOTTOM", "MEDIUM_RECTANGLE");
+Gamedock.GetInstance().RequestBannerAd("TOP", "MEDIUM_RECTANGLE");
+
+
+//Showing and hiding a banner ad
+Gamedock.GetInstance().ShowBannerAd();
+Gamedock.GetInstance().HideBannerAd();
+
+//Callbacks
+Gamedock.GetInstance().addEventListener(SDKEvents.AD_AVAILABLE, onAdAvailableEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
+
+private function onAdAvailableEvent(evt:AdAvailableEvent) : void
+{
+	trace(evt.toString());
+}
+
+private function onAdNotAvailableEvent(evt:AdNotAvailableEvent) : void
+{
+	trace(evt.toString());
+}
+
+~~~
 
 <!-- tabs:end -->
 
@@ -98,6 +139,16 @@ Gamedock.Instance.ShowInterstitial();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+~~~C#
+//Show an interstitial ad
+// TODO: Remove parameter, redundant since 3.7.0?
+Gamedock.GetInstance().ShowInterstitial("admob");
+
+//Callbacks for interstitials are the same as for banners and reward videos except that the "adType" is "interstitial"
+~~~
 
 <!-- tabs:end -->
 
@@ -176,6 +227,66 @@ void AdFinished(Gamedock.Unity.Utils.GamedockAdFinishedResponse response){
 
 
 
+#### ** AIR **
+
+~~~C#
+
+//Callbacks
+Gamedock.GetInstance().addEventListener(SDKEvents.AD_AVAILABLE, onAdAvailableEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
+
+private function onAdAvailableEvent(evt:AdAvailableEvent) : void
+{
+	if (adType == "rewardvideo")
+	{
+		// Show "play reward video" button.
+	}
+}
+
+private function onAdNotAvailableEvent(evt:AdNotAvailableEvent) : void
+{
+	if (adType == "rewardvideo")
+	{
+		// Hide "play reward video" button.
+	}
+}
+
+~~~
+
+When the user clicks the button, the following code is triggered:
+
+~~~C#
+
+public function ShowRewardedVideo() : void
+{
+	Gamedock.GetInstance().addEventListener(SDKEvents.AD_AVAILABLE, onAdStartedEvent);
+	Gamedock.GetInstance().addEventListener(SDKEvents.AD_NOT_AVAILABLE, onAdFinishedEvent);    
+    Gamedock.GetInstance().PlayVideo();
+}
+
+private function onAdStartedEvent(evt:AdStartedEvent) : void
+{
+    // Mute the sound and pause the game if neccessary
+}
+
+private function onAdFinishedEvent(evt:AdFinishedEvent) : void
+{
+	// Unmute the sound and resume the game if necessary.
+	
+    if (evt.adType == "rewardvideo")
+	{
+		if (evt.reason == "close" && evt.reward != null)
+		{
+			// Give the reward
+		}
+		else if (evt.reason == "dismiss")
+		{
+			// Video was canceled, don't give reward.
+		}
+    }
+}
+~~~
+
 <!-- tabs:end -->
 
 
@@ -220,5 +331,33 @@ void MoreAppsButtonOnClick()
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+~~~C#
+
+Gamedock.GetInstance().RequestMoreApps();
+
+private function onAdAvailableEvent(evt:AdAvailableEvent) : void
+{
+	if (evt.adType == "moreapps")
+	{
+		// Show more apps button.
+	}
+}
+
+private function onAdNotAvailableEvent(evt:AdNotAvailableEvent) : void
+{
+	if (evt.adType == "moreapps")
+	{
+		// Hide more apps button.
+	}
+}
+
+private function moreAppsButtonOnClick()
+{
+	Gamedock.GetInstance().PlayMoreApps();
+}
+~~~
 
 <!-- tabs:end -->

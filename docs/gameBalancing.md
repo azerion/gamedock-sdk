@@ -85,5 +85,61 @@ Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated += OnFirebaseRem
 
 
 
+#### ** AIR **
+
+### Parsing the JSON Configuration File
+
+You can use the following methods for working with the Game Config:
+
+~~~C#
+//Method that returns the whole game config as defined in the Gamedock Console as a JSON string
+Gamedock.GetInstance().GetConfigAll();
+
+//Method that returns a first level node in the game config as a JSON string
+Gamedock.GetInstance().GetConfigValue("key");
+~~~
+
+The Gamedock SDK also includes methods for converting JSON strings to objects via the Gamedock.Unity.JSON.JSONHelper method.
+
+> The configuration service should always return a value. However, if, for any reason, it does not, ensure that you check and handle a possible null return.
+
+### Listening for Updates to the Configuration File
+
+By default, game configuration calls will always return the last saved value. However, it is also possible to listen for configuration updates, which often happen in a background process, using the OnConfigUpdated event. After receiving the update, you can refresh the user interface and game state. Use the following code.
+
+### Implementing a Default Configuration File
+
+If there is no network connection, the Gamedock SDK will use a default configuration file. In addition, users might open the app for the first time and not have an Internet connection. For those situations, a default configuration file called **“defaultGameConfig.json”** needs to be added to your project’s root folder. The following is an example of a simple configuration file for the game Pixel Wizard.
+
+### Using Firebase Remote Config
+
+The Gamedock SDK offers the possibility to work with the Firebase Remote Config. For Android, you need to make sure that the Firebase module is included. For more information on how to set up the values in Firebase, check the following link:
+
+[https://firebase.google.com/docs/remote-config/](https://firebase.google.com/docs/remote-config/)
+
+In order to work with the Firebase Remote Config directly through the Gamedock SDK, use the following methods and callbacks:
+
+~~~C#
+//Set Default Values for the Remote Config
+Gamedock.GetInstance().setFirebaseRemoteConfigDefaults("{ \"showTappyWheel\" : true, \"gameSecret2\" : 10.1010, \"gameSecret1\" : 1010101, \"tappyWheelButtonText\" : \"Default value\" }");
+
+//Requesting the cloud remote config
+Gamedock.GetInstance().requestFirebaseRemoteConfig(0);
+
+//Getting the remote config values
+Gamedock.GetInstance().getBooleanFirebaseRemoteConfig("showTappyWheel", "null");
+Gamedock.GetInstance().getDoubleFirebaseRemoteConfig("gameSecret2", "null");
+Gamedock.GetInstance().getLongFirebaseRemoteConfig("gameSecret1", "null");
+Gamedock.GetInstance().getStringFirebaseRemoteConfig("tappyWheelButtonText", "null");
+
+//Firebase Remote Config Callback
+Gamedock.GetInstance().addEventListener(SDKEvents.FIREBASE_REMOTE_CONFIG_UPDATED, onFireBaseRemoteConfigUpdatedEvent);
+
+private function onFireBaseRemoteConfigUpdatedEvent(evt:FirebaseRemoteConfigUpdatedEvent) : void		
+{
+	log(evt.toString());
+}
+~~~
+
 <!-- tabs:end -->
 

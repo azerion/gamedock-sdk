@@ -5,6 +5,10 @@ Support for user identification depends on the games platform:
 * Android: developers should show the Gamedock user ID in-game. For instance, within a settings screen. The Gamedock user ID can be obtained by calling the Gamedock.Instance.GetGamedockUID() method of the Gamedock SDK.
 * iOS: no specific action is required. The build script automatically inserts a Settings.bundle file into your Xcode project. This results in the Generic Settings app from Apple being updated and showing some SDK-related option, as well as the user’s ID. If you still want to obtain the Gamedock user ID, you can call the Gamedock.Instance.GetGamedockUID() method.
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 //Get Gamedock User Id
 strimng userId = Gamedock.Instance.GetGamedockUID()
@@ -12,6 +16,24 @@ strimng userId = Gamedock.Instance.GetGamedockUID()
 //Get Gamedock Device Id
 string deviceId = Gamedock.Instance.GetDeviceId();
 ~~~
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+#### ** AIR **
+~~~C#
+//Get Gamedock User Id
+var userId:String = Gamedock.GetInstance().GetGamedockUserId()
+
+//Get Gamedock Device Id
+var deviceId:String = Gamedock.GetInstance().GetDeviceId();
+~~~
+
+<!-- tabs:end -->
 
 ## Setting External IDs
 
@@ -32,6 +54,10 @@ Gamedock.MonoInstance.Initialize();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+External id's are not supported for AIR.
 
 <!-- tabs:end -->
 
@@ -56,6 +82,10 @@ Gamedock.Instance.RemoveExternalId(externalPartner);
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+External id's are not supported for AIR.
 
 <!-- tabs:end -->
 
@@ -91,6 +121,23 @@ First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+~~~C#
+// Start listening to user id change requests
+Gamedock.GetInstance().addEventListener(SDKEvents.REQUEST_USER_ID_CHANGE, onRequestUserIdChangeEvent);
+
+private function onRequestUserIdChangeEvent(evt:RequestUserIdChangeEvent) : void
+{
+	// Update the game to allow the new user id to be used
+
+	// Confirm back to the Gamedock SDK to change the user id
+	Gamedock.GetInstance().ConfirmUserIdChange();
+}
+~~~
+
+First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In this callback, the game should prepare the state to allow a user id change. Once this is done the ConfirmUserIdChange() method of the Gamedock SDK should be called to let the Gamedock SDK change the Gamedock SDK and do a full reload of the entire loaded user data.
 
 <!-- tabs:end -->
 
@@ -129,5 +176,19 @@ public enum UpdateStatus {
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.GAME_VERSION_STATUS, onGameVersionStatusEvent);
+
+private function onGameVersionStatusEvent(evt:GameVersionStatusEvent) : void		
+{
+	// Possible values for GameVersionStatusEvent.version: "recommended" or "forced".
+}
+
+// TODO: Rename version to status?
+
+~~~
 
 <!-- tabs:end -->

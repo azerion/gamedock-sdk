@@ -55,6 +55,11 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 
 
 
+#### ** AIR **
+
+Receipt validation is not supported for AIR.
+
+
 <!-- tabs:end -->
 
 Optionally, the Gamedock Games SDK can also send the receipt to the game’s backend. In this way, corrective action can be taken against false purchases or other suspicious activity.
@@ -96,5 +101,25 @@ void OnServerTimeRequestFailed (GamedockErrorMessage errorMessage)
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+~~~C#
+// Request server time
+Gamedock.GetInstance().RequestServerTime();
+// Server time callbacks
+Gamedock.GetInstance().addEventListener(SDKEvents.SERVER_TIME_REQUEST_FAILED, onServerTimeRequestFailedEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SERVER_TIME_REQUEST_SUCCESS, onServerTimeRequestSuccessEvent);
+
+private function onServerTimeRequestFailedEvent(evt:ServerTimeRequestFailedEvent) : void
+{
+	trace(evt.toString());
+}
+
+private function onServerTimeRequestSuccessEvent(evt:ServerTimeRequestSuccessEvent) : void
+{
+	trace(evt.toString());
+}
+~~~
 
 <!-- tabs:end -->

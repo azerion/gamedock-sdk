@@ -45,6 +45,42 @@ public delegate void UserDataError(GamedockErrorMessage errorMessage);
 
 
 
+#### ** AIR **
+
+~~~C#
+// Set public and private game states.
+Gamedock.GetInstance().SetPublicGameState(gameState);
+Gamedock.GetInstance().SetPrivateGameState(gameState);
+
+// Get public and private game states.
+var publicGameState:String = Gamedock.GetInstance().GetPublicGameState();
+var privateGameState:String = Gamedock.GetInstance().GetPrivateGameState();
+
+// Request other user's game states.
+// Requires a provider and a JSON string list.
+Gamedock.GetInstance().GetOtherUsersGameState(provider, userIdsList);
+~~~
+
+To listen to the available callbacks, use the following methods:
+
+~~~C#
+
+// The following methods are called for the game state operations.
+
+Gamedock.GetInstance().addEventListener(SDKEvents.OTHER_USERS_GAME_STATE_DATA_LOADED, onOtherUsersGameStateDataLoadedEvent);
+private function onOtherUsersGameStateDataLoadedEvent(evt:OtherUsersGameStateDataLoadedEvent) : void
+{
+	trace(evt.toString());
+}
+
+//Check the Handling errors page for a list of error messages
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_ERROR, onUserDataErrorEvent);
+private function onUserDataErrorEvent(evt:UserDataErrorEvent) : void
+{
+	trace(evt.toString());
+}
+~~~
+
 <!-- tabs:end -->
 
 > There is a 2mb limit for the gamestate, sending bigger gamestates will be ignored by the backend.

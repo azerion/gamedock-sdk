@@ -53,7 +53,7 @@ GamedockTracking.IAPPurchased(skuId, transactionId)
     .Track();
 ~~~
 
-Simply call the corresponding method at the required point in your game, and the SDK will send the event to the Gamedock backend. It is important that the expected parameters for your game are carefully checked. These must be correct for the successful completion of the QA process. Descriptions of all methods and parameters are included in the provided SDK code.
+Simply call the corresponding method at the required point in your game, and the SDK will send the event to the Gamedock back-end. It is important that the expected parameters for your game are carefully checked. These must be correct for the successful completion of the QA process. Descriptions of all methods and parameters are included in the provided SDK code.
 
 
 #### ** Android **
@@ -63,5 +63,42 @@ Simply call the corresponding method at the required point in your game, and the
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+For AIR, Gamedock provides a number of standard event-tracking methods:
+
+~~~C#
+Gamedock.GetInstance().TrackMilestoneAchievedEvent("name");
+Gamedock.GetInstance().TrackLevelStartEvent("levelName", "difficulty", false, "creatorId");
+Gamedock.GetInstance().TrackLevelCompleteEvent("levelName", "difficulty", 1, 1, null, 1, 1, false, "creatorId");
+Gamedock.GetInstance().TrackLevelFailedEvent("levelName", "difficulty", 1, "0", 1, 1, 1, "reason", false, "creatorId");
+Gamedock.GetInstance().TrackLevelUpEvent("level", "objectId", "skillId");
+Gamedock.GetInstance().TrackEquipEvent("equippedItem", "equippedTo", "unequippedFrom");
+Gamedock.GetInstance().TrackUpgradeEvent("upgradeId", "level", "reason", 1);
+Gamedock.GetInstance().TrackLevelCreateEvent("levelId", "creatorId");
+Gamedock.GetInstance().TrackLevelDownloadedEvent("levelId", "creatorId", 1);
+Gamedock.GetInstance().TrackLevelRateEvent("levelId", "creatorId", 1);
+Gamedock.GetInstance().TrackEndlessModeStartEvent("levelName");
+Gamedock.GetInstance().TrackEndlessModeEndEvent(1);
+Gamedock.GetInstance().TrackPlayerDiesEvent("levelName");
+Gamedock.GetInstance().TrackWalletInventoryEvent("reason", "location", new Vector.<TrackingCurrency>(), new Vector.<TrackingItem>(), "reasonDetails", "transactionId");
+Gamedock.GetInstance().TrackIAPPurchasedEvent("skuId", "transactionId", "token");
+Gamedock.GetInstance().TrackIAPRestoredEvent("skuId", "originalTransactionId", "originalPurchaseDate");
+Gamedock.GetInstance().TrackIAPFailedEvent("error", "skuId");
+Gamedock.GetInstance().TrackTutorialCompleteEvent();
+Gamedock.GetInstance().TrackTutorialSkippedEvent();
+Gamedock.GetInstance().TrackRegisterEvent("platform");
+Gamedock.GetInstance().TrackShareEvent("platform");
+Gamedock.GetInstance().TrackInviteEvent("platform");
+Gamedock.GetInstance().TrackLevelAppeared("level", "difficulty");
+Gamedock.GetInstance().TrackLevelDiscarded("level", "difficulty");
+Gamedock.GetInstance().TrackErrorShown("reason");
+Gamedock.GetInstance().TrackTimeElapLoad(1, "pointInGame", "startPoint");
+Gamedock.GetInstance().TrackTimeoutDetected(1, "pointInGame");
+Gamedock.GetInstance().TrackObjectStateChanged("changedObject", "status", "reason", "changedProperties");
+~~~
+
+Ask your Azerion representative if any events should be implemented. Call the corresponding function at the required point in your game, and the SDK will send the event to the Gamedock back-end. It is important that the events and parameters for your game are white-listed via the Gamedock Console, or they will not be forwarded to BI for reporting purposes. Besides reporting purposes, events can also be configured via Gamedock console to function as triggers, to show splash screens or ads at the desired moment in-game.
 
 <!-- tabs:end -->
