@@ -14,7 +14,7 @@
 
 You can find the latest version of the Unity plugin here: [https://github.com/azerion/gamedock-sdk/releases](https://github.com/azerion/gamedock-sdk/releases)
 
-Unpack the downloaded archive, inside you will find the native library folders and a Unity package. You can ignore the folder for now and just import the Unity package.
+Unpack the downloaded archive, and inside you will find the native library folders and a Unity package. You can ignore the folder for now and just import the Unity package.
 
 ### Using the Gamedock Unity SDK
 
@@ -149,5 +149,50 @@ Example (including privacy policy / GDPR and Google Play Games for Android):
 - For iOS, make sure that the InfoAdditions and Entitlements match those in the provisioning profile, or you may have trouble publishing/uploading to the App Store. You can check what's defined in your provisioning profile via console/terminal commands (see also: https://stackoverflow.com/questions/11834650/ios-look-inside-provisioning-profile).
 
 - For iOS, when using push notifications, make sure that the "aps-environment" entitlement is set to the correct environment (development/production).
+
+#### ** Cordova **
+
+### Download and Import the SDK Cordova package into your project
+
+You can include the latest Cordova package by running the following commands into your main project folder:
+~~~JavaScript
+//Download the plugin
+npm i gamedock-sdk-cordova
+
+//If you have not yet create a build for your platform run
+cordova platform add android
+cordova build android
+
+cordova platform add ios
+cordova build ios
+
+//Add the SDK plugin to your game
+cordova plugin add gamedock-sdk-cordova
+
+//Make a new build of your game
+cordova build android
+cordova build ios
+
+~~~
+
+This plugin expects that npm is installed on your machine. If you have not done that yet, please refer to this documentation [https://docs.npmjs.com/](https://docs.npmjs.com/)
+
+Alternatively you can download the archive of the plugin from this [page](https://github.com/azerion/gamedock-sdk/releases) and include it manually into your project (using the above commands excluding the first one).
+
+### Initializing the GameDock Cordova SDK
+
+In order to initialise the SDK call the following function (make sure this call is done before any other SDK call and preferably before any other network calls):
+~~~JavaScript
+var withAgeGate = false;
+var ageGateOptions = {
+    shouldBlock: true, 
+    requiredAge: 12
+};
+var withPrivacyPolicy = true;
+var environment = "PRODUCTION";
+var externalIds = [];
+
+gamedockSDK.initialise(withAgeGate, ageGateOptions, withPrivacyPolicy, environment, []);
+~~~
 
 <!-- tabs:end -->

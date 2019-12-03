@@ -39,9 +39,14 @@ The Gamedock SDK also includes methods for converting JSON strings to objects vi
 
 By default, game configuration calls will always return the last saved value. However, it is also possible to listen for configuration updates, which often happen in a background process, using the OnConfigUpdated event. After receiving the update, you can refresh the user interface and game state. Use the following code.
 
+~~~C#
+Gamedock.Instance.ConfigCallbacks.OnConfigDataUpdated -= OnConfigDataUpdated;
+Gamedock.Instance.ConfigCallbacks.OnConfigDataUpdated += OnConfigDataUpdated;
+~~~
+
 ### Implementing a Default Configuration File
 
-If there is no network connection, the Gamedock SDK will use a default configuration file. In addition, users might open the app for the first time and not have an Internet connection. For those situations, a default configuration file called **“defaultGameConfig.json”** needs to be added to your project’s root folder. The following is an example of a simple configuration file for the game Pixel Wizard.
+If there is no network connection, the Gamedock SDK will use a default configuration file. In addition, users might open the app for the first time and not have an Internet connection. For those situations, a default configuration file called **“defaultGameConfig.json”** needs to be added to your project’s root folder.
 
 ### Using Firebase Remote Config
 
@@ -84,6 +89,33 @@ Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated += OnFirebaseRem
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+### Parsing the JSON Configuration File
+
+You can use the following method for working with the Game Config:
+
+~~~JavaScript
+//Method that returns the whole game config as defined in the Gamedock Console as a JSON string
+var config = gamedockSDK.getConfig();
+~~~
+
+### Listening for Updates to the Configuration File
+
+~~~JavaScript
+gamedockSDK.on('ConfigDataUpdated', (configDataUpdated) => {
+    console.log('ConfigDataUpdated with data: ', JSON.stringify(configDataUpdated));
+});
+
+gamedockSDK.on('ConfigDataError', (configDataError) => {
+    console.log('ConfigDataError with data: ', JSON.stringify(configDataError));
+});
+~~~
 
 <!-- tabs:end -->
 

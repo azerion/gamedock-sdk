@@ -114,11 +114,50 @@ The user should also have an option to change their privacy policy settings whil
 Spil.GetInstance().ShowPrivacyPolicySettings();
 ~~~
 
-![github pages](_images/IMG_3132-300x210.png)
+![github pages](_images/PrivacyPolicyEditorSettings.png)
 
 The user has to restart the app after making changes to the GDPR settings before they take effect.
 
-![github pages](_images/IMG_3134-300x210.png)
+#### ** Cordova **
+
+### Enable or disable the privacy policy popup
+
+The GDPR privacy policy popup can be enabled via parameters when calling gamedockSDK.initialise.
+
+### Handling privacy policy callbacks / initialising 3rd party libraries
+
+The SDK provides feedback information for the choice that the user has made when presented with the privacy policy. By default, the Gamedock SDK handles all the network calls and 3rd party SDK’s within the Gamedock SDK. However, in case you do send network calls to your own server or load 3rd party SDK’s outside the Gamedock SDK it is important to know that this is only allowed after the user accepted the privacy policy popup. In order to get that feedback, register the following callback:
+
+~~~JavaScript
+//Callback informing the choice for the age gate
+gamedockSDK.on('PrivacyPolicyStatus', (privacyPolicyStatus) => {
+    console.log('PrivacyPolicyStatus with data: ', JSON.stringify(privacyPolicyStatus));
+});
+~~~
+
+### Changing the header image
+
+If you want to set your own custom header image instead of the Azerion logo, you can do so by adding the following images (PNG):
+
+Android:
+* platforms/android/app/src/main/res/drawable/privacy_policy_landscape_custom.png (if your game is in landscape)
+* platforms/android/app/src/main/res/drawable/privacy_policy_portrait_custom.png (if your game is in portrait)
+
+iOS:
+*
+*
+
+### Showing the privacy policy settings in-game
+
+The user should also have an option to change their privacy policy settings while playing the game. The game should offer a button for this which opens the GDPR settings screen, a default settings screen is provided by the Gamedock SDK and can be opened by calling:
+	
+~~~JavaScript
+gamedockSDK.showPrivacyPolicySettings();
+~~~
+
+![github pages](_images/PrivacyPolicyEditorSettings.png)
+
+The user has to restart the app after making changes to the GDPR settings before they take effect.
 
 <!-- tabs:end -->
 
@@ -148,5 +187,16 @@ Dictionary<string, bool> gdprSettings = Gamedock.Instance.GetGDPRSettings();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+~~~JavaScript
+gamedockSDK.setGDPRSettings(true, true);
+var settings = gamedockSDK.getGDPRSettings();
+~~~
 
 <!-- tabs:end -->

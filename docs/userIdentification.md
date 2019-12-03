@@ -5,13 +5,43 @@ Support for user identification depends on the games platform:
 * Android: developers should show the Gamedock user ID in-game. For instance, within a settings screen. The Gamedock user ID can be obtained by calling the Gamedock.Instance.GetGamedockUID() method of the Gamedock SDK.
 * iOS: no specific action is required. The build script automatically inserts a Settings.bundle file into your Xcode project. This results in the Generic Settings app from Apple being updated and showing some SDK-related option, as well as the user’s ID. If you still want to obtain the Gamedock user ID, you can call the Gamedock.Instance.GetGamedockUID() method.
 
+<!-- tabs:start -->
+
+#### ** Unity **
+
 ~~~C#
 //Get Gamedock User Id
-strimng userId = Gamedock.Instance.GetGamedockUID()
+strimng userId = Gamedock.Instance.GetGamedockUID();
 
 //Get Gamedock Device Id
 string deviceId = Gamedock.Instance.GetDeviceId();
 ~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+~~~JavaScript
+//Get Gamedock User Id
+gamedockSDK.getGamedockUserId();
+
+//Get Gamedock Device Id
+gamedockSDK.getGamedockDeviceId();
+~~~~
+
+<!-- tabs:end -->
+
+
 
 ## Setting External IDs
 
@@ -22,7 +52,7 @@ Additional external ids can be passed to the SDK in order to provide better trac
 #### ** Unity **
 
 ~~~C#
-Gamedock.MonoInstance.Initialize();
+Gamedock.MonoInstance.Initialize(Dictionary<string, string> externalIds = null);
 ~~~
 
 #### ** Android **
@@ -32,6 +62,16 @@ Gamedock.MonoInstance.Initialize();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+~~~JavScript
+gamedockSDK.initialise(withAgeGate, ageGateOptions, withPrivacyPolicy, environment, externalIds);
+~~~
 
 <!-- tabs:end -->
 
@@ -56,6 +96,20 @@ Gamedock.Instance.RemoveExternalId(externalPartner);
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+~~~JavaScript
+//Add external Id
+gamedockSDK.addExternalId(externalPartner, id);
+
+//Remove external Id
+Gamedock.Instance.removeExternalId(externalPartner);
+~~~
 
 <!-- tabs:end -->
 
@@ -91,6 +145,14 @@ First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -129,5 +191,13 @@ public enum UpdateStatus {
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->

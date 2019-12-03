@@ -56,6 +56,14 @@ Gamedock.Instance.ResetPlayerData();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 Note that a user’s wallet information will be reset both locally (on the user’s device) and within the Gamedock Console. 
@@ -214,6 +222,14 @@ InitialValue = "Initial Value";
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 ## Reseting data
@@ -238,6 +254,14 @@ Gamedock.Instance.ResetWallet();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 In order to reset the Inventory data use the following code:
@@ -258,6 +282,14 @@ Gamedock.Instance.ResetInventory();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 In order to reset the whole Player data use the following code:
@@ -277,6 +309,14 @@ Gamedock.Instance.ResetPlayerData();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -323,5 +363,13 @@ Gamedock.Instance.ClearDiskCache();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->

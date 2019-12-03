@@ -55,6 +55,14 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 Optionally, the Gamedock Games SDK can also send the receipt to the game’s backend. In this way, corrective action can be taken against false purchases or other suspicious activity.
@@ -96,5 +104,13 @@ void OnServerTimeRequestFailed (GamedockErrorMessage errorMessage)
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->

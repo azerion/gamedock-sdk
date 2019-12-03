@@ -93,4 +93,12 @@ for (int i = 0; i < helper.Packages.Count; i++) {
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->

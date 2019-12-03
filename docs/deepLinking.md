@@ -95,6 +95,14 @@ void OnRewardTokenClaimFailed (string rewardType, GamedockErrorMessage error)
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 > This code can be used for all the Gamedock SDK features that use a reward-token mechanism.
@@ -196,5 +204,13 @@ static Dictionary<string, string> GetParams(string uri)
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->

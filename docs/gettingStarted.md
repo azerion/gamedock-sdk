@@ -8,3 +8,11 @@ This section will guide you through:
 * Setting up platform specific requirements.
 * How to use the Unity editor mode.
 
+Currently supported platforms/engines:
+* Unity (Android, iOS, Standalone)
+* AIR (Adobe Flash) (Android, iOS)
+* Cordova/Javascript (Android, iOS)
+* Native Android
+* Native iOS
+
+

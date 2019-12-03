@@ -64,4 +64,20 @@ Simply call the corresponding method at the required point in your game, and the
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+In order to track an event, use the following code:
+
+~~~JavaScript
+ gamedockSDK.trackEvent(eventName, {key: value});
+ 
+ //Examples
+ gamedockSDK.trackEvent('levelComplete', {'level': 'Level 1'});
+ gamedockSDK.trackEvent('milestoneAchieved', {'name': 'First Cordova App'});
+~~~
+
 <!-- tabs:end -->

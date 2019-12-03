@@ -1,7 +1,5 @@
 # Age Gate & COPPA
 
-
-=======
 According to European law, games intended for minors are required to show an age gate at the start of the game before allowing players to continue. This functionality is provided by the Gamedock SDK in two flavours: a native popup with a configurable banner image, or a Unity prefab that is fully customizable as long as no elements or scripts are removed.
   
 ![github pages](_images/AgeGatePopup.png)
@@ -96,15 +94,44 @@ The variables returned are:
 If you want to set your own custom header image instead of the Azerion logo, you can do so by replacing the appropriate image files in the GameDockResources.ANE:
 
 Android:
-- GameDockResources.ane\META-INF\ANE\Android-ARM\sdk-resources-res\drawable\
-- GameDockResources.ane\META-INF\ANE\Android-ARM64\sdk-resources-res\drawable\
-- GameDockResources.ane\META-INF\ANE\Android-x86\sdk-resources-res\drawable\
+* GameDockResources.ane\META-INF\ANE\Android-ARM\sdk-resources-res\drawable\
+* GameDockResources.ane\META-INF\ANE\Android-ARM64\sdk-resources-res\drawable\
+* GameDockResources.ane\META-INF\ANE\Android-x86\sdk-resources-res\drawable\
 
 iOS:
-- GameDock.ane\META-INF\ANE\iPhone-ARM\
-- GameDock.ane\META-INF\ANE\iPhone-x86\
+* GameDock.ane\META-INF\ANE\iPhone-ARM\
+* GameDock.ane\META-INF\ANE\iPhone-x86\
 
 For Android, the image files are named “privacy_policy_landscape_custom.png” and “privacy_policy_portrait_custom.png”, for iOS they are called "PrivacyPolicyHeader.png" and "PrivacyPolicyHeaderLandscape.png", each file is used for landscape/portrait resp. The image size is 800px x 220px or 600px x 220px.
+
+#### ** Cordova **
+
+### Enable/disable the age gate popup
+
+The age gate popup can be enabled/configured via parameters when calling gamedockSDK.initialise.
+
+### Handling age gate callbacks
+
+The SDK provides feedback information for the choice that the user has made when presented with the age gate. In order to get that feedback, register the following callback:
+
+~~~JavaScript
+//Callback informing the choice for the age gate
+gamedockSDK.on('AgeGateStatus', (ageGateStatus) => {
+    console.log('AgeGateStatus with data: ', JSON.stringify(ageGateStatus));
+});
+~~~
+
+### Changing the header image
+
+If you want to set your own custom header image instead of the Azerion logo, you can do so by adding the following images (PNG):
+
+Android:
+* platforms/android/app/src/main/res/drawable/privacy_policy_landscape_custom.png (if your game is in landscape)
+* platforms/android/app/src/main/res/drawable/privacy_policy_portrait_custom.png (if your game is in portrait)
+
+iOS:
+*
+*
 
 <!-- tabs:end -->
 
