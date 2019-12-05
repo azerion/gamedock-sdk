@@ -58,7 +58,16 @@ Gamedock.Instance.ResetPlayerData();
 
 #### ** AIR **
 
+~~~C#
+// Reset the wallet data.
+Gamedock.GetInstance().ResetWallet();
 
+// Reset the Inventory data.
+Gamedock.GetInstance().ResetInventory();
+
+// Reset both wallet and inventory data.
+Gamedock.GetInstance().ResetPlayerData();
+~~~
 
 #### ** Cordova **
 
@@ -162,7 +171,7 @@ uniqueItem.uniqueProperties.Add("test", "test");
 Gamedock.PlayerData.Inventory.UpdateUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
 
 //Remove Unique Item from the Inventory
-Gamedock.PlayerData.Inventory.RemoveUnqiueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+Gamedock.PlayerData.Inventory.RemoveUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
 
 //Method to request user data
 Gamedock.Instance.RequestUserData();
@@ -224,7 +233,137 @@ InitialValue = "Initial Value";
 
 #### ** AIR **
 
+Gamedock.GetInstance().GameDataHelper and Gamedock.GetInstance().PlayerDataHelper contain all methods for the wallet, in-game shop and inventory features. These classes are instantiated on Init() and automatically retrieve the data from the Gamedock SDK, so you can start using the methods immediately. See below code snippets to use the wallet, in-game shop and inventory features:
 
+~~~C#
+// Retrieving Gamedock Game Data
+// List of currencies configured in the Gamedock Console
+var Currencies:Vector.<Currency> = Gamedock.GetInstance().GameData.Currencies;
+
+// List of items configured in the Gamedock Console
+var Items:Vector.<Item> = Gamedock.GetInstance().GameData.Items;
+
+// List of bundles configured in the Gamedock Console and that are used in the Shop
+var Bundles:Vector.<Bundle> = Gamedock.GetInstance().GameData.Bundles;
+
+// Shop object that defines the configuration
+var Shop:Shop = Gamedock.GetInstance().GameData.Shop;
+// For Shop Entries, the type can be BUNDLE or PACKAGE
+// Shop stickers can be found on each Shop Entry under the ImageEntries list
+// Each image entry contains an URL to download the sticker image
+
+// Getting a Currency, Item, Bundle or Gacha by ID or NAME
+Gamedock.GetInstance().GameData.GetCurrency(ID);
+Gamedock.GetInstance().GameData.GetCurrency(NAME);
+
+Gamedock.GetInstance().GameData.GetItem(ID);
+Gamedock.GetInstance().GameData.GetItem(NAME);
+
+Gamedock.GetInstance().GameData.GetBundle(ID);
+Gamedock.GetInstance().GameData.GetBundle(NAME);
+
+Gamedock.GetInstance().GameData.GetGacha(ID);
+Gamedock.GetInstance().GameData.GetGacha(NAME);
+
+// Retrieve item properties
+var itemProperties:Object = Gamedock.GetInstance().GameData.GetItem(49).Properties;
+
+// Retrieving Player Data
+var Wallet:Wallet = Gamedock.GetInstance().PlayerData.Wallet;
+var Inventory:Inventory = Gamedock.GetInstance().PlayerData.Inventory;
+
+// Getting the Current Balance for a given Currency ID
+Gamedock.GetInstance().PlayerData.GetCurrencyBalance(ID);
+
+// Getting the Item Amount for a given Item ID
+Gamedock.GetInstance().PlayerData.GetItemAmount(ID);
+
+// Check if an Item is present in the Player Inventory
+Gamedock.GetInstance().PlayerData.InventoryHasItem(Item ID);
+
+// Retrieve all the gacha the user has
+Gamedock.GetInstance().PlayerData.GetGachas();
+
+// Wallet Oprations
+// Adding Currency to the User's Wallet
+Gamedock.GetInstance().PlayerData.Wallet.Add(CurrencyId, Amount, Reason, Location, ReasonDetails, TransactionId);
+// Subtracting Currency to the User's Wallet
+Gamedock.GetInstance().PlayerData.Wallet.Subtract(CurrencyId, Amount, Reason, Location, ReasonDetails, TransactionId);
+// Method to set an currency limit
+Gamedock.GetInstance().SetCurrencyLimit(currencyId:int, limit:int);
+
+// Inventory Operations
+// Adding Item to the User's Inventory
+Gamedock.GetInstance().PlayerData.Inventory.Add(ItemId, Amount, Reason, Location, ReasonDetails, TransactionId);
+// Subtracting Item to the User's Inventory
+Gamedock.GetInstance().PlayerData.Inventory.Subtract(ItemId, Amount, Reason, Location, ReasonDetails, TransactionId);
+// Consuming a bundle
+Gamedock.GetInstance().PlayerData.BuyBundle(BundleId, Reason, Location, ReasonDetails, TransactionId, PerkItems);
+// Opening a Gacha Item
+Gamedock.GetInstance().PlayerData.OpenGacha(GachaId, Reason, Location, ReasonDetail, PerkItems);
+// Method to set an item limit
+Gamedock.GetInstance().SetItemLimit(itemId:int, limit:int);
+
+// Create Unique Item
+// Be sure to check the "is unique" checkbox for your item in the Gamedock Console, this will make the item non-stackable and allows you to create unique items from it.
+var uniqueItem:UniquePlayerItem = Gamedock.GetInstance().PlayerData.Inventory.CreateUniqueItem(itemId);
+var uniqueItem:UniquePlayerItem = Gamedock.GetInstance().PlayerData.Inventory.CreateUniqueItem(itemId, uniqueId);
+
+// Add Unique Item to the inventory
+Gamedock.GetInstance().PlayerData.Inventory.AddUniqueItemToInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+
+// Update Unique Item from the inventory
+var hasUniqueItem:Boolean = InventoryHasUniquePlayerItem(uniqueId);
+var uniqueItem:UniquePlayerItem = Gamedock.GetInstance().PlayerData.Inventory.GetUniqueItem(uniqueId);
+uniqueItem.uniqueProperties.Add("test", "test");
+Gamedock.GetInstance().PlayerData.Inventory.UpdateUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+
+// Remove Unique Item from the Inventory
+Gamedock.GetInstance().PlayerData.Inventory.RemoveUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+
+// Method to request user data
+Gamedock.GetInstance().RequestUserData();
+
+// Method used to refresh the data from the Gamedock Console
+Gamedock.GetInstance().UpdatePlayerData();
+
+// Events to register to
+Gamedock.GetInstance().addEventListener(SDKEvents.GAME_DATA_AVAILABLE, onGameDataAvailableEvent);
+
+Gamedock.GetInstance().addEventListener(SDKEvents.GAME_DATA_ERROR, onGameDataErrorEvent);
+
+Gamedock.GetInstance().addEventListener(SDKEvents.PLAYER_DATA_UPDATED, onPlayerDataUpdatedEvent);
+
+Gamedock.GetInstance().addEventListener(SDKEvents.PLAYER_DATA_AVAILABLE, onPlayerDataAvailableEvent); // TODO: This event is not yet implemented for AIR.
+
+// Callback invoked when an unique item is created as a result of a BuyBundle or OpenGacha operations
+Gamedock.GetInstance().addEventListener(SDKEvents.PLAYER_DATA_NEW_UNIQUE_ITEM, onPlayerDataNewUniqueItemEvent);
+
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_ERROR, onUserDataErrorEvent);
+
+// List of Standard Reasons (you can pass your own reason as a String)
+// Accessed through the Class "PlayerDataUpdateReasons"
+RewardAds = "Reward Ads";
+ItemBought = "Item Bought";
+ItemSold = "Item Sold";
+EventReward = "Event Reward";
+LoginReward = "Login Reward";
+IAP = "IAP";
+PlayerLevelUp = "Player Level Up";
+LevelComplete = "Level Complete";
+ItemUpgrade = "Item Upgrade";
+BonusFeatures = "Bonus Features";
+Trade = "Trade";
+ClientServerMismatch = "Client-Server Mismatch";
+ItemPickedUp = "Item Picked Up";
+DailyBonus = "Daily Bonus From Client";
+Rush = "Rush";
+Gift = "Gift";
+Cancel = "Cancel";
+Collection = "Collection";
+Reset = "Reset";
+InitialValue = "Initial Value";
+~~~
 
 #### ** Cordova **
 
@@ -256,7 +395,9 @@ Gamedock.Instance.ResetWallet();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ResetWallet();
+~~~
 
 #### ** Cordova **
 
@@ -284,7 +425,9 @@ Gamedock.Instance.ResetInventory();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ResetWallet();
+~~~
 
 #### ** Cordova **
 
@@ -312,7 +455,9 @@ Gamedock.Instance.ResetPlayerData();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ResetPlayerData();
+~~~
 
 #### ** Cordova **
 
@@ -366,7 +511,35 @@ Gamedock.Instance.ClearDiskCache();
 
 #### ** AIR **
 
+~~~C#
+// Retrieve the image path for an item
+//If it returns null the SDK will attempt to download the image in the background and call the listener when it has finished
+var imagePath:String = item.GetImagePath();
 
+// Retrieve the image path for an bundle
+//If it returns null the SDK will attempt to download the image in the background and call the listener when it has finished
+var imagePath:String = bundle.GetImagePath();
+
+// Preload and download all the image information for the present items and bundles
+//The specific listener will be called when all the images have been processed
+Gamedock.GetInstance().PreloadItemAndBundleImages();
+
+// The event listeners that you can subscribe to for image processing
+Gamedock.GetInstance().addEventListener(SDKEvents.IMAGE_LOAD_FAILED, onImageLoadFailedEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.IMAGE_LOAD_SUCCESS, onImageLoadSuccessEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.IMAGE_PRELOADING_COMPLETED, onImagePreLoadingCompletedEvent);
+
+// If you have the imagePath for an image you can use this Gamedock method to load the BitMap image
+Gamedock.GetInstance().LoadImage(loadedImagePath);
+
+// AIR event listeners for image loading, returns a BitMap object on success.
+Gamedock.GetInstance().addEventListener(AS3Events.AS3_IMAGE_LOAD_SUCCESS, onAS3ImageLoadEvent);
+Gamedock.GetInstance().addEventListener(AS3Events.AS3_IMAGE_LOAD_PROGRESS, onAS3ImageLoadProgressEvent);
+Gamedock.GetInstance().addEventListener(AS3Events.AS3_IMAGE_LOAD_FAILED, onAS3ImageLoadFailedEvent);
+
+//Clear the local cache
+Gamedock.GetInstance().ClearDiskCache();
+~~~
 
 #### ** Cordova **
 

@@ -247,6 +247,7 @@ Gamedock.Instance.MissionData.UpdateContainerAndMissionProgress(updatedContainer
 
 #### ** AIR **
 
+> The missions feature is not supported for AIR.
 
 
 #### ** Cordova **

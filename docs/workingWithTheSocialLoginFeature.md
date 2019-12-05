@@ -65,7 +65,13 @@ where:
 
 #### ** AIR **
 
+~~~C#
+Gamedock.GetInstance().UserLogin(socialId:String, socialProvider:String, socialToken:String, socialValidationData:Object);
+~~~
 
+where:
+* *socialProvider* should be SocialLoginNetworks.GooglePlayGames, SocialLoginNetworks.GameCenter or SocialLoginNetworks.Facebook. Because this parameter is used across multiple methods, it is recommended that you maintain consistency by defining it statically.
+* *socialId* should be the Facebook user ID, Google Play Games User Id or Game Center User Id.socialToken should be the Facebook access token retrieved earlier from Facebook, token from Google Play Games or Game Center authentication information (should be passed in the optional parameter). 
 
 #### ** Cordova **
 
@@ -95,7 +101,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnLoginFailed(GamedockErrorMessage errorM
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.LOGIN_FAILED, onLoginFailedEvent);
+~~~
 
 #### ** Cordova **
 
@@ -125,7 +133,6 @@ Sometimes it is useful to know whether a user is already logged in. For example,
 bool loggedIn = Gamedock.Instance.IsLoggedIn();
 ~~~
 
-
 #### ** Android **
 
 
@@ -136,7 +143,9 @@ bool loggedIn = Gamedock.Instance.IsLoggedIn();
 
 #### ** AIR **
 
-
+~~~C#
+var loggedIn:Boolean = Gamedock.GetInstance().IsLoggedIn();
+~~~
 
 #### ** Cordova **
 
@@ -166,7 +175,9 @@ Gamedock.Instance.Logout(bool global);
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().Logout(global:Boolean);
+~~~
 
 #### ** Cordova **
 
@@ -195,7 +206,10 @@ Gamedock.Instance.SocialLoginCallbacks.OnLogoutFailed(GamedockErrorMessage error
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.LOGOUT_SUCCESSFUL, onLogoutSuccessfulEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.LOGOUT_FAILED, onLogoutFailedEvent);
+~~~
 
 #### ** Cordova **
 
@@ -227,7 +241,9 @@ Gamedock.Instance.UserPlayAsGuest();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().UserPlayAsGuest();
+~~~
 
 #### ** Cordova **
 
@@ -255,7 +271,9 @@ Gamedock.Instance.SocialLoginCallbacks.LoginSuccessful(false, null, null, true);
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.LOGIN_SUCCESSFUL, onLoginSuccessfulEvent);
+~~~
 
 #### ** Cordova **
 
@@ -286,7 +304,10 @@ Gamedock.Instance.SocialLoginCallbacks.OnAuthenticationError(GamedockErrorMessag
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.AUTHENTICATION_ERROR, onAuthenticationErrorEvent);
+// TODO: This event is currently not implemented for AIR, implement?
+~~~
 
 #### ** Cordova **
 
@@ -314,7 +335,9 @@ Gamedock.Instance.SocialLoginCallbacks.ShowUnauthorizedDialog(string title, stri
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ShowUnauthorizedDialog(title:String, message:String, loginText:String, playAsGuestText:String);
+~~~
 
 #### ** Cordova **
 
@@ -343,7 +366,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnRequestLogin += OnRequestLogin();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.REQUEST_LOGIN, onRequestLoginEvent);
+~~~
 
 #### ** Cordova **
 
@@ -375,7 +400,9 @@ Gamedock.Instance.ResetData();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ResetData();
+~~~
 
 #### ** Cordova **
 
@@ -407,7 +434,9 @@ string deviceId = Gamedock.Instance.GetDeviceId();
 
 #### ** AIR **
 
-
+~~~C#
+var deviceId:String = Gamedock.GetInstance().GetDeviceId();
+~~~
 
 #### ** Cordova **
 
@@ -443,7 +472,9 @@ Gamedock.Instance.RequestUserData();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().RequestUserData();
+~~~
 
 #### ** Cordova **
 
@@ -472,7 +503,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataAvailable += OnUserDataAvailabl
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_AVAILABLE, onUserDataAvailableEvent);
+~~~
 
 #### ** Cordova **
 
@@ -505,7 +538,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataSyncError += OnUserDataSyncErro
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_SYNC_ERROR, onUserDataSyncErrorEvent);
+~~~
 
 #### ** Cordova **
 
@@ -539,7 +574,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeConflict(MergeConflictData
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_MERGE_CONFLICT, onUserDataMergeConflictEvent);
+~~~
 
 #### ** Cordova **
 
@@ -567,7 +604,9 @@ Gamedock.Instance.MergeUserData(string mergeData, string mergeType);
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().MergeUserData(mergeData:String, mergeType:String);
+~~~
 
 #### ** Cordova **
 
@@ -600,7 +639,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeSuccessful += OnUserDataMe
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_MERGE_SUCCESSFUL, onUserDataMergeSuccessfulEvent);
+~~~
 
 #### ** Cordova **
 
@@ -629,7 +670,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeFailed(string mergeData, s
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_MERGE_FAILED, onUserDataMergeFailedEvent);
+~~~
 
 #### ** Cordova **
 
@@ -662,7 +705,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataLockError += OnUserDataLockErro
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_LOCK_ERROR, onUserDataLockErrorEvent);
+~~~
 
 #### ** Cordova **
 
@@ -691,7 +736,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataError(GamedockErrorMessage erro
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_ERROR, onUserDataErrorEvent);
+~~~
 
 #### ** Cordova **
 
@@ -723,7 +770,9 @@ Gamedock.Instance.ShowSyncErrorDialog(string title, string message, string start
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ShowSyncErrorDialog(title:String, message:String, startMergeButtonText:String);
+~~~
 
 #### ** Cordova **
 
@@ -751,7 +800,9 @@ Gamedock.Instance.ShowMergeConflictDialog(string title, string message, string l
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ShowMergeFailedDialog(title:String, message:String, localButtonText:String, remoteButtonText:String, mergeButtonText:String);
+~~~
 
 #### ** Cordova **
 
@@ -781,7 +832,9 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataHandleMerge(string mergeType);
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_HANDLE_MERGE, onUserDataHandleMergeEvent);
+~~~
 
 #### ** Cordova **
 
@@ -809,7 +862,9 @@ Gamedock.Instance.ShowMergeFailedDialog(string title, string message, string ret
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ShowMergeFailedDialog(title:String, message:String, retryButtonText:String, mergeData:String, mergeType:String);
+~~~
 
 #### ** Cordova **
 
@@ -839,7 +894,9 @@ Gamedock.Instance.ShowNativeDialog(string title, string message, string buttonTe
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ShowNativeDialog(title:String, message:String, buttonText:String);
+~~~
 
 #### ** Cordova **
 

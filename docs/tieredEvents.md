@@ -38,7 +38,17 @@ void OnTieredEventsNotAvailable(){}
 
 #### ** AIR **
 
+~~~C#
+// Request
+Gamedock.GetInstance().RequestTieredEvents();
 
+// Available
+Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENTS_AVAILABLE, onTieredEventsAvailableEvent);
+
+// Not available
+Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENTS_NOT_AVAILABLE, onTieredEventsNotAvailableEvent);
+
+~~~
 
 #### ** Cordova **
 
@@ -66,7 +76,9 @@ List<TieredEvent> activeTieredEvents = GetAllTieredEvents();
 
 #### ** AIR **
 
-
+~~~C#
+var activeTieredEvents:Vector.<TieredEvent> = GetAllTieredEvents();
+~~~
 
 #### ** Cordova **
 
@@ -94,7 +106,9 @@ TieredEventProgress progress = GetTieredEventProgress(int tieredEventId);
 
 #### ** AIR **
 
-
+~~~C#
+var progress:TieredEventProgress = GetTieredEventProgress(tieredEventId:int);
+~~~
 
 #### ** Cordova **
 
@@ -135,7 +149,17 @@ void OnTieredEventUpdated(TieredEventProgress progress) {
 
 #### ** AIR **
 
-
+Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENT_UPDATED, onTieredEventUpdatedEvent);
+private function onTieredEventProgressOpenEvent(evt:TieredEventProgressOpenEvent) : void
+{
+	// TODO: these properties are currenttly not exposed for AIR, add them?
+	evt.tieredEventId; // The id of the tiered event which was updated
+	evt.currentTierId; // The id of the current active tier within the tiered event
+	evt.currentAmount; // The progress within the current tier
+	evt.completed; // Indicates if the tiered event is completed
+	evt.completedTiers; // List with completed tier ids
+	evt.claimableTiers; // List of tier ids which are claimable by the player
+}
 
 #### ** Cordova **
 
@@ -176,7 +200,24 @@ void OnTieredEventProgressClosed() {}
 
 #### ** AIR **
 
+~~~C#
+// Show the progress screen
+Gamedock.GetInstance().ShowTieredEventProgress(tieredEventId:int);
 
+// Open
+Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENT_PROGRESS_OPEN, onTieredEventProgressOpenEvent);
+private function onTieredEventProgressOpenEvent(evt:TieredEventProgressOpenEvent) : void
+{
+	trace(evt.toString());
+}
+
+// Closed
+Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENT_PROGRESS_CLOSED, onTieredEventProgressClosedEvent);
+private function onTieredEventProgressClosedEvent(evt:TieredEventProgressClosedEvent) : void
+{
+	trace(evt.toString());
+}
+~~~
 
 #### ** Cordova **
 
@@ -211,7 +252,13 @@ void OnTieredEventsError(GamedockErrorMessage error) {
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENTS_ERROR, onTieredEventsErrorEvent);
+private function onTieredEventsErrorEvent(evt:TieredEventsErrorEvent) : void
+{
+	log(evt.toString());
+}
+~~~
 
 #### ** Cordova **
 
