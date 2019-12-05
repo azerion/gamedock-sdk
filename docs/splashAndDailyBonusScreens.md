@@ -42,8 +42,8 @@ Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenOpenShop += OnSplashScreen
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenData -= OnSplashScreenData;
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenData += OnSplashScreenData;
 
-Gamedock.Instance.SplashScreenCallbacks.OnIAPRequestPurchase -= OnIAPRequestPurchase;
-Gamedock.Instance.SplashScreenCallbacks.OnIAPRequestPurchase += OnIAPRequestPurchase;
+Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase -= OnIAPRequestPurchase;
+Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase += OnIAPRequestPurchase;
 ~~~
 
 #### ** Android **
@@ -53,6 +53,39 @@ Gamedock.Instance.SplashScreenCallbacks.OnIAPRequestPurchase += OnIAPRequestPurc
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+~~~JavaScript
+gamedockSDK.on('SplashScreenOpen', () => {
+    
+    }
+});
+
+gamedockSDK.on('SplashScreenClosed', () => {
+
+    }
+});
+
+gamedockSDK.on('SplashScreenAvailable', (type) => {
+
+    }
+});
+
+gamedockSDK.on('SplashScreenNotAvailable', () => {
+
+    }
+});
+
+gamedockSDK.on('SplashScreenOpenShop', () => {
+
+    }
+});
+~~~
 
 <!-- tabs:end -->
 
@@ -77,6 +110,20 @@ Gamedock.Instance.ShowSplashScreen();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+~~~JavaScript
+gamedockSDK.requestSplashScreen(type);
+
+//Should be used when an OnSplashScreenAvailable callback is triggered 
+//Can be used immediately or later in the game once the callback is triggered
+gamedockSDK.playInterstitial();
+~~~
 
 <!-- tabs:end -->
 
@@ -106,6 +153,14 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusNotAvailable += OnDailyBonus
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 To request the daily bonus screen during the game, use the following code:
@@ -126,6 +181,14 @@ Gamedock.Instance.RequestDailyBonus();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 If the daily bonus screen is available call the following method to show it:
@@ -145,6 +208,14 @@ Gamedock.Instance.ShowDailyBonus();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -176,6 +247,14 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusReward += OnDailyBonusReward
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 

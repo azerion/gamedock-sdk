@@ -168,11 +168,15 @@ extern "C" {
     
     void requestBannerAdNative(const char* position, const char* format);
     
+    void requestInterstitialNative();
+    
     void showInterstitialAdNative(const char* adProvider);
     
     void showBannerAdNative();
     
     void hideBannerAdNative();
+    
+    bool isAdAvailableNative(char* adTypeName);
     
     void devRequestAdNative(const char* providerName, const char* adTypeName, const bool parentalGate);
     
@@ -351,6 +355,8 @@ extern "C" {
     long getLongFirebaseRemoteConfigNative(char* key, char* namespaceValue);
     
     char* getStringFirebaseRemoteConfigNative(char* key, char* namespaceValue);
+    
+    char* getFirebaseInstanceIdNative();
 }
 
 #endif

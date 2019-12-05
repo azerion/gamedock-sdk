@@ -49,8 +49,8 @@ Gamedock.Instance.AdvertisementCallbacks.OnAdAvailable += OnAdAvailable;
 Gamedock.Instance.AdvertisementCallbacks.OnAdNotAvailable -= OnAdNotAvailable;
 Gamedock.Instance.AdvertisementCallbacks.OnAdNotAvailable += OnAdNotAvailable;
 
-void OnAdAvailable(enumAdType adType) {
-        if (adType == enumAdType.Banner) {
+void OnAdAvailable(EnumAdType adType) {
+        if (adType == EnumAdType.Banner) {
             ...Show Ad Container...
             //Show Banner Ad
             Gamedock.Instance.ShowBannerAd();
@@ -59,10 +59,11 @@ void OnAdAvailable(enumAdType adType) {
 
 // TODO: Should be adnotavailable?
 void OnAdAvailable(enumAdType adType) {
-        if (adType == enumAdType.Banner) {
+        if (adType == EnumAdType.Banner) {
             ...Hide Ad Container...
         }
 }
+
 ~~~
 
 #### ** Android **
@@ -92,7 +93,6 @@ Gamedock.GetInstance().RequestBannerAd("TOP", "SMART_BANNER");
 Gamedock.GetInstance().RequestBannerAd("BOTTOM", "MEDIUM_RECTANGLE");
 Gamedock.GetInstance().RequestBannerAd("TOP", "MEDIUM_RECTANGLE");
 
-
 //Showing and hiding a banner ad
 Gamedock.GetInstance().ShowBannerAd();
 Gamedock.GetInstance().HideBannerAd();
@@ -110,7 +110,53 @@ private function onAdNotAvailableEvent(evt:AdNotAvailableEvent) : void
 {
 	trace(evt.toString());
 }
+~~~
 
+#### ** Cordova **
+
+~~~JavaScript
+//Request banner ads
+//A new request is required if you want to change positon or ad size
+gamedockSDK.requestBanner(GamedockSDK.AdBannerPosition.BOTTOM, GamedockSDK.AdBannerSize.SMART_BANNER);
+
+//Possible values for BannerPosition
+//If null is passed it will default to BOTTOM
+AdBannerPosition {
+    TOP,
+    BOTTOM
+}
+
+//Possible values for BannerAdSize
+/If null is passed it will default to SMART_BANNER
+AdBannerSize {
+    BANNER,
+    LEADERBOARD,
+    FULL_BANNER,
+    LARGE_BANNER,
+    SMART_BANNER,
+    MEDIUM_RECTANGLE
+}
+
+//Showing and hiding a banner ad
+gamedockSDK.showBanner();
+gamedockSDK.hideBanner();
+
+//Callbacks
+gamedockSDK.on('AdAvailable', (adType) => {
+    console.log('Ad Available: ', adType);
+    switch (adType.type) {
+        case AdType.Banner:
+            //Show banner
+    }
+});
+
+gamedockSDK.on('AdNotAvailable', (adType) => {
+    console.log('Ad Not Available: ', adType);
+    switch (adType.type) {
+        case AdType.Banner:
+            //Cannot show banner
+    }
+});
 ~~~
 
 <!-- tabs:end -->
@@ -126,8 +172,11 @@ Interstitial ads are full-screen ads that cover the interface of their host app.
 #### ** Unity **
 
 ~~~C#
+//Request an interstitial ad
+Gamedock.Instance.RequestInterstitial();
+
 //Show an interstitial ad
-Gamedock.Instance.ShowInterstitial();
+Gamedock.Instance.PlayInterstitial();
 
 //Callbacks for interstitials are the same as for banners and reward videos except that the "enumAdType" is "interstitial"
 ~~~
@@ -148,6 +197,33 @@ Gamedock.Instance.ShowInterstitial();
 Gamedock.GetInstance().ShowInterstitial("admob");
 
 //Callbacks for interstitials are the same as for banners and reward videos except that the "adType" is "interstitial"
+---
+
+#### ** Cordova **
+
+~~~JavaScript
+//Request an interstitial ad
+gamedockSDK.requestInterstitial();
+
+//Show an interstitial ad
+gamedockSDK.playInterstitial();
+
+//Callbacks
+gamedockSDK.on('AdAvailable', (adType) => {
+    console.log('Ad Available: ', adType);
+    switch (adType.type) {
+        case AdType.Interstitial:
+            //Show interstitial
+    }
+});
+
+gamedockSDK.on('AdNotAvailable', (adType) => {
+    console.log('Ad Not Available: ', adType);
+    switch (adType.type) {
+        case AdType.Interstitial:
+            //Not interstitial available to be shown
+    }
+});
 ~~~
 
 <!-- tabs:end -->
@@ -177,14 +253,14 @@ void OnDisable(){
   Gamedock.Instance.AdvertisementCallbacks.OnAdNotAvailable -= OnAdNotAvailable;
 }
 
-void OnAdAvailable(Gamedock.Unity.Utils.enumAdType adType){
+void OnAdAvailable(Gamedock.Unity.Utils.EnumAdType adType){
   if (adType == Gamedock.Unity.Utils.enumAdType.RewardVideo) {
     rewardVideoButton.SetActive (true);
   }
 }
 
-void OnAdNotAvailable(Gamedock.Unity.Utils.enumAdType adType){
-  if (adType == Gamedock.Unity.Utils.enumAdType.RewardVideo) {
+void OnAdNotAvailable(Gamedock.Unity.Utils.EnumAdType adType){
+  if (adType == Gamedock.Unity.Utils.EnumAdType.RewardVideo) {
     rewardVideoButton.SetActive (false);
   }
 }
@@ -208,7 +284,7 @@ void AdFinished(Gamedock.Unity.Utils.GamedockAdFinishedResponse response){
     
     game.resume();
     
-    if (response.GetTypeAsEnum() == Gamedock.Unity.Utils.enumAdType.RewardVideo){
+    if (response.GetTypeAsEnum() == Gamedock.Unity.Utils.EnumAdType.RewardVideo){
             if (response.reason.Equals("close") && response.reward != null) {
                 playerCoins += response.reward.reward;
             } else if (response.reason.Equals("dismiss")){
@@ -230,7 +306,6 @@ void AdFinished(Gamedock.Unity.Utils.GamedockAdFinishedResponse response){
 #### ** AIR **
 
 ~~~C#
-
 //Callbacks
 Gamedock.GetInstance().addEventListener(SDKEvents.AD_AVAILABLE, onAdAvailableEvent);
 Gamedock.GetInstance().addEventListener(SDKEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
@@ -250,13 +325,11 @@ private function onAdNotAvailableEvent(evt:AdNotAvailableEvent) : void
 		// Hide "play reward video" button.
 	}
 }
-
 ~~~
 
 When the user clicks the button, the following code is triggered:
 
 ~~~C#
-
 public function ShowRewardedVideo() : void
 {
 	Gamedock.GetInstance().addEventListener(SDKEvents.AD_AVAILABLE, onAdStartedEvent);
@@ -285,6 +358,45 @@ private function onAdFinishedEvent(evt:AdFinishedEvent) : void
 		}
     }
 }
+~~~
+
+#### ** Cordova **
+
+~~~JavaScript
+//Request a rewarded video ad
+gamedockSDK.requestRewardVideo();
+
+//Show a rewarded video ad
+gamedockSDK.playRewardVideo();
+
+//Callbacks
+gamedockSDK.on('AdAvailable', (adType) => {
+    console.log('Ad Available: ', adType);
+    switch (adType.type) {
+        case AdType.RewardedVideo:
+            //Show Button for user to play video
+    }
+});
+
+gamedockSDK.on('AdNotAvailable', (adType) => {
+    console.log('Ad Not Available: ', adType);
+    switch (adType.type) {
+        case AdType.RewardedVideo:
+            //Not rewarded video available to be shown
+    }
+});
+
+gamedockSDK.on('AdFinished', (adFinished) => {
+    console.log('Ad Finished with data: ', JSON.stringify(adFinished));
+    switch (adFinished.type) {
+        case AdType.RewardedVideo:
+            if (adFinished.reason == AdReason.Close) {
+                //Give reward to user
+            } else if (adFinished.reason == AdReason.Dismiss) {
+                //The user will not get his reward
+            }
+    }
+});
 ~~~
 
 <!-- tabs:end -->
@@ -335,7 +447,6 @@ void MoreAppsButtonOnClick()
 #### ** AIR **
 
 ~~~C#
-
 Gamedock.GetInstance().RequestMoreApps();
 
 private function onAdAvailableEvent(evt:AdAvailableEvent) : void
@@ -358,6 +469,47 @@ private function moreAppsButtonOnClick()
 {
 	Gamedock.GetInstance().PlayMoreApps();
 }
+---
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
+<!-- tabs:end -->
+
+## Checking if an ad is available
+
+You can also directly check if an ad is available by using the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
+
+~~~C#
+bool isBannerAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Banner);
+bool isInterstitialAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Interstitial));
+bool isRewardedVideoAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.RewardVideo));
+~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+#### ** AIR **
+
+IsAdAvailable is not supported for AIR. Use the AdAvailable and AdNotAvailable events instead.
+// TODO: Implement these methods for AIR?
+
+#### ** Cordova **
+
+~~~JavaScript
+gamedockSDK.isAdAvailable(AdType.Banner);
+gamedockSDK.isAdAvailable(AdType.Interstitial);
+gamedockSDK.isAdAvailable(AdType.RewardedVideo); 
 ~~~
 
 <!-- tabs:end -->

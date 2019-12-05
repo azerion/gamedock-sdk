@@ -36,6 +36,14 @@ void OnTieredEventsNotAvailable(){}
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 To get a list of all available active tiered events use the following method:
@@ -56,6 +64,14 @@ List<TieredEvent> activeTieredEvents = GetAllTieredEvents();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 To get the progress of a tiered event call:
@@ -75,6 +91,14 @@ TieredEventProgress progress = GetTieredEventProgress(int tieredEventId);
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -109,6 +133,14 @@ void OnTieredEventUpdated(TieredEventProgress progress) {
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 ## Showing tiered event progress
@@ -142,6 +174,14 @@ void OnTieredEventProgressClosed() {}
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 If the user claims his reward in the web view the OnTieredEventUpdated event will be called with the new active tier information.
@@ -168,6 +208,14 @@ void OnTieredEventsError(GamedockErrorMessage error) {
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 

@@ -4,7 +4,7 @@ According to European GDPR (General Data Protection Regulation) law, apps must c
 
 > IMPORTANT: It is not allowed to have any network calls before the user accepts the privacy policy, do not initialise any libraries/make any calls before initialising the GameDock SDK.
 
-![github pages](_images/IMG_3130-300x210.png)
+![github pages](_images/PrivacyPolicyPopup.png)
 
 GDPR law will be enforced starting May 2018, meaning all apps must show a consent popup before collecting data. Besides the GDPR deadline, Google has added its own requirements, which will be enforced starting 1 Feb 2018. Apple hasn’t communicated a hard deadline yet other than May 2018, but we're taking the same approach as with Google so as to avoid any risks. This means that as of 1 Feb 2018, all games must have the GDPR popup enabled unless the account manager explicitly states it should be disabled. Please align closely with your account manager regarding this matter.
 
@@ -16,7 +16,7 @@ GDPR law will be enforced starting May 2018, meaning all apps must show a consen
 
 By default, the Gamedock SDK will use the default native template screens, if you want to use custom Unity screens select ‘Use unity prefabs’ on the GamedockSDK GameObject, also make sure to specify the correct orientation. There are 2 default template prefabs provided by the Gamedock SDK, those can be found in the ‘Resources/Gamedock/PrivacyPolicy’ directory. The 2 prefabs both have to be added to the GamedockSDK gameobject in the privacy policy slots when selecting the ‘Use unity prefabs’ option.
 
-![github pages](_images/Screen-Shot-2018-11-08-at-10.52.40-300x111.png)
+![github pages](_images/PrivacyPolicyEditorSettings.png)
 
 The user should have an option to change their settings later on while playing the game. The game should offer a button for this which opens the GDPR settings screen, a default settings screen is provided by the Gamedock SDK and can be opened by calling:
 	
@@ -24,11 +24,10 @@ The user should have an option to change their settings later on while playing t
 Gamedock.Instance.ShowPrivacyPolicySettings();
 ~~~
 
-![github pages](_images/IMG_3132-300x210.png)
+![github pages](_images/PrivacyPolicySettingsPopup.png)
 
 The user has to restart the app after making changes to the GDPR settings before they take effect.
 
-![github pages](_images/IMG_3134-300x210.png)
 
 ### Handling network calls and 3rd party SDK’s
 
@@ -115,11 +114,50 @@ The user should also have an option to change their privacy policy settings whil
 Spil.GetInstance().ShowPrivacyPolicySettings();
 ~~~
 
-![github pages](_images/IMG_3132-300x210.png)
+![github pages](_images/PrivacyPolicyEditorSettings.png)
 
 The user has to restart the app after making changes to the GDPR settings before they take effect.
 
-![github pages](_images/IMG_3134-300x210.png)
+#### ** Cordova **
+
+### Enable or disable the privacy policy popup
+
+The GDPR privacy policy popup can be enabled via parameters when calling gamedockSDK.initialise.
+
+### Handling privacy policy callbacks / initialising 3rd party libraries
+
+The SDK provides feedback information for the choice that the user has made when presented with the privacy policy. By default, the Gamedock SDK handles all the network calls and 3rd party SDK’s within the Gamedock SDK. However, in case you do send network calls to your own server or load 3rd party SDK’s outside the Gamedock SDK it is important to know that this is only allowed after the user accepted the privacy policy popup. In order to get that feedback, register the following callback:
+
+~~~JavaScript
+//Callback informing the choice for the age gate
+gamedockSDK.on('PrivacyPolicyStatus', (privacyPolicyStatus) => {
+    console.log('PrivacyPolicyStatus with data: ', JSON.stringify(privacyPolicyStatus));
+});
+~~~
+
+### Changing the header image
+
+If you want to set your own custom header image instead of the Azerion logo, you can do so by adding the following images (PNG):
+
+Android:
+* platforms/android/app/src/main/res/drawable/privacy_policy_landscape_custom.png (if your game is in landscape)
+* platforms/android/app/src/main/res/drawable/privacy_policy_portrait_custom.png (if your game is in portrait)
+
+iOS:
+*
+*
+
+### Showing the privacy policy settings in-game
+
+The user should also have an option to change their privacy policy settings while playing the game. The game should offer a button for this which opens the GDPR settings screen, a default settings screen is provided by the Gamedock SDK and can be opened by calling:
+	
+~~~JavaScript
+gamedockSDK.showPrivacyPolicySettings();
+~~~
+
+![github pages](_images/PrivacyPolicyEditorSettings.png)
+
+The user has to restart the app after making changes to the GDPR settings before they take effect.
 
 <!-- tabs:end -->
 
@@ -127,3 +165,38 @@ The user has to restart the app after making changes to the GDPR settings before
 ## Changing the consent popup text
 
 Note that the text and translations of the popup are kept in the Gamedock SDK Game config feature, which should be by default integrated into your game. Note that in case you are working on an update you can fetch the new game config in Unity (we already updated the game config contents). Only in case of explicit requests by your account manager the default text and translations may be changed. Please don’t change this text on your own as this must be legally correct.
+
+## Manually passing GDPR information
+
+If you don't intend on using the SDK popups, you can also pass and retrieve the GDPR information to the SDK using the following methods:
+
+<!-- tabs:start -->
+
+#### ** Unity **
+
+~~~C#
+Gamedock.Instance.SetGDPRSettings(withPersonalisedAds, withPersonalisedContent);
+//Dictionary contains two keys (withPersonalisedAds, withPersonalisedContent) with the information.
+Dictionary<string, bool> gdprSettings = Gamedock.Instance.GetGDPRSettings();
+~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+~~~JavaScript
+gamedockSDK.setGDPRSettings(true, true);
+var settings = gamedockSDK.getGDPRSettings();
+~~~
+
+<!-- tabs:end -->

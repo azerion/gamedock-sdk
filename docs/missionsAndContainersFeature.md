@@ -245,4 +245,12 @@ Gamedock.Instance.MissionData.UpdateContainerAndMissionProgress(updatedContainer
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->

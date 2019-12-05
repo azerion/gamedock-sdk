@@ -38,7 +38,7 @@ The auth details can be passed to the UserLogin method in a dictionary as 4th pa
 
 ## Implementing the Gamedock SDK Login
 
-![github pages](_images/Social-Login-Feature-768x797.png)
+![github pages](_images/SocialLoginFeature.png)
 
 Use the following method to login the user:
 
@@ -63,6 +63,14 @@ where:
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 ## Failure
@@ -84,6 +92,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnLoginFailed(GamedockErrorMessage errorM
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -118,6 +134,14 @@ bool loggedIn = Gamedock.Instance.IsLoggedIn();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 ## Logging out a user
@@ -140,6 +164,14 @@ Gamedock.Instance.Logout(bool global);
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 *global* specifies whether the user should be globally logged out of all devices they are currently playing on (TRUE), or remained logged in on any other devices (FALSE). One of the following events will be triggered to indicate whether the logout was successful:
@@ -160,6 +192,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnLogoutFailed(GamedockErrorMessage error
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -185,6 +225,14 @@ Gamedock.Instance.UserPlayAsGuest();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 It will reset the user ID and user data. This method be called after their session token expired (explained in Handling Expired Session Tokens). This method has almost the same functionality as the normal logout call, but performs additional tracking and triggers a different success event to indicate that the user is playing as a guest:
@@ -204,6 +252,14 @@ Gamedock.Instance.SocialLoginCallbacks.LoginSuccessful(false, null, null, true);
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -228,6 +284,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnAuthenticationError(GamedockErrorMessag
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 After an authorization error, a popup is displayed to the user asking whether they want to re-login or continue as a guest user. The Gamedock SDK provides a default popup that can be used to show this error by calling the following method:
@@ -247,6 +311,14 @@ Gamedock.Instance.SocialLoginCallbacks.ShowUnauthorizedDialog(string title, stri
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -268,6 +340,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnRequestLogin += OnRequestLogin();
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -293,6 +373,14 @@ Gamedock.Instance.ResetData();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 ## Displaying the Current Device ID
@@ -317,11 +405,19 @@ string deviceId = Gamedock.Instance.GetDeviceId();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 ## Implementing Cross-Device Data Synchronization
 
-![github pages](_images/Sync-Feature-768x443.png)
+![github pages](_images/SyncFeature.png)
 
 The user data synchronization feature can be used to enable the synchronizing of user data when a logged in user is playing across multiple devices.
 
@@ -345,6 +441,14 @@ Gamedock.Instance.RequestUserData();
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 Note that if the data cannot be retrieved from the Gamedock backend, it will be loaded from the data stored locally on the device. The following event is triggered when the data is available for use:
@@ -365,6 +469,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataAvailable += OnUserDataAvailabl
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -390,6 +502,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataSyncError += OnUserDataSyncErro
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -417,6 +537,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeConflict(MergeConflictData
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 This indicates that the current local user data cannot be merged with the remote user data. This must be resolved by either selecting the current local data, the remote server data, or by creating a merge of both data sources. Both local and remote states are returned to resolve the conflict. The following method should be called whenever a merge conflict was resolved:
@@ -436,6 +564,14 @@ Gamedock.Instance.MergeUserData(string mergeData, string mergeType);
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -462,6 +598,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeSuccessful += OnUserDataMe
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 If the merge failed, the following event will be triggered:
@@ -482,6 +626,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeFailed(string mergeData, s
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -508,6 +660,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataLockError += OnUserDataLockErro
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 It is recommended that the game waits and then tries to resend the changes later. Since Gamedock SDK version 2.7.0 the *OnPlayerDataError()* and *OnGameStateError()* events have been removed. They have been merged into the new OnUserDataError() event. The conditions in which this new event is triggered remain the same as the two replaced events, and the errorMessage payload is also unchanged. The new event has the following format:
@@ -528,6 +688,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataError(GamedockErrorMessage erro
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -553,6 +721,14 @@ Gamedock.Instance.ShowSyncErrorDialog(string title, string message, string start
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 The following utility method can be used to display a native dialog box asking the user whether to use the remote or local user data:
@@ -572,6 +748,14 @@ Gamedock.Instance.ShowMergeConflictDialog(string title, string message, string l
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -595,6 +779,14 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataHandleMerge(string mergeType);
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 It specifies the choice made by the user: mergeType can be “remote”, “local”, or “merge”. The following utility method can be used to display a native merge failed dialog box asking the user whether they want to retry merging of the user data:
@@ -614,6 +806,14 @@ Gamedock.Instance.ShowMergeFailedDialog(string title, string message, string ret
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
 
@@ -636,5 +836,13 @@ Gamedock.Instance.ShowNativeDialog(string title, string message, string buttonTe
 #### ** iOS **
 
 
+
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->

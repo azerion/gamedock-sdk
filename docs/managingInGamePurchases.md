@@ -53,6 +53,14 @@ Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable += OnPackagesNotAvail
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 ## IAP Tools/Libraries

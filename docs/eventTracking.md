@@ -101,4 +101,16 @@ Gamedock.GetInstance().TrackObjectStateChanged("changedObject", "status", "reaso
 
 Ask your Azerion representative if any events should be implemented. Call the corresponding function at the required point in your game, and the SDK will send the event to the Gamedock back-end. It is important that the events and parameters for your game are white-listed via the Gamedock Console, or they will not be forwarded to BI for reporting purposes. Besides reporting purposes, events can also be configured via Gamedock console to function as triggers, to show splash screens or ads at the desired moment in-game.
 
+#### ** Cordova **
+
+In order to track an event, use the following code:
+
+~~~JavaScript
+ gamedockSDK.trackEvent(eventName, {key: value});
+ 
+ //Examples
+ gamedockSDK.trackEvent('levelComplete', {'level': 'Level 1'});
+ gamedockSDK.trackEvent('milestoneAchieved', {'name': 'First Cordova App'});
+~~~
+
 <!-- tabs:end -->

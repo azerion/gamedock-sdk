@@ -44,12 +44,14 @@
 #import <Gamedock/Mission.h>
 #import <Gamedock/UpdatedMissionData.h>
 #import <Gamedock/ErrorContext.h>
+#import <Gamedock/InitializationOptions.h>
 #import "HookBridge.h"
 #import "GAI.h"
 
-#define GAMEDOCK_SDK_VERSION @"3.6.1"
+#define GAMEDOCK_SDK_VERSION @"3.7.0"
 
 @class Gamedock;
+@class InitializationOptions;
 @class ImageContext;
 @class TieredEventProgress;
 
@@ -61,8 +63,8 @@
  * Ad events, params:
  * type = rewardVideo|interstitial|moreApps
  * reason = error|dismiss|reward
- * network = ChartBoost|admob|dfp
- * reward = rewardData(Admob/dfp:Integer,Chartboost:Json{reward:"",currencyName:"",currencyId:""})|nil
+ * network = headerlift|admob|dfp
+ * reward = rewardData(Admob/dfp:Integer,headerlift:Json{reward:"",currencyName:"",currencyId:""})|nil
  */
 -(void)adAvailable:(nonnull NSString*)type; // An ad is available
 -(void)adNotAvailable:(nonnull NSString*)type; // An ad is unavailable or did fail to load
@@ -206,10 +208,17 @@
 @property (nonatomic, assign) BOOL initialized;
 @property (nonatomic, assign) BOOL coppaEnabled;
 @property (nonatomic, retain) NSDictionary * _Nullable privacySettingsToSendAfterInit;
+@property (nonatomic, strong, nullable) InitializationOptions *initializationOptions;
 
 +(nonnull Gamedock*)sharedInstance;
 
 #pragma mark General
+
+/**
+* Initiates the SDK
+* @param initializationOptions
+*/
++(void)startWithInitOptions:(nonnull InitializationOptions*)initializationOptions;
 
 /**
  * Initiates the SDK
@@ -217,6 +226,8 @@
  * @param externalIds, used to set a diexternalIds
  */
 +(void)startWithOptions:(nullable NSDictionary*)options withExternalIds:(nullable NSDictionary*)externalIds;
+
++(nullable InitializationOptions*)getInitOptions;
 
 /**
  * Helper method to log a message to the console
@@ -237,6 +248,8 @@
  * @returns The Gamedock user id
  */
 +(nullable NSString*)getGamedockUserId;
+
++(NSString*)getFirebaseInstanceId;
 
 /**
  * Get the registered push notification token
@@ -302,6 +315,16 @@
  * Checks the age gate setting and if needed presents the age gate screen
  */
 +(void)checkAgeGate:(BOOL)shouldBlock withRequiredAged:(int)requiredAge;
+
+/*
+ * Method used to configure the GDPR settings in the SDK manually.
+ */
++(void)setGDPRSettings:(BOOL)personalisedAds withPersonalisedContent:(BOOL)personalisedContent;
+
+/*
+ * Method used to retrieve the GDPR settings.
+ */
++(nonnull NSMutableDictionary*)getGDPRSetting;
 
 /**
  * Saves the priv value and updates the 3rd party libraries accordingly.
@@ -789,6 +812,11 @@
 +(void)requestBannerAd:(nonnull NSString*)position format:(nonnull NSString*)format;
 
 /**
+ * Requests an interstitial ad
+ */
++(void)requestInterstitial;
+
+/**
  * Shows an interstitial ad
  */
 +(void)showInterstitialAd:(nullable NSString*)adProvider;
@@ -802,6 +830,11 @@
  * Hides a banner ad
  */
 +(void)hideBannerAd;
+
+/**
+  * Checks if an ad of adType is available
+ */
++(BOOL)isAdAvailable:(nullable NSString*)adType;
 
 #pragma mark UserData & GameData
 
@@ -1310,7 +1343,7 @@
 
 /**
  * NOTE: Those methods are exposed just for ad testing, they should not be referenced in the final implementation, params:
- * adProvider: Chartboost|admob|dfp
+ * adProvider: headerlift|admob|dfp
  * adType: interstitial|rewardVideo|moreApps
  * parentalGate: not implemented yet (always false)
  */

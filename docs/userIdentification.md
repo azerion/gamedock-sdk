@@ -11,11 +11,12 @@ Support for user identification depends on the games platform:
 
 ~~~C#
 //Get Gamedock User Id
-strimng userId = Gamedock.Instance.GetGamedockUID()
+strimng userId = Gamedock.Instance.GetGamedockUID();
 
 //Get Gamedock Device Id
 string deviceId = Gamedock.Instance.GetDeviceId();
 ~~~
+
 #### ** Android **
 
 
@@ -25,6 +26,7 @@ string deviceId = Gamedock.Instance.GetDeviceId();
 
 
 #### ** AIR **
+
 ~~~C#
 //Get Gamedock User Id
 var userId:String = Gamedock.GetInstance().GetGamedockUserId()
@@ -33,7 +35,19 @@ var userId:String = Gamedock.GetInstance().GetGamedockUserId()
 var deviceId:String = Gamedock.GetInstance().GetDeviceId();
 ~~~
 
+#### ** Cordova **
+
+~~~JavaScript
+//Get Gamedock User Id
+gamedockSDK.getGamedockUserId();
+
+//Get Gamedock Device Id
+gamedockSDK.getGamedockDeviceId();
+~~~~
+
 <!-- tabs:end -->
+
+
 
 ## Setting External IDs
 
@@ -44,7 +58,7 @@ Additional external ids can be passed to the SDK in order to provide better trac
 #### ** Unity **
 
 ~~~C#
-Gamedock.MonoInstance.Initialize();
+Gamedock.MonoInstance.Initialize(Dictionary<string, string> externalIds = null);
 ~~~
 
 #### ** Android **
@@ -57,7 +71,13 @@ Gamedock.MonoInstance.Initialize();
 
 #### ** AIR **
 
-External id's are not supported for AIR.
+> External id's are not supported for AIR.
+
+#### ** Cordova **
+
+~~~JavScript
+gamedockSDK.initialise(withAgeGate, ageGateOptions, withPrivacyPolicy, environment, externalIds);
+~~~
 
 <!-- tabs:end -->
 
@@ -85,7 +105,17 @@ Gamedock.Instance.RemoveExternalId(externalPartner);
 
 #### ** AIR **
 
-External id's are not supported for AIR.
+> External id's are not supported for AIR.
+
+#### ** Cordova **
+
+~~~JavaScript
+//Add external Id
+gamedockSDK.addExternalId(externalPartner, id);
+
+//Remove external Id
+Gamedock.Instance.removeExternalId(externalPartner);
+~~~
 
 <!-- tabs:end -->
 
@@ -139,6 +169,11 @@ private function onRequestUserIdChangeEvent(evt:RequestUserIdChangeEvent) : void
 
 First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In this callback, the game should prepare the state to allow a user id change. Once this is done the ConfirmUserIdChange() method of the Gamedock SDK should be called to let the Gamedock SDK change the Gamedock SDK and do a full reload of the entire loaded user data.
 
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 The Gamedock SDK will never automatically change the user id when the ConfirmUserIdChange() is never fired the old user id will remain being used.
@@ -187,8 +222,11 @@ private function onGameVersionStatusEvent(evt:GameVersionStatusEvent) : void
 	// Possible values for GameVersionStatusEvent.version: "recommended" or "forced".
 }
 
-// TODO: Rename version to status?
-
+// TODO: Version should be renamed to status, to align with other platforms.
 ~~~
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->

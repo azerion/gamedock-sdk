@@ -27,4 +27,12 @@ Gamedock.Instance.ShowHelpCenterWebview(string url, string[] tags);
 
 
 
+#### ** AIR **
+
+
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->

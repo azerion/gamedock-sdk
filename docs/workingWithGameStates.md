@@ -81,6 +81,10 @@ private function onUserDataErrorEvent(evt:UserDataErrorEvent) : void
 }
 ~~~
 
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
+
 <!-- tabs:end -->
 
 > There is a 2mb limit for the gamestate, sending bigger gamestates will be ignored by the backend.

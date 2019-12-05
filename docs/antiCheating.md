@@ -57,7 +57,11 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 
 #### ** AIR **
 
-Receipt validation is not supported for AIR.
+> Receipt validation is not supported for AIR.
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 
 <!-- tabs:end -->
@@ -121,5 +125,9 @@ private function onServerTimeRequestSuccessEvent(evt:ServerTimeRequestSuccessEve
 	trace(evt.toString());
 }
 ~~~
+
+#### ** Cordova **
+
+> This feature is currently not supported on Cordova.
 
 <!-- tabs:end -->
