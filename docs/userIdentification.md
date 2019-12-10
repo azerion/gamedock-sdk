@@ -222,7 +222,6 @@ private function onGameVersionStatusEvent(evt:GameVersionStatusEvent) : void
 	// Possible values for GameVersionStatusEvent.version: "recommended" or "forced".
 }
 
-// TODO: Version should be renamed to status, to align with other platforms.
 ~~~
 
 #### ** Cordova **

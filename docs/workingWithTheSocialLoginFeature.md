@@ -306,7 +306,6 @@ Gamedock.Instance.SocialLoginCallbacks.OnAuthenticationError(GamedockErrorMessag
 
 ~~~C#
 Gamedock.GetInstance().addEventListener(SDKEvents.AUTHENTICATION_ERROR, onAuthenticationErrorEvent);
-// TODO: This event is currently not implemented for AIR, implement?
 ~~~
 
 #### ** Cordova **

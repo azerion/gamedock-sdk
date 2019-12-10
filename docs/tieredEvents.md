@@ -152,7 +152,6 @@ void OnTieredEventUpdated(TieredEventProgress progress) {
 Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENT_UPDATED, onTieredEventUpdatedEvent);
 private function onTieredEventProgressOpenEvent(evt:TieredEventProgressOpenEvent) : void
 {
-	// TODO: these properties are currenttly not exposed for AIR, add them?
 	evt.tieredEventId; // The id of the tiered event which was updated
 	evt.currentTierId; // The id of the current active tier within the tiered event
 	evt.currentAmount; // The progress within the current tier

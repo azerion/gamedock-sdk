@@ -57,8 +57,7 @@ void OnAdAvailable(EnumAdType adType) {
         }
 }
 
-// TODO: Should be adnotavailable?
-void OnAdAvailable(enumAdType adType) {
+void OnAdNotAvailable(enumAdType adType) {
         if (adType == EnumAdType.Banner) {
             ...Hide Ad Container...
         }
@@ -193,8 +192,7 @@ Gamedock.Instance.PlayInterstitial();
 
 ~~~C#
 //Show an interstitial ad
-// TODO: Remove parameter, redundant since 3.7.0?
-Gamedock.GetInstance().ShowInterstitial("admob");
+Gamedock.GetInstance().ShowInterstitial();
 
 //Callbacks for interstitials are the same as for banners and reward videos except that the "adType" is "interstitial"
 ---
@@ -501,8 +499,11 @@ bool isRewardedVideoAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Rewar
 
 #### ** AIR **
 
-IsAdAvailable is not supported for AIR. Use the AdAvailable and AdNotAvailable events instead.
-// TODO: Implement these methods for AIR?
+~~~C#
+var isBannerAvailable:Boolean = Gamedock.GetInstance().IsAdAvailable("banner");
+var isInterstitialAvailable:Boolean = Gamedock.GetInstance().IsAdAvailable("interstitial"));
+var isRewardedVideoAvailable:Boolean = Gamedock.GetInstance().IsAdAvailable("rewardvideo"));
+~~~
 
 #### ** Cordova **
 

@@ -334,7 +334,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.GAME_DATA_ERROR, onGameDataErr
 
 Gamedock.GetInstance().addEventListener(SDKEvents.PLAYER_DATA_UPDATED, onPlayerDataUpdatedEvent);
 
-Gamedock.GetInstance().addEventListener(SDKEvents.PLAYER_DATA_AVAILABLE, onPlayerDataAvailableEvent); // TODO: This event is not yet implemented for AIR.
+Gamedock.GetInstance().addEventListener(SDKEvents.PLAYER_DATA_AVAILABLE, onPlayerDataAvailableEvent);
 
 // Callback invoked when an unique item is created as a result of a BuyBundle or OpenGacha operations
 Gamedock.GetInstance().addEventListener(SDKEvents.PLAYER_DATA_NEW_UNIQUE_ITEM, onPlayerDataNewUniqueItemEvent);
