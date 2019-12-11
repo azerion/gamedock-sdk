@@ -10,7 +10,7 @@
 
 > Xcode 11 is required in order to build for iOS.
 
-### Download and Import the GameDock Unity package into your project
+### Download and Import the Gamedock Unity package into your project
 
 You can find the latest version of the Unity plugin here: [https://github.com/azerion/gamedock-sdk/releases](https://github.com/azerion/gamedock-sdk/releases)
 
@@ -28,7 +28,7 @@ The Gamedock SDK is now ready to use, most Gamedock SDK features will be configu
 
 > If you have issues with missing Prefab scripts please download the following folder and replace it in "Assets/Gamedock/Editor/" : [Prefab missing script fix](https://splashscreens.cdn.spilcloud.com/files/1574351079_Prefabs.zip)
 
-### Initializing the GameDock Unity SDK
+### Initializing the Gamedock Unity SDK
 
 By default, the Gamedock SDK will automatically initialize on Awake(). You can disable that functionality on the "GamedockSDK" object and initialize the SDK at a later stage. Initializing the SDK can be done using the following code:
 
@@ -53,27 +53,28 @@ You can find the latest version of the AIR plugin here: url to be added
 Unpack the downloaded archive, inside you'll find 9 ANE's that you can import into your projects:
 
 #### For iOS & Android
-- GameDock-x.x.x.ANE: The main GameDock ANE, required for all platforms. For iOS, this also includes most dependencies, for Android, there are other ANE's that can be added as modules. 
+- Gamedock-x.x.x.ANE: The main Gamedock ANE, required for all platforms. For iOS, there is one additional ANE containing all dependencies, for Android, there are a number of ANE's that can be added as modules. 
 
 #### For iOS
+- GamedockSDKiOSDependencies-x.x.x.ANE: Required, contains all dependencies for the Gamedock SDK for iOS.
 - com.distriqt.Core.ANE: Prevents crashes on iOS devices caused by dependencies using compiler flags that AIR doesn't recognise. Always include this for iOS.
 
 #### For Android:
-- GameDockAdjust-x.x.x.ANE: Optional, used for Adjust tracking and deeplinking.
-- GameDockAdMob-x.x.x.ANE: Optional, used for Advertising (interstitials, rewarded videos, banners).
-- GameDockChartboost-x.x.x.ANE: Optional, used for interstitials (will be deprecated soon and included in AdMob).
-- GameDockFirebase-x.x.x.ANE: Optional, used Firebase event tracking, deeplinks and push notifications (Android).
-- GameDockGPG-x.x.x.ANE: Optional, contains Google Play Games, used for achievements and leaderboards.
-- GameDockGPS-x.x.x.ANE: Required, contains Google Play Services, used by GameDock, Admob, Firebase and GPG.
-- GameDockSDKGoogleAppId-x.x.x.ANE: Optional, contains only a strings.xml resource with an app id that is unique for each game. The id is required for Firebase (analytics, among others). This ANE is provided only if your app uses it, and is unique per app.
-- GameDockResources-x.x.x.ANE: Optional, used to replace GameDock assets (images) with game-specific assets, for instance for the logo's on the GDPR privacy policy menu.
+- GamedockAdjust-x.x.x.ANE: Optional, used for Adjust tracking and deeplinking.
+- GamedockAdMob-x.x.x.ANE: Optional, used for Advertising (interstitials, rewarded videos, banners).
+- GamedockChartboost-x.x.x.ANE: Optional, used for interstitials (will be deprecated soon and included in AdMob).
+- GamedockFirebase-x.x.x.ANE: Optional, used Firebase event tracking, deeplinks and push notifications (Android).
+- GamedockGPG-x.x.x.ANE: Optional, contains Google Play Games, used for achievements and leaderboards.
+- GamedockGPS-x.x.x.ANE: Required, contains Google Play Services, used by Gamedock, Admob, Firebase and GPG.
+- GamedockSDKGoogleAppId-x.x.x.ANE: Optional, contains only a strings.xml resource with an app id that is unique for each game. The id is required for Firebase (analytics, among others). This ANE is provided only if your app uses it, and is unique per app.
+- GamedockResources-x.x.x.ANE: Optional, used to replace Gamedock assets (images) with game-specific assets, for instance for the logo's on the GDPR privacy policy menu.
 
 ### Using the Gamedock AIR SDK
 
 1. Import the ANE's into your project via your prefered IDE and link them via your app.xml.
-2. Make sure your game version and app identifier (f.e. com.yourcompany.yourgame) match those configured in the GameDock Console, this way your game will receive the correct configurations/data.
-3. For Android, be sure to add the correct ManifestAdditions, depending on the features you're using. See the Example app included with the GameDock AIR download for examples, or see: url to be added.
-4. Make sure you include the required .json files in the project root when packaging a build. These files should be provided to you by your GameDock representative and are downloadable via the GameDock Console.
+2. Make sure your game version and app identifier (f.e. com.yourcompany.yourgame) match those configured in the Gamedock Console, this way your game will receive the correct configurations/data.
+3. For Android, be sure to add the correct ManifestAdditions, depending on the features you're using. See the Example app included with the Gamedock AIR download for examples, or see: url to be added.
+4. Make sure you include the required .json files in the project root when packaging a build. These files should be provided to you by your Gamedock representative and are downloadable via the Gamedock Console.
 
 These include:
 - defaultGameConfig.json: Required, used for GameConfig and SDKConfig features.
@@ -83,42 +84,42 @@ These include:
 
 The Gamedock SDK is now ready to use, most Gamedock SDK features will be configured automatically when the SDK initializes, see the specific feature sections to see which integration parts still have to be implemented. Please make sure to also follow the next section ‘GDPR & Privacy Policy’ to make your game GDPR compliant.
 
-### Initializing the GameDock AIR SDK
+### Initializing the Gamedock AIR SDK
 
 In your app's main entry-point, before making any other calls or initialising other libraries, do the following:
-1. Check if GameDock is supported for the current platform (mobile/pc etc).
-2. Attach event handlers for any GameDock events that your app requires.
-3. Initialise GameDock.
+1. Check if Gamedock is supported for the current platform (mobile/pc etc).
+2. Attach event handlers for any Gamedock events that your app requires.
+3. Initialise Gamedock.
 
 Example (including privacy policy / GDPR and Google Play Games for Android):
 ~~~C#
 	public function Main()
 	{
-		// Initialise GameDock and show Privacy Policy / GDPR popup.
-		if (!GameDock.isSupported())
+		// Initialise Gamedock and show Privacy Policy / GDPR popup.
+		if (!Gamedock.isSupported())
 		{
-			trace("GameDock is not supported on this platform."); // When not Android or iOS
+			trace("Gamedock is not supported on this platform."); // When not Android or iOS
 			return;
 		}
   
-		// Attach event handlers for GameDock features used by your app.
+		// Attach event handlers for Gamedock features used by your app.
 		
 		// Such as ads
-		GameDock.GetInstance().addEventListener(GameDockEvents.AD_AVAILABLE, onAdAvailableEvent);
-		GameDock.GetInstance().addEventListener(GameDockEvents.AD_FINISHED, onAdFinishedEvent);
-		GameDock.GetInstance().addEventListener(GameDockEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
-		GameDock.GetInstance().addEventListener(GameDockEvents.AD_STARTED, onAdStartedEvent);
+		Gamedock.GetInstance().addEventListener(GamedockEvents.AD_AVAILABLE, onAdAvailableEvent);
+		Gamedock.GetInstance().addEventListener(GamedockEvents.AD_FINISHED, onAdFinishedEvent);
+		Gamedock.GetInstance().addEventListener(GamedockEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
+		Gamedock.GetInstance().addEventListener(GamedockEvents.AD_STARTED, onAdStartedEvent);
 		
 		// And GDPR / Privacy policy popup.
-		GameDock.GetInstance().addEventListener(GameDockEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
-		GameDock.GetInstance().addEventListener(GameDockEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
+		Gamedock.GetInstance().addEventListener(GamedockEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
+		Gamedock.GetInstance().addEventListener(GamedockEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
   
 		// Disable automatic registering for Push Notifications for iOS so users don't get a pop-up.
-		GameDock.GetInstance().DisableAutomaticRegisterForPushNotificationsiOS();
+		Gamedock.GetInstance().DisableAutomaticRegisterForPushNotificationsiOS();
   
-		// Initialise GameDock with the prefered privacy policy / GDPR settings. 
-		// After the user passes the privacy policy / GDPR menu, GameDock will start requesting/processing data and firing events.
-		GameDock.GetInstance().Init(true, true, true, 16, false, GCMProjectId);
+		// Initialise Gamedock with the prefered privacy policy / GDPR settings. 
+		// After the user passes the privacy policy / GDPR menu, Gamedock will start requesting/processing data and firing events.
+		Gamedock.GetInstance().Init(true, true, true, 16, false, GCMProjectId);
 	}
   
 	private function onPrivacyPolicyStatusEvent(evt:PrivacyPolicyStatusEvent) : void
@@ -126,25 +127,24 @@ Example (including privacy policy / GDPR and Google Play Games for Android):
 		// If the user accepted the policy, initialise other libraries, such as Google Play Games.
 		if(evt.accepted)
 		{
-			if (GameDockGPG.isSupported())
+			if (GamedockGPG.isSupported())
 			{
 				// Initialise Google Play Games and log in the user.
-				trace("Starting GameDock Google Play Games");
-				GameDockGPG.create(false, false, null);
-				GameDockGPG.games.signIn();
+				trace("Starting Gamedock Google Play Games");
+				GamedockGPG.create(false, false, null);
+				GamedockGPG.games.signIn();
 			} else {
 				trace("Google Play Games is not supported on this platform (not Android!)");
 			}
 		}
 	}
-
 ~~~
 
-* Be sure to also check the example project included with the GameDock AIR SDK download, as it provides examples for most features.
+* Be sure to also check the example project included with the Gamedock AIR SDK download, as it provides examples for most features.
 
-### Publishing an app with the GameDock AIR SDK
+### Publishing an app with the Gamedock AIR SDK
 
-- When publishing your app, you'll likely want to replace any Azerion branding (logo's, background images etc) with your own. For AIR, you'll need to have a Windows device with WinRar (or similar) in order to replace the assets contained in  GameDockResources.x.x.x.ANE. If you don't have a Windows device, ask your GameDock representative to create a custom ANE for you via Slack. 
+- When publishing your app, you'll likely want to replace any Azerion branding (logo's, background images etc) with your own. For AIR, you'll need to have a Windows device with WinRar (or similar) in order to replace the assets contained in  GamedockResources.x.x.x.ANE. If you don't have a Windows device, ask your Gamedock representative to create a custom ANE for you via Slack. 
 
 - For iOS, make sure that the InfoAdditions and Entitlements match those in the provisioning profile, or you may have trouble publishing/uploading to the App Store. You can check what's defined in your provisioning profile via console/terminal commands (see also: https://stackoverflow.com/questions/11834650/ios-look-inside-provisioning-profile).
 
@@ -172,14 +172,13 @@ cordova plugin add gamedock-sdk-cordova
 //Make a new build of your game
 cordova build android
 cordova build ios
-
 ~~~
 
 This plugin expects that npm is installed on your machine. If you have not done that yet, please refer to this documentation [https://docs.npmjs.com/](https://docs.npmjs.com/)
 
 Alternatively you can download the archive of the plugin from this [page](https://github.com/azerion/gamedock-sdk/releases) and include it manually into your project (using the above commands excluding the first one).
 
-### Initializing the GameDock Cordova SDK
+### Initializing the Gamedock Cordova SDK
 
 In order to initialise the SDK call the following function (make sure this call is done before any other SDK call and preferably before any other network calls):
 ~~~JavaScript

@@ -33,7 +33,7 @@ Package package = helper.GetPackageByPackageId(string packageId);
 Package package = helper.GetPackageById(string id);
 
 // Check package has a promotion.
-package.HasActivePromotion()
+package.HasActivePromotion();
 
 //Informs that the packages request has been successful
 Gamedock.Instance.PackagesCallbacks.OnPackagesAvailable -= OnPackagesAvailable;
@@ -43,7 +43,6 @@ Gamedock.Instance.PackagesCallbacks.OnPackagesAvailable += OnPackagesAvailable;
 Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable -= OnPackagesNotAvailable;
 Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable += OnPackagesNotAvailable;
 ~~~
-
 
 #### ** Android **
 
@@ -55,7 +54,37 @@ Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable += OnPackagesNotAvail
 
 #### ** AIR **
 
+~~~C#
+// Retrieve Packages from the SDK (locally)
+var helper:PackagesHelper = Gamedock.GetInstance().GetPackages();
 
+// The PackagesHelper class contains helper methods.
+// It contains a list "Packages" which have all the information required.
+var Packages:Vector.<Package>;
+
+// Request package by Store ID.
+var package:Package = helper.GetPackageByPackageId(packageId:string);
+
+// Request package by Console ID.
+var package:Package = helper.GetPackageById(id:string);
+
+// Check package has a promotion.
+package.HasActivePromotion();
+
+// Informs that the packages request has been successful
+Gamedock.GetInstance().addEventListener(SDKEvents.PACKAGES_AVAILABLE, onPackagesAvailableEvent);
+private function onPackagesAvailableEvent(evt:PackagesAvailableEvent) : void
+{
+	log(evt.toString());
+}
+	
+// Informs that packages could not be retrieved from the server
+Gamedock.GetInstance().addEventListener(SDKEvents.PACKAGES_NOT_AVAILABLE, onPackagesNotAvailableEvent);
+private function onPackagesNotAvailableEvent(evt:PackagesNotAvailableEvent) : void
+{
+	log(evt.toString());
+}
+~~~
 
 #### ** Cordova **
 

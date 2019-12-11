@@ -57,11 +57,12 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 
 #### ** AIR **
 
-
+> Receipt validation is not supported for AIR.
 
 #### ** Cordova **
 
 > This feature is currently not supported on Cordova.
+
 
 <!-- tabs:end -->
 
@@ -107,7 +108,23 @@ void OnServerTimeRequestFailed (GamedockErrorMessage errorMessage)
 
 #### ** AIR **
 
+~~~C#
+// Request server time
+Gamedock.GetInstance().RequestServerTime();
+// Server time callbacks
+Gamedock.GetInstance().addEventListener(SDKEvents.SERVER_TIME_REQUEST_FAILED, onServerTimeRequestFailedEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SERVER_TIME_REQUEST_SUCCESS, onServerTimeRequestSuccessEvent);
 
+private function onServerTimeRequestFailedEvent(evt:ServerTimeRequestFailedEvent) : void
+{
+	trace(evt.toString());
+}
+
+private function onServerTimeRequestSuccessEvent(evt:ServerTimeRequestSuccessEvent) : void
+{
+	trace(evt.toString());
+}
+~~~
 
 #### ** Cordova **
 

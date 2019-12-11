@@ -4,7 +4,7 @@ According to European law, games intended for minors are required to show an age
   
 ![github pages](_images/AgeGatePopup.png)
 
-Games that comply with COPPA regulation cannot show any ads, age gate or privacy policy menu's. The GameDock SDK also provides an option to enable COPPA compliance, which ensures no age gate, privacy policy or ads are shown.
+Games that comply with COPPA regulation cannot show any ads, age gate or privacy policy menu's. The Gamedock SDK also provides an option to enable COPPA compliance, which ensures no age gate, privacy policy or ads are shown.
 
 <!-- tabs:start -->
 
@@ -12,7 +12,7 @@ Games that comply with COPPA regulation cannot show any ads, age gate or privacy
 
 ### Enable or disable COPPA
 
-COPPA compliance can be enabled/disabled via your "GameDockSDK" object or through the GameDock SDK configuration menu. If enabled, this settings will prevent any privacy policy or agegate menu from being shown, and will disallow any ads (reward videos/interstitials/banners) being displayed. Only enable this if your account manager explicitly states that your game must be COPPA compliant. 
+COPPA compliance can be enabled/disabled via your "GamedockSDK" object or through the Gamedock SDK configuration menu. If enabled, this settings will prevent any privacy policy or agegate menu from being shown, and will disallow any ads (reward videos/interstitials/banners) being displayed. Only enable this if your account manager explicitly states that your game must be COPPA compliant. 
 
 ### Enable or disable the age gate popup
 
@@ -64,7 +64,7 @@ For Unity 2017.1 and above you can use the supplied project found in the SDK bun
 
 ### Enable/disable the age gate popup or COPPA
 
-The age gate popup can be enabled/configured via parameters when calling GameDock.GetInstance().Init():
+The age gate popup can be enabled/configured via parameters when calling Gamedock.GetInstance().Init():
 * *showAgeGate* Boolean - If enabled, the age gate popup will always appear the first time the user opens the game **before** the GDPR/Privacy Policy popup. 
 * *ageGateShouldBlock* Boolean - Gives the possibility for blocking the user from continuing to the game if the minimum age requirement is not met. 
 * *ageGateMinimumAgeRequirement* Number - Minimum age in years for users to be able to pass the age gate popup.  
@@ -76,7 +76,7 @@ The SDK provides feedback information for the choice that the user has made when
 
 ~~~C#
 //Callback informing the choice for the age gate
-GameDock.GetInstance().addEventListener(SDKEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
 
 private function onAgeGateStatusEvent(evt:AgeGateStatusEvent) : void
 {
@@ -91,16 +91,16 @@ The variables returned are:
 
 ### Changing the header image
 
-If you want to set your own custom header image instead of the Azerion logo, you can do so by replacing the appropriate image files in the GameDockResources.ANE:
+If you want to set your own custom header image instead of the Azerion logo, you can do so by replacing the appropriate image files in the GamedockResources.ANE:
 
 Android:
-* GameDockResources.ane\META-INF\ANE\Android-ARM\sdk-resources-res\drawable\
-* GameDockResources.ane\META-INF\ANE\Android-ARM64\sdk-resources-res\drawable\
-* GameDockResources.ane\META-INF\ANE\Android-x86\sdk-resources-res\drawable\
+* GamedockResources.ane\META-INF\ANE\Android-ARM\sdk-resources-res\drawable\
+* GamedockResources.ane\META-INF\ANE\Android-ARM64\sdk-resources-res\drawable\
+* GamedockResources.ane\META-INF\ANE\Android-x86\sdk-resources-res\drawable\
 
 iOS:
-* GameDock.ane\META-INF\ANE\iPhone-ARM\
-* GameDock.ane\META-INF\ANE\iPhone-x86\
+* Gamedock.ane\META-INF\ANE\iPhone-ARM\
+* Gamedock.ane\META-INF\ANE\iPhone-x86\
 
 For Android, the image files are named “privacy_policy_landscape_custom.png” and “privacy_policy_portrait_custom.png”, for iOS they are called "PrivacyPolicyHeader.png" and "PrivacyPolicyHeaderLandscape.png", each file is used for landscape/portrait resp. The image size is 800px x 220px or 600px x 220px.
 

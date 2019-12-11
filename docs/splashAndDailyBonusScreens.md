@@ -56,7 +56,16 @@ Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase += OnIAPRequestPur
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_OPEN, onSplashScreenOpenEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_CLOSED, onSplashScreenClosedEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_ERROR, onSplashScreenErrorEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_AVAILABLE, onSplashScreenAvailableEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_NOT_AVAILABLE, onSplashScreenNotAvailableEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_OPEN_SHOP, onSplashScreenOpenShopEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_DATA, onSplashScreenDataEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.IAP_REQUEST_PURCHASE, onIAPRequestPurchaseEvent);
+~~~
 
 #### ** Cordova **
 
@@ -113,7 +122,13 @@ Gamedock.Instance.ShowSplashScreen();
 
 #### ** AIR **
 
+~~~C#
+Gamedock.GetInstance().RequestSplashScreen(type:String);
 
+//Should be used when an OnSplashScreenAvailable callback is triggered 
+//Can be used immediately or later in the game once the callback is triggered
+Gamedock.GetInstance().ShowSplashScreen();
+~~~
 
 #### ** Cordova **
 
@@ -155,7 +170,10 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusNotAvailable += OnDailyBonus
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_AVAILABLE, onDailyBonusAvailableEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_NOT_AVAILABLE, onDailyBonusNotAvailableEvent);
+~~~
 
 #### ** Cordova **
 
@@ -183,7 +201,9 @@ Gamedock.Instance.RequestDailyBonus();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().RequestDailyBonus();
+~~~
 
 #### ** Cordova **
 
@@ -211,7 +231,9 @@ Gamedock.Instance.ShowDailyBonus();
 
 #### ** AIR **
 
-
+~~~C#
+Gamedock.GetInstance().ShowDailyBonus();
+~~~
 
 #### ** Cordova **
 
@@ -250,7 +272,14 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusReward += OnDailyBonusReward
 
 #### ** AIR **
 
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_OPEN, onDailyBonusOpenEvent);			
+Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_CLOSED, onDailyBonusClosedEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_ERROR, onDailyBonusErrorEvent);
 
+//Called only if the daily bonus has external rewards
+Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_REWARD, onDailyBonusRewardEvent);
+~~~
 
 #### ** Cordova **
 
