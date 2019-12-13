@@ -1,4 +1,5 @@
 ios/release/Gamedock.framework/Frameworks/GoogleMobileAds.framework/GoogleMobileAds filter=lfs diff=lfs merge=lfs -text
 ios/release/Gamedock.framework/Frameworks/FBAudienceNetwork.framework/FBAudienceNetwork filter=lfs diff=lfs merge=lfs -text
 ios/release/Gamedock.framework/Frameworks/AppLovinSDK.framework/AppLovinSDK filter=lfs diff=lfs merge=lfs -text
+*.tgz filter=lfs diff=lfs merge=lfs -text
 *.unitypackage filter=lfs diff=lfs merge=lfs -text
