@@ -1,8 +1,8 @@
 # GDPR & Privacy policy
 
-According to European GDPR (General Data Protection Regulation) law, apps must clarify their functions to users and explicitly request user approval before tracking personal data. Both Google and Apple have their own interpretations of GDPR. In order to comply with all requirements, the GameDock SDK includes a customisable privacy policy menu with accompanying mechanisms that ensure no 3rd party libraries are initialised and no network communication is performed before the user has accepted the privacy policy.
+According to European GDPR (General Data Protection Regulation) law, apps must clarify their functions to users and explicitly request user approval before tracking personal data. Both Google and Apple have their own interpretations of GDPR. In order to comply with all requirements, the Gamedock SDK includes a customisable privacy policy menu with accompanying mechanisms that ensure no 3rd party libraries are initialised and no network communication is performed before the user has accepted the privacy policy.
 
-> IMPORTANT: It is not allowed to have any network calls before the user accepts the privacy policy, do not initialise any libraries/make any calls before initialising the GameDock SDK.
+> IMPORTANT: It is not allowed to have any network calls before the user accepts the privacy policy, do not initialise any libraries/make any calls before initialising the Gamedock SDK.
 
 ![github pages](_images/PrivacyPolicyPopup.png)
 
@@ -64,7 +64,7 @@ For Unity 2017.1 and above you can use the supplied project found in the SDK bun
 
 ### Enable or disable the privacy policy popup
 
-The privacy policy popup can be enabled/configured via parameters when calling GameDock.GetInstance().Init():
+The privacy policy popup can be enabled/configured via parameters when calling Gamedock.GetInstance().Init():
 * *showAgeGate* Boolean - If enabled, the age gate popup will always appear the first time the user opens the game **before** the GDPR/Privacy Policy popup. 
 * *ageGateShouldBlock* Boolean - Gives the possibility for blocking the user from continuing to the game if the minimum age requirement is not met. 
 * *ageGateMinimumAgeRequirement* Number - Minimum age in years for users to be able to pass the age gate popup.  
@@ -76,7 +76,7 @@ The SDK provides feedback information for the choice that the user has made when
 
 ~~~C#
 //Callback informing the choice for the privacy policy
-GameDock.GetInstance().addEventListener(SDKEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
+Gamedock.GetInstance().addEventListener(SDKEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
 
 private function onPrivacyPolicyStatusEvent(evt:PrivacyPolicyStatusEvent) : void
 {
@@ -93,16 +93,16 @@ The variables returned are:
 
 ### Changing the header image
 
-If you want to set your own custom header image instead of the Azerion logo, you can do so by replacing the appropriate image files in the GameDockResources.ANE:
+If you want to set your own custom header image instead of the Azerion logo, you can do so by replacing the appropriate image files in the GamedockResources.ANE:
 
 Android:
-- GameDockResources.ane\META-INF\ANE\Android-ARM\sdk-resources-res\drawable\
-- GameDockResources.ane\META-INF\ANE\Android-ARM64\sdk-resources-res\drawable\
-- GameDockResources.ane\META-INF\ANE\Android-x86\sdk-resources-res\drawable\
+- GamedockResources.ane\META-INF\ANE\Android-ARM\sdk-resources-res\drawable\
+- GamedockResources.ane\META-INF\ANE\Android-ARM64\sdk-resources-res\drawable\
+- GamedockResources.ane\META-INF\ANE\Android-x86\sdk-resources-res\drawable\
 
 iOS:
-- GameDock.ane\META-INF\ANE\iPhone-ARM\
-- GameDock.ane\META-INF\ANE\iPhone-x86\
+- Gamedock.ane\META-INF\ANE\iPhone-ARM\
+- Gamedock.ane\META-INF\ANE\iPhone-x86\
 
 For Android, the image files are named “privacy_policy_landscape_custom.png” and “privacy_policy_portrait_custom.png”, for iOS they are called "PrivacyPolicyHeader.png" and "PrivacyPolicyHeaderLandscape.png", each file is used for landscape/portrait resp. The image size is 800px x 220px or 600px x 220px.
 
@@ -190,7 +190,7 @@ Dictionary<string, bool> gdprSettings = Gamedock.Instance.GetGDPRSettings();
 
 #### ** AIR **
 
-
+> This feature is not supported for AIR.
 
 #### ** Cordova **
 

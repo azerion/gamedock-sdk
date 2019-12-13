@@ -34,7 +34,13 @@ Gamedock.Instance.RegisterForPushNotifications();
 
 #### ** AIR **
 
+~~~C#
+// Disable asking automatically for Push notification permissions
+Gamedock.GetInstance().DisableAutomaticRegisterForPushNotificationsiOS();
 
+// Request push notification permission.
+Gamedock.GetInstance().RegisterForPushNotificationsiOS();
+~~~
 
 #### ** Cordova **
 

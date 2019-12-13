@@ -27,7 +27,13 @@ string deviceId = Gamedock.Instance.GetDeviceId();
 
 #### ** AIR **
 
+~~~C#
+//Get Gamedock User Id
+var userId:String = Gamedock.GetInstance().GetGamedockUserId()
 
+//Get Gamedock Device Id
+var deviceId:String = Gamedock.GetInstance().GetDeviceId();
+~~~
 
 #### ** Cordova **
 
@@ -65,7 +71,7 @@ Gamedock.MonoInstance.Initialize(Dictionary<string, string> externalIds = null);
 
 #### ** AIR **
 
-
+> External id's are not supported for AIR.
 
 #### ** Cordova **
 
@@ -99,7 +105,7 @@ Gamedock.Instance.RemoveExternalId(externalPartner);
 
 #### ** AIR **
 
-
+> External id's are not supported for AIR.
 
 #### ** Cordova **
 
@@ -148,6 +154,20 @@ First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In
 
 #### ** AIR **
 
+~~~C#
+// Start listening to user id change requests
+Gamedock.GetInstance().addEventListener(SDKEvents.REQUEST_USER_ID_CHANGE, onRequestUserIdChangeEvent);
+
+private function onRequestUserIdChangeEvent(evt:RequestUserIdChangeEvent) : void
+{
+	// Update the game to allow the new user id to be used
+
+	// Confirm back to the Gamedock SDK to change the user id
+	Gamedock.GetInstance().ConfirmUserIdChange();
+}
+~~~
+
+First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In this callback, the game should prepare the state to allow a user id change. Once this is done the ConfirmUserIdChange() method of the Gamedock SDK should be called to let the Gamedock SDK change the Gamedock SDK and do a full reload of the entire loaded user data.
 
 
 #### ** Cordova **
@@ -194,7 +214,15 @@ public enum UpdateStatus {
 
 #### ** AIR **
 
+~~~C#
+Gamedock.GetInstance().addEventListener(SDKEvents.GAME_VERSION_STATUS, onGameVersionStatusEvent);
 
+private function onGameVersionStatusEvent(evt:GameVersionStatusEvent) : void		
+{
+	// Possible values for GameVersionStatusEvent.version: "recommended" or "forced".
+}
+
+~~~
 
 #### ** Cordova **
 

@@ -97,7 +97,42 @@ void OnRewardTokenClaimFailed (string rewardType, GamedockErrorMessage error)
 
 #### ** AIR **
 
+~~~C#
+// Claiming a token
+Gamedock.GetInstance().ClaimToken (token, rewardType);
 
+//Callbacks for Rewards
+
+//Called natively when a reward token was received
+//Make sure to have this callback as early as possible in the game otherwise it will not be called
+Gamedock.GetInstance().DeepLinkCallbacks.OnRewardTokenReceived -= OnRewardTokenReceived;
+Gamedock.GetInstance().DeepLinkCallbacks.OnRewardTokenReceived += OnRewardTokenReceived;
+
+//Called after the token has been received
+//Only called if you use External as a reward type
+Gamedock.GetInstance().DeepLinkCallbacks.OnRewardTokenClaimed -= OnRewardTokenClaimed;
+Gamedock.GetInstance().DeepLinkCallbacks.OnRewardTokenClaimed += OnRewardTokenClaimed;
+
+//Called if the claiming of the Token has failed
+Gamedock.GetInstance().DeepLinkCallbacks.OnRewardTokenClaimFailed -= OnRewardTokenClaimFailed;
+Gamedock.GetInstance().DeepLinkCallbacks.OnRewardTokenClaimFailed += OnRewardTokenClaimFailed;
+
+void OnRewardTokenReceived (string token, List<RewardObject> reward, string rewardType)
+{
+  Debug.Log ("Received reward with token: " + token + "-- Rewards: " + JsonHelper.getJSONFromObject (reward) + "-- For Type: " + rewardType);
+Gamedock.Instance.ClaimToken (token, rewardType);
+}
+
+void OnRewardTokenClaimed (List<RewardObject> reward, string rewardType)
+{
+  Debug.Log ("Claimed reward for: " + rewardType + "-- And reward: " + JsonHelper.getJSONFromObject (reward));
+}
+
+void OnRewardTokenClaimFailed (string rewardType, GamedockErrorMessage error)
+{
+  Debug.Log ("Error claiming reward for: " + rewardType + "-- With message: " + error.message);
+}
+~~~
 
 #### ** Cordova **
 
@@ -207,7 +242,7 @@ static Dictionary<string, string> GetParams(string uri)
 
 #### ** AIR **
 
-
+> This feature is not supported for AIR.
 
 #### ** Cordova **
 
