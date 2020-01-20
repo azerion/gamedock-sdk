@@ -251,14 +251,14 @@ void OnDisable(){
   Gamedock.Instance.AdvertisementCallbacks.OnAdNotAvailable -= OnAdNotAvailable;
 }
 
-void OnAdAvailable(Gamedock.Unity.Utils.EnumAdType adType){
-  if (adType == Gamedock.Unity.Utils.enumAdType.RewardVideo) {
+void OnAdAvailable(GamedockSDK.Unity.Base.SDK.EnumAdType adType){
+  if (adType == GamedockSDK.Unity.Base.SDK.EnumAdType.RewardVideo) {
     rewardVideoButton.SetActive (true);
   }
 }
 
-void OnAdNotAvailable(Gamedock.Unity.Utils.EnumAdType adType){
-  if (adType == Gamedock.Unity.Utils.EnumAdType.RewardVideo) {
+void OnAdNotAvailable(GamedockSDK.Unity.Base.SDK.EnumAdType adType){
+  if (adType == GamedockSDK.Unity.Base.SDK.EnumAdType.RewardVideo) {
     rewardVideoButton.SetActive (false);
   }
 }
@@ -278,11 +278,11 @@ void AdOpened(){
     muteAudio = true;
 }
 
-void AdFinished(Gamedock.Unity.Utils.GamedockAdFinishedResponse response){
+void AdFinished(GamedockSDK.Unity.Base.SDK.GamedockAdFinishedResponse response){
     
     game.resume();
     
-    if (response.GetTypeAsEnum() == Gamedock.Unity.Utils.EnumAdType.RewardVideo){
+    if (response.GetTypeAsEnum() == GamedockSDK.Unity.Base.SDK.EnumAdType.RewardVideo){
             if (response.reason.Equals("close") && response.reward != null) {
                 playerCoins += response.reward.reward;
             } else if (response.reason.Equals("dismiss")){
@@ -416,14 +416,14 @@ void OnEnable(){
   Gamedock.Instance.RequestMoreApps ();
 }
  
-void OnAdAvailable(Gamedock.Unity.Utils.enumAdType adType){
-  if (adType == Gamedock.Unity.Utils.enumAdType.MoreApps) {
+void OnAdAvailable(GamedockSDK.Unity.Base.SDK.EnumAdType adType){
+  if (adType == GamedockSDK.Unity.Base.SDK.EnumAdType.MoreApps) {
     moreAppsButton.SetActive (true);
   }
 }
  
-void OnAdNotAvailable(Gamedock.Unity.Utils.enumAdType adType){
-  if (adType == Gamedock.Unity.Utils.enumAdType.MoreApps) {
+void OnAdNotAvailable(GamedockSDK.Unity.Base.SDK.EnumAdType adType){
+  if (adType == GamedockSDK.Unity.Base.SDK.EnumAdType.MoreApps) {
     moreAppsButton.SetActive (false);
   }
 }
