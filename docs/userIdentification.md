@@ -71,7 +71,10 @@ Gamedock.MonoInstance.Initialize(Dictionary<string, string> externalIds = null);
 
 #### ** AIR **
 
-> External id's are not supported for AIR.
+~~~C#
+// Only the last parameter (externalId's) is really relevant for this example:
+Gamedock.GetInstance().Init(true, true, true, 16, false, "{\"MyExternalPartner\":\"MyExternalId\"}");
+~~~
 
 #### ** Cordova **
 
@@ -105,7 +108,13 @@ Gamedock.Instance.RemoveExternalId(externalPartner);
 
 #### ** AIR **
 
-> External id's are not supported for AIR.
+~~~C#
+//Add external Id
+Gamedock.GetInstance().addExternalId("MyExternalPartner","MyExternalId");
+
+//Remove external Id
+Gamedock.GetInstance().removeExternalId("MyExternalPartner");
+~~~
 
 #### ** Cordova **
 
