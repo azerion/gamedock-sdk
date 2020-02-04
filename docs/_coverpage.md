@@ -2,7 +2,7 @@
 
 ![logo](_images/GamedockLogoMedium.png)
 
-# Gamedock SDK <small>3.7.0</small>
+# Gamedock SDK <small>3.8.0</small>
 
 > The Gamedock SDK is designed to give developers access to the Gamedock Console functions and communicate with the Gamedock backend.
 
