@@ -106,6 +106,11 @@ Ask your Azerion representative if any events should be implemented. Call the co
 In order to track an event, use the following code:
 
 ~~~JavaScript
+//Using predefined tracking methods examples (recommended way unless the event you are tracking is not in the list)
+gamedockSDK.tracking.LevelComplete("Level1").addX().track();
+gamedockSDK.tracking.MilestoneAchieved("First Cordova App").addX().track();
+
+//Direct way
  gamedockSDK.trackEvent(eventName, {key: value});
  
  //Examples
