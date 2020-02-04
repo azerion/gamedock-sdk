@@ -98,7 +98,7 @@ In your app's main entry-point, before making any other calls or initialising ot
 2. Attach event handlers for any Gamedock events that your app requires.
 3. Initialise Gamedock.
 
-Example (including privacy policy / GDPR and Google Play Games for Android):
+Example (including privacy policy / GDPR, Google Play Games and external id's for Android):
 ~~~C#
 	public function Main()
 	{
@@ -108,7 +108,7 @@ Example (including privacy policy / GDPR and Google Play Games for Android):
 			trace("Gamedock is not supported on this platform."); // When not Android or iOS
 			return;
 		}
-  
+		
 		// Attach event handlers for Gamedock features used by your app.
 		
 		// Such as ads
@@ -120,15 +120,17 @@ Example (including privacy policy / GDPR and Google Play Games for Android):
 		// And GDPR / Privacy policy popup.
 		Gamedock.GetInstance().addEventListener(GamedockEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
 		Gamedock.GetInstance().addEventListener(GamedockEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
-  
+		
 		// Disable automatic registering for Push Notifications for iOS so users don't get a pop-up.
 		Gamedock.GetInstance().DisableAutomaticRegisterForPushNotificationsiOS();
-  
+		
 		// Initialise Gamedock with the prefered privacy policy / GDPR settings. 
 		// After the user passes the privacy policy / GDPR menu, Gamedock will start requesting/processing data and firing events.
-		Gamedock.GetInstance().Init(true, true, true, 16, false, GCMProjectId);
+		Gamedock.GetInstance().Init(true, true, true, 16, false);
+		// If you'd like to send external id's with any ad requests, add them via the externalIds parameter (see also: "User identification"):
+		// Gamedock.GetInstance().Init(true, true, true, 16, false, "{\"MyExternalPartner\":\"MyExternalId\"}");
 	}
-  
+
 	private function onPrivacyPolicyStatusEvent(evt:PrivacyPolicyStatusEvent) : void
 	{
 		// If the user accepted the policy, initialise other libraries, such as Google Play Games.
