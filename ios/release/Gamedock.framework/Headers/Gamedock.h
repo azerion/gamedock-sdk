@@ -48,7 +48,7 @@
 #import "HookBridge.h"
 #import "GAI.h"
 
-#define GAMEDOCK_SDK_VERSION @"3.7.0"
+#define GAMEDOCK_SDK_VERSION @"3.8.0"
 
 @class Gamedock;
 @class InitializationOptions;
@@ -58,6 +58,9 @@
 @protocol GamedockDelegate
 
 @optional
+
+// Initialization flow completed
+-(void)initializationCompleted;
 
 /**
  * Ad events, params:
@@ -142,16 +145,6 @@
 -(void)serverTimeRequestSuccess:(nonnull NSString*)unixTimestamp;
 -(void)serverTimeRequestFailed:(nonnull NSString*)error;
 
-// Live events
--(void)liveEventStageOpen;
--(void)liveEventStageClosed;
--(void)liveEventAvailable;
--(void)liveEventNotAvailable;
--(void)liveEventError:(nonnull NSString*)error;
--(void)liveEventMetRequirements:(BOOL)metRequirements;
--(void)liveEventUsedExternalItems:(nonnull NSArray*)externalItem;
--(void)liveEventReward:(nonnull NSArray*)rewardList;
--(void)liveEventCompleted;
 
 // Login
 -(void)onLoginSuccessful:(BOOL)resetData withSocialProvider:(nullable NSString*)socialProvider withSocialId:(nullable NSString*)socialId isGuest:(BOOL)isGuest;
@@ -206,9 +199,13 @@
 
 @property (nonatomic, assign, nullable) id  delegate;
 @property (nonatomic, assign) BOOL initialized;
+@property (nonatomic, assign) BOOL sdkFeaturesInitialized;
+@property (nonatomic, assign) BOOL privacyPolicyEnabled;
 @property (nonatomic, assign) BOOL coppaEnabled;
+@property (nonatomic, assign) BOOL usingUnity;
 @property (nonatomic, retain) NSDictionary * _Nullable privacySettingsToSendAfterInit;
 @property (nonatomic, strong, nullable) InitializationOptions *initializationOptions;
+@property (nonatomic, retain, nullable) NSArray *features;
 
 +(nonnull Gamedock*)sharedInstance;
 
@@ -236,6 +233,18 @@
  * @param The message to log
  */
 +(void)log:(nonnull NSString*)message;
+
+/**
+ * Method used to send the initializeSDK event and handle feature enabling/disabling responses.
+ */
++(void)initializeSDK;
+
+/**
+ * Method used to initialize the components of the SDK.
+ */
++(void)initializeComponents;
+
++(BOOL)isFeatureEnabled:(nonnull NSString*)featureName;
 
 /**
  * Method to set a custom bundle id, useful during debugging.
@@ -1155,33 +1164,6 @@
  * Automatically preloads all images for all items and bundles
  */
 +(void)preloadItemAndBundleImages;
-
-#pragma live events
-
-/**
- * Request the live event
- */
-+(void)requestLiveEvent;
-
-/**
- * Open the live event
- */
-+(void)openLiveEvent;
-
-/**
- * Request the live event start
- */
-+(int)getLiveEventStartDate;
-
-/**
- * Request the live event end time
- */
-+(int)getLiveEventEndDate;
-
-/**
- * Request the live event config
- */
-+(nonnull NSDictionary*)getLiveEventConfig;
 
 #pragma tiered events
 

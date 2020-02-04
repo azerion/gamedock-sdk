@@ -19,6 +19,8 @@
 @class PlayerItem;
 @class UniquePlayerItem;
 
+static NSString* const FEATURE_NAME_UD_P = @"userData";
+
 @interface PlayerDataController : NSObject
 
 @property (nonatomic, retain) UserProfile *cachedUserProfile;

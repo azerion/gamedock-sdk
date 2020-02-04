@@ -12,6 +12,8 @@
 @class Bundle;
 @class Currency;
 
+static NSString* const FEATURE_NAME_GD = @"virtualGoods";
+
 @interface GameDataController : NSObject
 
 @property (nonatomic, retain) GameData *cachedGameData;

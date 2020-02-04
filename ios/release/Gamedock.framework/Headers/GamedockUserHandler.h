@@ -7,6 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString* const FEATURE_NAME_UD_U = @"userData";
+static NSString* const FEATURE_NAME_SOCIAL = @"socialLogin";
+
 @interface GamedockUserHandler : NSObject 
 
 +(GamedockUserHandler*)sharedInstance;
@@ -20,9 +23,10 @@
 
 // --- Gamedock user id ---
 
+-(NSString*)getReceivedChangedUidFromSLOT;
+-(void)setReceivedChangedUidFromSLOT:(NSString*)uid;
 -(void)syncGamedockUserId;
 -(NSString*)getGamedockUserId;
--(void)checkForSLOTUidChange;
 -(void)confirmUserIdChange;
 
 // --- Device id ---

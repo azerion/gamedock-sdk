@@ -4,6 +4,46 @@ Typically, the monetization of your games comes through advertising. Showing the
 
 Interstitial ads are full-screen ads that cover the interface of an app until closed by the user. Typically, they are displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. When an app shows an interstitial ad, the user has the choice to either click on the ad and continue to its destination (such as a reward video), or close it and return to the app.
 
+The SDK currently has the following Ad Networks implemented:
+
+### Android
+
+| Ad Network                        | Version                                        | Type               |
+|:----------------------------------|:-----------------------------------------------|:-------------------|
+| AdMob                             | 18.3.0                                         | Mediator           |
+| AdManager                         | 18.3.0                                         | Mediator           |
+| AdColony                          | 4.1.2                                          | Mediation          |
+| Unity Ads                         | 3.4.0                                          | Mediation          |
+| Facebook Audience Network         | 5.6.0                                          | Mediation          |
+| Vungle                            | 6.5.1                                          | Mediation          |
+| Applovin                          | 9.10.5                                         | Mediation          |
+| InMobi                            | 7.3.0                                          | Mediation          |
+| Tapjoy                            | 12.4.0                                         | Mediation          |
+| Ironsource                        | 6.11.1                                         | Mediation          |
+| MyTarget                          | 5.5.5                                          | Mediation          |
+| Chartboost                        | 7.5.0                                          | Mediation          |
+| Fyber                             | 7.5.0                                          | Mediation          |
+| Awesome Ads                       | 7.0.1                                          | Mediation          |
+
+### iOS
+
+| Ad Network                        | Version                                        | Type               |
+|:----------------------------------|:-----------------------------------------------|:-------------------|
+| AdMob                             | 7.53.1                                         | Mediator           |
+| AdManager                         | 7.53.1                                         | Mediator           |
+| AdColony                          | 4.1.2                                          | Mediation          |
+| Unity Ads                         | 3.3.0                                          | Mediation          |
+| Facebook Audience Network         | 5.6.0                                          | Mediation          |
+| Vungle                            | 6.5.1                                          | Mediation          |
+| Applovin                          | 6.10.1                                         | Mediation          |
+| InMobi                            | 7.4.0                                          | Mediation          |
+| Tapjoy                            | 12.4.0                                         | Mediation          |
+| Ironsource                        | 6.8.7                                          | Mediation          |
+| MyTarget                          | 5.4.5                                          | Mediation          |
+| Chartboost                        | 8.0.4                                          | Mediation          |
+| Fyber                             | 7.5.1                                          | Mediation          |
+| Awesome Ads                       | 7.0.1                                          | Mediation          |
+
 ## Handling Banner Ads
 
 Banners are advertisements that can be displayed by the game in specific and designated areas. Currently, the Gamedock SDK supports the displaying of banners on the bottom part of the game. Banner ads can be shown or hidden depending on the situation and screen in which the player is. In order to work with the banners implementation from the Gamedock SDK use the following methods:
@@ -384,6 +424,10 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
     }
 });
 
+gamedockSDK.on('AdStart', () => {
+    console.log('Ad Started');
+});
+
 gamedockSDK.on('AdFinished', (adFinished) => {
     console.log('Ad Finished with data: ', JSON.stringify(adFinished));
     switch (adFinished.type) {
@@ -467,7 +511,7 @@ private function moreAppsButtonOnClick()
 {
 	Gamedock.GetInstance().PlayMoreApps();
 }
----
+~~~
 
 #### ** Cordova **
 

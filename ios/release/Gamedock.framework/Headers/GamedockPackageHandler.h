@@ -10,6 +10,9 @@
 #import "Package.h"
 #import "ShopEntry.h"
 
+static NSString* const FEATURE_NAME_VG = @"virtualGoods";
+static NSString* const FEATURE_NAME_PROMO = @"promotions";
+
 @interface GamedockPackageHandler : NSObject
 
 @property (strong, nonatomic) NSMutableArray *loadedPackages;

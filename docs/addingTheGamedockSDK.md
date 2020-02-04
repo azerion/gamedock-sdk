@@ -36,6 +36,13 @@ By default, the Gamedock SDK will automatically initialize on Awake(). You can d
 Gamedock.MonoInstance.Initialize();
 ~~~
 
+You can also subscribe to the event that notifies the initial initialization point completion. Keep in mind that this does not signify that all the SDK modules are ready yet, and for individual functionalities you should still look at each features' callbacks. In order to register for the callback use the following code:
+
+~~~C#
+Gamedock.Instance.InitializationCallbacks.OnInitializationCompleted -= OnInitializationCompleted;
+Gamedock.Instance.InitializationCallbacks.OnInitializationCompleted += OnInitializationCompleted;
+~~~
+
 #### ** Android **
 
 
@@ -192,6 +199,14 @@ var environment = "PRODUCTION";
 var externalIds = [];
 
 gamedockSDK.initialise(withAgeGate, ageGateOptions, withPrivacyPolicy, environment, []);
+~~~
+
+You can also subscribe to the event that notifies the initial initialization point completion. Keep in mind that this does not signify that all the SDK modules are ready yet, and for individual functionalities you should still look at each features' callbacks. In order to register for the callback use the following code:
+
+~~~JavaScript
+gamedockSDK.on('InitializationCompleted', () => {
+    console.log('SDK Initialization Completed');
+});
 ~~~
 
 <!-- tabs:end -->

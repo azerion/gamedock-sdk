@@ -18,6 +18,8 @@
 
 #ifdef __cplusplus
 extern "C" {
+    char* cStringCopy(const char* string);
+    
     // --- External ---
     
     // NOTE: Not defined in GamedockiOSUnityImplementation.cs & HookBridge.mm, implemented by unity
@@ -283,18 +285,6 @@ extern "C" {
     void clearDiskCacheNative();
     
     void preloadItemAndBundleImagesNative();
-    
-    // --- Live events ---
-    
-    void requestLiveEventNative();
-    
-    void openLiveEventNative();
-    
-    char* getLiveEventStartDateNative();
-    
-    char* getLiveEventEndDateNative();
-    
-    char* getLiveEventConfigNative();
     
     // --- Tiered events ---
     

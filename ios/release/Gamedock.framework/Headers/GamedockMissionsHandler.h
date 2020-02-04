@@ -5,6 +5,9 @@
 //  Copyright © 2019 Azerion. All rights reserved.
 //
 
+static NSString* const FEATURE_NAME_MISSIONS = @"missions";
+static NSString* const FEATURE_NAME_UD_M = @"userData";
+
 #import <Gamedock/MissionsConfiguration.h>
 #import <Gamedock/MissionData.h>
 #import <Gamedock/MissionProgress.h>
