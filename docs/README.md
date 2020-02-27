@@ -1,5 +1,44 @@
 # Change Log
 
+
+###  Version 3.8.1 *(25-02-2020)*
+
+**Bug fixes**
+ * Android: Fixed crash when the SDK thread is not created properly.
+ * Android: Fixed crash where in certain cases the install store name could not be retrieved.
+ * Android: Fixed ANR issue with the InitializationCompleted callback for Unity.
+ * Android: Fixed few other ANR related issues.
+ * iOS: Fixed issue when showing/hiding banner ads.
+ * Unity: Updated Android post-build script to support Unity 2019.3.+ .
+ * Unity: Updated iOS post-build script to support Unity 2019.3.+ .
+
+
+###  Version 3.8.0 *(04-02-2020)*
+
+**New Features**
+ * _Priority Ads_: The SDK now allows the configuration of Priority Ads thorough the Gamedock Console. This feature allows adding ad placements (banners, interstitial and rewarded videos) as priority using different ad providers than the default stack. For example, Ad Manager ad unit ids can be shown X amount of times before the SDK then falls back to the default AdMob mediation stack. On the SDK side, no additional implementation is required as all configuration is done through the Console.
+ * _Toggleable Features_: Most of the SDK features can now be turn on or off individually, thus potentially reducing the number of events fired automatically by the SDK. The SDK will report in it's logs if a feature is not enabled. Enabling/Disabling features is done through the Gamedock Console. In the Unity Editor, you can see the features overview in the Configuration->General tab.
+
+**Bug fixes**
+ * Android: Fixed issue with Unity Ads not displaying ads properly.
+ * Android: Fixed several issues related to ad request/displaying.
+ * Android: Fixed crash when displaying Splahscreens through WebViews.
+ * Android: Fixed crash related to SDK threading.
+ * Android: Fixed issue with displaying Unity Ads ads.
+ * iOS: Fixed issue related to MissionData handling.
+ * iOS: Fixed issue with Age Gate callback not forwarding the correct response for native implementations.
+ * Cordova: Fixed initialization issue with IAP tracking.
+ * Unity: Improved logging.
+ * Unity: Fixed several warning messages.
+
+**Other**
+ * Android/iOS/Unity/Cordova: Direct interstitial requests will now take into account interstitial timers set in the Gamedock Console.
+ * Android/iOS/Unity/Cordova: Added extra tracking for all advertisement placements (banners, interstitials, rewarded videos).
+ * Android/iOS/Unity/Cordova: Added extra InitializationCompleted callback from the SDK when the initial initialization is completed (you should still listen to the various callbacks for each feature for more accurate functionality).
+ * Android/iOS/Unity/Cordova: Updated Firebase libraries to the latest versions.
+ * Android/iOS/Unity/Cordova: Updated Ad libraries to the latest versions.
+
+
 ### Version 3.7.0 *(20-11-2019)*
 
 **IMPORTANT! If you are experiencing issues with missing scripts on some of our Editor prefabs, it is caused by Unity not importing properly some of it's components. In order to fix it please download [this](https://splashscreens.cdn.spilcloud.com/files/1574351079_Prefabs.zip) package and overwrite the folder "Assets/Gamedock/Editor/Prefabs".** 

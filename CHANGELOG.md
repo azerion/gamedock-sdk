@@ -1,6 +1,18 @@
 Change Log
 ==========
 
+Version 3.8.1 *(25-02-2020)*
+---------------------------
+**Bug fixes**
+ * Android: Fixed crash when the SDK thread is not created properly.
+ * Android: Fixed crash where in certain cases the install store name could not be retrieved.
+ * Android: Fixed ANR issue with the InitializationCompleted callback for Unity.
+ * Android: Fixed few other ANR related issues.
+ * iOS: Fixed issue when showing/hiding banner ads.
+ * Unity: Updated Android post-build script to support Unity 2019.3.+ .
+ * Unity: Updated iOS post-build script to support Unity 2019.3.+ .
+
+
 Version 3.8.0 *(04-02-2020)*
 ----------------------------
 **New Features**
