@@ -13,12 +13,14 @@
 
 + (void)sendMessageToUnity:(NSString*)messageName withParameter:(NSString*)parameterString;
 + (NSString*)getLocalSecret;
++ (NSString*)getPhSecret;
++ (NSString*)getSphSecret;
 
 // --- C Hookbridge ---
 
 #ifdef __cplusplus
 extern "C" {
-    char* cStringCopy(const char* string);
+    char* gdStringCopy(const char* string);
     
     // --- External ---
     
@@ -27,6 +29,10 @@ extern "C" {
     
     // NOTE: Not defined in GamedockiOSUnityImplementation.cs & HookBridge.mm, implemented in libGamedockSDKiOSAuth.a
     char* getLocalSecretEx();
+    
+    char* getPhSecretEx();
+    
+    char* getSphSecretEx();
     
     // --- GDPR ---
     
@@ -130,6 +136,10 @@ extern "C" {
     
     char* getConfigValueNative(const char* keyName);
     
+    // --- Subscription Validation ---
+    
+    void validateSubscriptionNative(const char* skuId, const char* transactionId, const char* token);
+    
     // --- Packages & Promotions ---
     
     char* getAllPackagesNative();
@@ -143,8 +153,6 @@ extern "C" {
     char* getBundlePromotionNative(int bundleId); // NOTE: Method name change
     
     char* getPackagePromotionNative(const char* packageId); // NOTE: New method
-    
-    void requestPackagesNative();
     
     void requestPromotionsNative();
     
@@ -180,6 +188,8 @@ extern "C" {
     
     bool isAdAvailableNative(char* adTypeName);
     
+    void setAdTestDeviceNative(char* deviceId);
+    
     void devRequestAdNative(const char* providerName, const char* adTypeName, const bool parentalGate);
     
     // --- Game & Player data ---
@@ -191,6 +201,8 @@ extern "C" {
     char* getGamedockGameDataNative();
     
     char* getInventoryNative();
+    
+    void processUserDataTransactionsNative(char* transactionsValue, char* reasonName, char* locationName, char* reasonDetails, char* transactionId);
     
     void addCurrencyToWalletNative(int currencyId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId);
     
@@ -347,6 +359,15 @@ extern "C" {
     char* getStringFirebaseRemoteConfigNative(char* key, char* namespaceValue);
     
     char* getFirebaseInstanceIdNative();
+    
+    void gdFirebaseRecordCustomExceptionNative(char* name, char* reason, char* stackTrace);
+    
+    // --- Store ---
+    
+    void showAppRatePopupNative();
+    
+    // --- Features ---
+    long getFeaturesVersionIdNative(char* featureName);
 }
 
 #endif

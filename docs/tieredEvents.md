@@ -63,7 +63,7 @@ To get a list of all available active tiered events use the following method:
 #### ** Unity **
 
 ~~~C#
-List<TieredEvent> activeTieredEvents = GetAllTieredEvents();
+List<TieredEvent> activeTieredEvents = Gamedock.Instance.GetAllTieredEvents();
 ~~~
 
 #### ** Android **
@@ -93,7 +93,7 @@ To get the progress of a tiered event call:
 #### ** Unity **
 
 ~~~C#
-TieredEventProgress progress = GetTieredEventProgress(int tieredEventId);
+TieredEventProgress progress = Gamedock.Instance.GetTieredEventProgress(int tieredEventId);
 ~~~
 
 #### ** Android **

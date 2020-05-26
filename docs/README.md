@@ -1,5 +1,36 @@
 # Change Log
 
+###  Version 3.9.0 *(26-05-2020)*
+
+**New Features**
+ * _Advertisement Initialization_: The SDK now reports back to the game when the advertisement module has been initialized. **Make sure to start using the ads methods after the "OnAdsInitialized" callback has been fired otherwise ads will not work properly! Check the documentation page for Advertisement for more information.** Additionally, the SDK now reports tracks internally the time it took to initialize each ad mediation partner.
+ * _Multi-operation Wallet and Inventory Transactions_: It is now possible to perform multiple operations on the Wallet and Inventory, before committing and sending to the backend the information. All the operation will be grouped into one event thus allowing for easier tracking. The following operations are supported: *AddCurrency, SubtractCurrency, AddItem, SubtractItem, OpenGacha, AddUniqueItem, RemoveUniqueItem, UpdateUniqueItem*. For more information on how to use this, check the following page: [https://azerion.github.io/gamedock-sdk/#/shopWalletInventoryControl](https://azerion.github.io/gamedock-sdk/#/shopWalletInventoryControl).
+ * _App Rate Screen_: This feature allows the displaying of a popup in which the user is asked to rate the game. If the user gives a rating lower than 4, the user is redirected to a provided feedback url. For more information, check the documentation here: [https://azerion.github.io/gamedock-sdk/#/appRate](https://azerion.github.io/gamedock-sdk/#/appRate).
+
+**Bug fixes**
+ * Android: Fixed crash related to IAP initialization.
+ * Android: Fixed issue with AppsFlyer not tracking properly.
+ * iOS: Fixed ad tracking for banner ads.
+ * iOS: Renamed HookBridge method "cStringCopy" to "gdStringCopy" to avoid conflicts with other libraries.
+ * Android/iOS: Excluded SDK reserved events from being tracked by Firebase.
+ * Unity: Fixed issues with iOS post-build script.
+ * Unity: Fixed issue with Editor inventory subtraction delta.
+ * Unity: Fixed minor issue with Features Initialization when using social login in the editor.
+
+**Other**
+ * Android: Removed the Gamedock Firebase module. In order to use Firebase and the features supported by Gamedock make sure to include the dependencies mentioned at the bottom of this page: [https://azerion.github.io/gamedock-sdk/#/addingTheGamedockSDK](https://azerion.github.io/gamedock-sdk/#/addingTheGamedockSDK).
+ * Android/iOS: Refactored AdMob implementation to use the new provided API which should improve loading times of ads. This ties in with the Advertisement Initialization feature. **Because of the new api, it is not possible anymore to track clicks on any rewarded video ads from AdMob or it's partners (the "rewardedVideoDidClick" event).**
+ * Android/iOS/Unity: Refactored the way certain callbacks communicate between Unity and the native layer. The forward facing api will not change, but it does mean fewer native calls made from Unity towards the native layer (since the data is available in the initial callback). This can show slight improvements in performance and data reliability.
+ * Android/iOS/Unity: Added minor feature to check which version id is received for specific configuration. Currently only Game Config is supported but more will be added later.
+ * Android/iOS/Unity/Cordova: Added additional security to the SDK.
+ * Android/iOS/Unity/Cordova: Added IAP subscription validation. If a subscription is valid it will be returned from the backend in the same callback as regular subscriptions. Make sure to mark the IAP purchase event that it is a subscription for this to work.
+ * Unity: Changed default iOS module inclusion. The additional Gamedock iOS SDK modules are now disabled by default.
+ * Unity: Added several helper methods for *PlayerDataHelper* and *GameDataHelper*.
+ * Unity: All helpers (PlayerData, GameData, etc.) have been moved under *Gamedock.Instance*.
+ * Android/iOS/Unity/Cordova: Added AdStart callback for when a banner is shown as well as notify which type of ad is shown through the AdStart callback
+ * Android/iOS/Unity/Cordova: Updated Firebase and AppsFlyer libraries to the latest versions.
+ * Android/iOS/Unity/Cordova: Updated Ad libraries to the latest versions.
+ * Android/iOS/Unity/Cordova: Added minor additional tracking properties for advertisement requested events.
 
 ###  Version 3.8.1 *(25-02-2020)*
 

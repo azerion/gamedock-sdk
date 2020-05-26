@@ -2,40 +2,6 @@
 
 By default, a user’s data is lost when they remove a game from their device. If they later re-install it, they start again as a new user. The social login feature solves this problem by binding the user’s progress to a specified Facebook account. After re-installing the game on the same or another device via a Facebook login, they can continue from their previous state. In addition, this feature can also be used to enable users to play across multiple devices while preserving their game progress. In this way, the user’s game experience can be enhanced.
 
-## Facebook SDK Requirements
-
-To start using the social login feature with Facebook, do the following:
-
-1. Download the latest version of the Facebook SDK. It is available from: [https://developers.facebook.com/docs/unity/downloads/](https://developers.facebook.com/docs/unity/downloads/).
-1. Add the Facebook SDK to your IDE project as described in [https://developers.facebook.com/docs/unity/gettingstarted](https://developers.facebook.com/docs/unity/gettingstarted). Use the Facebook app ID provided by your Gamedock Account Manager.
-
-## Implementing the Facebook Login
-
-Within the game, login the user via the provided Facebook app using the following method and handle the result:
-
-~~~C#
-FB.LogInWithReadPermissions(new List<string>() {“public_profile”}, this.HandleResult);
-~~~
-
-Note that additional permissions (such as the user’s e-mail address) can be specified as part of the call. For further information, consult the Facebook SDK documentation. If the Facebook login is successful, retrieve the Facebook user ID and Facebook token from the Facebook SDK using the following properties:
-
-~~~C#
-String facebookUserId= AccessToken.CurrentAccessToken.UserId;
-String facebookToken = AccessToken.CurrentAccessToken.TokenString;
-~~~
-
-Note that both items are required for the Gamedock SDK login.
-
-## Implementing the Google Play Games
-
-To start using the social login feature with Google Play Games, follow the instructions found here: [https://github.com/playgameservices/play-games-plugin-for-unity](https://github.com/playgameservices/play-games-plugin-for-unity).
-
-## Implementing Game Center
-
-Game center can be implemented using the Unity Social API: [https://docs.unity3d.com/Manual/net-SocialAPI.html](https://docs.unity3d.com/Manual/net-SocialAPI.html).
-After login the game center’s user auth details can be retrieved using a library like this: [https://github.com/abivz/unity3d-gamekit-identity-plugin/](https://github.com/abivz/unity3d-gamekit-identity-plugin/).
-The auth details can be passed to the UserLogin method in a dictionary as 4th parameter containing 3 key/value pairs: “publicKeyUrl”, salt” and “timestamp”.
-
 ## Implementing the Gamedock SDK Login
 
 ![github pages](_images/SocialLoginFeature.png)

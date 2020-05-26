@@ -20,7 +20,8 @@
 
 +(NSString*)sha256:(NSString *)input;
 +(NSString*)createSHA512:(NSString *)input;
-+(NSString *)createBase64EncodedSHA512:(NSString *)input;
++(NSString*)createBase64EncodedSHA512:(NSString *)input withBundleId:(NSString *)bundleId withUserId:(NSString *)userId;
++(BOOL)verifyServerSHA:(NSString *)payload withPh:(NSString *)ph;
 
 +(UIViewController*)topMostController;
 +(UIViewController*)absoluteTopMostController;

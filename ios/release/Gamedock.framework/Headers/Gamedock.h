@@ -45,13 +45,15 @@
 #import <Gamedock/UpdatedMissionData.h>
 #import <Gamedock/ErrorContext.h>
 #import <Gamedock/InitializationOptions.h>
+#import <Gamedock/UserDataTransaction.h>
 #import "HookBridge.h"
 #import "GAI.h"
 
-#define GAMEDOCK_SDK_VERSION @"3.8.1"
+#define GAMEDOCK_SDK_VERSION @"3.9.0"
 
 @class Gamedock;
 @class InitializationOptions;
+@class UserDataTransaction;
 @class ImageContext;
 @class TieredEventProgress;
 
@@ -62,16 +64,11 @@
 // Initialization flow completed
 -(void)initializationCompleted;
 
-/**
- * Ad events, params:
- * type = rewardVideo|interstitial|moreApps
- * reason = error|dismiss|reward
- * network = headerlift|admob|dfp
- * reward = rewardData(Admob/dfp:Integer,headerlift:Json{reward:"",currencyName:"",currencyId:""})|nil
- */
+//Ads Events
+-(void)adsInitialized; // Ads component fully initialized
 -(void)adAvailable:(nonnull NSString*)type; // An ad is available
 -(void)adNotAvailable:(nonnull NSString*)type; // An ad is unavailable or did fail to load
--(void)adStart; // An ad has started
+-(void)adStart:(nonnull NSString*)type; // An ad has started
 -(void)adFinished:(nonnull NSString*)type reason:(nonnull NSString*)reason reward:(nonnull NSString*)reward network:(nonnull NSString*)network; // An ad has finished (dismissed or an reward was granted)
 -(void)openParentalGate; // The ad requires a parental gate check to continue, present the parental gate in this method and call the closedParentalGate method to pass the result back to the GamedockSDK.
 
@@ -103,24 +100,24 @@
 -(void)configError:(nonnull NSString*)error;
 
 // Missions events
--(void)missionConfigurationAvailable;
+-(void)missionConfigurationAvailable:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
 -(void)missionConfigurationNotAvailable;
 -(void)missionConfigurationError:(nonnull NSString*)error;
--(void)missionDataUpdated:(nullable NSString*)reason withUpdatedMissionData:(nonnull UpdatedMissionData*)updatedMissionData;
+-(void)missionDataUpdated:(nullable NSString*)reason withUpdatedMissionData:(nonnull UpdatedMissionData*)updatedMissionData withContainers:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
 
 // Package & promotion events
--(void)packagesAvailable;
+-(void)packagesAvailable:(nonnull NSString*)packagesJSON;
 -(void)packagesNotAvailable;
--(void)promotionsAvailable;
+-(void)promotionsAvailable:(nonnull NSString*)promotionsJSON;
 -(void)promotionsNotAvailable;
 -(void)onBoughtPromotion:(int)id amount:(int)amountPurchased maxPurchase:(int)maxPurchase;
 
 // Game data events
--(void)gamedockGameDataAvailable;
+-(void)gamedockGameDataAvailable:(nonnull NSString*)gameDataJSON;
 -(void)gamedockGameDataError:(nonnull NSString*)message;
 
 // Player data events
--(void)playerDataUpdated:(nonnull NSString*)reason updatedData:(nonnull NSString*)updatedData;
+-(void)playerDataUpdated:(nonnull NSString*)reason updatedData:(nonnull NSString*)updatedData wallet:(nonnull NSString*)wallet inventory:(nonnull NSString*)inventory;
 -(void)playerDataEmptyGacha;
 -(void)playerDataNewUniqueItem:(nonnull UniquePlayerItem*)newUniquePlayerItem bundleId:(int)bundleId gachaId:(int)gachaId tierId:(int)tierId reason:(nonnull NSString*)reason;
 
@@ -133,8 +130,8 @@
 -(void)imagePreloadingCompleted;
 
 // IAP validation
--(void)iapValid:(nonnull NSArray*)items;
--(void)iapInvalid:(nonnull NSString*)message;
+-(void)iapValid:(nonnull NSString*)skuId;
+-(void)iapInvalid:(nonnull NSString*)skuId withMessage:(nonnull NSString*)message;
 
 // Token claiming
 -(void)rewardTokenReceived:(nonnull NSString*)token rewardData:(nonnull NSArray*)rewardJsonObject withRewardType:(nonnull NSString*)rewardType;
@@ -157,11 +154,11 @@
 -(void)userIdChangeCompleted;
 
 // Userdata syncing
--(void)userDataAvailable;
+-(void)userDataAvailable:(nonnull NSString*)wallet withInventory:(nonnull NSString*) intentory withContainers:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
 -(void)userDataError:(nonnull NSString*)error withContext:(nonnull ErrorContext*)errorContext;
 -(void)userDataError:(nonnull NSString*)error;
 -(void)userDataMergeConflict:(nonnull NSString*)localData remoteData:(nonnull NSString*)remoteData;
--(void)userDataMergeSuccessful;
+-(void)userDataMergeSuccessful:(nonnull NSString*)wallet withInventory:(nonnull NSString*) intentory withContainers:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
 -(void)userDataMergeFailed:(nonnull NSString*)mergeData mergeType:(nonnull NSString*)mergeType;
 -(void)userDataHandleMerge:(nonnull NSString*)mergeType; // Called when a merge conflict option button was pressed
 -(void)userDataSyncError;
@@ -182,7 +179,7 @@
 -(void)tieredEventsError:(nonnull NSString*)error;
 
 // Asset bundles
--(void)assetBundlesAvailable;
+-(void)assetBundlesAvailable:(nonnull NSString*)assetBundlesJSON;
 -(void)assetBundlesNotAvailable;
 
 // Firebase
@@ -206,6 +203,7 @@
 @property (nonatomic, retain) NSDictionary * _Nullable privacySettingsToSendAfterInit;
 @property (nonatomic, strong, nullable) InitializationOptions *initializationOptions;
 @property (nonatomic, retain, nullable) NSArray *features;
+@property (nonatomic, retain, nullable) NSMutableDictionary *featuresVersionIds;
 
 +(nonnull Gamedock*)sharedInstance;
 
@@ -246,6 +244,9 @@
 
 +(BOOL)isFeatureEnabled:(nonnull NSString*)featureName;
 
++(void)setFeatureVersionId:(nonnull NSString*)featureName withVersionId:(NSNumber*)versionId;
+
++(NSNumber*)getFeaturesVersionId:(nonnull NSString*)featureName;
 /**
  * Method to set a custom bundle id, useful during debugging.
  * @param The custom bundle id to use
@@ -259,6 +260,8 @@
 +(nullable NSString*)getGamedockUserId;
 
 +(NSString*)getFirebaseInstanceId;
+
++(void)recordFirebaseCustomeException:(nonnull NSString*)name withReason:(nonnull NSString*)reason withStackTrace:(nonnull NSString*)stackTrace;
 
 /**
  * Get the registered push notification token
@@ -674,6 +677,10 @@
  */
 +(nullable id)getConfigValue:(nonnull NSString*)keyString;
 
+#pragma mark Subscription Validation
+
++(void)validateSubscription:(nonnull NSString*)skuId withTransactionId:(nonnull NSString*)transactionId withToken:(nonnull NSString*)token;
+
 #pragma mark Packages
 
 /**
@@ -681,6 +688,8 @@
  * @return NSArray object representation from the stored store packages
  */
 +(nullable NSArray*)getAllPackages;
+
++(nullable NSString*)getAllPackagesJSON;
 
 /**
  * Get a specific package from the store
@@ -701,7 +710,7 @@
  * @return NSArray object representation from the stored store promotions
  */
 +(nullable NSArray*)getAllPromotions;
-
++(nullable NSString*)getAllPromotionsJSON;
 /**
  * Get the promotion for a bundle
  * @param id    Id of the bundle. Type must be int.
@@ -717,11 +726,6 @@
 +(nullable NSDictionary*)getPackagePromotion:(nonnull NSString*)packageId;
 
 /**
- * Refresh the package data
- */
-+(void)requestPackages;
-
-/**
  * Refresh the mission data
  */
 +(void)requestMissionConfiguration;
@@ -732,6 +736,7 @@
 +(void)requestPromotions;
 
 +(nonnull NSMutableArray*)getContainersConfiguration;
++(nonnull NSString*)getContainersConfigurationJSON;
 
 +(nullable Container*)getMissionContainer:(nonnull NSString*)containerId;
 
@@ -742,6 +747,7 @@
 +(nonnull NSMutableArray*)getMissionsConfigurationWithUnlocks:(nonnull NSMutableArray*)missionUnlocks;
 
 +(nullable NSMutableArray*)getAllMissionConfigurations;
++(nonnull NSString*)getAllMissionConfigurationsJSON;
 
 +(nullable Mission*)getMissionConfiguration:(nonnull NSString*)missionId;
 
@@ -845,6 +851,11 @@
  */
 +(BOOL)isAdAvailable:(nullable NSString*)adType;
 
+/**
+ * Sets a testing device for ad networks and in certain cases enables test mode (depending on the mediation)
+ */
++(void)setAdTestDevice:(nonnull NSString*)deviceId;
+
 #pragma mark UserData & GameData
 
 /**
@@ -887,6 +898,8 @@
  */
 +(nullable NSString*)getInventory;
 
++(UserDataTransaction*)beginUserDataTransaction;
+
 /**
  * Returns the shop data as json
  */
@@ -905,7 +918,7 @@
  * @param location      The location where the event happened, for example level1
  * @param transactionId The transaction id used
  */
-+(void)addCurrencyToWallet:(int)currencyId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId;
++(NSMutableDictionary* _Nullable)addCurrencyToWallet:(int)currencyId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId isTransaction:(BOOL)isTransaction;
 
 /**
  * Subtract currency from the wallet
@@ -915,7 +928,7 @@
  * @param location      The location where the event happened, for example level1
  * @param transactionId The transaction id used
  */
-+(void)subtractCurrencyFromWallet:(int)currencyId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId;
++(NSMutableDictionary* _Nullable)subtractCurrencyFromWallet:(int)currencyId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId isTransaction:(BOOL)isTransaction;
 
 /**
  * Add item to the inventory
@@ -925,7 +938,7 @@
  * @param location      The location where the event happened, for example level1
  * @param transactionId The transaction id used
  */
-+(void)addItemToInventory:(int)itemId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId;
++(NSMutableDictionary* _Nullable)addItemToInventory:(int)itemId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId isTransaction:(BOOL)isTransaction;
 
 /**
  * Subtract item to from the inventory
@@ -935,7 +948,7 @@
  * @param location      The location where the event happened, for example level1
  * @param transactionId The transaction id used
  */
-+(void)subtractItemFromInventory:(int)itemId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId;
++(NSMutableDictionary* _Nullable)subtractItemFromInventory:(int)itemId withAmount:(int)amount withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId isTransaction:(BOOL)isTransaction;
 
 /**
  * Uses the bundle and will add the items to the inventory and subtract the currency from the wallet
@@ -954,7 +967,7 @@
  * @param reasonDetails The bundle reasonDetails
  * @param location      The location where the event happened, for example level1
  */
-+(void)openGacha:(int)itemId withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withPerkItems:(nullable NSArray*)perkItems;
++(NSMutableDictionary* _Nullable)openGacha:(int)itemId withReason:(nonnull NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withPerkItems:(nullable NSArray*)perkItems isTransaction:(BOOL)isTransaction;
 
 /**
  * Get all the shop tabs
@@ -1021,8 +1034,10 @@
 +(void)setItemLimit:(int)itemId withLimit:(int)limit;
 
 +(nonnull NSMutableArray*)getUserAllContainerProgress;
++(nonnull NSString*)getUserAllContainerProgressJSON:(nullable NSMutableArray*)containerProgressList;
 
 +(nonnull NSMutableArray*)getUserAllMissionProgress;
++(nonnull NSString*)getUserAllMissionProgressJSON:(nullable NSMutableArray*)missionProgressList;
 
 +(void)updateContainerProgress:(nonnull NSMutableArray*)containerProgressList withReason:(nullable NSString*)reason withReasonDetails:(nullable NSString*)reasonDetails withLocation:(nullable NSString*)location withTransactionId:(nullable NSString*)transactionId;
 
@@ -1042,17 +1057,17 @@
 /**
  * Add an unique item to the inventory
  */
-+(void)addUniqueItemToInventory:(nonnull NSString*)uniquePlayerItemJSON withReason:(nonnull NSString*)reason withReasonDetails:(nonnull NSString*)reasonDetails withLocation:(nonnull NSString*)location withTransactionId:(nonnull NSString*)transactionId;
++(NSMutableDictionary* _Nullable)addUniqueItemToInventory:(nonnull NSString*)uniquePlayerItemJSON withReason:(nonnull NSString*)reason withReasonDetails:(nonnull NSString*)reasonDetails withLocation:(nonnull NSString*)location withTransactionId:(nonnull NSString*)transactionId isTransaction:(BOOL)isTransaction;
 
 /**
  * Update an unique item to the inventory
  */
-+(void)updateUniqueItemFromInventory:(nonnull NSString*)uniquePlayerItemJSON withReason:(nonnull NSString*)reason withReasonDetails:(nonnull NSString*)reasonDetails withLocation:(nonnull NSString*)location withTransactionId:(nonnull NSString*)transactionId;
++(NSMutableDictionary* _Nullable)updateUniqueItemFromInventory:(nonnull NSString*)uniquePlayerItemJSON withReason:(nonnull NSString*)reason withReasonDetails:(nonnull NSString*)reasonDetails withLocation:(nonnull NSString*)location withTransactionId:(nonnull NSString*)transactionId isTransaction:(BOOL)isTransaction;
 
 /**
  * Removes an unique item to the inventory
  */
-+(void)removeUniqueItemFromInventoryNative:(nonnull NSString*)uniquePlayerItemJSON withReason:(nonnull NSString*)reason withReasonDetails:(nonnull NSString*)reasonDetails withLocation:(nonnull NSString*)location withTransactionId:(nonnull NSString*)transactionId;
++(NSMutableDictionary* _Nullable)removeUniqueItemFromInventory:(nonnull NSString*)uniquePlayerItemJSON withReason:(nonnull NSString*)reason withReasonDetails:(nonnull NSString*)reasonDetails withLocation:(nonnull NSString*)location withTransactionId:(nonnull NSString*)transactionId isTransaction:(BOOL)isTransaction;
 
 #pragma mark Customer support
 
@@ -1228,7 +1243,7 @@
 +(void)resetData;
 
 /**
- * Call when the game is ready to change the uid requested by SLOT
+ * Call when the game is ready to change the uid requested by Gamedock Backend 
  */
 +(void)confirmUserIdChange;
 
@@ -1314,6 +1329,13 @@
  */
 +(nonnull NSString*)getStringFirebaseRemoteConfig:(nonnull NSString*)key namespaceValue:(nonnull NSString*)namespaceValue;
 
+#pragma mark Store
+
+/**
+  * Mehtod used to show the Apple App Rate popup
+ */
++(void)showAppRatePopup;
+
 #pragma test methods (dev)
 
 /**
@@ -1325,7 +1347,7 @@
 
 /**
  * NOTE: Those methods are exposed just for ad testing, they should not be referenced in the final implementation, params:
- * adProvider: headerlift|admob|dfp
+ * adProvider: admob|dfp
  * adType: interstitial|rewardVideo|moreApps
  * parentalGate: not implemented yet (always false)
  */

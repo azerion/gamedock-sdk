@@ -17,28 +17,26 @@ In order to work the Promotions feature in the game implement the following code
 #### ** Unity **
 
 ~~~C#
-//Returns a helper class that can be used to handle promotion operations
-PromotionsHelper promotionsHelper = Gamedock.Instance.GetPromotions();
 //List of promotions
-List<Promotion> promotionList = promotionHelper.Promotions;
+Gamedock.Instance.Promotions.Promotions
 
 //Retrieves the promotion associated with the given bundle id
-Promotion promotion = promotionHelper.GetBundlePromotion(bundleId);
+Promotion promotion = Gamedock.Instance.Promotions.GetBundlePromotion(bundleId);
 
 //Retrieves the promotion associated with the given package id
-Promotion promotion = promotionHelper.GetPackagePromotion(packageId);
+Promotion promotion = Gamedock.Instance.Promotions.GetPackagePromotion(packageId);
 
 //Checks if a promotion is present for the bundle with the given bundle id
-bool hasBundlePromotion = promotionHelper.HasBundlePromotion(bundleId);
+bool hasBundlePromotion = Gamedock.Instance.Promotions.HasBundlePromotion(bundleId);
 
 //Checks if a promotion is present for the IAP package with the given package id
-bool hasPackagePromotion = promotionHelper.HasPackagePromotion(packageId);
+bool hasPackagePromotion = Gamedock.Instance.Promotions.HasPackagePromotion(packageId);
 
 //Checks if a promotion is active for the given Shop Tab
-bool hasTabPromotion = promotionHelper.HasActiveTabPromotion(tab);
+bool hasTabPromotion = Gamedock.Instance.Promotions.HasActiveTabPromotion(tab);
 
 //Checks if a promotion is active for the given Shop Entry
-bool hasEntryPromotion = promotionHelper.HasActiveEntryPromotion(entry);
+bool hasEntryPromotion = Gamedock.Instance.Promotions.HasActiveEntryPromotion(entry);
 
 //Informs that the promotions request has been successful
 //This does not guarantee that there are any promotions in the list
@@ -64,19 +62,16 @@ Gamedock.Instance.ShowPromotionScreen(promotionId);
 A simple example is also given for applying promotion values to an IAP Package as these need to be applied manually:
 
 ~~~C#
-//Retrieve the packages helper
-PackagesHelper helper = Gamedock.Instance.GetPackages ();
-
 //Loop through all packages and find required package (productSKU)
-for (int i = 0; i < helper.Packages.Count; i++) {
-  if (productSKU == helper.Packages [i].PackageId) {
+for (int i = 0; i < Gamedock.Instance.Packages.Packages.Count; i++) {
+  if (productSKU == Gamedock.Instance.Packages.Packages[i].PackageId) {
   
-    int packageValue = int.Parse(helper.Packages[i].Items[0].Value.Replace(".0", ""));
+    int packageValue = int.Parse(Gamedock.Instance.Packages.Packages[i].Items[0].Value.Replace(".0", ""));
     
     //Check if package has promotion
-    if (helper.Packages[i].HasActivePromotion()) {
+    if (Gamedock.Instance.Packages.Packages[i].HasActivePromotion()) {
       //Apply extra entities from the promotion
-      Promotion packagePromotion = Gamedock.Instance.GetPromotions().GetPackagePromotion(helper.Packages[i].PackageId);
+      Promotion packagePromotion = Gamedock.Instance.Promotions.GetPackagePromotion(helper.Packages[i].PackageId);
       packageValue = packageValue + packagePromotion.ExtraEntities[0].Amount;
     }
     //Award users the full amount (normal + promotion)

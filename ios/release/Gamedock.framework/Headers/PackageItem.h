@@ -11,7 +11,7 @@
 
 @property (assign, nonatomic) int id;
 @property (strong, nonatomic) NSString *type;
-@property (assign, nonatomic) int value;
+@property (assign, nonatomic) int amount;
     
 -(id)initWithDictionary:(NSDictionary*)dict;
     

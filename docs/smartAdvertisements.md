@@ -1,48 +1,98 @@
 # Smart Advertisements
 
-Typically, the monetization of your games comes through advertising. Showing the right ads to the right users at the right time can highly influence the revenues you can earn per ad. The Gamedock platform supports the use of Interstitial (smart) ads based on user behavior. For example, if a user has just completed three levels in a row and is about to receive a large in-game bonus, they are likely to be more engaged. Therefore, this could be a good moment to show an ad because it is unlikely that they are about to leave the game.
+Typically, the monetization of your games comes through advertising. Showing the right ads to the right users at the right time can highly influence the revenues you can earn per ad.
 
-Interstitial ads are full-screen ads that cover the interface of an app until closed by the user. Typically, they are displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. When an app shows an interstitial ad, the user has the choice to either click on the ad and continue to its destination (such as a reward video), or close it and return to the app.
+The Gamedock platform supports the following ad types:
+
+* Banners
+* Interstitials
+* Rewarded Videos
 
 The SDK currently has the following Ad Networks implemented:
 
 ### Android
 
-| Ad Network                        | Version                                        | Type               |
-|:----------------------------------|:-----------------------------------------------|:-------------------|
-| AdMob                             | 18.3.0                                         | Mediator           |
-| AdManager                         | 18.3.0                                         | Mediator           |
-| AdColony                          | 4.1.2                                          | Mediation          |
-| Unity Ads                         | 3.4.0                                          | Mediation          |
-| Facebook Audience Network         | 5.6.0                                          | Mediation          |
-| Vungle                            | 6.5.1                                          | Mediation          |
-| Applovin                          | 9.10.5                                         | Mediation          |
-| InMobi                            | 7.3.0                                          | Mediation          |
-| Tapjoy                            | 12.4.0                                         | Mediation          |
-| Ironsource                        | 6.11.1                                         | Mediation          |
-| MyTarget                          | 5.5.5                                          | Mediation          |
-| Chartboost                        | 7.5.0                                          | Mediation          |
-| Fyber                             | 7.5.0                                          | Mediation          |
-| Awesome Ads                       | 7.0.1                                          | Mediation          |
+| Ad Network                        | Version                                        | Type               | Banner    | Interstitial   | Rewarded Video   |
+|:----------------------------------|:-----------------------------------------------|:-------------------|:----------|:---------------|:-----------------|
+| AdMob                             | 19.1.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdManager                         | 19.1.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdColony                          | 4.1.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Unity Ads                         | 3.4.2                                          | Mediation          | ✓         | ✓              | ✓                |
+| Facebook Audience Network         | 5.8.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Vungle                            | 6.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
+| Applovin                          | 9.12.0                                         | Mediation          | ✓         | ✓              | ✓                |
+| InMobi                            | 9.0.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Tapjoy                            | 12.4.2                                         | Mediation          | x         | ✓              | ✓                |
+| Ironsource                        | 6.16.0                                         | Mediation          | x         | ✓              | ✓                |
+| MyTarget                          | 5.6.3                                          | Mediation          | ✓         | ✓              | ✓                |
+| Fyber                             | 7.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
 
 ### iOS
 
-| Ad Network                        | Version                                        | Type               |
-|:----------------------------------|:-----------------------------------------------|:-------------------|
-| AdMob                             | 7.53.1                                         | Mediator           |
-| AdManager                         | 7.53.1                                         | Mediator           |
-| AdColony                          | 4.1.2                                          | Mediation          |
-| Unity Ads                         | 3.3.0                                          | Mediation          |
-| Facebook Audience Network         | 5.6.0                                          | Mediation          |
-| Vungle                            | 6.5.1                                          | Mediation          |
-| Applovin                          | 6.10.1                                         | Mediation          |
-| InMobi                            | 7.4.0                                          | Mediation          |
-| Tapjoy                            | 12.4.0                                         | Mediation          |
-| Ironsource                        | 6.8.7                                          | Mediation          |
-| MyTarget                          | 5.4.5                                          | Mediation          |
-| Chartboost                        | 8.0.4                                          | Mediation          |
-| Fyber                             | 7.5.1                                          | Mediation          |
-| Awesome Ads                       | 7.0.1                                          | Mediation          |
+| Ad Network                        | Version                                        | Type               | Banner    | Interstitial   | Rewarded Video   |
+|:----------------------------------|:-----------------------------------------------|:-------------------|:----------|:---------------|:-----------------|
+| AdMob                             | 7.59.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdManager                         | 7.59.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdColony                          | 4.1.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Unity Ads                         | 3.4.2                                          | Mediation          | ✓         | ✓              | ✓                |
+| Facebook Audience Network         | 5.8.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Vungle                            | 6.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
+| Applovin                          | 6.12.5                                         | Mediation          | ✓         | ✓              | ✓                |
+| InMobi                            | 9.0.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Tapjoy                            | 12.4.2                                         | Mediation          | x         | ✓              | ✓                |
+| Ironsource                        | 6.16.1                                         | Mediation          | x         | ✓              | ✓                |
+| MyTarget                          | 5.5.1                                          | Mediation          | ✓         | ✓              | ✓                |
+| Chartboost                        | 8.0.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Fyber                             | 7.5.4                                          | Mediation          | ✓         | ✓              | ✓                |
+
+## Advertisement Initialization
+
+The Gamedock SDK initializes automatically the advertisement module, if the feature has been enabled and configured correctly in the Gamedock Console, and if the module has been enabled in the SDK. When advertisement is initialized, the following callback will be fired:
+
+<!-- tabs:start -->
+
+#### ** Unity **
+
+~~~C#
+Gamedock.Instance.AdvertisementCallbacks.OnAdsInitialized -= OnAdsInitialized;
+Gamedock.Instance.AdvertisementCallbacks.OnAdsInitialized += OnAdsInitialized;
+
+public void OnAdsInitialized()
+{
+    //Request specific ad types
+}
+~~~
+
+#### ** Android **
+
+
+
+#### ** iOS **
+
+
+
+#### ** AIR **
+
+~~~C#
+
+~~~
+
+#### ** Cordova **
+
+~~~JavaScript
+
+
+//Callbacks
+gamedockSDK.on('AdsInitialized', () => {
+    console.log('Advertisement Initialized');
+});
+~~~
+
+<!-- tabs:end -->
+
+> It is highly recommended that you wait for this callback before doing any advertisement logic!
+
+
 
 ## Handling Banner Ads
 
@@ -201,11 +251,13 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
 <!-- tabs:end -->
 
 
+
 ## Handling Interstitial Ads
 
 Interstitial ads are full-screen ads that cover the interface of their host app. They are typically displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. By default, the Gamedock SDK shows interstitial ads based on specific event triggers that can be configured in the Gamedock Console.
 
 > The game events that should trigger interstitial ads need to discussed and agreed with your Gamedock Account Manager. You can also manually trigger an interstitial ad using the following functions:
+
 <!-- tabs:start -->
 
 #### ** Unity **
@@ -313,7 +365,7 @@ public void ShowRewardedVideo(){
     Gamedock.Instance.PlayRewardVideo ();
 }
 
-void AdOpened(){
+void AdOpened(EnumAdType adType){
     //mute the game and pause if neccessary
     muteAudio = true;
 }
@@ -424,7 +476,7 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
     }
 });
 
-gamedockSDK.on('AdStart', () => {
+gamedockSDK.on('AdStart', (adType) => {
     console.log('Ad Started');
 });
 

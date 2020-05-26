@@ -29,14 +29,14 @@ void OnAssetBundlesNotAvailable(){}
 Once the Asset Bundles are available you can get a dedicated helper class using the following method:
 
 ~~~C#
-//Asset Bundles Helper
-AssetBundlesHelper assetBundlesHelper = Gamedock.Instance.GetAssetBundles();
+//List of all asset bundles
+Gamedock.Instance.AssetBundles.AssetBundles
 
 //Get Asset Bundle with name
-AssetBundle assetBundle = Gamedock.Instance.GetAssetBundles().GetAssetBundle("goldplane");
+AssetBundle assetBundle = Gamedock.Instance.AssetBundles.GetAssetBundle("goldplane");
 
 //Get Asset Bundles of Type
-List<AssetBundle> assetBundles = Gamedock.Instance.GetAssetBundles().GetAssetBundlesOfType("level");
+List<AssetBundle> assetBundles = Gamedock.Instance.AssetBundles.GetAssetBundlesOfType("level");
 
 //Check if asset bundle is valid
 bool valid = assetBundle.IsValid();

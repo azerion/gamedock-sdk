@@ -45,7 +45,7 @@
 -(NSString*)getDeviceModel;
 -(NSString*)getAppVersion;
 -(NSString*)getPrivValue;
-
+-(BOOL)isReservedEvent:(NSString*)name;
 // --- Event tracking ---
 
 -(void)trackEvent:(NSString*)name;

@@ -22,6 +22,7 @@
     * [Implementing Asset Bundles Configurations](implementingAssetBundlesConfigurations.md "Implementing Asset Bundles Configurations")
     * [Splash and Daily Bonus Screens](splashAndDailyBonusScreens.md "Splash and Daily Bonus Screens")
     * [Tiered Events](tieredEvents.md "Tiered Events")
+    * [Deep Linking](appRate.md "App Rate")
     * [Deep Linking](deepLinking.md "Deep Linking")
     * [Anti-Cheating](antiCheating.md "Anti-Cheating")
     * [Handling Errors](handlingErrors.md "Handling Errors")

@@ -20,7 +20,7 @@ static NSString* const FEATURE_NAME_PROMO = @"promotions";
 
 +(GamedockPackageHandler*)sharedInstance;
 
--(void)requestPackages;
+-(void)processPackagesResponse:(NSArray*) packagesData;
 -(void)savePackages;
 -(NSArray*)getAllPackages;
 -(NSArray*)getAllPackagesObject;

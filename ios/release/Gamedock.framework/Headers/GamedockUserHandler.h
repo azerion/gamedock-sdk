@@ -21,10 +21,19 @@ static NSString* const FEATURE_NAME_SOCIAL = @"socialLogin";
 @property (nonatomic, retain) NSMutableDictionary *deviceVersions;
 @property (nonatomic, retain) NSMutableDictionary *metadata;
 
+@property (nonatomic, retain) NSString *externalUserProvider;
+@property (nonatomic, retain) NSString *externalUserId;
+@property (nonatomic, retain) NSString *gamedockUserId;
+@property (nonatomic, retain) NSString *gamedockUserToken;
+@property (nonatomic, retain) NSMutableDictionary *receivedMergeConflictDeviceVersions;
+@property (nonatomic, retain) NSMutableDictionary *externalIds;
+
+@property (nonatomic, retain) NSString *receivedChangedUidFromGamedock;
+
 // --- Gamedock user id ---
 
--(NSString*)getReceivedChangedUidFromSLOT;
--(void)setReceivedChangedUidFromSLOT:(NSString*)uid;
+-(NSString*)getUidFromGamedock;
+-(void)setUidFromGamedock:(NSString*)uid;
 -(void)syncGamedockUserId;
 -(NSString*)getGamedockUserId;
 -(void)confirmUserIdChange;
