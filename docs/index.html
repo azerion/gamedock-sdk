@@ -73,7 +73,7 @@
       search: 'auto',
       coverpage: true,
       onlyCover: true,
-      basePath: '/gamedock-sdk/',
+<!--      basePath: '/gamedock-sdk/',-->
       search : [
         '/',
         '/gettingStarted',
@@ -110,7 +110,10 @@
         tabComments: true,      // default
         tabHeadings: true       // default
       },
-      subMaxLevel: 1
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      subMaxLevel: 2
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
