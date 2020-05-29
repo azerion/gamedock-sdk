@@ -1,4 +1,4 @@
-# Smart Advertisements
+# Advertisement
 
 Typically, the monetization of your games comes through advertising. Showing the right ads to the right users at the right time can highly influence the revenues you can earn per ad.
 

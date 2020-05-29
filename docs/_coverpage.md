@@ -8,6 +8,6 @@
 
 [Get Started](#/#gettingStarted)
 [Download](https://github.com/azerion/gamedock-sdk/releases)
-[Change Log](#change-log)
+[Change Log](#/#changelog)
 
 ![background](_images/coverpageBackground.png)

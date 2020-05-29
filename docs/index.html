@@ -16,7 +16,7 @@
     --content-max-width                 : 100em;
     --code-font-family                  : 'Open Sans',Helvetica,Arial,Lucida,sans-serif;
     --heading-h1-color                  : #006A97;
-    
+
     --cover-background-color            : url(/_images/CoverpageBackground.png);
     --cover-background-mask-color       : ;
     --cover-heading-color               : #006A97;
@@ -24,26 +24,27 @@
     --cover-button-border               : 1px solid #006A97;
     --cover-button-color                : #006A97;
     
-    --sidebar-width                     : 27rem;
+    --sidebar-width                     : 21rem;
     --sidebar-name-color                : #FFFFFF;
     --sidebar-name-font-weight          : bold;
 
     --blockquote-border-color           : #006A97;
     
     --sidebar-nav-strong-color          : #006A97;
-    --sidebar-nav-link-color            : #006A97;
-    --sidebar-nav-link-color--active    : #006A97;
-    --sidebar-nav-link-color--hover     : #006A97;
+    --sidebar-nav-link-color            : #ffffff;
+    --sidebar-nav-link-color--active    : #ffffff;
+    --sidebar-nav-link-color--hover     : #ffffff;
     --sidebar-nav-link-border-style     : none;
     --sidebar-nav-link-border-color     : #006A97;
     --sidebar-nav-link-border-color--active     : #006A97;
     --sidebar-nav-link-border-color--hover      : #006A97;
     --sidebar-nav-link-font-weight--active      : bold;
 
-    --sidebar-background                : #F7F7F7;
+    --sidebar-background                : #272727;
+    --sidebar-padding                   : 0 5px;
 
     --sidebar-nav-link-text-decoration--active    : none;
-    --sidebar-nav-link-text-decoration--hover     : underline;
+    --sidebar-nav-link-text-decoration--hover     : none;
 
     --sidebar-nav-pagelink-background-image             : ;
     --sidebar-nav-pagelink-background-image--active     : ;
@@ -53,6 +54,7 @@
     --search-result-heading-color            : #006A97;
     --search-result-heading-font-weight      : bold;
     --search-result-item-color               : #006A97;
+    --search-margin                          : 1.5rem 0 0;
   }
   </style>
 </head>
@@ -67,37 +69,39 @@
       autoHeader: true,
       externalLinkTarget: '_blank',
       executeScript: true,
+      auto2top: true,
       search: 'auto',
       coverpage: true,
+      onlyCover: true,
       basePath: '/gamedock-sdk/',
       search : [
         '/',
         '/gettingStarted',
-        '/gettingStarted/addingTheGamedockSDK',
-        '/gettingStarted/gdprPrivacyPolicy',
-        '/gettingStarted/platformSpecificComponents',
-        '/gettingStarted/unityEditorMode',
-        '/gamedockSDKFeatures',
-        '/gamedockSDKFeatures/eventTracking',
-        '/gamedockSDKFeatures/gameBalancing',
-        '/gamedockSDKFeatures/smartAdvertisements',
-        '/gamedockSDKFeatures/pushNotifications',
-        '/gamedockSDKFeatures/userIdentification',
-        '/gamedockSDKFeatures/shopWalletInventoryControl',
-        '/gamedockSDKFeatures/workingWithTheSocialLoginFeature',
-        '/gamedockSDKFeatures/missionsAndContainersFeature',
-        '/gamedockSDKFeatures/managingInGamePurchases',
-        '/gamedockSDKFeatures/promotions',
-        '/gamedockSDKFeatures/implementingCustomerSupport',
-        '/gamedockSDKFeatures/workingWithGameStates',
-        '/gamedockSDKFeatures/implementingAssetBundlesConfigurations',
-        '/gamedockSDKFeatures/splashAndDailyBonusScreens',
-        '/gamedockSDKFeatures/tieredEvents',
-        '/gamedockSDKFeatures/appRate',
-        '/gamedockSDKFeatures/deepLinking',
-        '/gamedockSDKFeatures/antiCheating',
-        '/gamedockSDKFeatures/handlingErrors',
+        '/addingTheGamedockSDK',
+        '/gdprPrivacyPolicy',
+        '/platformSpecificComponents',
+        '/unityEditorMode',
+        '/eventTracking',
+        '/gameBalancing',
+        '/smartAdvertisements',
+        '/pushNotifications',
+        '/userIdentification',
+        '/shopWalletInventoryControl',
+        '/workingWithTheSocialLoginFeature',
+        '/missionsAndContainersFeature',
+        '/managingInGamePurchases',
+        '/promotions',
+        '/implementingCustomerSupport',
+        '/workingWithGameStates',
+        '/implementingAssetBundlesConfigurations',
+        '/splashScreens',
+        '/tieredEvents',
+        '/appRate',
+        '/deepLinking',
+        '/antiCheating',
+        '/handlingErrors',
         '/selfTesting',
+        '/faq'
       ],
       tabs: {
         persist    : true,      // default
@@ -105,12 +109,14 @@
         theme      : 'classic', // default
         tabComments: true,      // default
         tabHeadings: true       // default
-      }
+      },
+      subMaxLevel: 1
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//unpkg.com/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js">
 </body>
 </html>
