@@ -3,11 +3,11 @@
 ## General
 1. What platforms/game engines does Gamedock support?
 Currently Gamedock supports the following platforms:
-* Android (Native)
-* iOS (Native)
-* Unity Android, iOS & Standalone(experimental)
-* Cordova Android & iOS
-* AIR Android & iOS
+    * Android (Native)
+    * iOS (Native)
+    * Unity Android, iOS & Standalone(experimental)
+    * Cordova Android & iOS
+    * AIR Android & iOS
 2. What are the costs involved with using Gamedock?
 Interested in what Gamedock can do for your app? Please get in touch with one of our representatives via [gamedock.support@azerion.com](gamedock.support@azerion.com) for more information on how to get started.
 
@@ -18,16 +18,16 @@ Gamedock is committed to being GDPR, CCPA and distribution platform compliant, a
 We collect a variety of information through end users general interaction with apps that have the Gamedock SDK integrated. Collected personal data may include, but is not limited to, device information, application usage data and automated electronic interations. For more information please refer to our Privacy Policy here: [https://azerion.com/business/mobile-apps-privacy-policy.html](https://azerion.com/business/mobile-apps-privacy-policy.html).
 3. Can it be specified if a user has opted out of user specific features (personalized content, contextual ads)?
 The Gamedock SDK has two ways of accepting opt out choices from the user:
-* The SDK comes pre-built with a consent popup functionality which can be customized to certain degrees and which take the input from the user on choices regarding ads and content. The SDK also reports back to the game what the choices from the user have been and also this information can be retrieved at any point.
-* If you decide not to use the pre-built consent popup, you can also pass in the information to the SDK manually for personalized content and contextual ads.
+    * The SDK comes pre-built with a consent popup functionality which can be customized to certain degrees and which take the input from the user on choices regarding ads and content. The SDK also reports back to the game what the choices from the user have been and also this information can be retrieved at any point.
+    * If you decide not to use the pre-built consent popup, you can also pass in the information to the SDK manually for personalized content and contextual ads.
 
 ## SDK
 1. What additional optional modules/plugins does Gamedock contain in it's package?
 The Gamedock SDK contains the following optional additional modules that can be enabled/disabled depending on your needs::
-* Adjust SDK module
-* AppsFlyer SDK module
-* AdMob/AdManager including multiple additional mediation ad partners
-* Firebase SDK module containing the implementation for Analytics, Remote Config, Dynamic Links and Crashlytics
+    * Adjust SDK module
+    * AppsFlyer SDK module
+    * AdMob/AdManager including multiple additional mediation ad partners
+    * Firebase SDK module containing the implementation for Analytics, Remote Config, Dynamic Links and Crashlytics
 2. Do I need any additional keys in order to initialize/work with the SDK?
 All keys are retrieved automatically from the console (if configured correctly of course) if you are using Unity or Cordova. For Unity you can always refresh all the configurations by using the Configuration menu (Top Bar->Gamedock SDK->General->Create Default Configuration Files). On Cordova the configuration keys are only retrieved once, when you add the plugin to your game (if you need to refresh the keys, remove the plugin and add it again).
 3. Does the SDK support offline behavior/operations?
