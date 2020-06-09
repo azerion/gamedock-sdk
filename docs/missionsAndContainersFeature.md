@@ -237,18 +237,9 @@ if (containerCompleted)
 Gamedock.Instance.MissionData.UpdateContainerAndMissionProgress(updatedContainersProgress, updatedMissionsProgress, "ClaimedMissionReward");
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 > The missions feature is not supported for AIR.
-
 
 #### ** Cordova **
 

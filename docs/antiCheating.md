@@ -47,14 +47,6 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 }
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 > Receipt validation is not supported for AIR.
@@ -97,14 +89,6 @@ void OnServerTimeRequestFailed (GamedockErrorMessage errorMessage)
   Debug.Log ("Server failed to retrieve with error: " + errorMessage.message);
 }
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

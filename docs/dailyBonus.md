@@ -27,14 +27,6 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusNotAvailable -= OnDailyBonus
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusNotAvailable += OnDailyBonusNotAvailable;
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -58,14 +50,6 @@ To request the daily bonus screen during the game, use the following code:
 Gamedock.Instance.RequestDailyBonus();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -87,14 +71,6 @@ If the daily bonus screen is available call the following method to show it:
 ~~~C#
 Gamedock.Instance.ShowDailyBonus();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -128,14 +104,6 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusError += OnDailyBonusError;
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusReward -= OnDailyBonusReward;
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusReward += OnDailyBonusReward;
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

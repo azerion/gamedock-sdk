@@ -31,6 +31,7 @@
 * [Reporting](reporting.md "Reporting")
   * [![github pages](_images/sidebar/eventTracking.svg)Event Tracking](eventTracking.md "Event Tracking")
   * [![github pages](_images/sidebar/deepLink.svg)Deep Linking](deepLinking.md "Deep Linking")
-<!--* [FAQs](faq.md "FAQs")-->
+* [FAQs](faq.md "FAQs")
+* [Knowledge Base](knowledgeBase.md "Knowledge Base")
 * [Change Log](changelog.md "Change Log")
 

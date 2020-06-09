@@ -80,14 +80,6 @@ for (int i = 0; i < Gamedock.Instance.Packages.Packages.Count; i++) {
 }
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#

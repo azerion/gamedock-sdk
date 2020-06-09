@@ -51,15 +51,6 @@ For iOS, the header image can be replaced at Gamedock.framework/PrivacyPolicyHea
 
 For Unity 2017.1 and above you can use the supplied project found in the SDK bundle under NativeLibraries/Android/Resources. Build this project in Android Studio and make sure to replace the necessary images.
 
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ### Enable or disable the privacy policy popup
@@ -179,14 +170,6 @@ Gamedock.Instance.SetGDPRSettings(withPersonalisedAds, withPersonalisedContent);
 //Dictionary contains two keys (withPersonalisedAds, withPersonalisedContent) with the information.
 Dictionary<string, bool> gdprSettings = Gamedock.Instance.GetGDPRSettings();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

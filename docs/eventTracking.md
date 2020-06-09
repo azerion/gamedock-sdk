@@ -55,15 +55,6 @@ GamedockTracking.IAPPurchased(skuId, transactionId)
 
 Simply call the corresponding method at the required point in your game, and the SDK will send the event to the Gamedock back-end. It is important that the expected parameters for your game are carefully checked. These must be correct for the successful completion of the QA process. Descriptions of all methods and parameters are included in the provided SDK code.
 
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 For AIR, Gamedock provides a number of standard event-tracking methods:

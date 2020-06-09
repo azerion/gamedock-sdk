@@ -46,14 +46,6 @@ Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase -= OnIAPRequestPur
 Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase += OnIAPRequestPurchase;
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -111,14 +103,6 @@ Gamedock.Instance.RequestSplashScreen(string type);
 //Can be used immediately or later in the game once the callback is triggered
 Gamedock.Instance.ShowSplashScreen();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

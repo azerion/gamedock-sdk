@@ -24,14 +24,6 @@ DisableAutomaticRegisterForPushNotifications();
 Gamedock.Instance.RegisterForPushNotifications();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#

@@ -29,7 +29,11 @@ OnUserDataError
   • UserDataServerError(38, "UserDataServerError", "Error retrieving user data from server (gameState and playerData)!")
   • UserDataResetError(41, "UserDataResetError", "Error while resetting user data. This may be caused by loss of internet connection.")
   • UniqueItemAdd(45, "UniqueItemAdd", "Unable to add unique item to inventory because an item with the same unique id is present. Use Update or Remove methods first before trying again.");
-
+  • MissionConfigurationServerError(46, "MissionConfigurationServerError", "Error retrieving mission configuration.")
+  • ContainerOperation(47, "ContainerOperation", "Error updating container progress information!")
+  • MissionOperation(48, "MissionOperation", "Error updating mission progress information.")
+  • TransactionOperation(49, "TransactionOperation", "Error performing transaction.")
+  
 OnConfigError
   • ConfigServerError(19, "ConfigServerError", "Error retrieving config")
   • ConfigResetError(39, "ConfigResetError", "Error while resetting game config. This may be caused by loss of internet connection.")

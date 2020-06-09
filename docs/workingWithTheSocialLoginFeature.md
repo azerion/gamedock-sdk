@@ -20,15 +20,6 @@ where:
 * *socialProvider* should be SocialLoginNetworks.GooglePlayGames, SocialLoginNetworks.GameCenter or SocialLoginNetworks.Facebook. Because this parameter is used across multiple methods, it is recommended that you maintain consistency by defining it statically.
 * *socialId* should be the Facebook user ID, Google Play Games User Id or Game Center User Id.socialToken should be the Facebook access token retrieved earlier from Facebook, token from Google Play Games or Game Center authentication information (should be passed in the optional parameter). 
 
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -56,14 +47,6 @@ If the user login failed, the following event is triggered:
 ~~~C#
 Gamedock.Instance.SocialLoginCallbacks.OnLoginFailed(GamedockErrorMessage errorMessage);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -99,14 +82,6 @@ Sometimes it is useful to know whether a user is already logged in. For example,
 bool loggedIn = Gamedock.Instance.IsLoggedIn();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -131,14 +106,6 @@ Use the following method call to log out a user:
 Gamedock.Instance.Logout(bool global);
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -161,14 +128,6 @@ Gamedock.GetInstance().Logout(global:Boolean);
 Gamedock.Instance.SocialLoginCallbacks.OnLogoutSuccessful();
 Gamedock.Instance.SocialLoginCallbacks.OnLogoutFailed(GamedockErrorMessage errorMessage);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -197,14 +156,6 @@ Use the following method to logout the user and let them continue as a guest use
 Gamedock.Instance.UserPlayAsGuest();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -226,14 +177,6 @@ It will reset the user ID and user data. This method be called after their sessi
 ~~~C#
 Gamedock.Instance.SocialLoginCallbacks.LoginSuccessful(false, null, null, true);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -260,14 +203,6 @@ It can happen that the session of a logged in user is no longer valid, either be
 Gamedock.Instance.SocialLoginCallbacks.OnAuthenticationError(GamedockErrorMessage errorMessage);
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -289,14 +224,6 @@ After an authorization error, a popup is displayed to the user asking whether th
 ~~~C#
 Gamedock.Instance.SocialLoginCallbacks.ShowUnauthorizedDialog(string title, string message, string loginText, string playAsGuestText);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -320,14 +247,6 @@ The default dialog triggers the following event to inform the developer that the
 Gamedock.Instance.SocialLoginCallbacks.OnRequestLogin -= OnRequestLogin();
 Gamedock.Instance.SocialLoginCallbacks.OnRequestLogin += OnRequestLogin();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -355,14 +274,6 @@ The user data (described in Supporting Wallet, Shop and Inventory Control) and g
 Gamedock.Instance.ResetData();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -388,14 +299,6 @@ The device ID can be retrieved using the following method:
 ~~~C#
 string deviceId = Gamedock.Instance.GetDeviceId();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -427,14 +330,6 @@ After initializing the Gamedock SDK, it is recommended that you request the late
 Gamedock.Instance.RequestUserData();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -457,14 +352,6 @@ Note that if the data cannot be retrieved from the Gamedock backend, it will be 
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataAvailable -= OnUserDataAvailable();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataAvailable += OnUserDataAvailable();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -493,14 +380,6 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataSyncError -= OnUserDataSyncErro
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataSyncError += OnUserDataSyncError();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -528,15 +407,6 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeConflict(MergeConflictData
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeConflict(MergeConflictData localData, MergeConflictData remoteData) += OnUserDataMergeConflict();
 ~~~
 
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -558,14 +428,6 @@ This indicates that the current local user data cannot be merged with the remote
 ~~~C#
 Gamedock.Instance.MergeUserData(string mergeData, string mergeType);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -594,14 +456,6 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeSuccessful -= OnUserDataMe
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeSuccessful += OnUserDataMergeSuccessful();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -624,14 +478,6 @@ If the merge failed, the following event will be triggered:
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeFailed(string mergeData, string mergeType) -= OnUserDataMergeFailed();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeFailed(string mergeData, string mergeType) += OnUserDataMergeFailed();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -660,14 +506,6 @@ Gamedock.Instance.SocialLoginCallbacks.OnUserDataLockError -= OnUserDataLockErro
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataLockError += OnUserDataLockError();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -690,14 +528,6 @@ It is recommended that the game waits and then tries to resend the changes later
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataError(GamedockErrorMessage errorMessage) -= OnUserDataError;
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataError(GamedockErrorMessage errorMessage) += OnUserDataError;
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -725,14 +555,6 @@ The following utility method can be useful during development to display a nativ
 Gamedock.Instance.ShowSyncErrorDialog(string title, string message, string startMergeButtonText);
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -754,14 +576,6 @@ The following utility method can be used to display a native dialog box asking t
 ~~~C#
 Gamedock.Instance.ShowMergeConflictDialog(string title, string message, string localButtonText, string remoteButtonText, string mergeButtonText = null);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -787,14 +601,6 @@ The following event is triggered by the *ShowMergeConflictDialog()* method:
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataHandleMerge(string mergeType);
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -816,14 +622,6 @@ It specifies the choice made by the user: mergeType can be “remote”, “loca
 ~~~C#
 Gamedock.Instance.ShowMergeFailedDialog(string title, string message, string retryButtonText, string mergeData, string mergeType);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -848,14 +646,6 @@ The following method is available for displaying login/logout errors:
 ~~~C#
 Gamedock.Instance.ShowNativeDialog(string title, string message, string buttonText);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

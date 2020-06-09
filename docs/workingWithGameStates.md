@@ -37,14 +37,6 @@ public delegate void OtherUsersGameStateDataLoaded(OtherUsersGameStateData data)
 public delegate void UserDataError(GamedockErrorMessage errorMessage);
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#

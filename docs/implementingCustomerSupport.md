@@ -19,14 +19,6 @@ The following method is available:
 Gamedock.Instance.ShowHelpCenterWebview(string url, string[] tags);
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#

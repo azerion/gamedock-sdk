@@ -87,14 +87,6 @@ void OnRewardTokenClaimFailed (string rewardType, GamedockErrorMessage error)
 }
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -231,14 +223,6 @@ static Dictionary<string, string> GetParams(string uri)
   );
 }
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

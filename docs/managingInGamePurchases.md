@@ -43,14 +43,6 @@ Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable -= OnPackagesNotAvail
 Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable += OnPackagesNotAvailable;
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#

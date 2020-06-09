@@ -23,14 +23,6 @@ The following method is available to display the App Rate Popup:
 Gamedock.Instance.ShowAppRatePopup(string rejectText, string laterText, string message, string feedbackUrl, int triggerCount = 3, int laterCount = 6);
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#

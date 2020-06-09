@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+Version 3.9.1 *(04-06-2020)*
+----------------------------
+**Bug fixes**
+ * Android: Fixed issue with custom set package names.
+ * iOS: Updated all ad networks to have the UIWebView references warning be removed when uploading builds with Gamedock to the Apple Store
+
+**Other**
+ * Android/iOS: Updated AdMob mediation adapters and networks in order to fix crashes and have the improvements from those updates
+
+
 Version 3.9.0 *(26-05-2020)*
 ----------------------------
 **New Features**

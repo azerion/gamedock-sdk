@@ -48,14 +48,6 @@ Gamedock.Instance.ResetInventory();
 Gamedock.Instance.ResetPlayerData();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -87,8 +79,8 @@ If there is no network connection, then the SDK will use the latest known defaul
 
 The Gamedock Unity classes “GamedockGameDataHelper.cs” and “PlayerDataHelper.cs” contain all methods for the wallet, in-game shop and inventory features. These classes are instantiated on “Awake()” in the “Gamedock.cs” file and automatically retrieve the data from the Gamedock SDK, so you can start using the methods immediately. See below code snippets to use the wallet, in-game shop and inventory features:
 
+Retrieving the various Game Data lists containing Currencies, Items, Bundles and Shop.
 ~~~C#
-//Retrieving Gamedock Game Data
 //List of currencies configured in the Gamedock Console
 List<Currency> Currencies = Gamedock.Instance.GameData.Currencies;
 
@@ -99,69 +91,66 @@ List<Item> Items = Gamedock.Instance.GameData.Items;
 List<Bundle> Bundles = Gamedock.Instance.GameData.Bundles;
 
 //Shop object that defines the configuration
-Shop Shop = Gamedock.Instance.GameData.Shop;
 //For Shop Entries, the type can be BUNDLE or PACKAGE
 //Shop stickers can be found on each Shop Entry under the ImageEntries list
 //Each image entry contains an URL to download the sticker image
+Shop Shop = Gamedock.Instance.GameData.Shop;
 
-//Getting a Currency, Item, Bundle or Gacha by ID or NAME
-Gamedock.Instance.GameData.GetCurrency (ID);
-Gamedock.Instance.GameData.GetCurrency (NAME);
+~~~
 
-Gamedock.Instance.GameData.GetItem (ID);
-Gamedock.Instance.GameData.GetItem (NAME);
+Helper methods for retrieving specific entries in the Game Data lists (ID represents the id generated in the Console, NAME represents the name given by you to the specific entity when it was created).
+~~~C#
+//Getting a Currency 
+Currency currency = Gamedock.Instance.GameData.GetCurrency (ID);
+Currency currency = Gamedock.Instance.GameData.GetCurrency (NAME);
 
-Gamedock.Instance.GameData.GetBundle (ID);
-Gamedock.Instance.GameData.GetBundle (NAME);
+//Getting an Item 
+Item item = Gamedock.Instance.GameData.GetItem (ID);
+Item item = Gamedock.Instance.GameData.GetItem (NAME);
 
-Gamedock.Instance.GameData.GetGacha (ID);
-Gamedock.Instance.GameData.GetGacha (NAME);
+//Getting a Gacha 
+Item gacha = Gamedock.Instance.GameData.GetGacha (ID);
+Item gacha = Gamedock.Instance.GameData.GetGacha (NAME);
 
-//Retrieve item properties
-Dictionary<string,object> itemProperties = Gamedock.Instance.GameData.GetItem(49).Properties;
+//Getting a Bundle 
+Bundle bundle = Gamedock.Instance.GameData.GetBundle (ID);
+Bundle bundle = Gamedock.Instance.GameData.GetBundle (NAME);
+~~~
 
-//Retrieving Player Data
+Retrieve the Wallet or the Inventory object containing all the information that the user has.
+~~~C#
+//Retrieving the Wallet
 Wallet Wallet = Gamedock.Instance.PlayerData.Wallet;
+
+//Retrieving the Inventory
 Inventory Inventory = Gamedock.Instance.PlayerData.Inventory;
+~~~
 
-//Getting a PlayerCurrency, PlayerItem
-Gamedock.Instance.PlayerData.GetCurrency (ID);
-Gamedock.Instance.PlayerData.GetCurrency (NAME);
-
-Gamedock.Instance.PlayerData.GetItem (ID);
-Gamedock.Instance.PlayerData.GetItem (NAME);
-
-//Getting the Current Balance for a given Currency ID
-Gamedock.Instance.PlayerData.GetCurrencyBalance (ID);
-Gamedock.Instance.PlayerData.GetCurrencyBalance (NAME);
-
-//Getting the Item Amount for a given Item ID
-Gamedock.Instance.PlayerData.GetItemAmount (ID);
-Gamedock.Instance.PlayerData.GetItemAmount (NAME);
-
-//Check if an Item is present in the Player Inventory
-Gamedock.Instance.PlayerData.InventoryHasItem (Item ID);
-
-//Retrieve all the gacha the user has
-Gamedock.Instance.PlayerData.GetGachas();
-
-//Wallet Oprations
+Helper methods for doing operations with the Wallet and the Inventory.
+~~~C#
+///Wallet Operations
 //Adding Currency to the User's Wallet
 Gamedock.Instance.PlayerData.Wallet.Add (Currency ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
+
 //Subtracting Currency to the User's Wallet
 Gamedock.Instance.PlayerData.Wallet.Subtract (Currency ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
-//Method to set an currency limit
+
+//Method to set a currency limit
 Gamedock.Instance.SetCurrencyLimit(int currencyId, int limit);
 
-//Inventory Operations
+///Inventory Operations
 //Adding Item to the User's Inventory
 Gamedock.Instance.PlayerData.Inventory.Add (Item ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
+
 //Subtracting Item to the User's Inventory
 Gamedock.Instance.PlayerData.Inventory.Subtract (Item ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
+
 //Consuming a bundle
 Gamedock.Instance.PlayerData.BuyBundle(Bundle ID, Reason, Location, ReasonDetails = null, TransactionId = null, List<PerkItem> perkItems = null);
+
 //Opening a Gacha Item
 Gamedock.Instance.PlayerData.OpenGacha(Gacha ID, Reason, Location, ReasonDetail = null, List<PerkItem> perkItems = null);
+
 //Method to set an item limit
 Gamedock.Instance.SetItemLimit(int itemId, int limit);
 
@@ -173,21 +162,57 @@ UniquePlayerItem uniqueItem = Gamedock.Instance.PlayerData.Inventory.CreateUniqu
 //Add Unique Item to the inventory
 Gamedock.Instance.PlayerData.Inventory.AddUniqueItemToInventory(uniqueItem, reason, reasonDetails, location, transactionId);
 
-//Update Unique Item from the inventory
-bool hasUniqueItem = Gamedock.Instance.PlayerData.InventoryHasUniquePlayerItem(uniqueId);
-UniquePlayerItem uniqueItem = Gamedock.Instance.PlayerData.Inventory.GetUniqueItem(uniqueId);
+//Update Unique Item with new properties
 uniqueItem.uniqueProperties.Add("test", "test");
 Gamedock.Instance.PlayerData.Inventory.UpdateUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
 
 //Remove Unique Item from the Inventory
 Gamedock.Instance.PlayerData.Inventory.RemoveUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+~~~
 
-//Multiple operations sent, bundled into one transaction
+Helper methods for retrieving specific entries in the Game Data lists (ID represents the id generated in the Console, NAME represents the name given by you to the specific entity when it was created).
+~~~C#
+//Getting a PlayerCurrency
+PlayerCurrency currency = Gamedock.Instance.PlayerData.GetCurrency (ID);
+PlayerCurrency currency = Gamedock.Instance.PlayerData.GetCurrency (NAME);
+
+//Getting a PlayerItem
+PlayerItem item = Gamedock.Instance.PlayerData.GetItem (ID);
+PlayerItem item = Gamedock.Instance.PlayerData.GetItem (NAME);
+
+//Getting a UniquePlayerItem
+UniquePlayerItem uniqueItem = Gamedock.Instance.PlayerData.Inventory.GetUniqueItem(uniqueId);
+
+//Getting all the Gachas owned by the user
+List<PlayerItem> playerOwnedGachas = Gamedock.Instance.PlayerData.GetGachas();
+
+//Check if an Item is present in the Player Inventory
+bool check = Gamedock.Instance.PlayerData.InventoryHasItem (ID);
+bool check = Gamedock.Instance.PlayerData.InventoryHasItem (NAME);
+
+//Check if an Item is present in the Player Inventory
+bool hasUniqueItem = Gamedock.Instance.PlayerData.InventoryHasUniquePlayerItem(uniqueId);
+~~~
+
+Helper methods for retrieving the current amount/balance the user has for PlayerCurrencies and PlayerItems.
+~~~C#
+//Getting the Current Balance
+int balance = Gamedock.Instance.PlayerData.GetCurrencyBalance (ID);
+int balance = Gamedock.Instance.PlayerData.GetCurrencyBalance (NAME);
+
+//Getting the Item Amount
+int amount = Gamedock.Instance.PlayerData.GetItemAmount (ID);
+int amount = Gamedock.Instance.PlayerData.GetItemAmount (NAME);
+~~~
+
+By default each operation done on the Wallet or Inventory sends their own events to the backend. In some cases you might want to bundle multiple operations before sending them to the backend. You can do so using the methods below.
+~~~C#
 //Transaction Builder always needs to end with Submit!
 Gamedock.Instance.PlayerData.TransactionBuilder
     .AddCurrency(currencyId, amount)
     .SubtractItem(itemId, amount)
     .Submit(reason, reasonDetails, location, transactionId);
+    
 //Supported operations
 AddCurrency
 SubtractCurrency
@@ -197,35 +222,38 @@ OpenGacha
 AddUniqueItem
 RemoveUniqueItem
 UpdateUniqueItem
+~~~
 
-//Method to request user data
-//This is done automatically also by the SDK. Only used in special cases!
-Gamedock.Instance.RequestUserData();
-
-//Method used to refresh the data from the Gamedock Console
-//This is done automatically also by the SDK. Only used in special cases!
-Gamedock.Instance.UpdatePlayerData();
-
-//Events to register to
+The game can listen to the following events related to Game Data, Wallet an Inventory.
+~~~C#
+//Callback fired when the SDK has initialized the Game Data and the information can be retrieved by the game
 Gamedock.Instance.GameDataCallbacks.OnGamedockGameDataAvailable -= OnGamedockGameDataAvailable;
 Gamedock.Instance.GameDataCallbacks.OnGamedockGameDataAvailable += OnGamedockGameDataAvailable;
 
+//Callback fired when the SDK encountered an issue while initializing/loading the Game Data
 Gamedock.Instance.GameDataCallbacks.OnGamedockGameDataError -= OnGamedockGameDataError;
 Gamedock.Instance.GameDataCallbacks.OnGamedockGameDataError += OnGamedockGameDataError;
 
+//Callback fired after each operation has been been successfully done on the Wallet or Inventory
 Gamedock.Instance.UserDataCallbacks.OnPlayerDataUpdated -= OnPlayerDataUpdated;
 Gamedock.Instance.UserDataCallbacks.OnPlayerDataUpdated += OnPlayerDataUpdated;
 
-Gamedock.Instance.UserDataCallbacks.OnPlayerDataAvailable -= OnPlayerDataAvailable;
-Gamedock.Instance.UserDataCallbacks.OnPlayerDataAvailable += OnPlayerDataAvailable;
+//Callback fired when the SDK has initialized the User Data part, which includes Wallet, Inventory, Game State and Mission Data, and the information can be retrieved by the game
+//Callback is also fired by the SDK after the user has logged in with the social login feature
+Gamedock.Instance.UserDataCallbacks.OnUserDataAvailable -= OnUserDataAvailable;
+Gamedock.Instance.UserDataCallbacks.OnUserDataAvailable += OnUserDataAvailable;
 
 //Callback invoked when an unique item is created as a result of a BuyBundle or OpenGacha operations
 Gamedock.Instance.UserDataCallbacks.OnPlayerDataNewUniqueItem -= OnPlayerDataNewUniqueItem;
 Gamedock.Instance.UserDataCallbacks.OnPlayerDataNewUniqueItem += OnPlayerDataNewUniqueItem;
 
+//Callback fired when the SDK encountered an issue while initializing/loading the User Data
 Gamedock.Instance.UserDataCallbacks.OnUserDataError -= OnUserDataError;
 Gamedock.Instance.UserDataCallbacks.OnUserDataError += OnUserDataError;
+~~~
 
+Below is a list of common reasons which can be sent when doing Wallet and Inventory Operations.
+~~~C#
 //List of Standard Reasons (you can pass your own reason as a String)
 //Accessed through the Class "PlayerDataUpdateReasons"
 RewardAds = "Reward Ads";
@@ -249,14 +277,6 @@ Collection = "Collection";
 Reset = "Reset";
 InitialValue = "Initial Value";
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -412,14 +432,6 @@ In order to reset the Wallet data use the following code:
 Gamedock.Instance.ResetWallet();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -442,14 +454,6 @@ In order to reset the Inventory data use the following code:
 Gamedock.Instance.ResetInventory();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -471,14 +475,6 @@ In order to reset the whole Player data use the following code:
 ~~~C#
 Gamedock.Instance.ResetPlayerData();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -527,14 +523,6 @@ Gamedock.Instance.ImageLoadingCallbacks.OnImageLoaded;
 //Clear the local cache
 Gamedock.Instance.ClearDiskCache();
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

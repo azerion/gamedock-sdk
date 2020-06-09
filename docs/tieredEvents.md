@@ -28,14 +28,6 @@ Gamedock.Instance.TieredEventsCallbacks.OnTieredEventsNotAvailable += OnTieredEv
 void OnTieredEventsNotAvailable(){}
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -66,14 +58,6 @@ To get a list of all available active tiered events use the following method:
 List<TieredEvent> activeTieredEvents = Gamedock.Instance.GetAllTieredEvents();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -95,14 +79,6 @@ To get the progress of a tiered event call:
 ~~~C#
 TieredEventProgress progress = Gamedock.Instance.GetTieredEventProgress(int tieredEventId);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -138,14 +114,6 @@ void OnTieredEventUpdated(TieredEventProgress progress) {
   progress.claimableTiers; // List of tier ids which are claimable by the player
 } 
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -188,14 +156,6 @@ Gamedock.Instance.TieredEventsCallbacks.OnTieredEventProgressClosed -= OnTieredE
 Gamedock.Instance.TieredEventsCallbacks.OnTieredEventProgressClosed += OnTieredEventProgressClosed;
 void OnTieredEventProgressClosed() {}
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -240,14 +200,6 @@ Gamedock.Instance.TieredEventsCallbacks.OnTieredEventsError += OnTieredEventsErr
 void OnTieredEventsError(GamedockErrorMessage error) {
 }
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

@@ -82,14 +82,6 @@ Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated -= OnFirebaseRem
 Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated += OnFirebaseRemoteConfigUpdated;
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ### Parsing the JSON Configuration File

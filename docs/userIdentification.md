@@ -17,14 +17,6 @@ strimng userId = Gamedock.Instance.GetGamedockUID();
 string deviceId = Gamedock.Instance.GetDeviceId();
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ~~~C#
@@ -47,8 +39,6 @@ gamedockSDK.getGamedockDeviceId();
 
 <!-- tabs:end -->
 
-
-
 ## Setting External IDs
 
 Additional external ids can be passed to the SDK in order to provide better tracking and offering the possibility of linking different services on the backend. You can pass additional external ids at SDK initialization if you perform manual initialization for the SDK. This can be done using the following code:
@@ -60,14 +50,6 @@ Additional external ids can be passed to the SDK in order to provide better trac
 ~~~C#
 Gamedock.MonoInstance.Initialize(Dictionary<string, string> externalIds = null);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -97,14 +79,6 @@ Gamedock.Instance.AddExternalId(externalPartner, id);
 //Remove external Id
 Gamedock.Instance.RemoveExternalId(externalPartner);
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -152,14 +126,6 @@ private void OnUserIdChangeRequest(string newuserid) {
 ~~~
 
 First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In this callback, the game should prepare the state to allow a user id change. Once this is done the ConfirmUserIdChange() method of the Gamedock SDK should be called to let the Gamedock SDK change the Gamedock SDK and do a full reload of the entire loaded user data.
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -212,14 +178,6 @@ public enum UpdateStatus {
     Forced
 }
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

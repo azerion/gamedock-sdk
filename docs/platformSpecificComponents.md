@@ -71,11 +71,11 @@ Extra components for iOS can be enabled/disabled in Unity via this configuration
 
 ## Building and publishing
 
-### iOS
+### iOS Building
 
 For iOS there are no other steps to take, the Gamedock postprocessor script takes care of all the building and adding the Gamedock frameworks to the project.
 
-#### Split-application binary for Android (APK + OBB files)
+### Android Split-application binary (APK + OBB files)
 
 When a Unity app becomes large in filesize it may be a good idea to split the app up into multiple parts. This way the initial download and install of the app from the app store is quick and the app opens up to show a “downloading assets” screen. The app then downloads all the other assets before continuing.
 
@@ -83,7 +83,7 @@ Unity supports this feature via the “split-application binary” build option,
 
 There is a problem though, the “Streaming Assets” folder that contains the JSON files required by the Gamedock SDK is included in the OBB file, not the APK file. This means that when the app starts the Gamedock SDK tries to locate the JSON files in the APK but it won’t find them. This problem can be solved by copying the JSON files in the Unity project from “/Streaming Assets” to “/Plugins/Android/assets/”. The files are then copied to the APK file and the Gamedock SDK can initialize properly.
 
-### WebGL
+### WebGL Building
 
 * For building to the Facebook target from Unity you’ll need to download the Facebook platform support tools via Unity.
 * For publishing to Facebook the Facebook SDK needs to be included.

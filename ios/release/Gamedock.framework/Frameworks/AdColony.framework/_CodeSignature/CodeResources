@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/AdColonyAppOptions.h</key>
 		<data>
-		zNt7qXPZdqHLSh9mlqTewdRkYTQ=
+		VYJfrhVuMzWufT0o99tTpm5kNOg=
 		</data>
 		<key>Headers/AdColonyEventTracker.h</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/AdColonyOptions.h</key>
 		<data>
-		ALtuAMnwfEcYsceps89hudTWCw0=
+		LaEjWks7KwciToljY90naMmaF8c=
 		</data>
 		<key>Headers/AdColonyPublic.h</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		h8s5of4e5XoWh/lN2s6vPCJlN00=
+		t4oI0Hr3cm8/X93QXVaF9zootRk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -149,11 +149,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zNt7qXPZdqHLSh9mlqTewdRkYTQ=
+			VYJfrhVuMzWufT0o99tTpm5kNOg=
 			</data>
 			<key>hash2</key>
 			<data>
-			g51TNyC005Med66Kow4o+i8za8yHHMV1nzY9Q3ZIyOc=
+			xdS5ZHcjj0K7ls0i+bqSRKJaCSmjoftwM6+jZleh7Kc=
 			</data>
 		</dict>
 		<key>Headers/AdColonyEventTracker.h</key>
@@ -204,11 +204,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ALtuAMnwfEcYsceps89hudTWCw0=
+			LaEjWks7KwciToljY90naMmaF8c=
 			</data>
 			<key>hash2</key>
 			<data>
-			kXgD9CFiLFHaMcT0IpYftZpOPIQSUIbUaAn9znuTtgE=
+			ouP79lS5ySSfN1v8jLAO77yDasCVP4vVj28aWUYrYv8=
 			</data>
 		</dict>
 		<key>Headers/AdColonyPublic.h</key>

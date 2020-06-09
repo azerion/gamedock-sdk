@@ -18,32 +18,32 @@ The SDK currently has the following Ad Networks implemented:
 | AdManager                         | 19.1.0                                         | Mediator           | ✓         | ✓              | ✓                |
 | AdColony                          | 4.1.4                                          | Mediation          | ✓         | ✓              | ✓                |
 | Unity Ads                         | 3.4.2                                          | Mediation          | ✓         | ✓              | ✓                |
-| Facebook Audience Network         | 5.8.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Facebook Audience Network         | 5.9.0                                          | Mediation          | ✓         | ✓              | ✓                |
 | Vungle                            | 6.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
-| Applovin                          | 9.12.0                                         | Mediation          | ✓         | ✓              | ✓                |
-| InMobi                            | 9.0.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Applovin                          | 9.12.8                                         | Mediation          | ✓         | ✓              | ✓                |
+| InMobi                            | 9.0.6                                          | Mediation          | ✓         | ✓              | ✓                |
 | Tapjoy                            | 12.4.2                                         | Mediation          | x         | ✓              | ✓                |
-| Ironsource                        | 6.16.0                                         | Mediation          | x         | ✓              | ✓                |
-| MyTarget                          | 5.6.3                                          | Mediation          | ✓         | ✓              | ✓                |
+| Ironsource                        | 6.16.2                                         | Mediation          | x         | ✓              | ✓                |
+| MyTarget                          | 5.8.1                                          | Mediation          | ✓         | ✓              | ✓                |
 | Fyber                             | 7.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
 
 ### iOS
 
 | Ad Network                        | Version                                        | Type               | Banner    | Interstitial   | Rewarded Video   |
 |:----------------------------------|:-----------------------------------------------|:-------------------|:----------|:---------------|:-----------------|
-| AdMob                             | 7.59.0                                         | Mediator           | ✓         | ✓              | ✓                |
-| AdManager                         | 7.59.0                                         | Mediator           | ✓         | ✓              | ✓                |
-| AdColony                          | 4.1.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| AdMob                             | 7.60.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdManager                         | 7.60.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdColony                          | 4.1.5                                          | Mediation          | ✓         | ✓              | ✓                |
 | Unity Ads                         | 3.4.2                                          | Mediation          | ✓         | ✓              | ✓                |
-| Facebook Audience Network         | 5.8.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Facebook Audience Network         | 5.9.0                                          | Mediation          | ✓         | ✓              | ✓                |
 | Vungle                            | 6.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
-| Applovin                          | 6.12.5                                         | Mediation          | ✓         | ✓              | ✓                |
+| Applovin                          | 6.12.8                                         | Mediation          | ✓         | ✓              | ✓                |
 | InMobi                            | 9.0.4                                          | Mediation          | ✓         | ✓              | ✓                |
 | Tapjoy                            | 12.4.2                                         | Mediation          | x         | ✓              | ✓                |
-| Ironsource                        | 6.16.1                                         | Mediation          | x         | ✓              | ✓                |
-| MyTarget                          | 5.5.1                                          | Mediation          | ✓         | ✓              | ✓                |
-| Chartboost                        | 8.0.4                                          | Mediation          | ✓         | ✓              | ✓                |
-| Fyber                             | 7.5.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Ironsource                        | 6.16.2                                         | Mediation          | x         | ✓              | ✓                |
+| MyTarget                          | 5.6.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Chartboost                        | 8.1.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Fyber                             | 7.5.6                                          | Mediation          | ✓         | ✓              | ✓                |
 
 ## Advertisement Initialization
 
@@ -62,14 +62,6 @@ public void OnAdsInitialized()
     //Request specific ad types
 }
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -91,8 +83,6 @@ gamedockSDK.on('AdsInitialized', () => {
 <!-- tabs:end -->
 
 > It is highly recommended that you wait for this callback before doing any advertisement logic!
-
-
 
 ## Handling Banner Ads
 
@@ -154,14 +144,6 @@ void OnAdNotAvailable(enumAdType adType) {
 }
 
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -250,8 +232,6 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
 
 <!-- tabs:end -->
 
-
-
 ## Handling Interstitial Ads
 
 Interstitial ads are full-screen ads that cover the interface of their host app. They are typically displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. By default, the Gamedock SDK shows interstitial ads based on specific event triggers that can be configured in the Gamedock Console.
@@ -271,14 +251,6 @@ Gamedock.Instance.PlayInterstitial();
 
 //Callbacks for interstitials are the same as for banners and reward videos except that the "enumAdType" is "interstitial"
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -317,8 +289,6 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
 ~~~
 
 <!-- tabs:end -->
-
-
 
 ## Handling Reward Videos
 
@@ -384,14 +354,6 @@ void AdFinished(GamedockSDK.Unity.Base.SDK.GamedockAdFinishedResponse response){
 
 }
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -495,8 +457,6 @@ gamedockSDK.on('AdFinished', (adFinished) => {
 
 <!-- tabs:end -->
 
-
-
 ## Handling More Apps Screens
 
 The More Apps screen needs to be triggered manually. Typically, it shows other games that the user might be interested in playing. The procedure for showing a More Apps screen is very like that to show a reward video. First, check if the feature is available. If so, you can show a button in the game to open the More Apps screen. Use the following code:
@@ -529,14 +489,6 @@ void MoreAppsButtonOnClick()
   Gamedock.Instance.PlayMoreApps();
 }
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 
@@ -584,14 +536,6 @@ bool isBannerAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Banner);
 bool isInterstitialAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Interstitial));
 bool isRewardedVideoAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.RewardVideo));
 ~~~
-
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
 
 #### ** AIR **
 

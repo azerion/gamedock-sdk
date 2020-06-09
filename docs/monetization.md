@@ -1,3 +1,3 @@
-# Gamedock SDK Features
+# Monetization Features
 
-> The Gamedock SDK offers many features like a game config, advertising, progress saving and many more. This section explains each feature available in the SDK together with samples of how to integrate them inside your game.
+> The Gamedock SDK offers monetization related features like a advertising, promotions and more. This section explains each of the monetization specific feature available in the SDK together with samples of how to integrate them inside your game.

@@ -43,14 +43,6 @@ Gamedock.Instance.InitializationCallbacks.OnInitializationCompleted -= OnInitial
 Gamedock.Instance.InitializationCallbacks.OnInitializationCompleted += OnInitializationCompleted;
 ~~~
 
-#### ** Android **
-
-
-
-#### ** iOS **
-
-
-
 #### ** AIR **
 
 ### Download and Import the AIR ANE's into your project
