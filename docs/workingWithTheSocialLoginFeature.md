@@ -12,7 +12,7 @@ Use the following method to login the user:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.UserLogin(string socialId, string socialProvider, string socialToken, Dictionary<string, object> socialValidationData = null);
 ~~~
 
@@ -22,7 +22,7 @@ where:
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().UserLogin(socialId:String, socialProvider:String, socialToken:String, socialValidationData:Object);
 ~~~
 
@@ -44,13 +44,13 @@ If the user login failed, the following event is triggered:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnLoginFailed(GamedockErrorMessage errorMessage);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.LOGIN_FAILED, onLoginFailedEvent);
 ~~~
 
@@ -78,13 +78,13 @@ Sometimes it is useful to know whether a user is already logged in. For example,
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 bool loggedIn = Gamedock.Instance.IsLoggedIn();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 var loggedIn:Boolean = Gamedock.GetInstance().IsLoggedIn();
 ~~~
 
@@ -102,13 +102,13 @@ Use the following method call to log out a user:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.Logout(bool global);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().Logout(global:Boolean);
 ~~~
 
@@ -124,14 +124,14 @@ Gamedock.GetInstance().Logout(global:Boolean);
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnLogoutSuccessful();
 Gamedock.Instance.SocialLoginCallbacks.OnLogoutFailed(GamedockErrorMessage errorMessage);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.LOGOUT_SUCCESSFUL, onLogoutSuccessfulEvent);
 Gamedock.GetInstance().addEventListener(SDKEvents.LOGOUT_FAILED, onLogoutFailedEvent);
 ~~~
@@ -152,13 +152,13 @@ Use the following method to logout the user and let them continue as a guest use
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.UserPlayAsGuest();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().UserPlayAsGuest();
 ~~~
 
@@ -174,13 +174,13 @@ It will reset the user ID and user data. This method be called after their sessi
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.LoginSuccessful(false, null, null, true);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.LOGIN_SUCCESSFUL, onLoginSuccessfulEvent);
 ~~~
 
@@ -199,13 +199,13 @@ It can happen that the session of a logged in user is no longer valid, either be
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnAuthenticationError(GamedockErrorMessage errorMessage);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.AUTHENTICATION_ERROR, onAuthenticationErrorEvent);
 ~~~
 
@@ -221,13 +221,13 @@ After an authorization error, a popup is displayed to the user asking whether th
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.ShowUnauthorizedDialog(string title, string message, string loginText, string playAsGuestText);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().ShowUnauthorizedDialog(title:String, message:String, loginText:String, playAsGuestText:String);
 ~~~
 
@@ -243,14 +243,14 @@ The default dialog triggers the following event to inform the developer that the
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnRequestLogin -= OnRequestLogin();
 Gamedock.Instance.SocialLoginCallbacks.OnRequestLogin += OnRequestLogin();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.REQUEST_LOGIN, onRequestLoginEvent);
 ~~~
 
@@ -270,13 +270,13 @@ The user data (described in Supporting Wallet, Shop and Inventory Control) and g
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.ResetData();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().ResetData();
 ~~~
 
@@ -296,13 +296,13 @@ The device ID can be retrieved using the following method:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 string deviceId = Gamedock.Instance.GetDeviceId();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 var deviceId:String = Gamedock.GetInstance().GetDeviceId();
 ~~~
 
@@ -326,13 +326,13 @@ After initializing the Gamedock SDK, it is recommended that you request the late
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.RequestUserData();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().RequestUserData();
 ~~~
 
@@ -348,14 +348,14 @@ Note that if the data cannot be retrieved from the Gamedock backend, it will be 
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataAvailable -= OnUserDataAvailable();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataAvailable += OnUserDataAvailable();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_AVAILABLE, onUserDataAvailableEvent);
 ~~~
 
@@ -375,14 +375,14 @@ When a second device is being used to play the same game using the same Facebook
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataSyncError -= OnUserDataSyncError();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataSyncError += OnUserDataSyncError();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_SYNC_ERROR, onUserDataSyncErrorEvent);
 ~~~
 
@@ -402,14 +402,14 @@ When a merge error occurs, the following event will be triggered:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeConflict(MergeConflictData localData, MergeConflictData remoteData) -= OnUserDataMergeConflict();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeConflict(MergeConflictData localData, MergeConflictData remoteData) += OnUserDataMergeConflict();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_MERGE_CONFLICT, onUserDataMergeConflictEvent);
 ~~~
 
@@ -425,13 +425,13 @@ This indicates that the current local user data cannot be merged with the remote
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.MergeUserData(string mergeData, string mergeType);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().MergeUserData(mergeData:String, mergeType:String);
 ~~~
 
@@ -451,14 +451,14 @@ If the merge was successfully accepted by the Gamedock backend, the following ev
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeSuccessful -= OnUserDataMergeSuccessful();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeSuccessful += OnUserDataMergeSuccessful();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_MERGE_SUCCESSFUL, onUserDataMergeSuccessfulEvent);
 ~~~
 
@@ -474,14 +474,14 @@ If the merge failed, the following event will be triggered:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeFailed(string mergeData, string mergeType) -= OnUserDataMergeFailed();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataMergeFailed(string mergeData, string mergeType) += OnUserDataMergeFailed();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_MERGE_FAILED, onUserDataMergeFailedEvent);
 ~~~
 
@@ -501,14 +501,14 @@ It is not possible for the Gamedock backend to accept user data from two devices
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataLockError -= OnUserDataLockError();
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataLockError += OnUserDataLockError();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_LOCK_ERROR, onUserDataLockErrorEvent);
 ~~~
 
@@ -524,14 +524,14 @@ It is recommended that the game waits and then tries to resend the changes later
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataError(GamedockErrorMessage errorMessage) -= OnUserDataError;
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataError(GamedockErrorMessage errorMessage) += OnUserDataError;
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_ERROR, onUserDataErrorEvent);
 ~~~
 
@@ -551,13 +551,13 @@ The following utility method can be useful during development to display a nativ
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.ShowSyncErrorDialog(string title, string message, string startMergeButtonText);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().ShowSyncErrorDialog(title:String, message:String, startMergeButtonText:String);
 ~~~
 
@@ -573,13 +573,13 @@ The following utility method can be used to display a native dialog box asking t
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.ShowMergeConflictDialog(string title, string message, string localButtonText, string remoteButtonText, string mergeButtonText = null);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().ShowMergeFailedDialog(title:String, message:String, localButtonText:String, remoteButtonText:String, mergeButtonText:String);
 ~~~
 
@@ -597,13 +597,13 @@ The following event is triggered by the *ShowMergeConflictDialog()* method:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SocialLoginCallbacks.OnUserDataHandleMerge(string mergeType);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_HANDLE_MERGE, onUserDataHandleMergeEvent);
 ~~~
 
@@ -619,13 +619,13 @@ It specifies the choice made by the user: mergeType can be “remote”, “loca
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.ShowMergeFailedDialog(string title, string message, string retryButtonText, string mergeData, string mergeType);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().ShowMergeFailedDialog(title:String, message:String, retryButtonText:String, mergeData:String, mergeType:String);
 ~~~
 
@@ -643,13 +643,13 @@ The following method is available for displaying login/logout errors:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.ShowNativeDialog(string title, string message, string buttonText);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().ShowNativeDialog(title:String, message:String, buttonText:String);
 ~~~
 

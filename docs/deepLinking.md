@@ -50,7 +50,7 @@ Figure 6: Reward-Claiming Mechanism. If the app already exists, they are taken d
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Claiming a token
 Gamedock.Instance.ClaimToken (token, rewardType);
 
@@ -89,7 +89,7 @@ void OnRewardTokenClaimFailed (string rewardType, GamedockErrorMessage error)
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Claiming a token
 Gamedock.GetInstance().ClaimToken (token, rewardType);
 
@@ -153,7 +153,7 @@ Developers will have to integrate the Facebook SDK’s deeplinking features and 
 
 After initialising the Facebook SDK via FB.Init(OnFBInitComplete), in your OnFBInitComplete call you’ll have to call:
 
-~~~C#
+~~~csharp
 FB.GetAppLink(DeepLinkCallback);
 FB.Mobile.FetchDeferredAppLinkData(DeepLinkCallback);
 ~~~
@@ -164,7 +164,7 @@ In your DeepLinkCallback handler, you’ll have to fetch the deeplink, parse its
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 private void AppStart()
 {
   FB.Init(OnFBInitComplete);

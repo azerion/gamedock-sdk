@@ -13,7 +13,7 @@ More information on what you can do with Asset Bundles can be found here:
 
 The Asset Bundles configuration is automatically retrieved when the Gamedock SDK is first initialized. The configurations are then stored locally so that they can be used by the game, even when offline if they were cached. When the Gamedock SDK is initialized and the request has been done, the following callbacks are fired:
 
-~~~C#
+~~~csharp
 // Available
 // Fired also offline if a previous configuration was stored (list was not empty)
 Gamedock.Instance.AssetBundlesCallbacks.OnAssetBundlesAvailable -= OnAssetBundlesAvailable;
@@ -28,7 +28,7 @@ void OnAssetBundlesNotAvailable(){}
 
 Once the Asset Bundles are available you can get a dedicated helper class using the following method:
 
-~~~C#
+~~~csharp
 //List of all asset bundles
 Gamedock.Instance.AssetBundles.AssetBundles
 

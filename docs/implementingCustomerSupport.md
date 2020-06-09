@@ -14,14 +14,14 @@ The following method is available:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Show Zendesk Support Center in a Web View 
 Gamedock.Instance.ShowHelpCenterWebview(string url, string[] tags);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Show Zendesk Support Center in a Web View 
 Gamedock.GetInstance().ShowHelpCenterWebview(url:string, tags:string[]);
 ~~~

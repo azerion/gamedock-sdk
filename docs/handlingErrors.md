@@ -9,7 +9,7 @@ The Error Code object can be found in the Gamedock SDK under the name **Gamedock
 
 ## Error Code List
 
-~~~
+~~~csharp
 OnUserDataError
   • LoadFailed(1, "LoadFailed", "Data container is empty!")
   • ItemNotFound(2, "ItemNotFound", "Item does not exist!")

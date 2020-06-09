@@ -5,6 +5,7 @@ Version 3.9.1 *(04-06-2020)*
 ----------------------------
 **Bug fixes**
  * Android: Fixed issue with custom set package names.
+ * Android: Fixed critical issue with specific service crashing (reported in the Play Store console).
  * iOS: Updated all ad networks to have the UIWebView references warning be removed when uploading builds with Gamedock to the Apple Store
 
 **Other**

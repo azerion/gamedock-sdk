@@ -18,9 +18,7 @@ The IAP Packages feature within the Gamedock SDK can automatically request IAP p
 
 #### ** Unity **
 
-~~~C#
-
-
+~~~csharp
 // The PackagesHelper class contains helper methods.
 // It contains a list "Packages" which have all the information required.
 Gamedock.Instance.Packages.Packages
@@ -45,7 +43,7 @@ Gamedock.Instance.PackagesCallbacks.OnPackagesNotAvailable += OnPackagesNotAvail
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Retrieve Packages from the SDK (locally)
 var helper:PackagesHelper = Gamedock.GetInstance().GetPackages();
 

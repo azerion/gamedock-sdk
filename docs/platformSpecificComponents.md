@@ -38,7 +38,7 @@ In case dangerous permissions are set the Gamedock SDK will automatically reques
 
 You can manually request a permission using the following code:
 
-~~~C#
+~~~csharp
 //For the permission parameter you can use one of the values found in the GamedockAndroidUnityImplementation.Permissions class or use the official Android structure
 //see: "https://developer.android.com/guide/topics/security/permissions.html" for more information
 Gamedock.Instance.RequestDangerousPermission(permission, rationale, denyRationale);

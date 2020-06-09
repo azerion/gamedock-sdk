@@ -14,7 +14,7 @@ To operate game state support, use the following code:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Set public and private game states.
 Gamedock.Instance.SetPublicGameState(gameState);
 Gamedock.Instance.SetPrivateGameState(gameState);
@@ -30,7 +30,7 @@ Gamedock.Instance.GetOtherUsersGameState(provider, userIdsList);
 
 To listen to the available callbacks, use the following methods:
 
-~~~C#
+~~~csharp
 // The following methods are called for the game state operations.
 public delegate void OtherUsersGameStateDataLoaded(OtherUsersGameStateData data);
 //Check the Handling errors page for a list of error messages
@@ -39,7 +39,7 @@ public delegate void UserDataError(GamedockErrorMessage errorMessage);
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Set public and private game states.
 Gamedock.GetInstance().SetPublicGameState(gameState);
 Gamedock.GetInstance().SetPrivateGameState(gameState);
@@ -55,7 +55,7 @@ Gamedock.GetInstance().GetOtherUsersGameState(provider, userIdsList);
 
 To listen to the available callbacks, use the following methods:
 
-~~~C#
+~~~actionscript
 
 // The following methods are called for the game state operations.
 
@@ -79,4 +79,4 @@ private function onUserDataErrorEvent(evt:UserDataErrorEvent) : void
 
 <!-- tabs:end -->
 
-> There is a 2mb limit for the gamestate, sending bigger gamestates will be ignored by the backend.
+> There is a 2 MB limit for the gamestate, sending bigger gamestates will be ignored by the backend.

@@ -9,12 +9,13 @@ Currently Gamedock supports the following platforms:
 * Cordova Android & iOS
 * AIR Android & iOS
 2. What are the costs involved with using Gamedock?
+Interested in what Gamedock can do for your app? Please get in touch with one of our representatives via [gamedock.support@azerion.com](gamedock.support@azerion.com) for more information on how to get started.
 
 ## Privacy
 1. Is Gamedock GDPR compliant?
-
+Gamedock is committed to being GDPR, CCPA and distribution platform compliant, and to support development teams with the tooling they need to help end users manage their data. Under GDPR, our status is that of both a data processor and a data controller as much of our functionality relies on the data we collect. For more information please refer to our Privacy Policy here: [https://azerion.com/business/mobile-apps-privacy-policy.html](https://azerion.com/business/mobile-apps-privacy-policy.html) .
 2. What type of data does Gamedock track?
-
+We collect a variety of information through end users general interaction with apps that have the Gamedock SDK integrated. Collected personal data may include, but is not limited to, device information, application usage data and automated electronic interations. For more information please refer to our Privacy Policy here: [https://azerion.com/business/mobile-apps-privacy-policy.html](https://azerion.com/business/mobile-apps-privacy-policy.html).
 3. Can it be specified if a user has opted out of user specific features (personalized content, contextual ads)?
 The Gamedock SDK has two ways of accepting opt out choices from the user:
 * The SDK comes pre-built with a consent popup functionality which can be customized to certain degrees and which take the input from the user on choices regarding ads and content. The SDK also reports back to the game what the choices from the user have been and also this information can be retrieved at any point.

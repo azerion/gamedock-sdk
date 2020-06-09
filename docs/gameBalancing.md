@@ -23,7 +23,7 @@ The Gamedock SDK provides two methods for retrieving a game’s configuration fi
 
 You can use the following methods for working with the Game Config:
 
-~~~C#
+~~~csharp
 //Method that returns the whole game config as defined in the Gamedock Console as a JSON string
 Gamedock.Instance.GetConfigAll();
 
@@ -39,7 +39,7 @@ The Gamedock SDK also includes methods for converting JSON strings to objects vi
 
 By default, game configuration calls will always return the last saved value. However, it is also possible to listen for configuration updates, which often happen in a background process, using the OnConfigUpdated event. After receiving the update, you can refresh the user interface and game state. Use the following code.
 
-~~~C#
+~~~csharp
 Gamedock.Instance.ConfigCallbacks.OnConfigDataUpdated -= OnConfigDataUpdated;
 Gamedock.Instance.ConfigCallbacks.OnConfigDataUpdated += OnConfigDataUpdated;
 ~~~
@@ -56,7 +56,7 @@ The Gamedock SDK offers the possibility to work with the Firebase Remote Config.
 
 In order to work with the Firebase Remote Config directly through the Gamedock SDK, use the following methods and callbacks:
 
-~~~C#
+~~~csharp
 //Geting the Firebase Remote Config Helper
 FirebaseRemoteConfigHelper helper = Gamedock.Instance.GetFirebaseRemoteConfig();
 
@@ -88,7 +88,7 @@ Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated += OnFirebaseRem
 
 You can use the following methods for working with the Game Config:
 
-~~~C#
+~~~actionscript
 //Method that returns the whole game config as defined in the Gamedock Console as a JSON string
 Gamedock.GetInstance().GetConfigAll();
 
@@ -116,7 +116,7 @@ The Gamedock SDK offers the possibility to work with the Firebase Remote Config.
 
 In order to work with the Firebase Remote Config directly through the Gamedock SDK, use the following methods and callbacks:
 
-~~~C#
+~~~actionscript
 //Set Default Values for the Remote Config
 Gamedock.GetInstance().setFirebaseRemoteConfigDefaults("{ \"showTappyWheel\" : true, \"gameSecret2\" : 10.1010, \"gameSecret1\" : 1010101, \"tappyWheelButtonText\" : \"Default value\" }");
 
@@ -136,7 +136,7 @@ private function onFireBaseRemoteConfigUpdatedEvent(evt:FirebaseRemoteConfigUpda
 {
 	log(evt.toString());
 }
----
+~~~
 
 #### ** Cordova **
 
@@ -144,14 +144,14 @@ private function onFireBaseRemoteConfigUpdatedEvent(evt:FirebaseRemoteConfigUpda
 
 You can use the following method for working with the Game Config:
 
-~~~JavaScript
+~~~javascript
 //Method that returns the whole game config as defined in the Gamedock Console as a JSON string
 var config = gamedockSDK.getConfig();
 ~~~
 
 ### Listening for Updates to the Configuration File
 
-~~~JavaScript
+~~~javascript
 gamedockSDK.on('ConfigDataUpdated', (configDataUpdated) => {
     console.log('ConfigDataUpdated with data: ', JSON.stringify(configDataUpdated));
 });

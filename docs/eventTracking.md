@@ -22,7 +22,7 @@ The standard structure of an event is the following:
 
 Some example are described below:
 
-~~~C#
+~~~csharp
 //All tracking events have dedicated objects with required values constructors
 //All optional parameters have dedicated methods
 //Any optional parameter is added after the constructor of the event method using the .AddX method
@@ -59,7 +59,7 @@ Simply call the corresponding method at the required point in your game, and the
 
 For AIR, Gamedock provides a number of standard event-tracking methods:
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().TrackMilestoneAchievedEvent("name");
 Gamedock.GetInstance().TrackLevelStartEvent("levelName", "difficulty", false, "creatorId");
 Gamedock.GetInstance().TrackLevelCompleteEvent("levelName", "difficulty", 1, 1, null, 1, 1, false, "creatorId");
@@ -96,7 +96,7 @@ Ask your Azerion representative if any events should be implemented. Call the co
 
 In order to track an event, use the following code:
 
-~~~JavaScript
+~~~javascript
 //Using predefined tracking methods examples (recommended way unless the event you are tracking is not in the list)
 gamedockSDK.tracking.LevelComplete("Level1").addX().track();
 gamedockSDK.tracking.MilestoneAchieved("First Cordova App").addX().track();

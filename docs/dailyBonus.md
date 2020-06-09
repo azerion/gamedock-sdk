@@ -19,7 +19,7 @@ Before requesting the daily bonus screen, you should implement the callback list
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusAvailable -= OnDailyBonusAvailable;
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusAvailable += OnDailyBonusAvailable;
 
@@ -29,7 +29,7 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusNotAvailable += OnDailyBonus
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_AVAILABLE, onDailyBonusAvailableEvent);
 Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_NOT_AVAILABLE, onDailyBonusNotAvailableEvent);
 ~~~
@@ -46,13 +46,13 @@ To request the daily bonus screen during the game, use the following code:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.RequestDailyBonus();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().RequestDailyBonus();
 ~~~
 
@@ -68,13 +68,13 @@ If the daily bonus screen is available call the following method to show it:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.ShowDailyBonus();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().ShowDailyBonus();
 ~~~
 
@@ -90,7 +90,7 @@ To listen to status updates of the daily bonus screen listen to the following ev
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusOpen -= OnDailyBonusOpen;
 Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusOpen += OnDailyBonusOpen;
 
@@ -107,7 +107,7 @@ Gamedock.Instance.SplashScreenCallbacks.OnDailyBonusReward += OnDailyBonusReward
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_OPEN, onDailyBonusOpenEvent);			
 Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_CLOSED, onDailyBonusClosedEvent);
 Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_ERROR, onDailyBonusErrorEvent);
@@ -124,6 +124,6 @@ Gamedock.GetInstance().addEventListener(SDKEvents.DAILY_BONUS_REWARD, onDailyBon
 
 It’s also possible to create a daily bonus screen using Unity’s asset bundle system, for that the raw daily bonus config data can be used:
 
-~~~C#
+~~~csharp
 DailyBonus config = Gamedock.Instance.GetDailyBonusConfig();
 ~~~

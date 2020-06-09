@@ -13,7 +13,7 @@ The tiered events configuration can be requested manually after the Gamedock SDK
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Request
 Gamedock.Instance.RequestTieredEvents();
 
@@ -30,7 +30,7 @@ void OnTieredEventsNotAvailable(){}
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Request
 Gamedock.GetInstance().RequestTieredEvents();
 
@@ -54,13 +54,13 @@ To get a list of all available active tiered events use the following method:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 List<TieredEvent> activeTieredEvents = Gamedock.Instance.GetAllTieredEvents();
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 var activeTieredEvents:Vector.<TieredEvent> = GetAllTieredEvents();
 ~~~
 
@@ -76,13 +76,13 @@ To get the progress of a tiered event call:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 TieredEventProgress progress = Gamedock.Instance.GetTieredEventProgress(int tieredEventId);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 var progress:TieredEventProgress = GetTieredEventProgress(tieredEventId:int);
 ~~~
 
@@ -101,7 +101,7 @@ An event is fired to inform that the tiered event has been updated:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.TieredEventsCallbacks.OnTieredEventUpdated -= OnTieredEventUpdated;
 Gamedock.Instance.TieredEventsCallbacks.OnTieredEventUpdated += OnTieredEventUpdated;
 
@@ -117,6 +117,7 @@ void OnTieredEventUpdated(TieredEventProgress progress) {
 
 #### ** AIR **
 
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENT_UPDATED, onTieredEventUpdatedEvent);
 private function onTieredEventProgressOpenEvent(evt:TieredEventProgressOpenEvent) : void
 {
@@ -127,6 +128,7 @@ private function onTieredEventProgressOpenEvent(evt:TieredEventProgressOpenEvent
 	evt.completedTiers; // List with completed tier ids
 	evt.claimableTiers; // List of tier ids which are claimable by the player
 }
+~~~
 
 #### ** Cordova **
 
@@ -142,7 +144,7 @@ The progress of the tiered event is visible to the user through a web view which
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Show the progress screen
 Gamedock.Instance.ShowTieredEventProgress(int tieredEventId);
 
@@ -159,7 +161,7 @@ void OnTieredEventProgressClosed() {}
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Show the progress screen
 Gamedock.GetInstance().ShowTieredEventProgress(tieredEventId:int);
 
@@ -194,7 +196,7 @@ A few errors can occur for the tiered events feature, the following event is use
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.TieredEventsCallbacks.OnTieredEventsError -= OnTieredEventsError;
 Gamedock.Instance.TieredEventsCallbacks.OnTieredEventsError += OnTieredEventsError;
 void OnTieredEventsError(GamedockErrorMessage error) {
@@ -203,7 +205,7 @@ void OnTieredEventsError(GamedockErrorMessage error) {
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.TIERED_EVENTS_ERROR, onTieredEventsErrorEvent);
 private function onTieredEventsErrorEvent(evt:TieredEventsErrorEvent) : void
 {

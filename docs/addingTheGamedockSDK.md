@@ -32,13 +32,13 @@ The Gamedock SDK is now ready to use, most Gamedock SDK features will be configu
 
 By default, the Gamedock SDK will automatically initialize on Awake(). You can disable that functionality on the "GamedockSDK" object and initialize the SDK at a later stage. Initializing the SDK can be done using the following code:
 
-~~~C#
+~~~csharp
 Gamedock.MonoInstance.Initialize();
 ~~~
 
 You can also subscribe to the event that notifies the initial initialization point completion. Keep in mind that this does not signify that all the SDK modules are ready yet, and for individual functionalities you should still look at each features' callbacks. In order to register for the callback use the following code:
 
-~~~C#
+~~~csharp
 Gamedock.Instance.InitializationCallbacks.OnInitializationCompleted -= OnInitializationCompleted;
 Gamedock.Instance.InitializationCallbacks.OnInitializationCompleted += OnInitializationCompleted;
 ~~~
@@ -91,7 +91,7 @@ In your app's main entry-point, before making any other calls or initialising ot
 3. Initialise Gamedock.
 
 Example (including privacy policy / GDPR, Google Play Games and external id's for Android):
-~~~C#
+~~~actionscript
 	public function Main()
 	{
 		// Initialise Gamedock and show Privacy Policy / GDPR popup.
@@ -156,7 +156,7 @@ Example (including privacy policy / GDPR, Google Play Games and external id's fo
 ### Download and Import the SDK Cordova package into your project
 
 You can include the latest Cordova package by running the following commands into your main project folder:
-~~~JavaScript
+~~~javascript
 //Download the plugin
 npm i gamedock-sdk-cordova
 
@@ -182,7 +182,7 @@ Alternatively you can download the archive of the plugin from this [page](https:
 ### Initializing the Gamedock Cordova SDK
 
 In order to initialise the SDK call the following function (make sure this call is done before any other SDK call and preferably before any other network calls):
-~~~JavaScript
+~~~javascript
 var withAgeGate = false;
 var ageGateOptions = {
     shouldBlock: true, 
@@ -197,7 +197,7 @@ gamedockSDK.initialise(withAgeGate, ageGateOptions, withPrivacyPolicy, environme
 
 You can also subscribe to the event that notifies the initial initialization point completion. Keep in mind that this does not signify that all the SDK modules are ready yet, and for individual functionalities you should still look at each features' callbacks. In order to register for the callback use the following code:
 
-~~~JavaScript
+~~~javascript
 gamedockSDK.on('InitializationCompleted', () => {
     console.log('SDK Initialization Completed');
 });
@@ -206,7 +206,7 @@ gamedockSDK.on('InitializationCompleted', () => {
 <!-- tabs:end -->
 
 > As a reminder, in order to use the Android Firebase implementation from Gamedock make sure you have the following dependencies in your Gradle file:
-~~~Java
+~~~java
 implementation 'com.google.firebase:firebase-analytics:17.4.1' /* Gamedock Firebase */
 implementation 'com.google.firebase:firebase-crashlytics:17.0.0' /* Gamedock Firebase */
 implementation 'com.google.firebase:firebase-crashlytics-ndk:17.0.0' /* Gamedock Firebase */

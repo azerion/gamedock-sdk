@@ -23,7 +23,7 @@ The Gamedock SDK offers server-side IAP validation for your games. Whenever an i
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.IAPValidationCallbacks.OnIAPValid -= OnIAPValid;
 Gamedock.Instance.IAPValidationCallbacks.OnIAPValid += OnIAPValid;
 
@@ -70,9 +70,9 @@ The Gamedock SDK also offers the possibility to retrieve the game’s server tim
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Request server time
-Gamedock.Instance.RequestServerTime ();
+Gamedock.Instance.RequestServerTime();
 // Server time callbacks
 Gamedock.Instance.ServerTimeCallbacks.OnServerTimeRequestSuccess -= OnServerTimeRequestSuccess;
 Gamedock.Instance.ServerTimeCallbacks.OnServerTimeRequestSuccess += OnServerTimeRequestSuccess;
@@ -80,19 +80,19 @@ Gamedock.Instance.ServerTimeCallbacks.OnServerTimeRequestSuccess += OnServerTime
 Gamedock.Instance.ServerTimeCallbacks.OnServerTimeRequestFailed -= OnServerTimeRequestFailed;
 Gamedock.Instance.ServerTimeCallbacks.OnServerTimeRequestFailed += OnServerTimeRequestFailed;
 
-void OnServerTimeRequestSuccess (long time)
+void OnServerTimeRequestSuccess(long time)
 {
-  Debug.Log ("Server time is: " + time);
+  Debug.Log("Server time is: " + time);
 }
-void OnServerTimeRequestFailed (GamedockErrorMessage errorMessage)
+void OnServerTimeRequestFailed(GamedockErrorMessage errorMessage)
 {
-  Debug.Log ("Server failed to retrieve with error: " + errorMessage.message);
+  Debug.Log("Server failed to retrieve with error: " + errorMessage.message);
 }
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Request server time
 Gamedock.GetInstance().RequestServerTime();
 // Server time callbacks

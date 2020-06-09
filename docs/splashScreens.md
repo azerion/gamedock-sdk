@@ -19,7 +19,7 @@ Before requesting the splash screen, you should implement the callback listener 
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenOpen -= OnSplashScreenOpen;
 Gamedock.Instance.SplashScreenCallbacks.OnSplashScreenOpen += OnSplashScreenOpen;
 
@@ -48,7 +48,7 @@ Gamedock.Instance.IAPValidationCallbacks.OnIAPRequestPurchase += OnIAPRequestPur
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_OPEN, onSplashScreenOpenEvent);
 Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_CLOSED, onSplashScreenClosedEvent);
 Gamedock.GetInstance().addEventListener(SDKEvents.SPLASH_SCREEN_ERROR, onSplashScreenErrorEvent);
@@ -61,7 +61,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.IAP_REQUEST_PURCHASE, onIAPReq
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 gamedockSDK.on('SplashScreenOpen', () => {
     
     }
@@ -96,7 +96,7 @@ To work with splash screens during game time, use the following code:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.RequestSplashScreen(string type);
 
 //Should be used when an OnSplashScreenAvailable callback is triggered 
@@ -106,7 +106,7 @@ Gamedock.Instance.ShowSplashScreen();
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().RequestSplashScreen(type:String);
 
 //Should be used when an OnSplashScreenAvailable callback is triggered 
@@ -116,7 +116,7 @@ Gamedock.GetInstance().ShowSplashScreen();
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 gamedockSDK.requestSplashScreen(type);
 
 //Should be used when an OnSplashScreenAvailable callback is triggered 

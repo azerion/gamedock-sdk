@@ -16,7 +16,7 @@ In order to work the Promotions feature in the game implement the following code
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 //List of promotions
 Gamedock.Instance.Promotions.Promotions
 
@@ -61,7 +61,7 @@ Gamedock.Instance.ShowPromotionScreen(promotionId);
 
 A simple example is also given for applying promotion values to an IAP Package as these need to be applied manually:
 
-~~~C#
+~~~csharp
 //Loop through all packages and find required package (productSKU)
 for (int i = 0; i < Gamedock.Instance.Packages.Packages.Count; i++) {
   if (productSKU == Gamedock.Instance.Packages.Packages[i].PackageId) {
@@ -82,7 +82,7 @@ for (int i = 0; i < Gamedock.Instance.Packages.Packages.Count; i++) {
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Returns a helper class that can be used to handle promotion operations
 var promotionsHelper:PromotionsHelper = Gamedock.GetInstance().GetPromotions();
 // List of promotions
@@ -138,7 +138,7 @@ Gamedock.GetInstance().ShowPromotionScreen(promotionId);
 
 A simple example is also given for applying promotion values to an IAP Package as these need to be applied manually:
 
-~~~C#
+~~~actionscript
 // Retrieve the packages helper
 var helper:PackagesHelper = Gamedock.GetInstance().GetPackages();
 

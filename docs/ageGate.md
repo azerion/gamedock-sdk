@@ -28,7 +28,7 @@ The SDK gives the possibility for blocking the user from continuing to the game 
 
 Regardless of which option you choose (native or prefab), the SDK provides feedback information for the choice that the user has made when presented with the age gate. In order to get that feedback, register the following callback:
 
-~~~C#
+~~~csharp
 //Callback informing the choice for the age gate
 Gamedock.Instance.AgeGateCallbacks.OnAgeGateStatus -= OnAgeGateStatus(bool passed, string age, bool checkPrivacyPolicy);
 Gamedock.Instance.AgeGateCallbacks.OnAgeGateStatus += OnAgeGateStatus(bool passed, string age, bool checkPrivacyPolicy);
@@ -65,7 +65,7 @@ The age gate popup can be enabled/configured via parameters when calling Gamedoc
 
 The SDK provides feedback information for the choice that the user has made when presented with the age gate. In order to get that feedback, register the following callback:
 
-~~~C#
+~~~actionscript
 //Callback informing the choice for the age gate
 Gamedock.GetInstance().addEventListener(SDKEvents.AGE_GATE_STATUS, onAgeGateStatusEvent);
 
@@ -105,7 +105,7 @@ The age gate popup can be enabled/configured via parameters when calling gamedoc
 
 The SDK provides feedback information for the choice that the user has made when presented with the age gate. In order to get that feedback, register the following callback:
 
-~~~JavaScript
+~~~javascript
 //Callback informing the choice for the age gate
 gamedockSDK.on('AgeGateStatus', (ageGateStatus) => {
     console.log('AgeGateStatus with data: ', JSON.stringify(ageGateStatus));

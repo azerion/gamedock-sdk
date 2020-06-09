@@ -20,7 +20,7 @@ By default, the Gamedock SDK will use the default native template screens, if yo
 
 The user should have an option to change their settings later on while playing the game. The game should offer a button for this which opens the GDPR settings screen, a default settings screen is provided by the Gamedock SDK and can be opened by calling:
 	
-~~~C#
+~~~csharp
 Gamedock.Instance.ShowPrivacyPolicySettings();
 ~~~
 
@@ -33,7 +33,7 @@ The user has to restart the app after making changes to the GDPR settings before
 
 By default, the Gamedock SDK handles all the network calls and 3rd party SDK’s within the Gamedock SDK. However, in case you do send network calls to your own server or load 3rd party SDK’s outside the Gamedock SDK it is important to know that this is only allowed after the user accepted the consent popup. When the user presses the accept button the following Gamedock SDK method is called for starting the SDK’s own network calls / 3rd party:
 
-~~~C#
+~~~csharp
 //Callback informing the status of the privacy policy (if it was accepted by the user)
 Gamedock.Instance.PrivacyPolicyCallbacks.OnPrivacyPolicyStatus -= OnPrivacyPolicyStatus(bool accepted);
 Gamedock.Instance.PrivacyPolicyCallbacks.OnPrivacyPolicyStatus += OnPrivacyPolicyStatus(bool accepted);
@@ -65,7 +65,7 @@ The privacy policy popup can be enabled/configured via parameters when calling G
 
 The SDK provides feedback information for the choice that the user has made when presented with the privacy policy. By default, the Gamedock SDK handles all the network calls and 3rd party SDK’s within the Gamedock SDK. However, in case you do send network calls to your own server or load 3rd party SDK’s outside the Gamedock SDK it is important to know that this is only allowed after the user accepted the privacy policy popup. In order to get that feedback, register the following callback:
 
-~~~C#
+~~~actionscript
 //Callback informing the choice for the privacy policy
 Gamedock.GetInstance().addEventListener(SDKEvents.PRIVACY_POLICY_STATUS, onPrivacyPolicyStatusEvent);
 
@@ -101,8 +101,8 @@ For Android, the image files are named “privacy_policy_landscape_custom.png”
 
 The user should also have an option to change their privacy policy settings while playing the game. The game should offer a button for this which opens the GDPR settings screen, a default settings screen is provided by the Gamedock SDK and can be opened by calling:
 	
-~~~C#
-Spil.GetInstance().ShowPrivacyPolicySettings();
+~~~csharp
+Gamedock.GetInstance().ShowPrivacyPolicySettings();
 ~~~
 
 ![github pages](_images/PrivacyPolicyEditorSettings.png)
@@ -119,7 +119,7 @@ The GDPR privacy policy popup can be enabled via parameters when calling gamedoc
 
 The SDK provides feedback information for the choice that the user has made when presented with the privacy policy. By default, the Gamedock SDK handles all the network calls and 3rd party SDK’s within the Gamedock SDK. However, in case you do send network calls to your own server or load 3rd party SDK’s outside the Gamedock SDK it is important to know that this is only allowed after the user accepted the privacy policy popup. In order to get that feedback, register the following callback:
 
-~~~JavaScript
+~~~javascript
 //Callback informing the choice for the age gate
 gamedockSDK.on('PrivacyPolicyStatus', (privacyPolicyStatus) => {
     console.log('PrivacyPolicyStatus with data: ', JSON.stringify(privacyPolicyStatus));
@@ -142,11 +142,9 @@ iOS:
 
 The user should also have an option to change their privacy policy settings while playing the game. The game should offer a button for this which opens the GDPR settings screen, a default settings screen is provided by the Gamedock SDK and can be opened by calling:
 	
-~~~JavaScript
+~~~javascript
 gamedockSDK.showPrivacyPolicySettings();
 ~~~
-
-![github pages](_images/PrivacyPolicyEditorSettings.png)
 
 The user has to restart the app after making changes to the GDPR settings before they take effect.
 
@@ -165,7 +163,7 @@ If you don't intend on using the SDK popups, you can also pass and retrieve the 
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.SetGDPRSettings(withPersonalisedAds, withPersonalisedContent);
 //Dictionary contains two keys (withPersonalisedAds, withPersonalisedContent) with the information.
 Dictionary<string, bool> gdprSettings = Gamedock.Instance.GetGDPRSettings();
@@ -177,7 +175,7 @@ Dictionary<string, bool> gdprSettings = Gamedock.Instance.GetGDPRSettings();
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 gamedockSDK.setGDPRSettings(true, true);
 var settings = gamedockSDK.getGDPRSettings();
 ~~~

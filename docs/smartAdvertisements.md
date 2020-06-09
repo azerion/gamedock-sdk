@@ -53,7 +53,7 @@ The Gamedock SDK initializes automatically the advertisement module, if the feat
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.AdvertisementCallbacks.OnAdsInitialized -= OnAdsInitialized;
 Gamedock.Instance.AdvertisementCallbacks.OnAdsInitialized += OnAdsInitialized;
 
@@ -65,15 +65,13 @@ public void OnAdsInitialized()
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 
 ~~~
 
 #### ** Cordova **
 
-~~~JavaScript
-
-
+~~~javascript
 //Callbacks
 gamedockSDK.on('AdsInitialized', () => {
     console.log('Advertisement Initialized');
@@ -92,7 +90,7 @@ Banners are advertisements that can be displayed by the game in specific and des
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 //Request banner ads
 //A new request is required if you want to change positon or ad size
 Gamedock.Instance.RequestBannerAd(BannerPosition position = BannerPosition.NULL, BannerAdSize adSize = BannerAdSize.NULL);
@@ -147,7 +145,7 @@ void OnAdNotAvailable(enumAdType adType) {
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 //Request banner ads
 //A new request is required if you want to change positon or ad size,
 //f.e., one of the following:
@@ -185,7 +183,7 @@ private function onAdNotAvailableEvent(evt:AdNotAvailableEvent) : void
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 //Request banner ads
 //A new request is required if you want to change positon or ad size
 gamedockSDK.requestBanner(GamedockSDK.AdBannerPosition.BOTTOM, GamedockSDK.AdBannerSize.SMART_BANNER);
@@ -242,7 +240,7 @@ Interstitial ads are full-screen ads that cover the interface of their host app.
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 //Request an interstitial ad
 Gamedock.Instance.RequestInterstitial();
 
@@ -254,16 +252,16 @@ Gamedock.Instance.PlayInterstitial();
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 //Show an interstitial ad
 Gamedock.GetInstance().ShowInterstitial();
 
 //Callbacks for interstitials are the same as for banners and reward videos except that the "adType" is "interstitial"
----
+~~~
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 //Request an interstitial ad
 gamedockSDK.requestInterstitial();
 
@@ -298,7 +296,7 @@ Reward videos are advertisements that users voluntarily watch and, if played to 
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 public GameObject rewardVideoButton;
 
 void OnEnable(){
@@ -328,7 +326,7 @@ void OnAdNotAvailable(GamedockSDK.Unity.Base.SDK.EnumAdType adType){
 
 When the user clicks the button, the following code is triggered:
 
-~~~C#
+~~~csharp
 public void ShowRewardedVideo(){
     Gamedock.Instance.AdvertisementCallbacks.OnAdStarted += AdOpened;
     Gamedock.Instance.AdvertisementCallbacks.OnAdFinished += AdFinished;
@@ -357,7 +355,7 @@ void AdFinished(GamedockSDK.Unity.Base.SDK.GamedockAdFinishedResponse response){
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 //Callbacks
 Gamedock.GetInstance().addEventListener(SDKEvents.AD_AVAILABLE, onAdAvailableEvent);
 Gamedock.GetInstance().addEventListener(SDKEvents.AD_NOT_AVAILABLE, onAdNotAvailableEvent);
@@ -381,7 +379,7 @@ private function onAdNotAvailableEvent(evt:AdNotAvailableEvent) : void
 
 When the user clicks the button, the following code is triggered:
 
-~~~C#
+~~~actionscript
 public function ShowRewardedVideo() : void
 {
 	Gamedock.GetInstance().addEventListener(SDKEvents.AD_AVAILABLE, onAdStartedEvent);
@@ -414,7 +412,7 @@ private function onAdFinishedEvent(evt:AdFinishedEvent) : void
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 //Request a rewarded video ad
 gamedockSDK.requestRewardVideo();
 
@@ -465,7 +463,7 @@ The More Apps screen needs to be triggered manually. Typically, it shows other g
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 public GameObject moreAppsButton;
  
 void OnEnable(){
@@ -492,7 +490,7 @@ void MoreAppsButtonOnClick()
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().RequestMoreApps();
 
 private function onAdAvailableEvent(evt:AdAvailableEvent) : void
@@ -531,7 +529,7 @@ You can also directly check if an ad is available by using the following code:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 bool isBannerAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Banner);
 bool isInterstitialAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Interstitial));
 bool isRewardedVideoAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.RewardVideo));
@@ -539,7 +537,7 @@ bool isRewardedVideoAvailable = Gamedock.Instance.IsAdAvailable(EnumAdType.Rewar
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 var isBannerAvailable:Boolean = Gamedock.GetInstance().IsAdAvailable("banner");
 var isInterstitialAvailable:Boolean = Gamedock.GetInstance().IsAdAvailable("interstitial"));
 var isRewardedVideoAvailable:Boolean = Gamedock.GetInstance().IsAdAvailable("rewardvideo"));
@@ -547,7 +545,7 @@ var isRewardedVideoAvailable:Boolean = Gamedock.GetInstance().IsAdAvailable("rew
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 gamedockSDK.isAdAvailable(AdType.Banner);
 gamedockSDK.isAdAvailable(AdType.Interstitial);
 gamedockSDK.isAdAvailable(AdType.RewardedVideo); 

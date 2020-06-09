@@ -16,7 +16,7 @@ You can use the method described below to automatically block the Gamedock SDK f
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Disable asking automatically for Push notification permissions
 DisableAutomaticRegisterForPushNotifications();
 
@@ -26,7 +26,7 @@ Gamedock.Instance.RegisterForPushNotifications();
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Disable asking automatically for Push notification permissions
 Gamedock.GetInstance().DisableAutomaticRegisterForPushNotificationsiOS();
 

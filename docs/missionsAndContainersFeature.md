@@ -60,7 +60,7 @@ In order to work with the Mission and Containers components you need to use the 
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 //Helper class for missions progress
 Gamedock.Instance.MissionData (References to Gamedock.cs MissionData; is MissionDataHelper)
 
@@ -146,7 +146,7 @@ Make sure when using the feature that you generate all the “Default Configurat
 
 In order to understand better how the feature flow should be implemented you will find an example below:
 
-~~~C#
+~~~csharp
 // --- At the start of the first session it's best to initialize all containers and missions like this ---
 
 List<ContainerProgress> updatedContainers = new List<ContainerProgress>();

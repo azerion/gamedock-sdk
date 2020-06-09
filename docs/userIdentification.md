@@ -9,7 +9,7 @@ Support for user identification depends on the games platform:
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 //Get Gamedock User Id
 strimng userId = Gamedock.Instance.GetGamedockUID();
 
@@ -19,7 +19,7 @@ string deviceId = Gamedock.Instance.GetDeviceId();
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 //Get Gamedock User Id
 var userId:String = Gamedock.GetInstance().GetGamedockUserId()
 
@@ -29,7 +29,7 @@ var deviceId:String = Gamedock.GetInstance().GetDeviceId();
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 //Get Gamedock User Id
 gamedockSDK.getGamedockUserId();
 
@@ -47,20 +47,20 @@ Additional external ids can be passed to the SDK in order to provide better trac
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.MonoInstance.Initialize(Dictionary<string, string> externalIds = null);
 ~~~
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Only the last parameter (externalId's) is really relevant for this example:
 Gamedock.GetInstance().Init(true, true, true, 16, false, "{\"MyExternalPartner\":\"MyExternalId\"}");
 ~~~
 
 #### ** Cordova **
 
-~~~JavScript
+~~~javascript
 gamedockSDK.initialise(withAgeGate, ageGateOptions, withPrivacyPolicy, environment, externalIds);
 ~~~
 
@@ -72,7 +72,7 @@ External ids can also be set and removed (if necessary) at later stages in the g
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 //Add external Id
 Gamedock.Instance.AddExternalId(externalPartner, id);
 
@@ -82,7 +82,7 @@ Gamedock.Instance.RemoveExternalId(externalPartner);
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 //Add external Id
 Gamedock.GetInstance().addExternalId("MyExternalPartner","MyExternalId");
 
@@ -92,7 +92,7 @@ Gamedock.GetInstance().removeExternalId("MyExternalPartner");
 
 #### ** Cordova **
 
-~~~JavaScript
+~~~javascript
 //Add external Id
 gamedockSDK.addExternalId(externalPartner, id);
 
@@ -112,7 +112,7 @@ It’s possible for customer support to change the user id of a player through t
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 // Start listening to user id change requests
 Gamedock.Instance.InitializationCallbacks.OnUserIdChangeRequest -= OnUserIdChangeRequest;
 Gamedock.Instance.InitializationCallbacks.OnUserIdChangeRequest += OnUserIdChangeRequest;
@@ -129,7 +129,7 @@ First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 // Start listening to user id change requests
 Gamedock.GetInstance().addEventListener(SDKEvents.REQUEST_USER_ID_CHANGE, onRequestUserIdChangeEvent);
 
@@ -165,7 +165,7 @@ In order to implement the functionality into your game you only need to listen t
 
 #### ** Unity **
 
-~~~C#
+~~~csharp
 Gamedock.Instance.InitializationCallbacks.OnGameVersionStatus -= OnGameVersionStatus;
 Gamedock.Instance.InitializationCallbacks.OnGameVersionStatus += OnGameVersionStatus;
 
@@ -181,7 +181,7 @@ public enum UpdateStatus {
 
 #### ** AIR **
 
-~~~C#
+~~~actionscript
 Gamedock.GetInstance().addEventListener(SDKEvents.GAME_VERSION_STATUS, onGameVersionStatusEvent);
 
 private function onGameVersionStatusEvent(evt:GameVersionStatusEvent) : void		
