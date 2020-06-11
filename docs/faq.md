@@ -14,6 +14,23 @@ Currently Gamedock supports the following platforms:
 
 Interested in what Gamedock can do for your app? Please get in touch with one of our representatives via [gamedock.support@azerion.com](gamedock.support@azerion.com) for more information on how to get started.
 
+## Data
+1. **How long does Gamedock retain the data from users?**
+
+The Gamedock backend retains the tracked data from users for a maximum amount of 1 year after which that data is purged automatically. The user can also request to have his data removed earlier if he wants.
+
+2. **Are there any limits when sending data to the Gamedock Backend?**
+
+At the moment there is no hard limit on the amount of data the game should be sending, though certain situation should be taken into account. The game should not be spaming event tracking on events that are not relevant in any way to insightful data. Also the game should take into account when sending the Gamestate, that the size of it doesn't go over 1MB.
+
+3. **What happens with the data that has been tracked by the game while playing offline?**
+
+All the that has been tracked while the game was offline will be sent to the backend when a network connection is established. On Android, the data is sent regardless if the app is open or not, while on iOS the data will be sent only if the app is open.
+
+4. **Where can I view the data that has been sent by the SDK?**
+
+The data sent by the Gamedock SDK can be seen in two places. If you want to see live data being sent from you (the developer) to the backend, you can use the Event Dashboard in the Console. If you want to see analytics data and insights into your gamae please visit [https://reporting.gamedock.io/](https://reporting.gamedock.io/). Make sure to contact your organization manager or a Gamedock representative to get access to the reporting tool.
+
 ## Privacy
 1. **Is Gamedock GDPR compliant?**
 
@@ -62,20 +79,3 @@ By default, when you first login to the Console, no access is given to any games
 4. **I can access my game in the Console, but certain features are not appearing for me. How can I get access to more features?**
 
 Each of the feature in Console requires specific permissions to be given to your account for that game in order for you to see information in the Console. So if you need access to a specific feature or you want access to all the features, make sure to contact your organization administrator or a Gamedock representative to give you access.
-
-## Data
-1. **How long does Gamedock retain the data from users?**
-
-The Gamedock backend retains the tracked data from users for a maximum amount of 1 year after which that data is purged automatically. The user can also request to have his data removed earlier if he wants.
-
-2. **Are there any limits when sending data to the Gamedock Backend?**
-
-At the moment there is no hard limit on the amount of data the game should be sending, though certain situation should be taken into account. The game should not be spaming event tracking on events that are not relevant in any way to insightful data. Also the game should take into account when sending the Gamestate, that the size of it doesn't go over 1MB.
-
-3. **What happens with the data that has been tracked by the game while playing offline?**
-
-All the that has been tracked while the game was offline will be sent to the backend when a network connection is established. On Android, the data is sent regardless if the app is open or not, while on iOS the data will be sent only if the app is open.
-
-4. **Where can I view the data that has been sent by the SDK?**
-
-The data sent by the Gamedock SDK can be seen in two places. If you want to see live data being sent from you (the developer) to the backend, you can use the Event Dashboard in the Console. If you want to see analytics data and insights into your gamae please visit [https://reporting.gamedock.io/](https://reporting.gamedock.io/). Make sure to contact your organization manager or a Gamedock representative to get access to the reporting tool.

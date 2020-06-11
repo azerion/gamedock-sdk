@@ -1,23 +1,23 @@
-# Platform specific components
+# Platform Specific Components
 
 > This section is only targeted at the Unity platform.
 
-## Android
+<!-- tabs:start -->
+
+#### ** Android **
 
 ### Requirements
 
 * Minimum Android SDK version needs to be 17
 * Unity Build System needs to be Gradle
-* Make sure to use the supplied “mainTemplate.gradle” file in order to overcome issues such as Multi-Dexing and for importing Google Play Services Automatically
-
-For Android, you should enter your project ID as the value of the “ProjectId” field in Gamedock.cs. Ask your Gamedock contact to provide you with your project ID.
+* Make sure to use the supplied **“mainTemplate.gradle”** file in order to overcome issues such as Multi-Dexing and for importing Google Play Services Automatically
 
 There are two modes in which you can use the Android Gamedock SDK. The older method, using the “.aar” file, and importing the SDK file automatically using the “mainTemplate.gradle” file. These setting can be configured, as well as which modules you want to use in the “Gamedock SDK->Configurations->Android” Unity window located in the top menu.
 
 The modules are broken down into the following sections:
 
 * Adjust (Analytics)
-* Advertisement (Chartboost and AdMob)
+* Advertisement (AdMob)
 * Firebase (Analytics, Remote Config & Deep Links)
 
 > Besides the modules, there are also two manifest files which should be used only if you are using either the Unity Plugin “Prime31” or “Android Native”. You should especially look at the main activity name value.
@@ -63,27 +63,34 @@ Additional settings can be configured via the “Gamedock SDK -> Configuration -
 
 It allows switching between using “.aar” files or the recommended Gradle build system. After selecting the build system it’s possible to add or remove modules, based on which features your game requires. The screen also shows useful information such as recommended updates.
 
-## iOS
+#### ** iOS **
 
 Extra components for iOS can be enabled/disabled in Unity via this configuration windows (Gamedock SDK -> Configuration -> iOS):
 
 ![github pages](_images/PlatformSpecificUnityIOS.png)
 
+<!-- tabs:end -->
+
 ## Building and publishing
 
-### iOS Building
+<!-- tabs:start -->
+
+#### ** Android Split-application binary (APK + OBB files) **
+
+When a Unity app becomes large in file size it may be a good idea to split the app up into multiple parts. This way the initial download and install of the app from the app store is quick and the app opens up to show a “downloading assets” screen. The app then downloads all the other assets before continuing.
+
+Unity supports this feature via the **“Split Application Binary”** build option, which splits the app into an APK file and one or more OBB files (see: [here](https://docs.unity3d.com/Manual/android-OBBsupport.html)). By default the APK file contains only the starting scene of the Unity app and all of it’s required resources (including the “Plugins” folder).
+
+There is a problem though, the **“Streaming Assets”** folder that contains the JSON files required by the Gamedock SDK is included in the OBB file, not the APK file. This means that when the app starts the Gamedock SDK tries to locate the JSON files in the APK but it won’t find them. This problem can be solved by copying the JSON files in the Unity project from “/Streaming Assets” to “/Plugins/Android/assets/”. The files are then copied to the APK file and the Gamedock SDK can initialize properly.
+
+> It is strongly recommended that if your game goes over the 100 MB limit but below 150 MB, to use the App Bundles feature when building your project for publishing. For more information on App Bundles check [https://developer.android.com/guide/app-bundle](https://developer.android.com/guide/app-bundle) and Unity support for App Bundles [https://blogs.unity3d.com/2018/10/03/support-for-android-app-bundle-aab-in-unity-2018-3-beta/](https://blogs.unity3d.com/2018/10/03/support-for-android-app-bundle-aab-in-unity-2018-3-beta/)
+
+#### ** iOS Building **
 
 For iOS there are no other steps to take, the Gamedock postprocessor script takes care of all the building and adding the Gamedock frameworks to the project.
 
-### Android Split-application binary (APK + OBB files)
 
-When a Unity app becomes large in filesize it may be a good idea to split the app up into multiple parts. This way the initial download and install of the app from the app store is quick and the app opens up to show a “downloading assets” screen. The app then downloads all the other assets before continuing.
-
-Unity supports this feature via the “split-application binary” build option, which splits the app into an APK file and one or more OBB files (see: [here](https://docs.unity3d.com/Manual/android-OBBsupport.html)). By default the APK file contains only the starting scene of the Unity app and all of it’s required resources (including the “Plugins” folder).
-
-There is a problem though, the “Streaming Assets” folder that contains the JSON files required by the Gamedock SDK is included in the OBB file, not the APK file. This means that when the app starts the Gamedock SDK tries to locate the JSON files in the APK but it won’t find them. This problem can be solved by copying the JSON files in the Unity project from “/Streaming Assets” to “/Plugins/Android/assets/”. The files are then copied to the APK file and the Gamedock SDK can initialize properly.
-
-### WebGL Building
+#### ** WebGL Building **
 
 * For building to the Facebook target from Unity you’ll need to download the Facebook platform support tools via Unity.
 * For publishing to Facebook the Facebook SDK needs to be included.
@@ -94,3 +101,5 @@ There is a problem though, the “Streaming Assets” folder that contains the J
 * Be sure to disable exception logging/stack trace on the WebGL player settings panel in Unity when making a release build to optimize performance.
 * Uploading and testing via Facebook can be done via the Unity UI and the Facebook dashboard. Please contact a Gamedock SDK team member if you don’t have the correct credentials or can’t access the Facebook dashboard for your game.
 * Compared to mobile, WebGL is prone to memory issues, you’ll likely have to set your assets to the lowest possible quality and may have to optimize your scenes so the minimum number of assets are loaded at once.
+
+<!-- tabs:end -->

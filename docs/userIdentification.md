@@ -1,4 +1,4 @@
-# User Management
+# User Identification
 
 When a user contacts Gamedock Customer Support they may be asked for a Gamedock user ID. Currently, Gamedock does not require registration for users, and so cannot link an email to a Gamedock user ID. All users are essentially guest users and, therefore, have an anonymous user ID.
 Support for user identification depends on the games platform:

@@ -1,4 +1,4 @@
-# Testing and debugging
+# Testing and Debugging
 
 ### Guidelines for testing and debugging:
 

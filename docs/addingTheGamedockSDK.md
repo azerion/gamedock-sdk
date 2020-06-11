@@ -19,12 +19,22 @@ Unpack the downloaded archive, and inside you will find the native library folde
 ### Using the Gamedock Unity SDK
 
 1. Attach the script named “Gamedock.cs” to a new GameObject in your startup scene, and name that GameObject "GamedockSDK".
-2. Make sure to check set the Bundle identifier (iOS) and Package Name (Android) of your game in the Unity PlayerSettings.
-3. Go to the Gamedock SDK menu in the top bar of Unity and select Configuration.
 
-Make sure the fields are configured correctly and press the ‘Create default configuration files’ button to retrieve the latest configurations for your game. This step should be repeated before every build delivered to make sure that the latest offline configs are included in the build.
+![github pages](_images/unityEditor/usingGamedockUnitySDKStep1.png)
 
-The Gamedock SDK is now ready to use, most Gamedock SDK features will be configured automatically when the SDK initializes, see the specific feature sections to see which integration parts still have to be implemented. Please make sure to also follow the next section ‘GDPR & Privacy Policy’ to make your game GDPR compliant.
+
+2. Make sure to set the Bundle identifier (iOS) and Package Name (Android) of your game in the Unity Project Settings and make sure that matches the Gamedock Console configured one.
+
+![github pages](_images/unityEditor/usingGamedockUnitySDKStep21.png) ![github pages](_images/unityEditor/usingGamedockUnitySDKStep22.png)
+
+
+3. Go to the Gamedock SDK menu in the top bar of Unity and select Configuration. Make sure the fields are configured correctly and press the ‘Create default configuration files’ button to retrieve the latest configurations for your game. This step should be repeated before every build delivered to make sure that the latest offline configs are included in the build. If the retrieval fails in any way, check the Editor Console for more information.
+
+![github pages](_images/unityEditor/usingGamedockUnitySDKStep3.png)
+
+
+4. **The Gamedock SDK is now ready to use!** Most Gamedock SDK features will be configured automatically when the SDK initializes, see the specific feature sections to see which integration parts still have to be implemented. Please make sure to also follow the next section ‘GDPR & Privacy Policy’ to make your game GDPR compliant.
+
 
 > If you have issues with missing Prefab scripts please download the following folder and replace it in "Assets/Gamedock/Editor/" : [Prefab missing script fix](https://splashscreens.cdn.spilcloud.com/files/1574351079_Prefabs.zip)
 
