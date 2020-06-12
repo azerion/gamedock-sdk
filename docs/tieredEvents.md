@@ -1,6 +1,7 @@
 # Tiered Events
 
-> Tiered events do have to be configured through the Gamedock Console, please ask your product manager to configure this before starting the implementation of this feature.
+> [!TIP]
+> Tiered events have to be configured through the Gamedock Console. Please ask your product manager to configure this before starting the implementation of this feature.
 
 A tiered event is a unique event(not to be confused with tracking events) which allows the user to get special rewards by spending currencies or items within the game. A tiered event consists of multiple tiers, each individual tier has a certain goal. The goal is always to spend a certain amount of currency or items and the player will get a reward after completing a tier and then progresses to the next tier. The tiered event is finished when all the tiers are completed or when the end date of the event has been reached. The player has to spend currencies or items depending on the goal of the current tier he’s in, to progress. A web view is used to visualize the progress of the user which can be accessed through a button in the games GUI. The reward(s) for the current tier can be claimed through this web view when the goal has been reached by the player.
 It’s possible to configure multiple Tiered Events to be able to run at the same time.

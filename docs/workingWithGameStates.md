@@ -79,4 +79,5 @@ private function onUserDataErrorEvent(evt:UserDataErrorEvent) : void
 
 <!-- tabs:end -->
 
-> There is a 2 MB limit for the gamestate, sending bigger gamestates will be ignored by the backend.
+> [!DANGER]
+> There is a 2 MB limit for the Gamestate blob. Sending a bigger Gamestate blob will be ignored by the backend.

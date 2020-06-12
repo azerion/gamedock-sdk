@@ -1,5 +1,6 @@
 # External Analytics
 
+> [!TIP]
 > Besides the analytics provide by the Gamedock SDK, the SDK also includes additional external analytics tools that can be enabled when implementing the Gamedock SDK.
 
 The following modules can be enabled for additional analytics:

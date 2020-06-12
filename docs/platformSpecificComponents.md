@@ -1,5 +1,6 @@
 # Platform Specific Components
 
+> [!NOTE]
 > This section is only targeted at the Unity platform.
 
 <!-- tabs:start -->
@@ -20,6 +21,7 @@ The modules are broken down into the following sections:
 * Advertisement (AdMob)
 * Firebase (Analytics, Remote Config & Deep Links)
 
+> [!TIP]
 > Besides the modules, there are also two manifest files which should be used only if you are using either the Unity Plugin “Prime31” or “Android Native”. You should especially look at the main activity name value.
 
 ### Google Play Services
@@ -83,6 +85,7 @@ Unity supports this feature via the **“Split Application Binary”** build opt
 
 There is a problem though, the **“Streaming Assets”** folder that contains the JSON files required by the Gamedock SDK is included in the OBB file, not the APK file. This means that when the app starts the Gamedock SDK tries to locate the JSON files in the APK but it won’t find them. This problem can be solved by copying the JSON files in the Unity project from “/Streaming Assets” to “/Plugins/Android/assets/”. The files are then copied to the APK file and the Gamedock SDK can initialize properly.
 
+> [!WARNING]
 > It is strongly recommended that if your game goes over the 100 MB limit but below 150 MB, to use the App Bundles feature when building your project for publishing. For more information on App Bundles check [https://developer.android.com/guide/app-bundle](https://developer.android.com/guide/app-bundle) and Unity support for App Bundles [https://blogs.unity3d.com/2018/10/03/support-for-android-app-bundle-aab-in-unity-2018-3-beta/](https://blogs.unity3d.com/2018/10/03/support-for-android-app-bundle-aab-in-unity-2018-3-beta/)
 
 #### ** iOS Building **

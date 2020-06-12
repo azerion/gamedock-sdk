@@ -1,5 +1,6 @@
 # Shop, Wallet & Inventory Control
 
+> [!NOTE]
 > A wallet holds a user’s balance of the currencies (such as coins and diamonds) used within a game. An in-game shop is a facility that allows users to buy items, or bundles of items, with their game currency. For example, within a game, users might be able to buy a sword with 100 coins. Once bought, items are added to a user’s personal inventory.
 
 ### Understanding the Object Structures

@@ -80,7 +80,8 @@ gamedockSDK.on('AdsInitialized', () => {
 
 <!-- tabs:end -->
 
-> It is highly recommended that you wait for this callback before doing any advertisement logic!
+> [!WARNING]
+> The game has to wait for this callback before doing any advertisement logic.
 
 ## Handling Banner Ads
 
@@ -234,6 +235,7 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
 
 Interstitial ads are full-screen ads that cover the interface of their host app. They are typically displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. By default, the Gamedock SDK shows interstitial ads based on specific event triggers that can be configured in the Gamedock Console.
 
+> [!NOTE]
 > The game events that should trigger interstitial ads need to discussed and agreed with your Gamedock Account Manager. You can also manually trigger an interstitial ad using the following functions:
 
 <!-- tabs:start -->

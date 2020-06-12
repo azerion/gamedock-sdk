@@ -1,13 +1,16 @@
 # Adding the Gamedock SDK
 
+> [!NOTE]
 > As the Gamedock SDK grows and expands, new SDK versions with additional features will be made available. These new versions can update or improve your game. However, previous versions will still be available for legacy games. It is recommended that you update your games to the latest SDK.
 
 <!-- tabs:start -->
 
 #### ** Unity **
 
+> [!WARNING]
 > The minimum recommended Unity version in order for the SDK to work properly is **2018.3.+ or higher**.
 
+> [!WARNING]
 > Xcode 11 is required in order to build for iOS.
 
 ### Download and Import the Gamedock Unity package into your project
@@ -36,6 +39,7 @@ Unpack the downloaded archive, and inside you will find the native library folde
 4. **The Gamedock SDK is now ready to use!** Most Gamedock SDK features will be configured automatically when the SDK initializes, see the specific feature sections to see which integration parts still have to be implemented. Please make sure to also follow the next section ‘GDPR & Privacy Policy’ to make your game GDPR compliant.
 
 
+> [!DANGER]
 > If you have issues with missing Prefab scripts please download the following folder and replace it in "Assets/Gamedock/Editor/" : [Prefab missing script fix](https://splashscreens.cdn.spilcloud.com/files/1574351079_Prefabs.zip)
 
 ### Initializing the Gamedock Unity SDK
@@ -215,6 +219,7 @@ gamedockSDK.on('InitializationCompleted', () => {
 
 <!-- tabs:end -->
 
+> [!TIP]
 > As a reminder, in order to use the Android Firebase implementation from Gamedock make sure you have the following dependencies in your Gradle file:
 ~~~java
 implementation 'com.google.firebase:firebase-analytics:17.4.1' /* Gamedock Firebase */

@@ -33,6 +33,7 @@ Gamedock.Instance.GetConfigValue(string key);
 
 The Gamedock SDK also includes methods for converting JSON strings to objects via the Gamedock.Unity.JSON.JSONHelper method.
 
+> [!WARNING]
 > The configuration service should always return a value. However, if, for any reason, it does not, ensure that you check and handle a possible null return.
 
 ### Listening for Updates to the Configuration File
@@ -98,6 +99,7 @@ Gamedock.GetInstance().GetConfigValue("key");
 
 The Gamedock SDK also includes methods for converting JSON strings to objects via the Gamedock.Unity.JSON.JSONHelper method.
 
+> [!WARNING]
 > The configuration service should always return a value. However, if, for any reason, it does not, ensure that you check and handle a possible null return.
 
 ### Listening for Updates to the Configuration File

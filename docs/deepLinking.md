@@ -4,7 +4,8 @@ Deep linking (also known as dynamic linking) is the process of redirecting users
 
 Game developers can use deep linking to drive up user engagement and acquisition. It helps determine effective campaigns and properly measure attributions. In addition, deep linking can also simplify and amplify referral tracking and the onboarding process.
 
-> The Gamedock SDK support deeplinking via Firebase and Adjust SDK’s, which are included with the Gamedock SDK. Deeplinking may also have to be implemented via the Facebook SDK, which should be done by developers themselves in Unity. See the “Facebook SDK” section for more details. Your Gamedock contact person should inform you if/when deeplinks should be implemented and via which platform(s). For more information on Firebase deeplinking, see: [https://firebase.google.com/docs/dynamic-links](https://firebase.google.com/docs/dynamic-links).
+> [!NOTE]
+> The Gamedock SDK supports Deep Linking via Firebase and Adjust SDK’s, which are included with the Gamedock SDK. Deeplinking may also have to be implemented via the Facebook SDK, which should be done by developers themselves in Unity. See the “Facebook SDK” section for more details. Your Gamedock contact person should inform you if/when Deep Links should be implemented and via which platform(s). For more information on Firebase Deep Linking, see: [https://firebase.google.com/docs/dynamic-links](https://firebase.google.com/docs/dynamic-links).
 
 ## Prerequisites
 
@@ -28,6 +29,7 @@ Do the following:
 
 Base URL and URL scheme should be provided by Gamedock. A base url looks like this: “www.tappyplane.com”, a url scheme looks like this: “tappyplane”. 
 
+> [!WARNING]
 > Ensure the host name is specified in your manifest file.
 
 Obtain the required SHA-256 (and preferably the SHA-1) fingerprints from your Gamedock Games Account Manager. Confirm that the keys have been correctly configured in Google Firebase.
@@ -132,6 +134,7 @@ void OnRewardTokenClaimFailed (string rewardType, GamedockErrorMessage error)
 
 <!-- tabs:end -->
 
+> [!TIP]
 > This code can be used for all the Gamedock SDK features that use a reward-token mechanism.
 
 ## Passing data to your app via deep link
@@ -149,7 +152,7 @@ Documentation for setting up deep links via the Console is currently only availa
 ## Facebook SDK deep linking
 
 
-Developers will have to integrate the Facebook SDK’s deeplinking features and pass any received deeplinks to the Gamedock SDK to be processed. This can be done as follows:
+Developers will have to integrate the Facebook SDK’s Deep Linking features and pass any received Deep Links to the Gamedock SDK to be processed. This can be done as follows:
 
 After initialising the Facebook SDK via FB.Init(OnFBInitComplete), in your OnFBInitComplete call you’ll have to call:
 

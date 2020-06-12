@@ -1,5 +1,6 @@
 # Implementing Asset Bundles Configurations
 
+> [!NOTE]
 > This feature is only supported if your game is using Unity.
 
 Asset Bundles are files created in the Unity editor during edit-time, which can be used later by a build of a project at run-time. Asset Bundles can contain asset files such as models, materials, textures, and scenes. Asset Bundles cannot contain scripts. Asset Bundles allow on-demand streaming and loading of Assets from a local or remote location. With Asset Bundles, Assets can be stored remotely and accessed as needed, increasing the flexibility of the project and reducing the initial application size. Asset Bundles configurations can be done through the Gamedock Console, and as so please ask your Product Manager to configure this before starting the implementation of this feature.

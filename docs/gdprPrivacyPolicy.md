@@ -2,7 +2,8 @@
 
 According to European GDPR (General Data Protection Regulation) law, apps must clarify their functions to users and explicitly request user approval before tracking personal data. Both Google and Apple have their own interpretations of GDPR. In order to comply with all requirements, the Gamedock SDK includes a customisable privacy policy menu with accompanying mechanisms that ensure no 3rd party libraries are initialised and no network communication is performed before the user has accepted the privacy policy.
 
-> IMPORTANT: It is not allowed to have any network calls before the user accepts the privacy policy, do not initialise any libraries/make any calls before initialising the Gamedock SDK.
+> [!WARNING]
+> It is not allowed to have any network calls before the user accepts the privacy policy, do not initialise any libraries/make any calls before initialising the Gamedock SDK.
 
 ![github pages](_images/PrivacyPolicyPopup.png)
 

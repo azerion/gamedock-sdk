@@ -57,6 +57,7 @@ Gamedock.Instance.PromotionsCallbacks.OnPromotionAmountBought += OnPromotionAmou
 Gamedock.Instance.ShowPromotionScreen(promotionId);
 ~~~
 
+> [!TIP]
 > For Bundle purchases, the Promotion will be applied automatically if there is one. You do not need to add any extra information for the buying of the bundle.
 
 A simple example is also given for applying promotion values to an IAP Package as these need to be applied manually:
@@ -134,6 +135,7 @@ private function onPromotionAmountBoughtEvent(evt:PromotionAmountBoughtEvent) : 
 Gamedock.GetInstance().ShowPromotionScreen(promotionId);
 ~~~
 
+> [!TIP]
 > For Bundle purchases, the Promotion will be applied automatically if there is one. You do not need to add any extra information for the buying of the bundle.
 
 A simple example is also given for applying promotion values to an IAP Package as these need to be applied manually:

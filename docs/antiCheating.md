@@ -60,8 +60,6 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 
 Optionally, the Gamedock Games SDK can also send the receipt to the game’s backend. In this way, corrective action can be taken against false purchases or other suspicious activity.
 
-> Note that the operation of this support depends on the connection between the game and its backend. Further information about possible connection options is available from your Gamedock Account Manager.
-
 ## Retrieving Server-Time Information
 
 The Gamedock SDK also offers the possibility to retrieve the game’s server time. This can prove useful for anti-cheating measures. For example, if the user changes the device time or clock this does affect the execution of the game’s logic. To retrieve the server time, use the following code:
