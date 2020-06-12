@@ -221,6 +221,7 @@ gamedockSDK.on('InitializationCompleted', () => {
 
 > [!TIP]
 > As a reminder, in order to use the Android Firebase implementation from Gamedock make sure you have the following dependencies in your Gradle file:
+
 ~~~java
 implementation 'com.google.firebase:firebase-analytics:17.4.1' /* Gamedock Firebase */
 implementation 'com.google.firebase:firebase-crashlytics:17.0.0' /* Gamedock Firebase */
