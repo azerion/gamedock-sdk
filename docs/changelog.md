@@ -160,7 +160,7 @@
 * Removed old permissions system (replaced by the Organization and Role Management features).
 * Added confirmation window before removing a Splashscreen creative.
 
-###  01-04-2020 - 30-04-2020
+###  01.04.2020 - 30.04.2020
 
 * Re-added campaigns for promotions.
 * Added Audit logs for push notifications.
@@ -172,7 +172,7 @@
 * Removed testing environment on several features.
 * Added extra Firebase key for Android SDK Config.
 
-###  01-03-2020 - 31-03-2020
+###  01.03.2020 - 31.03.2020
 
 * Added generic Audit logging page.
 * Added a confirmation window before removing a Priority Ads configuration.
@@ -182,7 +182,7 @@
 * Added Audit logs for GDPR page.
 * Added Audit logs for promotions.
 
-###  01-02-2020 - 29-02-2020
+###  01.02.2020 - 29.02.2020
 
 * Fixed issues with the Graphana login (used for displaying the Graphs in the Console).
 * Fixed issues with navigation regarding Virtual Goods Currencies and User Page.
@@ -193,7 +193,7 @@
 * Minor UI/UX fixes.
 * Added default configuration download page.
 
-###  01-01-2020 - 31-01-2020
+###  01.01.2020 - 31.01.2020
 
 * Refactored Devices Dashboard for the Event Dashboard.
 * Removed unnecessary panels in the Game Dashboard.
