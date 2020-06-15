@@ -9,7 +9,7 @@
 * [Content](content.md "Content")
   * [![github pages](_images/sidebar/gameConfig.svg)Game Balancing](gameBalancing.md "Game Balancing")
   * [![github pages](_images/sidebar/pushNotifications.svg)Push Notifications](pushNotifications.md "Push Notifications")
-  * [![github pages](_images/sidebar/shopWalletInventory.svg)Shop, Wallet & Inventory](shopWalletInventoryControl.md "Shop, Wallet & Inventory Control")
+  * [![github pages](_images/sidebar/shopWalletInventory.svg)Wallet, Inventory & Shop](shopWalletInventoryControl.md "Wallet, Inventory & Shop")
   * [![github pages](_images/sidebar/missions.svg)Missions & Containers](missionsAndContainersFeature.md "Missions and Containers Feature")
   * [![github pages](_images/sidebar/inappPackages.svg)In-Game Packages](managingInGamePurchases.md "Managing In-Game Purchases")
   * [![github pages](_images/sidebar/gameState.svg)Game States](workingWithGameStates.md "Working with Game States")

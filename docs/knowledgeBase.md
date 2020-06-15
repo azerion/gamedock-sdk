@@ -1,5 +1,6 @@
 # Knowledge Base
 
+> [!NOTE]
 > This page contains an overview of potential issues that you might encounter while building or running your game with the Gamedock SDK based on the engine that you use.
 
 <!-- tabs:start -->
