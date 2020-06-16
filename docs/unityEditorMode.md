@@ -26,7 +26,7 @@ The following features are supported within the Unity Editor:
 * Social Login
 * Event Tracking
 
-> [!WARNING]
+> [!DANGER]
 > The Unity Editor implementation of Gamedock does not support offline functionality (the Android and iOS one do).
 
 ## Configuring the Unity Editor
@@ -44,7 +44,7 @@ In order to access the "Configuration" window do the following:
 
 ![github pages](_images/unityEditor/unityEditor1.png)
 
-> [!WARNING]
+> [!DANGER]
 > Make sure that when you open the "Configuration" window, that you are in the scene where the GamedockSDK object is also present, otherwise details will not be shown.
 
 The "Configuration" window contains 4 tabs:
