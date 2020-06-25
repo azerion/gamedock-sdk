@@ -36,11 +36,16 @@
 
   *Answer*: The reason why you would get duplicate library (aar files) erros could be that you have both these libraries imported as files in the "Assets/Plugins/Android" folder as well as imported through the "mainTemplate.gradle" file. The first thing you can do to spot duplicates is to use the "Verify Android Setup" option from Gamedock. This can be found in the Gamedock SDK->Configuration->Android->Verify Android Setup. If no errors appear in the Editor Console, investigate manually the "Assets/Plugins/Android" folder an make sure you have as little ".aar" files as possible and instead import those dependencies through the "mainTemplate.gradle" file. If you are using the Play Resolver also make sure to disable automatic importing of ".aar" files when resolving dependencies.
 
+* *Issue*: **For Android, I require to reimport the Gamedock SDK files (if using Gradle) because a new version is available.**
+
+  *Answer*: The easiest way to reimport all the Gamedock SDK files is to clear your gradle cache. In order to do so, follow the following instructions: [https://stackoverflow.com/a/30450020](https://stackoverflow.com/a/30450020).
+
 #### ** AIR **
 
 * *Issue*: **After I implemented the advertisement solution from Gamedock, I always get AdNotAvailable when requesting banners/interstitials/rewarded videos.**
 
   *Answer*: There are several common mistakes that might be causing this issue. The first is that as of 3.9.x or above, it is required that you do any ad related requests/operations only after the callback OnAdsInitialized has been fired (you need to listen to this callback). Another mistake could be that the advertisement configuration was not yet added for your game in the Gamedock Console. In this case contact your Game Producer/Gamedock Representative.
+
 
 #### ** Cordova **
 
@@ -51,5 +56,10 @@
 * *Issue*: **When starting the game first time with Gamedock, the Age Gate/Privacy Policy(GDPR) windows show up, but there is no text in the windows.**
 
   *Answer*: In general missing text in the Age Gate or Privacy Policy(GDPR) windows is related to either missing the "defaultGameConfig.json" in the build or not having setup properly the SDK Config in the Gamedock Console.
+
+* *Issue*: **For Android, I require to reimport the Gamedock SDK files (if using Gradle) because a new version is available.**
+
+  *Answer*: The easiest way to reimport all the Gamedock SDK files is to clear your gradle cache. In order to do so, follow the following instructions: [https://stackoverflow.com/a/30450020](https://stackoverflow.com/a/30450020).
+
 
 <!-- tabs:end -->
