@@ -19,7 +19,7 @@ The SDK currently has the following Ad Networks implemented:
 | AdColony                          | 4.1.4                                          | Mediation          | ✓         | ✓              | ✓                |
 | Unity Ads                         | 3.4.2                                          | Mediation          | ✓         | ✓              | ✓                |
 | Facebook Audience Network         | 5.9.0                                          | Mediation          | ✓         | ✓              | ✓                |
-| Vungle                            | 6.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
+| Vungle                            | 6.7.0                                          | Mediation          | ✓         | ✓              | ✓                |
 | Applovin                          | 9.12.8                                         | Mediation          | ✓         | ✓              | ✓                |
 | InMobi                            | 9.0.6                                          | Mediation          | ✓         | ✓              | ✓                |
 | Tapjoy                            | 12.4.2                                         | Mediation          | x         | ✓              | ✓                |
