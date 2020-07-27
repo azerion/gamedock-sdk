@@ -16,5 +16,5 @@ To create a sdk version:
 ### Remove a sdk version
 To remove a sdk version:
 1. Find the sdk version that you want to delete in the list of games
-2. Click the ![trash](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/trash.png) button for that row
+2. Click the ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/trash.png) button for that row
 3. A confirmation popup will show, press **OK** if you are sure you want to remove the version

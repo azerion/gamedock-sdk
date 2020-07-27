@@ -26,7 +26,7 @@ You may want to consider:
 ### Edit a game
 To edit a game:
 1. Find the game that you want to edit in the list of games
-2. Click the ![pencil](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for that row
+2. Click the ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for that row
 3. A pop-up will now show up where you can edit various properties of the game (see create game for an explanation of the fields)
 4. When done press **Save**
 
@@ -36,12 +36,12 @@ The functionality to hide a game basically does not remove the game, but will re
 To hide/unhide a game:
 
 1. Find the game that you want to hide/unhide in the list of games
-2. Click the  ![eye-close](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/eye-close.png)</span> or ![eye-open](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/eye-open.png)</span> button for that row to hide or unhide the game repectively
+2. Click the  ![eye-close](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/eye-close.png)</span> or ![eye-open](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/eye-open.png)</span> button for that row to hide or unhide the game repectively
 
 ### Change the organization for a game
 To change the organization:
 1. Find the game that you want to change the organization for in the list of games
-2. Click the ![transfer](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/transfer.png) button for that row
+2. Click the ![transfer](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/transfer.png) button for that row
 3. A pop-up will show where you can select the new organization for the game
 4. When done press **Save**
 

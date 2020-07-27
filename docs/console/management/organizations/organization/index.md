@@ -19,6 +19,6 @@ After creating an organization you can:
 ### Edit an organization
 To edit an organization:
 1. Find the organization that you want to edit in the list of organizations
-2. Click the ![pencil](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for that row
+2. Click the ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for that row
 3. A popup will show in which you can only edit the name of the organization
 4. When done press **Save**

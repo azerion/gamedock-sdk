@@ -22,7 +22,7 @@ After creating a service you may want to switch to the Events page and start cre
 ### Edit a service
 To edit a service:
 1. Find the service that you want to edit in the list of services
-2. Click the ![pencil](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for that row
+2. Click the ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for that row
 3. A popup will now show up where you can edit the name and url of the service you selected
 4. When done press **Save**
 5. You will see a green confirmation message and  the row should now contain the values you updated
@@ -30,6 +30,6 @@ To edit a service:
 ### Remove a service
 To remove a service:
 1. Find the service that you want to edit in the list of services
-1. Click the ![trash](https://github.com/schoende/gamedock-sdk/raw/master/docs/console/_images/trash.png) button for that row
+1. Click the ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/trash.png) button for that row
 2. Confirm that you want to delete the service
 3. You will see a green confirmation message and the service will be removed from the list
