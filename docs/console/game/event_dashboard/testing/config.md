@@ -2,7 +2,7 @@
 This page contains the configuration that is needed to connect to testrail, with which we can store what we configure in the **testrail** tab. To get this set up please contact the gamedock team. Next to that we can create **abstracts**. Abstracts are constant values which can be used in the testail tests. For example a package_id that is used in multiple tests can be configured as an abstract.
 
 ## Contents
-- [Create an abstract](create-an-abstract)
+- [Create an abstract](#create-an-abstract)
 - [Edit an abstract](#edit-an-abstract)
 - [Remove an abstract](#remove-an-abstract)
 
