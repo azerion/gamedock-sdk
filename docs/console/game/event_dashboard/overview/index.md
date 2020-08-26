@@ -13,7 +13,7 @@ To view the overview for a device:
 4 You'll now see events that have been sent in the period in the table below, more on that.
 
 ### Explanation of columns
-There are some columns that may not be clear intially. See the columns and what their value means below:
+There are some columns that may not be clear initially. See the columns and what their value means below:
 * Event: the name of the event
 * Configured: when false it indicates that this is an event that games should manually configure in the game's event page.
 * Status: there are three statusses: 
