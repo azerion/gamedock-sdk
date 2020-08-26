@@ -1,5 +1,5 @@
 # Events
-On this age you can configure global events. These events can be used by all games. Some of them are called by the SDK automatically some have to be integrated manually in the game (this is reflected in the field integration).
+On this page you can configure global events. These events can be used by all games. Some of them are called by the SDK automatically some have to be integrated manually in the game (this is reflected in the field integration).
 Next to creating the event you can set various properties by clicking on a row, which will expand the extra option to the right (Setting up what services to call, in which SDK versions this event is applicable) and below (Setting properties of the event) the table.
 
 ## Contents
