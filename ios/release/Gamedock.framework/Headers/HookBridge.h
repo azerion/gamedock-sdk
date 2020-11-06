@@ -124,6 +124,13 @@ extern "C" {
     
     void registerForPushNotifications();
     
+    // --- ATTracking ---
+        
+    void registerForATTrackingNative();
+    
+    void showAppSettingsNative();
+
+    
     // --- Token claiming ---
     
     void claimTokenNative(const char* token, const char* rewardType);
@@ -132,7 +139,7 @@ extern "C" {
     
     void requestGameConfigNative();
     
-    char* getConfigNative();
+    char* getConfigNative(bool withSdkConfig);
     
     char* getConfigValueNative(const char* keyName);
     
@@ -307,6 +314,8 @@ extern "C" {
     char* getTieredEventProgressNative(int tieredEventId);
     
     void showTieredEventProgressNative(int tieredEventId);
+    
+    void claimTierRewardsNative(int tieredEventId, int tierId);
     
     // --- Login ---
     

@@ -14,36 +14,42 @@ The SDK currently has the following Ad Networks implemented:
 
 | Ad Network                        | Version                                        | Type               | Banner    | Interstitial   | Rewarded Video   |
 |:----------------------------------|:-----------------------------------------------|:-------------------|:----------|:---------------|:-----------------|
-| AdMob                             | 19.1.0                                         | Mediator           | ✓         | ✓              | ✓                |
-| AdManager                         | 19.1.0                                         | Mediator           | ✓         | ✓              | ✓                |
-| AdColony                          | 4.1.4                                          | Mediation          | ✓         | ✓              | ✓                |
-| Unity Ads                         | 3.4.2                                          | Mediation          | ✓         | ✓              | ✓                |
-| Facebook Audience Network         | 5.9.0                                          | Mediation          | ✓         | ✓              | ✓                |
-| Vungle                            | 6.7.0                                          | Mediation          | ✓         | ✓              | ✓                |
-| Applovin                          | 9.12.8                                         | Mediation          | ✓         | ✓              | ✓                |
-| InMobi                            | 9.0.6                                          | Mediation          | ✓         | ✓              | ✓                |
-| Tapjoy                            | 12.4.2                                         | Mediation          | x         | ✓              | ✓                |
-| Ironsource                        | 6.16.2                                         | Mediation          | x         | ✓              | ✓                |
-| MyTarget                          | 5.8.1                                          | Mediation          | ✓         | ✓              | ✓                |
-| Fyber                             | 7.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
+| AdMob                             | 19.4.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdManager                         | 19.4.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| Gamedock Ads                      | 4.0.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| AdColony                          | 4.2.4                                          | Mediation          | ✓         | ✓              | ✓                |
+| Unity Ads                         | 3.4.8                                          | Mediation          | ✓         | ✓              | ✓                |
+| Facebook Audience Network         | 6.0.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Vungle                            | 6.7.1                                          | Mediation          | ✓         | ✓              | ✓                |
+| Applovin                          | 9.13.4                                         | Mediation          | ✓         | ✓              | ✓                |
+| InMobi                            | 9.1.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Tapjoy                            | 12.7.0                                         | Mediation          | x         | ✓              | ✓                |
+| Ironsource                        | 7.0.1                                          | Mediation          | x         | ✓              | ✓                |
+| MyTarget                          | 5.10.0                                         | Mediation          | ✓         | ✓              | ✓                |
+| Fyber                             | 7.7.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Ogury                             | 4.9.0                                          | Mediation          | ✓         | ✓              | ✓                |
+
 
 ### iOS
 
 | Ad Network                        | Version                                        | Type               | Banner    | Interstitial   | Rewarded Video   |
 |:----------------------------------|:-----------------------------------------------|:-------------------|:----------|:---------------|:-----------------|
-| AdMob                             | 7.60.0                                         | Mediator           | ✓         | ✓              | ✓                |
-| AdManager                         | 7.60.0                                         | Mediator           | ✓         | ✓              | ✓                |
-| AdColony                          | 4.1.5                                          | Mediation          | ✓         | ✓              | ✓                |
-| Unity Ads                         | 3.4.2                                          | Mediation          | ✓         | ✓              | ✓                |
-| Facebook Audience Network         | 5.9.0                                          | Mediation          | ✓         | ✓              | ✓                |
-| Vungle                            | 6.5.3                                          | Mediation          | ✓         | ✓              | ✓                |
-| Applovin                          | 6.12.8                                         | Mediation          | ✓         | ✓              | ✓                |
-| InMobi                            | 9.0.4                                          | Mediation          | ✓         | ✓              | ✓                |
-| Tapjoy                            | 12.4.2                                         | Mediation          | x         | ✓              | ✓                |
-| Ironsource                        | 6.16.2                                         | Mediation          | x         | ✓              | ✓                |
-| MyTarget                          | 5.6.0                                          | Mediation          | ✓         | ✓              | ✓                |
-| Chartboost                        | 8.1.0                                          | Mediation          | ✓         | ✓              | ✓                |
-| Fyber                             | 7.5.6                                          | Mediation          | ✓         | ✓              | ✓                |
+| AdMob                             | 7.66.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| AdManager                         | 7.66.0                                         | Mediator           | ✓         | ✓              | ✓                |
+| Gamedock Ads                      | 4.0.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| AdColony                          | 4.4.1                                          | Mediation          | ✓         | ✓              | ✓                |
+| Unity Ads                         | 3.5.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Facebook Audience Network         | 6.2.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Vungle                            | 6.8.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Applovin                          | 6.14.4                                         | Mediation          | ✓         | ✓              | ✓                |
+| InMobi                            | 9.1.0                                          | Mediation          | ✓         | ✓              | ✓                |
+| Tapjoy                            | 12.7.0                                         | Mediation          | x         | ✓              | ✓                |
+| Ironsource                        | 7.0.2                                          | Mediation          | x         | ✓              | ✓                |
+| MyTarget                          | 5.7.5                                          | Mediation          | ✓         | ✓              | ✓                |
+| Chartboost                        | 8.3.1                                          | Mediation          | ✓         | ✓              | ✓                |
+| Fyber                             | 7.7.1                                          | Mediation          | ✓         | ✓              | ✓                |
+| Ogury                             | 1.3.1                                          | Mediation          | ✓         | ✓              | ✓                |
+
 
 ## Advertisement Initialization
 

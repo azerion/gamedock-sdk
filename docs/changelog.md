@@ -4,6 +4,30 @@
 
 #### ** SDK **
 
+###  Version 4.0.0 *(07-11-2020)*
+
+**New Features**
+ * _Gamedock Ads Module_: This feature enabled internal ads (from within Azerion) to be displayed within the Gamedock SDK using the Priority Ads feature.
+ * _iOS 14 Support_: The SDK was updated to support iOS 14 including the new permission requirement from Apple regarding Ad Tracking. The GDPR popup for iOS now has an extra permission pop up after the user has accepted it. This permission cannot be customized and needs to come directly from Apple.
+ * _Ogury Mediation Network_: A new ad network was added to the AdMob mediation stack.
+
+**Bug fixes**
+ * Android/iOS: Fixed issue with sending correctly the AppsFlyer id to the Gamedock Backend.
+ * iOS: Fixed issue with Age Gate not taking into account properly the settings.
+ * iOS: Fixed issue with push notifications tokens not being parsed correctly. 
+ * Android: Fixed issue with doing an "AddItem" operation with the Transaction Builder.
+ * Android: Fixed issue with AppsFlyer id not being sent with the SDK "install" event.
+ * Android: Fixed several minor ANR and Crashes.
+
+**Other**
+ * Android/iOS/Unity/Cordova: Updated GDPR flow to now by default have personalized content and ads be disabled by default. Changed the button from "Accept" to "Accept All" and updated the flow for saving the user's options to take into account the change.
+ * Android/iOS: Updated AdMob mediation adapters and networks.
+ * Android/iOS/Unity: Opening a gacha will not return the position of the received gacha content in the PlayerDataUpdated callback.
+ * Android/iOS/Unity: Added additional claim method for tiered events.
+ * Android/iOS: Added additional tracking for ad events (available/not available).
+ * Android/iOS/Unity/Cordova: Retrieving the game config will no longer also return the SDK config.
+ * Unity: When building the game, the SDK will automatically fetch the latest Default Configuration Files.
+
 ###  Version 3.9.1 *(04-06-2020)*
 
 **Bug fixes**
@@ -152,6 +176,42 @@
  * Unity: Exposed the Android Crashlytics/Fabric api key to the manifest. If you are using a different Fabric account then the old Spilgames one, make sure to update this key.
 
 #### ** Console **
+
+### 01.09.2020 - 31.09.2020
+
+* Added description to event game versions and properties.
+* Added pushNotification statistics to the user page.
+* Made 404 and 500 error pages prettier.
+* Fixed Shop management page structure.
+* Fixed Management menu item not stuck to bottom.
+* Added possibility for user to manually configure IAP validation.
+* Additional UX improvements.
+
+### 01.08.2020 - 30.08.2020
+
+* Removed Franchises field from the games.
+* Removed DFP entries from the Advertisement page.
+* Added testing functionality to push notifications.
+* Added Event Dashboard overview and removed event validation page.
+* Added 404s when the user doesn't have permission to view games and organisations.
+* Added Game Viewer role to users that have custom roles.
+
+###  01.07.2020 - 31.07.2020
+
+* Push notifications improvements.
+* Added button to see all Graphana graphs below graph.
+* Added new Priority Ads network.
+* Added new Help Texts connected to GitHub.
+* Changed Event Dashboard devices to be game specific.
+
+###  01.06.2020 - 30.06.2020
+
+* Added validation before deleting a creative.
+* Minor issue fixed with pop-ups.
+* Push notifications improvements.
+* Changed so that super users see all games for permissions.
+* Permissions system improvements.
+* Several UI/UX improvements.
 
 ###  01.05.2020 - 31.05.2020
 

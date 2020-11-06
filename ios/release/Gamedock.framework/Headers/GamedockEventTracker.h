@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(int, GamedockPrivacyStatus) {
+    GamedockPrivacyStatusDoesntExist = -1,
+    GamedockPrivacyStatusWithoutContentWithoutAds,
+    GamedockPrivacyStatusWithContentWithoutAds,
+    GamedockPrivacyStatusWithoutContentWithAds,
+    GamedockPrivacyStatusWithContentWithAds
+};
+
 @interface GamedockEventTracker : NSObject
 
 // --- Properties ---
@@ -31,7 +39,8 @@
 -(void)setCustomBundleId:(NSString*)bundleId;
 -(void)setPluginInformation:(NSString*)pluginNameParam pluginVersion:(NSString*)pluginVersionParam;
 -(void)setPushKey:(NSString*)pushKey;
--(void)setPrivValue:(int)privValue;
+-(void)setPrivValue:(GamedockPrivacyStatus)privValue;
+-(void)setPrivValueWithContentValue:(bool)contentValue adsValue:(bool)adsValue completion:(void (^)(GamedockPrivacyStatus))completion;
 
 -(NSString*)getBundleId;
 -(NSString*)getSessionId;
@@ -44,7 +53,7 @@
 -(int)getTimezoneOffset;
 -(NSString*)getDeviceModel;
 -(NSString*)getAppVersion;
--(NSString*)getPrivValue;
+-(GamedockPrivacyStatus)getPrivValue;
 -(BOOL)isReservedEvent:(NSString*)name;
 // --- Event tracking ---
 

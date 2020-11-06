@@ -1,0 +1,64 @@
+{
+  "translations" : [
+    {
+      "lang": "en",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Your data will be used to deliver personalized ads to you.\";"
+    },
+    {
+      "lang": "nl",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Uw gegevens worden gebruikt om gepersonaliseerde advertenties aan u te tonen.\";"
+    },
+    {
+      "lang": "fr",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Vos données seront utilisées pour vous proposer des publicités personnalisées.\";"
+    },
+    {
+      "lang": "de",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Ihre Daten werden benutzt, um Ihnen personalisierte Werbung zuzuschicken.\";"
+    },
+        {
+      "lang": "es",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Tus datos se usarán para mostrarte anuncios personalizados.\";"
+    },
+        {
+      "lang": "pt",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Seus dados serão usados para fornecer anúncios personalizados para você.\";"
+    },
+        {
+      "lang": "it",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"I tuoi dati verranno utilizzati per inviarti annunci personalizzati.\";"
+    },
+        {
+      "lang": "sv",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Din data kommer att användas för att skicka personligt anpassade annonser till dig.\";"
+    },
+    {
+      "lang": "pl",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Twoje dane zostaną wykorzystane do dostarczenia Ci spersonalizowanych reklam.\";"
+    },
+    {
+      "lang": "ru",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Ваши данные будут использованы для показа Вам персонализированной рекламы.\";"
+    },
+    {
+      "lang": "id",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Data Anda akan digunakan untuk menayangkan iklan yang dipersonalisasi untuk Anda.\";"
+    },
+    {
+      "lang": "jp",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"お客様のデータはお客様個人に向けた広告のために使用されます。\";"
+    },
+    {
+      "lang": "zh",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"您的数据将被用于向您发送个人化的广告。\";"
+    },
+    {
+      "lang": "tr",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"Verileriniz size özel reklamlar sunmak için kullanılacaktır.\";"
+    },
+    {
+      "lang": "kr",
+      "permissions": "\"NSUserTrackingUsageDescription\" = \"귀하의 정보는 맞춤형 광고를 제공하기 위하여 사용됩니다.\";"
+    }
+  ]
+}

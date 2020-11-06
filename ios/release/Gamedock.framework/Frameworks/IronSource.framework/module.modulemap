@@ -36,11 +36,11 @@ framework module IronSource {
     header "ISLogDelegate.h"
     header "ISOfferwallDelegate.h"
     header "ISPlacementInfo.h"
-    header "ISRewardedInterstitialDelegate.h"
     header "ISRewardedVideoDelegate.h"
     header "ISDemandOnlyRewardedVideoDelegate.h"
     header "ISSupersonicAdsConfiguration.h"
-    
-    
+    header "ISImpressionDataDelegate.h"
+    header "ISImpressionData.h"
+
     
 }

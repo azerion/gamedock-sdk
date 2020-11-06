@@ -49,7 +49,7 @@
 #import "HookBridge.h"
 #import "GAI.h"
 
-#define GAMEDOCK_SDK_VERSION @"3.9.1"
+#define GAMEDOCK_SDK_VERSION @"4.0.0"
 
 @class Gamedock;
 @class InitializationOptions;
@@ -119,7 +119,7 @@
 // Player data events
 -(void)playerDataUpdated:(nonnull NSString*)reason updatedData:(nonnull NSString*)updatedData wallet:(nonnull NSString*)wallet inventory:(nonnull NSString*)inventory;
 -(void)playerDataEmptyGacha;
--(void)playerDataNewUniqueItem:(nonnull UniquePlayerItem*)newUniquePlayerItem bundleId:(int)bundleId gachaId:(int)gachaId tierId:(int)tierId reason:(nonnull NSString*)reason;
+-(void)playerDataNewUniqueItem:(nonnull UniquePlayerItem*)newUniquePlayerItem bundleId:(int)bundleId gachaId:(int)gachaId gachaPosition:(int)gachaPosition tierId:(int)tierId reason:(nonnull NSString*)reason;
 
 // User data events
 -(void)otherUsersGameStateLoaded:(nonnull NSDictionary*)data forProvider:(nonnull NSString*)provider; // Data: <NSString* userId, NSString* data>
@@ -187,6 +187,10 @@
 
 // Game version update available
 -(void)gameVersionStatus:(nonnull NSString*)status;
+
+//ATTracking
+-(void)attStatus:(int)status;
+-(void)privValueChangeForced:(int)priv;
 
 @end
 
@@ -342,12 +346,12 @@
  * Saves the priv value and updates the 3rd party libraries accordingly.
  * @param priv The new priv value to use
  */
-+(void)savePrivValue:(int)priv;
++(void)savePrivValue:(GamedockPrivacyStatus)priv;
 
 /**
  * Returns the priv value
  */
-+(int)getPrivValue;
++(GamedockPrivacyStatus)getPrivValue;
 
 /**
  * Forwarding Delegate method to let the Gamedock framework know when the app was launched
@@ -643,6 +647,14 @@
  */
 +(void)registerPushNotifications;
 
+#pragma mark ATTracking
+
+/**
+ * Helper functions to register for app transparency tracking
+ */
++(void)registerATTracking;
+
++(void)showAppSettings;
 /**
  * Helper function to forward the app delegate listener on the deviceToken
  */
@@ -668,7 +680,7 @@
  * Get the latest stored game configuration, typically a synchronized json object coming from the server.
  * @return NSDictionary object representation from the stored game configuration
  */
-+(nullable NSDictionary*)getConfig;
++(nullable NSDictionary*)getConfig:(BOOL)withSdkConfig;
 
 /**
  * Get a specific value from a particular key from the game configuration
@@ -1211,6 +1223,11 @@
  * Show the progress of the requested tiered event
  */
 +(void)showTieredEventProgress:(int)tieredEventId;
+
+/**
+ * Claim tier reward
+ */
++(void)claimTierReward:(int)tieredEventId withTierId:(int)tierId;
 
 #pragma user login
 
