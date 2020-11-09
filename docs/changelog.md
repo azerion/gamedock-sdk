@@ -27,6 +27,7 @@
  * Android/iOS: Added additional tracking for ad events (available/not available).
  * Android/iOS/Unity/Cordova: Retrieving the game config will no longer also return the SDK config.
  * Unity: When building the game, the SDK will automatically fetch the latest Default Configuration Files.
+ * Unity: Renamed GachaContent, BundleItem and PackageItem to GachaEntity, BundleEntity and PackageEntity.
 
 ###  Version 3.9.1 *(04-06-2020)*
 
