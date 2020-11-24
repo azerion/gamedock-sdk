@@ -8,12 +8,13 @@
 ###  Version 4.0.1 *(23-11-2020)*
 
 **Bug fixes**
- * Android: Fixed crash related to ad tracking. Version 4.0.1 *(07-11-2020)*
-
-**Bug fixes**
  * Android: Fixed crash related to ad tracking.
  * Android: Fixed crash related to decrypting event values.
  * Android: Added potential fix for saving information to shared preferences async.
+
+**Other**
+ * Android: Updated AdMob to latest version and all ad mediation networks.
+ * iOS: Added more SKAdNetwork ids for several mediation networks.
 
 ###  Version 4.0.0 *(07-11-2020)*
 
