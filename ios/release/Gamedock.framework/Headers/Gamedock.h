@@ -49,7 +49,7 @@
 #import "HookBridge.h"
 #import "GAI.h"
 
-#define GAMEDOCK_SDK_VERSION @"4.0.1"
+#define GAMEDOCK_SDK_VERSION @"4.0.2"
 
 @class Gamedock;
 @class InitializationOptions;

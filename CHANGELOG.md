@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 4.0.2 *(02-12-2020)*
+----------------------------
+**Bug fixes**
+ * Android: Fixed issue with IAP packages not being initialized/returned correctly.
+
 Version 4.0.1 *(23-11-2020)*
 ----------------------------
 **Bug fixes**
