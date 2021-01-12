@@ -50,14 +50,14 @@ The Gamedock SDK has two ways of accepting opt out choices from the user:
 1. **What additional optional modules/plugins does Gamedock contain in it's package?**
 
 The Gamedock SDK contains the following optional additional modules that can be enabled/disabled depending on your needs:
-* Adjust SDK module
 * AppsFlyer SDK module
 * AdMob/AdManager including multiple additional mediation ad partners
 * Firebase SDK module containing the implementation for Analytics, Remote Config, Dynamic Links and Crashlytics
+* Only for iOS: Push Notification Service which enables rich push notifications
 
 2. **Do I need any additional keys in order to initialize/work with the SDK?**
 
-All keys are retrieved automatically from the console (if configured correctly of course) if you are using Unity or Cordova. For Unity you can always refresh all the configurations by using the Configuration menu (Top Bar->Gamedock SDK->General->Create Default Configuration Files). On Cordova the configuration keys are only retrieved once, when you add the plugin to your game (if you need to refresh the keys, remove the plugin and add it again).
+All keys are retrieved automatically from the console (if configured correctly of course) if you are using Unity or Cordova. For Unity you can always refresh all the configurations by using the Configuration menu (Top Bar->Gamedock SDK->General->Create Default Configuration Files). On Cordova the configuration keys are only retrieved once, when you add the plugin to your game (if you need to refresh the keys, remove the plugin and add it again). Also for Cordova, if you want to refresh the default configuration files (json), you can just remove the plugin and re-add it again.
 
 3. **Does the SDK support offline behavior/operations?**
 

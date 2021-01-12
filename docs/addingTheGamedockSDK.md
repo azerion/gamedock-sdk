@@ -171,8 +171,8 @@ Example (including privacy policy / GDPR, Google Play Games and external id's fo
 
 You can include the latest Cordova package by running the following commands into your main project folder:
 ~~~javascript
-//Download the plugin
-npm i gamedock-sdk-cordova
+//Download the plugin from this [page](https://github.com/azerion/gamedock-sdk/releases) and include it manually into your project
+cordova plugin add <path-where-you-downloaded-the-plugin>
 
 //If you have not yet create a build for your platform run
 cordova platform add android
@@ -181,9 +181,6 @@ cordova build android
 cordova platform add ios
 cordova build ios
 
-//Add the SDK plugin to your game
-cordova plugin add gamedock-sdk-cordova
-
 //Make a new build of your game
 cordova build android
 cordova build ios
@@ -191,7 +188,8 @@ cordova build ios
 
 This plugin expects that npm is installed on your machine. If you have not done that yet, please refer to this documentation [https://docs.npmjs.com/](https://docs.npmjs.com/)
 
-Alternatively you can download the archive of the plugin from this [page](https://github.com/azerion/gamedock-sdk/releases) and include it manually into your project (using the above commands excluding the first one).
+> [!WARNING]
+> If you need to refresh the local json files, simply remove the plugin and re-add it again. It is recommended that when you do that, to also remove the android and ios platforms first so that there are no duplicates.
 
 ### Initializing the Gamedock Cordova SDK
 
