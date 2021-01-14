@@ -1,52 +1,65 @@
 # Localization
 
+* **[Console](#Console)**
+* **[Implementation](#Implementation)**
+
+---
+
 Providing a wide range of languages for your game is essential. Gamedock provides a way to fully localize your game using the built-in localization feature. While using the feature take into account the following things:
 
 * Currently the feature does not support first time offline startup of the game. What this means is that if the game is started first time without internet connection, the SDK will not have any localization information, even if the game would request for it until the first instance that the game has internet connection. Subsequent starts of the game while in offline will contain the last requested localization as well as the default one.
 * The SDK will always store locally the requested localization as well as the default localization (English).
 * If a requested locale is not present in the console, the SDK will still download the default locale information. Depending on how you requested the locale (if "fallbackToDefaultLocale" value was true or not) you might either get the provided defaultValue (from the GetLocalizationValue method call) or the value from the default locale. 
 
-## Console
+### Console
 
 In order to configure the localization feature in the console go through the following steps:
 
+<!-- panels:start -->
+
+<!-- div:left-panel -->
 1. Enable the feature in the features list.
 
+<!-- div:right-panel -->
 ![github pages](_images/Localization1.png)
 
-
+<!-- div:left-panel -->
 2. In the Console, go to Content->Localization to access the feature.
 
+<!-- div:right-panel -->
 ![github pages](_images/Localization2.png)
 
-
+<!-- div:left-panel -->
 3. Next go to the Locales page (within the Localization area) and add your desired locales that you want to use in your game.
 
+<!-- div:right-panel -->
 ![github pages](_images/Localization3.png)
 
-
+<!-- div:left-panel -->
 4. After, go to the Localization Keys (within the Localization area) and create the keys you need in the game.
 
+<!-- div:right-panel -->
 ![github pages](_images/Localization4.png)
 
-
+<!-- div:left-panel -->
 5. Go to the Localization Values (within the Localization area) and for each locale, add the translations for the keys you created in the step above. First add the draft values, and if your are fine with it, make sure to accept those values otherwise they will not be picked up when publishing.
 
+<!-- div:right-panel -->
 ![github pages](_images/Localization5.png)
 
-
+<!-- div:left-panel -->
 6. Once you have populated all the key (and locales) with values, go to the Overview (within the Localization area) page and publish your locales.
 
+<!-- div:right-panel -->
 ![github pages](_images/Localization6.png)
 
+<!-- div:left-panel -->
+7. You are ready now to use the localisation feature with the configured locales in your game. If you make any new changes to the keys or the values, make sure to publish again.
 
-7. You are ready now to use the localisation feature with the configured locales in your game.
-
+<!-- div:right-panel -->
 ![github pages](_images/Localization7.png)
 
-
-8. If you make any new changes to the keys or the values, make sure to publish again.
-
+<!-- panels:end -->
 
 > [!TIP]
 > You can view the amount of times each locale has been requested and retrieved by the game in the Locale Usage Stats page (within the Localization area).
@@ -59,7 +72,7 @@ In order to configure the localization feature in the console go through the fol
 > [!TIP]
 > If you have a template filled with locales, localization keys and values (in a CSV format) you can import that file in the Overview page (within the Localization area).
 
-## Implementation
+### Implementation
 
 In order to implement the localization feature follow the steps below. It is recommended to start with the Console section before implementing it into your game.
 
