@@ -23,6 +23,7 @@
     --cover-button-primary-background   : #006A97;
     --cover-button-border               : 1px solid #006A97;
     --cover-button-color                : #006A97;
+    --cover-max-width                   : 50em;
     
     --sidebar-width                     : 21rem;
     --sidebar-name-color                : #FFFFFF;
@@ -82,7 +83,7 @@
         '/platformSpecificComponents',
         '/unityEditorMode',
         '/eventTracking',
-        '/gameBalancing',
+        '/gameConfig',
         '/smartAdvertisements',
         '/pushNotifications',
         '/userIdentification',
@@ -95,6 +96,7 @@
         '/workingWithGameStates',
         '/implementingAssetBundlesConfigurations',
         '/splashScreens',
+        '/localization',
         '/tieredEvents',
         '/appRate',
         '/deepLinking',
@@ -115,7 +117,14 @@
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md',
       },
-      subMaxLevel: 1
+      subMaxLevel: 1,
+      footer: {
+        copy: '<span>Gamedock &copy; 2019-2021</span>',
+        auth: 'by <a href="https://www.azerion.com/">Azerion</a>',
+        pre: '<hr/>',
+        style: 'text-align: center;',
+        class: 'className',
+      }
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
@@ -130,5 +139,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="https://unpkg.com/docsify-copy-code@2"></script>
   <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# Game Balancing
+# Game Config
 
 Balance is key to a successful game. In single-player games, it determines whether the challenge level is appropriate to the audience. If there are multiple strategies or paths within your game to victory, it controls whether following one strategy is better or worse than following another. Within games that have several similar objects (such as cards in a trading card game or weapons in a role-playing game), it regulates the objects themselves and, specifically, whether different objects have the same cost/benefit ratio.
 The Gamedock platform makes use of configuration files to support the dynamic balancing of your games. These are JSON files that allow you to change all required parameters in a human-readable format without updating the published game.

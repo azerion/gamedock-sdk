@@ -14,4 +14,5 @@ Features covered:
 * Daily Bonus
 * Asset Bundles
 * Tiered Events
+* Localization
 * Handling Errors
