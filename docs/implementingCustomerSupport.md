@@ -6,7 +6,7 @@ The issue of customer support is an important aspect of games delivery. It is st
 
 Which of the above strategies you select depends on the nature of your game and its support requirements.
 
-## Opening Zendesk Within Your Games
+### Opening Zendesk Within Your Games
 
 The following method is available:
 

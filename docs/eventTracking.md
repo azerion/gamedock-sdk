@@ -1,5 +1,10 @@
 # Event Tracking
 
+* **[Configuration in Console](#configuration-in-console)**
+* **[Tracking Events using the SDK](#tracking-events-using-the-sdk)**
+
+---
+
 The Gamedock platform provides you with dedicated insight into how your users are experiencing your games. This is enabled through powerful event tracking.
 
 These are events that are expected in every game. A set of default events are provided in the Gamedock SDK and are discussed later in this chapter. While this provides insight into generic user behavior (such as the number of concurrent and unique users), it does not perform in-depth analysis. Moreover, it does not offer the possibility to create game-specific reports.
@@ -9,6 +14,12 @@ For this reason, event tracking is extended through the Gamedock's custom-built 
 To facilitate this insight, Gamedock needs to know the events that require tracking. This will differ depending on the nature and design of your game. All required event-tracking information should be discussed and agreed between the game’s designers and the Gamedock Account Manager.
 
 > No changes or additions should be made to the specified event-tracking calls without prior discussion and approval from your Gamedock Account Manager.
+
+### Configuration in Console
+
+**To Be Added Soon**
+
+### Tracking Events using the SDK
 
 Default events are events that are expected in every game and can be applied to most games. The Gamedock SDK contains a helper object for each of these.
 

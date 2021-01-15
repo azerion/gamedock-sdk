@@ -1,5 +1,11 @@
 # Missions and Containers Feature
 
+* **[Structure](#structure)**
+* **[Configuration in Console](#configuration-in-console)**
+* **[Implementation in the SDK](#implementation-in-the-sdk)**
+
+---
+
 The Missions and Containers feature allows you the possibility to create a configuration that adds or tweaks missions which are present in your game via the Gamedock Console. This configuration is retrieved from Console by the Gamedock SDK and made available for the game to be used. Also, besides the configuration, the Mission feature allows for the saving of user mission progress that can also be synchronized across multiple devices using the existing Cross-Device implementation (link to Sync feature).
 
 The mission feature is setup as flexible as possible to fit the needs for almost any kind of game. The Gamedock SDK provides all configurations needed to create a generic mission system including missions and chapters/episodes (through containers). It does however not control the state and progress of the missions and containers because those are very game specific. Instead, the Gamedock SDK provides methods to easily retrieve and save the state and progress by the game developer.
@@ -10,9 +16,9 @@ The Missions and Containers feature consists of four components:
 * Mission Progress
 * Container Progress
 
-## Attributes
+### Structure
 
-The Mission component has the following attributes:
+The **Mission** component has the following attributes:
 
 | Name                 | Definition                                                                                                                                                                                                            | Controlled by the SDK                                                                | Example                                                                                            |
 |:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|
@@ -26,7 +32,7 @@ The Mission component has the following attributes:
 | Rewards              | A list of rewards that will be given if the Mission is Completed. This is used mainly for display purposes as a dedicated method is provided which handles automatically the claiming of Mission Rewards (see below). | Yes (if the developer calls the designated claim missions reward method).            | The player will receive 10 gems for completing “M4”.                                               |
 | Properties           | A free-form Dictionary/JSON which allows any additional properties of a Mission that is outside the defined attributes’ scope                                                                                         | No (any value can be stored here).                                                   | The location of the “M4” mission is in Mission Town. The color of the “M4” mission marker is blue. |
 
-The Container component represents a collection of missions. You can picture Containers as for example Episodes or Chapters. The component has the following attributes:
+The **Container** component represents a collection of missions. You can picture Containers as for example Episodes or Chapters. The component has the following attributes:
 
 | Name                   | Definition                                                                                                                                                                                                                 | Controlled by the SDK                                                       | Example                                                                                          |
 |:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
@@ -35,7 +41,7 @@ The Container component represents a collection of missions. You can picture Con
 | Rewards                | A list of rewards that will be given if the Container is Completed. This is used mainly for display purposes as a dedicated method is provided which handles automatically the claiming of Containers Rewards (see below). | Yes (if the developer calls the designated claim containers reward method). | The player will receive 100 gems for completing “Chapter2”.                                      |
 | Properties             | A free-form Dictionary/JSON which allows any additional properties of a Container that is outside the defined attributes’ scope.                                                                                           | No (any value can be stored here).                                          | The color of the “Chapter2” container description text is blue.                                  |
 
-The Mission Progress component has the following attributes:
+The **Mission Progress** component has the following attributes:
 
 | Name          | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Controlled by the SDK                                           |
 |:--------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|
@@ -44,7 +50,7 @@ The Mission Progress component has the following attributes:
 | Progress      | A free-form Dictionary/JSON which allows the storing of any Progress Data that might be relevant in order to complete the Mission. This field should be kept as minimal as possible. Do not save full game states here!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | No (the progress needs to be updated manually by the developer. |
 | LastCompleted | The value that is populated by the SDK once the Status of a Mission has been set to COMPLETED. This value is defined in milliseconds.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Yes.                                                            |
 
-The Container Progress component has the following attributes:
+The **Container Progress** component has the following attributes:
 
 | Name          | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Controlled by the SDK                                       |
 |:--------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------|
@@ -52,7 +58,11 @@ The Container Progress component has the following attributes:
 | Status        | The current status of the Container. The Status needs to be manually changed by the developer. The Status attribute can have one of the following values:<br><ul><li> INACTIVE – This is the initial state of a Container.</li><br><li>IN_PROGRESS – The Container is marked as in progress.</li><br><li>PENDING_COLLECTION – This status is used when all the Objectives have been met for this Container. At this point, you can/should call the ClaimContainersReward method if any rewards need to be given for this Mission.</li><br><li>COMPLETED – This Status marks that the Container has been fully completed.</li></ul> | No (the next container will not be automatically unlocked). |
 | LastCompleted | Value that is populated by the SDK once the Status of a Mission has been set to COMPLETED. This value is defined in milliseconds.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Yes.                                                        |
 
-## Implementation
+### Configuration in Console
+
+**To Be Added Soon**
+
+### Implementation in the SDK
 
 In order to work with the Mission and Containers components you need to use the following methods:
 
@@ -142,7 +152,8 @@ List<string> claimedContainers;
 List<string> claimedMissions;
 ~~~
 
-Make sure when using the feature that you generate all the “Default Configuration Files” from the Gamedock SDK menu in order to create the **“defaultMissionConfig.json”** file.
+> [!NOTE]
+> Make sure when using the feature that you generate all the “Default Configuration Files” from the Gamedock SDK menu in order to create the **“defaultMissionConfig.json”** file.
 
 In order to understand better how the feature flow should be implemented you will find an example below:
 

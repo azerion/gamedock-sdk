@@ -1,5 +1,10 @@
 # External Analytics
 
+* **[AppsFlyer](#appsflyer)**
+* **[Firebase](#firebase)**
+
+---
+
 > [!TIP]
 > Besides the analytics provide by the Gamedock SDK, the SDK also includes additional external analytics tools that can be enabled when implementing the Gamedock SDK.
 
@@ -7,7 +12,6 @@ The following modules can be enabled for additional analytics:
 
 * AppsFlyer
 * Firebase
-* Adjust
 
 In order to enable the additional analytics modules do the following:
 
@@ -30,9 +34,9 @@ By default the modules are automatically included when importing the Gamedock SD
 
 No additional code implementation is required in order to track events in these specific external analytics providers.
 
-### AppsFlyer and Adjust
+### AppsFlyer
 
-In the case of AppsFlyer and Adjust the event tracking happens in two parts: the install tracking is done at the SDK level and the rest of the events are server-to-server based on the events tracked with Gamedock. In order to fully configure in the Gamedock Console AppsFlyer or Adjust so that server-to-server can happen, do the following:
+In the case of AppsFlyer the event tracking happens in two parts: the install tracking is done at the SDK level and the rest of the events are server-to-server based on the events tracked with Gamedock. In order to fully configure in the Gamedock Console AppsFlyer or Adjust so that server-to-server can happen, do the following:
 
 <!-- tabs:start -->
 
@@ -45,10 +49,6 @@ In the case of AppsFlyer and Adjust the event tracking happens in two parts: the
 2. Create/Edit your AppsFlyer **appId**. The **appId** documentation for AppsFlyer can be found [here](https://support.appsflyer.com/hc/en-us/articles/207377436-Adding-a-new-app).
 3. Make sure to Publish your changes (this includes also Step 4/any time you make changes to your AppsFlyer configuration).
 4. Add your desired events that will be forwarded from AppsFlyer from the Gamedock Tracking.
-
-#### ** Adjust **
-
-Currently Adjust is disabled in the Gamedock Console. If you require to work with Adjust please contact one of the Gamedock Representatives.
 
 <!-- tabs:end -->
 

@@ -1,5 +1,10 @@
 # Implementing Asset Bundles Configurations
 
+* **[Configuration in Console](#configuration-in-console)**
+* **[Using Asset Bundles in the SDK](#using-asset-bundles-in-the-sdk)**
+
+---
+
 > [!NOTE]
 > This feature is only supported if your game is using Unity.
 
@@ -10,7 +15,11 @@ More information on what you can do with Asset Bundles can be found here:
 [https://docs.unity3d.com/Manual/AssetBundlesIntro.html](https://docs.unity3d.com/Manual/AssetBundlesIntro.html)
 [https://learn.unity.com/tutorial/assets-resources-and-assetbundles](https://learn.unity.com/tutorial/assets-resources-and-assetbundles)
 
-## Using Asset Bundles
+### Configuration in Console
+
+**To Be Added Soon**
+
+### Using Asset Bundles in the SDK
 
 The Asset Bundles configuration is automatically retrieved when the Gamedock SDK is first initialized. The configurations are then stored locally so that they can be used by the game, even when offline if they were cached. When the Gamedock SDK is initialized and the request has been done, the following callbacks are fired:
 

@@ -1,5 +1,10 @@
 # Anti-Cheating
 
+* **[Receipt Validation](#receipt-validation)**
+* **[Retrieving Server-Time Information](#retrieving-server-time-information)**
+
+---
+
 Many games suffer from the problem of users attempting to subvert the rules of the game to obtain an unfair advantage over other players. Depending on the game, different activities constitute cheating, and it is either a matter of game policy or consensus opinion as to whether an activity is cheating.
 
 Typical cheating strategies include the use of the following:
@@ -13,7 +18,7 @@ Typical cheating strategies include the use of the following:
 
 See [https://en.wikipedia.org/wiki/Cheating_in_online_games](https://en.wikipedia.org/wiki/Cheating_in_online_games) for a more complete description of cheating mechanisms.
 
-## Receipt Validation
+### Receipt Validation
 
 The receipt for a game or an in-game purchase is a record of the sale of the game or of any purchases made from within the game. You can add receipt validation code to your game to prevent unauthorized copies of your game from running.
 
@@ -60,7 +65,7 @@ public void OnIAPServerError(GamedockErrorMessage errorMessage)
 
 Optionally, the Gamedock Games SDK can also send the receipt to the game’s backend. In this way, corrective action can be taken against false purchases or other suspicious activity.
 
-## Retrieving Server-Time Information
+### Retrieving Server-Time Information
 
 The Gamedock SDK also offers the possibility to retrieve the game’s server time. This can prove useful for anti-cheating measures. For example, if the user changes the device time or clock this does affect the execution of the game’s logic. To retrieve the server time, use the following code:
 

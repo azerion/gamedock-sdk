@@ -1,10 +1,16 @@
 # Age Gate & COPPA
 
+<!-- panels:start -->
+
+<!-- div:left-panel -->
 According to European law, games intended for minors are required to show an age gate at the start of the game before allowing players to continue. This functionality is provided by the Gamedock SDK in two flavours: a native popup with a configurable banner image, or a Unity prefab that is fully customizable as long as no elements or scripts are removed.
-  
-![github pages](_images/AgeGatePopup.png)
 
 Games that comply with COPPA regulation cannot show any ads, age gate or privacy policy menu's. The Gamedock SDK also provides an option to enable COPPA compliance, which ensures no age gate, privacy policy or ads are shown.
+
+<!-- div:right-panel -->
+![github pages](_images/AgeGatePopup.png)
+
+<!-- panels:end -->
 
 <!-- tabs:start -->
 

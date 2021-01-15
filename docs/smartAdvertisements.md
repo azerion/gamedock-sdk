@@ -1,5 +1,9 @@
 # Advertisement
 
+* **[Configuration in Console](#configuration-in-console)**
+* **[Advertisement Initialization in the SDK](#advertisement-initialization-in-the-sdk)**
+
+---
 Typically, the monetization of your games comes through advertising. Showing the right ads to the right users at the right time can highly influence the revenues you can earn per ad.
 
 The Gamedock platform supports the following ad types:
@@ -10,7 +14,7 @@ The Gamedock platform supports the following ad types:
 
 The SDK currently has the following Ad Networks implemented:
 
-### Android
+#### Android
 
 | Ad Network                        | Version                                        | Type               | Banner    | Interstitial   | Rewarded Video   |
 |:----------------------------------|:-----------------------------------------------|:-------------------|:----------|:---------------|:-----------------|
@@ -30,7 +34,7 @@ The SDK currently has the following Ad Networks implemented:
 | Ogury                             | 4.9.0                                          | Mediation          | ✓         | ✓              | ✓                |
 
 
-### iOS
+#### iOS
 
 | Ad Network                        | Version                                        | Type               | Banner    | Interstitial   | Rewarded Video   | SKAdNetworks   |
 |:----------------------------------|:-----------------------------------------------|:-------------------|:----------|:---------------|:-----------------|:---------------|
@@ -49,8 +53,11 @@ The SDK currently has the following Ad Networks implemented:
 | Fyber                             | 7.7.1                                          | Mediation          | ✓         | ✓              | ✓                | x              |
 | Ogury                             | 1.3.1                                          | Mediation          | ✓         | ✓              | ✓                | x              |
 
+### Configuration in Console
 
-## Advertisement Initialization
+**To Be Added Soon**
+
+### Advertisement Initialization in the SDK
 
 The Gamedock SDK initializes automatically the advertisement module, if the feature has been enabled and configured correctly in the Gamedock Console, and if the module has been enabled in the SDK. When advertisement is initialized, the following callback will be fired:
 
@@ -88,7 +95,7 @@ gamedockSDK.on('AdsInitialized', () => {
 > [!WARNING]
 > The game has to wait for this callback before doing any advertisement logic.
 
-## Handling Banner Ads
+#### Handling Banner Ads
 
 Banners are advertisements that can be displayed by the game in specific and designated areas. Currently, the Gamedock SDK supports the displaying of banners on the bottom part of the game. Banner ads can be shown or hidden depending on the situation and screen in which the player is. In order to work with the banners implementation from the Gamedock SDK use the following methods:
 
@@ -236,7 +243,7 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
 
 <!-- tabs:end -->
 
-## Handling Interstitial Ads
+#### Handling Interstitial Ads
 
 Interstitial ads are full-screen ads that cover the interface of their host app. They are typically displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. By default, the Gamedock SDK shows interstitial ads based on specific event triggers that can be configured in the Gamedock Console.
 
@@ -295,7 +302,7 @@ gamedockSDK.on('AdNotAvailable', (adType) => {
 
 <!-- tabs:end -->
 
-## Handling Reward Videos
+#### Handling Reward Videos
 
 Reward videos are advertisements that users voluntarily watch and, if played to the end, receive some form of in-game reward. The in-game currency the user receives, and how soon afterward they can watch another reward video, are set by parameters within the configuration file. Most advertisement functionality is handled automatically by the Gamedock SDK. However, you will need to specify how the triggering of reward videos and subsequent payout to the player upon completion of the video should be handled. The following shows an example of code that checks if a reward video is available, hides or shows the Watch Video button, and rewards the player if a reward video was successfully played.
 
@@ -462,7 +469,7 @@ gamedockSDK.on('AdFinished', (adFinished) => {
 
 <!-- tabs:end -->
 
-## Handling More Apps Screens
+#### Handling More Apps Screens
 
 The More Apps screen needs to be triggered manually. Typically, it shows other games that the user might be interested in playing. The procedure for showing a More Apps screen is very like that to show a reward video. First, check if the feature is available. If so, you can show a button in the game to open the More Apps screen. Use the following code:
 
@@ -528,7 +535,7 @@ private function moreAppsButtonOnClick()
 
 <!-- tabs:end -->
 
-## Checking if an ad is available
+#### Checking if an ad is available
 
 You can also directly check if an ad is available by using the following code:
 

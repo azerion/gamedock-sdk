@@ -20,7 +20,7 @@
   * [![github pages](_images/sidebar/handlingErrors.svg)Handling Errors](handlingErrors.md "Handling Errors")
 * [Monetization](monetization.md "Monetization")
   * [![github pages](_images/sidebar/promotions.svg)Promotions](promotions.md "Promotions")
-  * [![github pages](_images/sidebar/splahsScreens.svg)Splashscreens](splashScreens.md "Splashscreens")
+  * [![github pages](_images/sidebar/splahsScreens.svg)Splash Screens](splashScreens.md "Splash Screens")
   * [![github pages](_images/sidebar/ads.svg)Advertisement](smartAdvertisements.md "Smart Advertisements")
 * [Users](users.md "Users")
   * [![github pages](_images/sidebar/userIdentification.svg)User Identification](userIdentification.md "User Identification")

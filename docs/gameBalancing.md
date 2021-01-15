@@ -1,17 +1,26 @@
 # Game Config
 
+* **[Setting up the Game Config in the Console](#setting-up-the-game-config-in-the-console)**
+* **[Requesting a Configuration File from the SDK](#requesting-a-configuration-file-from-the-sdk)**
+
+---
+
 Balance is key to a successful game. In single-player games, it determines whether the challenge level is appropriate to the audience. If there are multiple strategies or paths within your game to victory, it controls whether following one strategy is better or worse than following another. Within games that have several similar objects (such as cards in a trading card game or weapons in a role-playing game), it regulates the objects themselves and, specifically, whether different objects have the same cost/benefit ratio.
 The Gamedock platform makes use of configuration files to support the dynamic balancing of your games. These are JSON files that allow you to change all required parameters in a human-readable format without updating the published game.
 
 The parameter configuration requirements are identified and agreed between the game’s designers and the Gamedock Account Manager. Once finalized, they are communicated to the game’s developers. A default JSON is provided as part of the Gamedock SDK. After publication, the configuration file is maintained by Gamedock LiveOps.
 
-### Best Practice
+#### Best Practice
 
 We recommend the following:
 * Balancing issues are best left until you have a good set of game core mechanics.
 * Pricing should not be managed using the game configuration file. Generally, this is better managed through the shop features. For more information, see “Supporting Wallet, Shop and Inventory Control”.
 
-## Requesting a Configuration File
+### Setting up the Game Config in the Console
+
+**To Be Added Soon**
+
+### Requesting a Configuration File from the SDK
 
 The Gamedock SDK provides two methods for retrieving a game’s configuration file from the Gamedock server. You can retrieve the entire file using the following code:
 
@@ -19,7 +28,7 @@ The Gamedock SDK provides two methods for retrieving a game’s configuration fi
 
 #### ** Unity **
 
-### Parsing the JSON Configuration File
+#### Parsing the JSON Configuration File
 
 You can use the following methods for working with the Game Config:
 
@@ -36,7 +45,7 @@ The Gamedock SDK also includes methods for converting JSON strings to objects vi
 > [!WARNING]
 > The configuration service should always return a value. However, if, for any reason, it does not, ensure that you check and handle a possible null return.
 
-### Listening for Updates to the Configuration File
+#### Listening for Updates to the Configuration File
 
 By default, game configuration calls will always return the last saved value. However, it is also possible to listen for configuration updates, which often happen in a background process, using the OnConfigUpdated event. After receiving the update, you can refresh the user interface and game state. Use the following code.
 
@@ -45,11 +54,11 @@ Gamedock.Instance.ConfigCallbacks.OnConfigDataUpdated -= OnConfigDataUpdated;
 Gamedock.Instance.ConfigCallbacks.OnConfigDataUpdated += OnConfigDataUpdated;
 ~~~
 
-### Implementing a Default Configuration File
+#### Implementing a Default Configuration File
 
 If there is no network connection, the Gamedock SDK will use a default configuration file. In addition, users might open the app for the first time and not have an Internet connection. For those situations, a default configuration file called **“defaultGameConfig.json”** needs to be added to your project’s root folder.
 
-### Using Firebase Remote Config
+#### Using Firebase Remote Config
 
 The Gamedock SDK offers the possibility to work with the Firebase Remote Config. For Android, you need to make sure that the Firebase module is included. For more information on how to set up the values in Firebase, check the following link:
 
@@ -85,7 +94,7 @@ Gamedock.Instance.ConfigCallbacks.OnFirebaseRemoteConfigUpdated += OnFirebaseRem
 
 #### ** AIR **
 
-### Parsing the JSON Configuration File
+#### Parsing the JSON Configuration File
 
 You can use the following methods for working with the Game Config:
 
@@ -102,15 +111,15 @@ The Gamedock SDK also includes methods for converting JSON strings to objects vi
 > [!WARNING]
 > The configuration service should always return a value. However, if, for any reason, it does not, ensure that you check and handle a possible null return.
 
-### Listening for Updates to the Configuration File
+#### Listening for Updates to the Configuration File
 
 By default, game configuration calls will always return the last saved value. However, it is also possible to listen for configuration updates, which often happen in a background process, using the OnConfigUpdated event. After receiving the update, you can refresh the user interface and game state. Use the following code.
 
-### Implementing a Default Configuration File
+#### Implementing a Default Configuration File
 
 If there is no network connection, the Gamedock SDK will use a default configuration file. In addition, users might open the app for the first time and not have an Internet connection. For those situations, a default configuration file called **“defaultGameConfig.json”** needs to be added to your project’s root folder. The following is an example of a simple configuration file for the game Pixel Wizard.
 
-### Using Firebase Remote Config
+#### Using Firebase Remote Config
 
 The Gamedock SDK offers the possibility to work with the Firebase Remote Config. For Android, you need to make sure that the Firebase module is included. For more information on how to set up the values in Firebase, check the following link:
 
@@ -142,7 +151,7 @@ private function onFireBaseRemoteConfigUpdatedEvent(evt:FirebaseRemoteConfigUpda
 
 #### ** Cordova **
 
-### Parsing the JSON Configuration File
+#### Parsing the JSON Configuration File
 
 You can use the following method for working with the Game Config:
 
@@ -151,7 +160,7 @@ You can use the following method for working with the Game Config:
 var config = gamedockSDK.getConfig();
 ~~~
 
-### Listening for Updates to the Configuration File
+#### Listening for Updates to the Configuration File
 
 ~~~javascript
 gamedockSDK.on('ConfigDataUpdated', (configDataUpdated) => {

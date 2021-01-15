@@ -1,5 +1,10 @@
 # Tiered Events
 
+* **[Configuration in Console](#configuration-in-console)**
+* **[Using tiered events from the SDK](#using-tiered-events-from-the-sdk)**
+
+---
+
 > [!TIP]
 > Tiered events have to be configured through the Gamedock Console. Please ask your product manager to configure this before starting the implementation of this feature.
 
@@ -8,7 +13,11 @@ It’s possible to configure multiple Tiered Events to be able to run at the sam
 
 You can also display the tiered event progress without the need of an web view if it is desired. The SDK also exposes the functionality to manually claim a tier reward (normally done within the web view).
 
-## Using tiered events
+### Configuration in Console
+
+**To Be Added Soon**
+
+### Using tiered events from the SDK
 
 The tiered events configuration can be requested manually after the Gamedock SDK has been initialized and either the available or not available callback will be fired in order to indicate if any tiered events are available:
 
@@ -129,7 +138,7 @@ var progress:TieredEventProgress = GetTieredEventProgress(tieredEventId:int);
 
 <!-- tabs:end -->
 
-## Updating tiered events
+#### Updating tiered events
 
 The progress is automatically updated by the Gamedock SDK when either currency is being spent using the Wallet feature or when items are being spent using the Inventory feature.
 An event is fired to inform that the tiered event has been updated:
@@ -176,7 +185,7 @@ private function onTieredEventProgressOpenEvent(evt:TieredEventProgressOpenEvent
 > [!NOTE]
 > Tier progress is always recorded even if the user is currently not at that tier. Ex.: If the user has currently completed Tier 1 but not claimed his reward, the SDK will still record progress for the next tiers.
 
-## Showing tiered event progress
+#### Showing tiered event progress
 
 The progress of the tiered event is visible to the user through a web view which is controlled by the Gamedock SDK and can be opened using a single call. There are 2 events which will be called to inform if the screen is opened or being closed:
 
@@ -228,7 +237,7 @@ private function onTieredEventProgressClosedEvent(evt:TieredEventProgressClosedE
 
 If the user claims his reward in the web view the OnTieredEventUpdated event will be called with the new active tier information.
 
-## Claiming rewards for a tier
+#### Claiming rewards for a tier
 
 When the requirements for a tier have been achieved by the user, a reward can be claimed (based on the configuration), in order to move to the next tier. Use the following method to claim the reward:
 
@@ -256,7 +265,7 @@ The values of the tier reward will be automatically be added to the user's Walle
 > [!NOTE]
 > A tier can only be fully completed once the reward has been claimed.
 
-## Handling errors
+#### Handling errors
 
 A few errors can occur for the tiered events feature, the following event is used to inform you:
 

@@ -7,7 +7,7 @@
 
 #### ** Android **
 
-### Requirements
+#### Requirements
 
 * Minimum Android SDK version needs to be 17
 * Unity Build System needs to be Gradle
@@ -24,11 +24,11 @@ The modules are broken down into the following sections:
 > [!TIP]
 > Besides the modules, there are also two manifest files which should be used only if you are using either the Unity Plugin “Prime31” or “Android Native”. You should especially look at the main activity name value.
 
-### Google Play Services
+#### Google Play Services
 
 When you use the supplied “mainTemplate.gradle” and the Gradle Build System, the Google Play Services and Google Play Games will be automatically imported and you don’t need any additional “.aar” files. If there are any conflict errors make sure to remove any redundant file and use the Gradle file system.
 
-### Permissions
+#### Permissions
 
 For Android version 6.0 and up, Google requires that with all your Android application, the permissions that they consider as dangerous (see: [https://developer.android.com/guide/topics/security/permissions.html](https://developer.android.com/guide/topics/security/permissions.html)) need to be asked at runtime. As of the Gamedock SDK version 2.7.0+, there are no dangerous permissions required anymore. In case you require have dangerous permissions, please discuss this first with your account manager. After agreement the following steps can be taken to implement a correct permission flow that will be approved by the Google review team.
 
@@ -46,7 +46,7 @@ You can manually request a permission using the following code:
 Gamedock.Instance.RequestDangerousPermission(permission, rationale, denyRationale);
 ~~~
 
-### Adding Custom Permission Images
+#### Adding Custom Permission Images
 
 If you want to set your own custom notification icon, you can do so by adding the appropriate image file to the following location (if does not exist, you will need to
 create it):
@@ -57,7 +57,7 @@ The image files should have the names “permission_header_custom.png” and “
 
 For Unity 2017.1 and above you can use the supplied project found in the SDK bundle under NativeLibraries/Android/Resources. Build this project in Android Studio and make sure to replace the necessary images.
 
-### Using the Android Configuration window
+#### Using the Android Configuration window
 
 Additional settings can be configured via the “Gamedock SDK -> Configuration -> Android” menu, the page looks like this:
 
@@ -73,7 +73,7 @@ Extra components for iOS can be enabled/disabled in Unity via this configuration
 
 <!-- tabs:end -->
 
-## Building and publishing
+### Building and publishing
 
 <!-- tabs:start -->
 

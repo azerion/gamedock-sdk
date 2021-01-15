@@ -1,6 +1,14 @@
 # Frequently Asked Questions
 
-## General
+* **[General](#general)**
+* **[Data](#data)**
+* **[Privacy](#privacy)**
+* **[SDK](#sdk)**
+* **[Console](#console)**
+
+---
+
+### General
 1. **What platforms/game engines does Gamedock support?**
 
 Currently Gamedock supports the following platforms:
@@ -14,7 +22,7 @@ Currently Gamedock supports the following platforms:
 
 Interested in what Gamedock can do for your app? Please get in touch with one of our representatives via [gamedock.support@azerion.com](gamedock.support@azerion.com) for more information on how to get started.
 
-## Data
+### Data
 1. **How long does Gamedock retain the data from users?**
 
 The Gamedock backend retains the tracked data from users for a maximum amount of 1 year after which that data is purged automatically. The user can also request to have his data removed earlier if he wants.
@@ -31,7 +39,7 @@ All the that has been tracked while the game was offline will be sent to the bac
 
 The data sent by the Gamedock SDK can be seen in two places. If you want to see live data being sent from you (the developer) to the backend, you can use the Event Dashboard in the Console. If you want to see analytics data and insights into your gamae please visit [https://reporting.gamedock.io/](https://reporting.gamedock.io/). Make sure to contact your organization manager or a Gamedock representative to get access to the reporting tool.
 
-## Privacy
+### Privacy
 1. **Is Gamedock GDPR compliant?**
 
 Gamedock is committed to being GDPR, CCPA and distribution platform compliant, and to support development teams with the tooling they need to help end users manage their data. Under GDPR, our status is that of both a data processor and a data controller as much of our functionality relies on the data we collect. For more information please refer to our Privacy Policy here: [https://azerion.com/business/mobile-apps-privacy-policy.html](https://azerion.com/business/mobile-apps-privacy-policy.html) .
@@ -46,7 +54,7 @@ The Gamedock SDK has two ways of accepting opt out choices from the user:
 * The SDK comes pre-built with a consent popup functionality which can be customized to certain degrees and which take the input from the user on choices regarding ads and content. The SDK also reports back to the game what the choices from the user have been and also this information can be retrieved at any point.
 * If you decide not to use the pre-built consent popup, you can also pass in the information to the SDK manually for personalized content and contextual ads.
 
-## SDK
+### SDK
 1. **What additional optional modules/plugins does Gamedock contain in it's package?**
 
 The Gamedock SDK contains the following optional additional modules that can be enabled/disabled depending on your needs:
@@ -63,7 +71,7 @@ All keys are retrieved automatically from the console (if configured correctly o
 
 Yes, the Gamedock SDK supports offline tracking and operations. All operations done with the SDK which would send network information is saved locally on the phone until a network connection is available and then sent to the backend. Social login synchronization is also supported while the user has logged in and the device is offline.
 
-## Console
+### Console
 1. **How can I access the Gamedock Console?**
 
 The Gamedock console can be accessed at the following address: [https://console.gamedock.io/](https://console.gamedock.io/).

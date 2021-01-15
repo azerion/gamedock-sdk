@@ -10,7 +10,7 @@ If you want to engage with the player and ask him for feedback and reviews for y
  * iOS:
     * It will use the built in app rate popup provided by Apple. You can find more information about it here: [https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/ratings-and-reviews/](https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/ratings-and-reviews/)
 
-## Opening the App Rate Popup
+### Opening the App Rate Popup
 
 The following method is available to display the App Rate Popup:
 

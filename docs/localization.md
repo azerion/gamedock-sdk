@@ -1,7 +1,7 @@
 # Localization
 
-* **[Console](#Console)**
-* **[Implementation](#Implementation)**
+* **[Configuration in Console](#configuration-in-console)**
+* **[Implementation in the SDK](#implementation-in-the-sdk)**
 
 ---
 
@@ -11,7 +11,7 @@ Providing a wide range of languages for your game is essential. Gamedock provide
 * The SDK will always store locally the requested localization as well as the default localization (English).
 * If a requested locale is not present in the console, the SDK will still download the default locale information. Depending on how you requested the locale (if "fallbackToDefaultLocale" value was true or not) you might either get the provided defaultValue (from the GetLocalizationValue method call) or the value from the default locale. 
 
-### Console
+### Configuration in Console
 
 In order to configure the localization feature in the console go through the following steps:
 
@@ -56,6 +56,9 @@ In order to configure the localization feature in the console go through the fol
 <!-- panels:end -->
 
 > [!TIP]
+> If you have a template filled with locales, localization keys and values (in a CSV format) you can import that file in the Overview page (within the Localization area).
+
+> [!TIP]
 > You can view the amount of times each locale has been requested and retrieved by the game in the Locale Usage Stats page (within the Localization area).
 >
 > ![github pages](_images/Localization8.png ':size=70%')
@@ -65,10 +68,8 @@ In order to configure the localization feature in the console go through the fol
 >
 > ![github pages](_images/Localization9.png ':size=70%')
 
-> [!TIP]
-> If you have a template filled with locales, localization keys and values (in a CSV format) you can import that file in the Overview page (within the Localization area).
 
-### Implementation
+### Implementation in the SDK
 
 In order to implement the localization feature follow the steps below. It is recommended to start with the Console section before implementing it into your game.
 

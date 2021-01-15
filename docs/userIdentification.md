@@ -1,5 +1,12 @@
 # User Identification
 
+* **[Find user in the Console](#find-user-in-the-console)**
+* **[Setting External IDs](#setting-external-ids)**
+* **[User ID modifications from the Console](#user-id-modifications-from-the-console)**
+* **[Informing the user about a required game update](#informing-the-user-about-a-required-game-update)**
+
+---
+
 When a user contacts Gamedock Customer Support they may be asked for a Gamedock user ID. Currently, Gamedock does not require registration for users, and so cannot link an email to a Gamedock user ID. All users are essentially guest users and, therefore, have an anonymous user ID.
 Support for user identification depends on the games platform:
 * Android: developers should show the Gamedock user ID in-game. For instance, within a settings screen. The Gamedock user ID can be obtained by calling the Gamedock.Instance.GetGamedockUID() method of the Gamedock SDK.
@@ -39,7 +46,11 @@ gamedockSDK.getGamedockDeviceId();
 
 <!-- tabs:end -->
 
-## Setting External IDs
+### Find user in the Console
+
+**To Be Added Soon**
+
+### Setting External IDs
 
 Additional external ids can be passed to the SDK in order to provide better tracking and offering the possibility of linking different services on the backend. You can pass additional external ids at SDK initialization if you perform manual initialization for the SDK. This can be done using the following code:
 
@@ -104,7 +115,7 @@ Gamedock.Instance.removeExternalId(externalPartner);
 
 Note that the provider is not strictly defined. Therefore, it does not matter what you pass as long as it is a string (for example, “FB”, ”facebook”, “twitter”, or “myBrand”).
 
-## User ID modifications from the Gamedock Console
+### User ID modifications from the Console
 
 It’s possible for customer support to change the user id of a player through the Gamedock Console. This is useful when the user, for example, lost his progress because his previous account could not correctly be retrieved. See below an example of how to use this feature:
 
@@ -153,7 +164,7 @@ First, the Gamedock SDK calls the OnUserIdChangeRequest with the new user id. In
 
 The Gamedock SDK will never automatically change the user id when the ConfirmUserIdChange() is never fired the old user id will remain being used.
 
-## Informing the user about a required game update
+### Informing the user about a required game update
 
 If your game requires to be run on only the most recent version you can enforce that using the Gamedock SDK and Console. In Console under the version page you have the possibility to define two options:
 * Recommended Version: This informs the game and the user that a new recommended version is available in the store. They should not be forced to update to that version.

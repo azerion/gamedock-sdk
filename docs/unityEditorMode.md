@@ -27,9 +27,9 @@ The following features are supported within the Unity Editor:
 * Event Tracking
 
 > [!DANGER]
-> The Unity Editor implementation of Gamedock does not support offline functionality (the Android and iOS one do).
+> The Unity Editor implementation of Gamedock does not support offline functionality (the Android and iOS ones do).
 
-## Configuring the Unity Editor
+### Configuring the Unity Editor
 
 The Gamedock SDK Unity Plugin has two main places where configuration can be done within Unity:
 
@@ -38,7 +38,7 @@ The Gamedock SDK Unity Plugin has two main places where configuration can be don
 
 When adding the SDK Plugin for the first time and after each update, you are presented with an "Introduction" window. This can provide important information that you might need to do. The window can also be accessed by going Top Bar->Gamedock SDK->Introduction.
 
-### Configuration Window
+#### Configuration Window
 
 In order to access the "Configuration" window do the following:
 
@@ -106,7 +106,7 @@ In the Editor tab of the "Configuration" you have the following information and 
 
 <!-- tabs:end -->
 
-### GamedockSDK Object
+#### GamedockSDK Object
 
 When configuring the GamedockSDK object you have the following information, options and functionality:
 

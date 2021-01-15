@@ -7,7 +7,7 @@ The Error Code object can be found in the Gamedock SDK under the name **Gamedock
 * Name – The name of the Error code
 * Message – A human readable message explaining what the error is about
 
-## Error Code List
+### Error Code List
 
 ~~~csharp
 OnUserDataError

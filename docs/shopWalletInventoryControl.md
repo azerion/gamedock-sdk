@@ -1,5 +1,11 @@
 # Wallet, Inventory & Shop
 
+* **[Understanding the Object Structures](#understanding-the-object-structures)**
+* **[Configuration in the Console](#configuration-in-the-console)**
+* **[Implementation in the SDK](#implementation-in-the-sdk)**
+
+---
+
 > [!NOTE]
 > A wallet holds a user’s balance of the currencies (such as coins and diamonds) used within a game. An in-game shop is a facility that allows users to buy items, or bundles of items, with their game currency. For example, within a game, users might be able to buy a sword with 100 coins. Once bought, items are added to a user’s personal inventory.
 
@@ -30,47 +36,11 @@ Table 6: SDK-Managed Objects.
 | Wallet    | Contains information about the user’s balance. It contains a list of currencies (that match the currencies defined in Table 1), a current balance, a delta, the game version being used, and a logic field which is either CLIENT or SERVER (currently, only CLIENT logic is fully implemented). |
 | Inventory | Contains information about the current Items possessed by the user. It has the same structure as the Wallet object.                                                                                                                                                                              |
 
-### Resetting Player Data
+### Configuration in the Console
 
-The Gamedock SDK provides the functionality to individually reset the player’s wallet or inventory. They are reset to the new player’s state. Alternatively, they can both be reset simultaneously. Use the following code:
+**To Be Added Soon**
 
-<!-- tabs:start -->
-
-#### ** Unity **
-
-~~~csharp
-// Reset the wallet data.
-Gamedock.Instance.ResetWallet();
-
-// Reset the Inventory data.
-Gamedock.Instance.ResetInventory();
-
-// Reset both wallet and inventory data.
-Gamedock.Instance.ResetPlayerData();
-~~~
-
-#### ** AIR **
-
-~~~actionscript
-// Reset the wallet data.
-Gamedock.GetInstance().ResetWallet();
-
-// Reset the Inventory data.
-Gamedock.GetInstance().ResetInventory();
-
-// Reset both wallet and inventory data.
-Gamedock.GetInstance().ResetPlayerData();
-~~~
-
-#### ** Cordova **
-
-> This feature is currently not supported on Cordova.
-
-<!-- tabs:end -->
-
-Note that a user’s wallet information will be reset both locally (on the user’s device) and within the Gamedock Console. 
-
-## Implementation
+### Implementation in the SDK
 
 If there is no network connection, then the SDK will use the latest known defaults. In exceptional cases, people will open the app for the first time and don’t have an Internet connection.
 
@@ -419,7 +389,7 @@ InitialValue = "Initial Value";
 
 <!-- tabs:end -->
 
-## Reseting data
+### Resetting data
 
 The SDK also provides the functionality to reset the player’s data, or just specifically the player’s Wallet and Inventory.
 
@@ -489,7 +459,7 @@ Gamedock.GetInstance().ResetPlayerData();
 
 <!-- tabs:end -->
 
-## Item and Bundles Image Processing and Loading
+### Item and Bundles Image Processing and Loading
 
 The Items and Bundles objects provided by the SDK can also contain images that can be displayed inside your game. In order to download and display these images use the following information:
 

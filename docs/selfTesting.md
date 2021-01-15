@@ -1,6 +1,12 @@
 # Testing and Debugging
 
-### Guidelines for testing and debugging:
+* **[Guidelines for testing and debugging](#guidelines-for-testing-and-debugging)**
+* **[QA Checklist](#qa-checklist)**
+* **[Testing with Charles](#testing-with-charles)**
+
+---
+
+### Guidelines for testing and debugging
 
 * Test on iOS/Android devices.
 * Use device logging (Android Studio / XCode/Console) to look for error messages and exceptions.
@@ -15,16 +21,16 @@
 We recommend you test your game in various simulators and devices. Especially performance is important to test on a real device.
 If you don’t have a real device to test your game on, please contact your Gamedock account manager in advance to discuss assistance of a QA engineer to test various development builds. Once you have tested the game in the simulator and on devices, you can request a QA moment for your game. We will test your game on a range of devices that covers most of the user base.
 
-## QA Checklist
+### QA Checklist
 
 Gamedock QA only tests your Gamedock SDK implementation. After each build delivery you will receive a detailed QA report via TestRail (ask your Gamedock representative for access). A QA Approval does not guarantee your app is free of issues, the developer is always end-responsible for the quality of their own app. Game-play testing is done via an external party and can be arranged by the game producer.
 
-### Issues and fixes:
+#### Issues and fixes:
 
 We ask you to verify that all reported issues are fixed before submitting a new build to QA.
 Failing to fix issues but reporting them as “everything fixed” will be flagged to the Gamedock Account Manager.
 
-### App Store (iOS) Guidelines:
+#### App Store (iOS) Guidelines:
 
 The App Store guidelines are strict but straightforward. Every submitted build to the App Store requires to be reviewed by a member of the Apple Review Team and rejections/approval can differ depending on the member.
 To ensure a near guarantee, carefully go through the following URL’s:
@@ -33,7 +39,7 @@ To ensure a near guarantee, carefully go through the following URL’s:
 * [https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)
 * [http://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html](http://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html)
 
-## Testing with Charles
+### Testing with Charles
 
 Charles is a tool to inspect network calls and discover the data being transferred. Charles can be used to validate a Gamedock SDK implementation to make sure that events are being sent to the Gamedock back-end properly.
 * Download and install Charles: [https://www.charlesproxy.com/](https://www.charlesproxy.com/)

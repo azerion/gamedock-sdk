@@ -1,5 +1,9 @@
 # Promotions
 
+* **[Configuration in Console](#configuration-in-console)**
+* **[Working with Promotions in the SDK](#working-with-promotions-in-the-sdk)**
+
+---
 The Promotions feature offers the possibility to award users with additional currencies and/or items for a limited amount of time or to reduce the prices for in-game bundles. The feature can be applied to **In-Game Bundles** and **IAP Packages**. The following options are available when configuring a promotion:
 * Set a start date and an end date for the promotion.
 * Award users with extra currencies, items and/or gacha boxes. This option is available for both Bundels and Packages.
@@ -8,7 +12,11 @@ The Promotions feature offers the possibility to award users with additional cur
 * Show splash screen specific to the promotion.
 * Configure promotion specific assets. These assets can be accessed through the PromotionsHelper class in the GameAssets List.
 
-## Working with Promotions
+### Configuration in Console
+
+**To Be Added Soon**
+
+### Working with Promotions in the SDK
 
 In order to work the Promotions feature in the game implement the following code:
 

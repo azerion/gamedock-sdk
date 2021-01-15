@@ -1,8 +1,13 @@
 # Working with the Social Login Feature
 
+* **[Implementing the Gamedock SDK Login](#implementing-the-gamedock-sdk-login)**
+* **[Implementing Cross-Device Data Synchronization](#implementing-cross-device-data-synchronization)**
+
+---
+
 By default, a user’s data is lost when they remove a game from their device. If they later re-install it, they start again as a new user. The social login feature solves this problem by binding the user’s progress to a specified Facebook account. After re-installing the game on the same or another device via a Facebook login, they can continue from their previous state. In addition, this feature can also be used to enable users to play across multiple devices while preserving their game progress. In this way, the user’s game experience can be enhanced.
 
-## Implementing the Gamedock SDK Login
+### Implementing the Gamedock SDK Login
 
 ![github pages](_images/SocialLoginFeature.png)
 
@@ -36,7 +41,7 @@ where:
 
 <!-- tabs:end -->
 
-## Failure
+#### Failure
 
 If the user login failed, the following event is triggered:
 
@@ -70,7 +75,7 @@ The *errorMessage* parameter describes what went wrong. The ShowNativeDialog() m
 | 35   | The user already has a social provider account. Please first logout.                           |
 | 36   | The specified social ID is already linked to another user.                                     |
 
-## Checking if a user is already logged in
+#### Checking if a user is already logged in
 
 Sometimes it is useful to know whether a user is already logged in. For example, when re-starting the game. The current user login status can be retrieved by calling the following method:
 
@@ -94,7 +99,7 @@ var loggedIn:Boolean = Gamedock.GetInstance().IsLoggedIn();
 
 <!-- tabs:end -->
 
-## Logging out a user
+#### Logging out a user
 
 Use the following method call to log out a user:
 
@@ -144,7 +149,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.LOGOUT_FAILED, onLogoutFailedE
 
 Note that it is only important to handle the fail event in the case of a global logout. In this case, the *ShowNativeDialog()* call can be used to display a dialog with *errorMessage*.
 
-## Logout and continue as a guest user
+#### Logout and continue as a guest user
 
 Use the following method to logout the user and let them continue as a guest user:
 
@@ -190,7 +195,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.LOGIN_SUCCESSFUL, onLoginSucce
 
 <!-- tabs:end -->
 
-## Handling Expired Session Tokens
+#### Handling Expired Session Tokens
 
 The social login feature works by internally assigning a session token to the currently logged in Facebook, Google Play Game or Game Center user. Each gameplay session receives a new token. This token, called “spilToken”, is sent with each request made by the Gamedock SDK to the Gamedock backend. The token is used to validate that the user is still correctly logged in.
 It can happen that the session of a logged in user is no longer valid, either because the session token has expired or due to a global logout on a different device. In these cases, an authorization error is triggered, and the user should either re-login or continue as a guest user. The following event will be triggered after an authorization error:
@@ -262,7 +267,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.REQUEST_LOGIN, onRequestLoginE
 
 The Facebook login process should be re-initiated after this event.
 
-## Resetting the User Data
+#### Resetting the User Data
 
 The user data (described in Supporting Wallet, Shop and Inventory Control) and game state (described in Working with Game States) can be reset after a logout or a non-guest login by calling the following method:
 
@@ -286,7 +291,7 @@ Gamedock.GetInstance().ResetData();
 
 <!-- tabs:end -->
 
-## Displaying the Current Device ID
+#### Displaying the Current Device ID
 
 The device ID can be displayed together with the Gamedock user ID in the game. This can be useful for Customer Support when resolving issues. See Implementing Customer Support for more information.
 
@@ -312,13 +317,13 @@ var deviceId:String = Gamedock.GetInstance().GetDeviceId();
 
 <!-- tabs:end -->
 
-## Implementing Cross-Device Data Synchronization
+### Implementing Cross-Device Data Synchronization
 
 ![github pages](_images/SyncFeature.png)
 
 The user data synchronization feature can be used to enable the synchronizing of user data when a logged in user is playing across multiple devices.
 
-## Requesting the latest user data
+#### Requesting the latest user data
 
 After initializing the Gamedock SDK, it is recommended that you request the latest user data. Normally, this is loaded successfully and is ready to use. However, in some cases merge conflicts can occur which must be resolved. The procedure to do so is described later in this section. The following method can be used to retrieve the user’s data from the Gamedock backend:
 
@@ -367,7 +372,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_AVAILABLE, onUserDat
 
 After initialization has been completed, it is possible to use and modify the user data using the methods described in Supporting Wallet, Shop and Inventory Control.
 
-## Playing on Multiple Devices
+#### Playing on Multiple Devices
 
 When a second device is being used to play the same game using the same Facebook ID, synchronization errors can occur. If this happens, the following event will be triggered:
 
@@ -394,7 +399,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_SYNC_ERROR, onUserDa
 
 Call the *RequestUserData()* method to re-synchronize the locally stored user data. It is recommended that gameplay is suspended at this point, and does not resume until the user data has been successfully synchronized again. There is a utility method available to show a native dialog that handles this case. It is described in Useful Utility Dialog Methods.
 
-## Resolving Merge Conflicts
+#### Resolving Merge Conflicts
 
 When a merge error occurs, the following event will be triggered:
 
@@ -493,7 +498,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_MERGE_FAILED, onUser
 
 In this case, you should retry the merge resolution with the MergeUserData method (described above) using the data returned by this event. The default Gamedock.Instance.ShowMergeFailedDialog method can also be used to display a native error dialog box that automatically retries as soon as the user clicks the Retry button.
 
-## Other Possible Errors
+#### Other Possible Errors
 
 It is not possible for the Gamedock backend to accept user data from two devices at the same time. When the first device sends its changes, a lock is applied to prevent other devices from attempting to send data while the update is in progress. If this happens, the following event will be triggered:
 
@@ -543,7 +548,7 @@ Gamedock.GetInstance().addEventListener(SDKEvents.USER_DATA_ERROR, onUserDataErr
 
 A synchronization error can occur when user data is handled through the Gamedock Console. It indicates that the data on the Gamedock backend is different from that on the device. In this case, the same flow is required to resolve the merge conflict.
 
-## Useful Utility Dialog Methods
+#### Useful Utility Dialog Methods
 
 The following utility method can be useful during development to display a native dialog box indicating that the user data on the Gamedock backend is different from that on the device:
 
