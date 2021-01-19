@@ -19,6 +19,8 @@ This table lists the following data for each Localization Value that exists :
 - **Draft** : the **Draft value** for the selected **Target Locale**, if any
 - **Accepted** : The **Accepted value** for the selected **Target Locale**, if any
 
+You can filter the table clicking on the dropdown **filter** ![filter](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/filter.png) , to show only certain values depending on their status
+
 ### Select Source/Target Locale
 In order to be able to change a particular Locale you'll need to select them properly on the locale dropdown selectors
 1. Select the Source Locale from the first Dropdown control at the top of the Table

@@ -42,14 +42,14 @@ For importing a locale, you'll need to have the data in CSV file with the follow
 Example: `ShopTitleText, en_US, es_ES, Title for the Shop, 25`
 1. Click on the three vertical dots on the right top to reveal the **Import Localization** option and click it
 2. On the popup click **Select File** and select a .csv file
-3. If there's no error (shown on the popup), click on **upload** and the file will be imported. Please note that the if the locale is not enabled, it will be enabled automatically
+3. If there's no error (shown on the popup), click on **upload** and the file will be imported. Please note that if the locale is not enabled, it will be enabled automatically
 4. You will need to refresh the page to view the changes on the table listing
 
 ### Export Locale
 1. Select, using the checkboxes ![checkbox](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/checkbox.png) on the left, the rows for each Locale you want to export
 2. Click on the button **Export Selected Languages** that appears on the top when selecting rows
 3. Click **ok** on the confirmation modal that follows
-4. A .ZIP file containing one or several .CSV files (one .CSV per Locale exported) will be prompted to download. 
+4. A .ZIP file containing one or several .CSV files (one .CSV per Locale selected for exporting) will be prompted to download. 
 
 ### Publish Several Locales
 1. Select, using the checkboxes ![checkbox](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/checkbox.png) on the left, the rows for each Locale you want to publish
