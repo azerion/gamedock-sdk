@@ -6,7 +6,7 @@ You can edit the draft value for a particular key in a Locale and also accept th
 
 ## Contents
 - [Table Listing](#table-listing)
-- [Select Source/Target Locale](#select-source-target-locale)
+- [Select Source/Target Locale](#select-sourcetarget-locale)
 - [Edit Localization Value](#edit-localization-value)
 - [Accept Localization Value](#accept-localization-value)
 - [Accept Several Localization Values](#accept-several-localization-values)
@@ -41,10 +41,10 @@ In order to be able to change a particular Locale you'll need to select them pro
 If you want to accept a draft value and mark it as accepted value:
 
 1. On the row where you want to accept the value, at the right, on the action column, click **Accept draft value** ![ok-circle](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/ok-circle.png)
-2. On the confirmation popup that appears press **OK**.
+2. On the confirmation popup that appears press **Ok**.
 3. It will accept the value and it will remove the contents of draft value
 
 ### Accept Several Localization Values
 1. Select, using the checkboxes on the left, the rows for each Locale you want to accept
 2. Click on the button **Accept selected** that appears on the top when selecting rows
-3. Click **ok** on the confirmation modal that follows
+3. Click **Ok** on the confirmation modal that follows
