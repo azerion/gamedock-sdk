@@ -14,7 +14,45 @@ The Promotions feature offers the possibility to award users with additional cur
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the Promotions feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Promotions** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/Promotions1.png)
+
+<!-- div:left-panel -->
+2. Go to **Monetization->Promotions** to access the feature.
+3. Click on the **"Create promotion"** button in order to create a new Promotion for your game.
+
+<!-- div:right-panel -->
+![github pages](_images/Promotions2.png)
+
+<!-- div:left-panel -->
+4. On the creation page, configure the following attributes for the **Promotion**:
+    * **Name**: The name of the Promotion.
+    * **Enabled**: Defines if the Promotion will be sent to the game.
+    * **Label**: A short description by which the Promotion can be identified (not Localized).
+    * **Start, End Date & Send At**: Used for determining when a Promotion is returned to the game. If none is provide the Promotion will always be provided to the game. Send At determines if the backend should consider UTC or the user's local time.
+    * **Duration & Duration Unit**: Determines the amount of time the promotion will be available to the user. 
+    * **Max purchases**: The amount of times the user can purchase the promotion before it becomes unavailable to him.
+    * **Affected entities**: This field determines if the Promotion modifies a Bundle or Package in the game.
+    * **Price override**: This field determines if the Promotion will override an existing price. This can only be used in conjunction with a Bundle affected entity.
+    * **Extra entities**: This field specifies what additional goods the user will receive when purchasing the Promotion. The entities can be Currency, Item or Gacha.
+    * **Platform**: Refers to the platform that the Promotion will be sent to. Here you can also configure the versions of the game that the Promotions will be sent.
+    * **Segments, Rule Groups & Conditions**: Indicates to which users the Promotion will be sent to.
+
+<!-- div:right-panel -->
+![github pages](_images/Promotions3.png)
+![github pages](_images/Promotions4.png)
+![github pages](_images/Promotions5.png)
+
+<!-- panels:end -->
+
+5. With the **Promotion** configured, you can now retrieved it from the SDK and use it to monetize more your game.
 
 ### Working with Promotions in the SDK
 

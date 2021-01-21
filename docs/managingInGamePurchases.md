@@ -18,7 +18,38 @@ It is important to understand that within the Gamedock platform in-app purchases
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the IAP Packages feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Virtual Goods** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop1.png)
+
+<!-- div:left-panel -->
+2. Go to **Content->Virtual Goods->Packages** to access the feature.
+3. Click on the **"Add Package"** button in order to create and In-App Package configuration.
+
+<!-- div:right-panel -->
+![github pages](_images/InGamePurchases1.png)
+
+<!-- div:left-panel -->
+4. Configure the following attributes for the **Package**:
+    * **Description**: A visual name used in the Console for visibility.
+    * **Price**: A visual attribute used in the Console. The actual price for the Package needs to be retrieved in the game via your implemented IAP library (ex.: Unity IAP).
+    * **Start & End Date**: Used for determining when a Package is returned to the game. If none is provide the Package will always be provided to the game.
+    * **Entities**: Defines what the package should give to the user once he has bought it. The entities can be Currency, Item or Gacha.
+    * **Store ids**: The corresponding ids of the IAP that is linked to the Package. You can retrieve these ids from the Play Store, App Store or other stores where you plan on delivering the game.
+
+<!-- div:right-panel -->
+![github pages](_images/InGamePurchases2.png)
+
+<!-- panels:end -->
+
+5. After a **Package** was created, you can edit it and add additional JSON properties that might help with configuring, displaying and in-game behaviour.
+6. Once you have finished configuration of the **Package(s)** you are ready to use the via the SDK.
 
 ### Retrieving IAP Packages Information
 

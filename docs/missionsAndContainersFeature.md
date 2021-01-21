@@ -60,7 +60,41 @@ The **Container Progress** component has the following attributes:
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the Missions and Containers feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Missions** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/Missions1.png)
+
+<!-- div:left-panel -->
+2. Go to **Content->Missions** to access the feature.
+3. Select your **Platform, Game Version and Segment**.
+
+<!-- div:right-panel -->
+![github pages](_images/Missions2.png)
+
+<!-- div:left-panel -->
+4. Drag from the Icons a **Container** and afterwards a **Mission** (make sure to drag it inside the container).
+
+<!-- div:right-panel -->
+![github pages](_images/Missions3.png)
+
+<!-- div:left-panel -->
+5. Select the **Container** in order to configure it.
+6. Select the **Mission** in order to configure it.
+7. You can link multiple missions by hovering over them in the graph and clicking on the linking icon.
+
+<!-- div:right-panel -->
+![github pages](_images/Missions4.png)
+![github pages](_images/Missions5.png)
+
+<!-- panels:end -->
+
+8. Once you have finished editing the Missions and Containers, make sure to press the "Save" button in order for the game to start receiving the configuration.
 
 ### Implementation in the SDK
 

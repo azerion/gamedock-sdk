@@ -22,8 +22,8 @@ Current versions of the modules used in the SDK:
 
 | Module                            | Android Version         | iOS Version        |
 |:----------------------------------|:------------------------|:-------------------|
-| AppsFlyer                         | 6.1.1                   | 5.2.0              |
-| AdMob                             | 19.5.0                  | 7.60.0             |
-| Firebase                          | 18.0.0                  | 6.25.0             |
+| AppsFlyer                         | 6.1.1                   | 6.1.3              |
+| AdMob                             | 19.5.0                  | 7.69.0             |
+| Firebase                          | 18.0.0                  | 7.3.0              |
 
 

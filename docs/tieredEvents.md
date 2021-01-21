@@ -15,7 +15,50 @@ You can also display the tiered event progress without the need of an web view i
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the **Tiered Events** feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Tiered Events** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/TieredEvents1.png)
+
+<!-- div:left-panel -->
+2. Go to **Content->Tiered Events** to access the feature.
+3. Click on the **"Create tiered event"** button in order to create a new Tiered Event for your game.
+
+<!-- div:right-panel -->
+![github pages](_images/TieredEvents2.png)
+
+<!-- div:left-panel -->
+4. Configure the following aspects about the **Tiered Event**:
+    * **Name**: The display name for the Tiered Event
+    * **Type**: Specifies the type of progress the Tiered Event is bound by. Spend refers to the user spending the specified currency or item, while Collect refers to the user gathering the specified currency or item.
+    * **Entity type & id**: Specifies which entity, be it Currency or Item, the Tiered Event will be affected by.
+    * **Date range**: Refers to the time the Tiered Event will be active for.
+    * **Announcement Days**: Specifies how many days before the Tiered Event will be active, it should still be returned to the SDK so that the game and user know what to expect in the near future.
+
+<!-- div:right-panel -->
+![github pages](_images/TieredEvents3.png)
+
+<!-- div:left-panel -->
+5. Click on the **Edit** icon and then the **"Create tier"** button in order to add **Tiers**.
+6. Configure the following aspects about the **Tier**:
+    * **Name**: The display name for the Tier.
+    * **Entity amount**: The amount of Currency or Item that the user needs in order to complete the Tier.
+    * **Image Url**: Refers to the image that is associated with the Tier
+    * **Properties**: Additional JSON properties.
+    * **Rewards**: The rewards that the user will get when he completes the Tier.
+    
+<!-- div:right-panel -->
+![github pages](_images/TieredEvents4.png)
+![github pages](_images/TieredEvents5.png)
+
+<!-- panels:end -->
+
+7. You are now ready to work with Tiered Events in your game.
 
 ### Using tiered events from the SDK
 

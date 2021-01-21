@@ -1,6 +1,6 @@
 # Event Tracking
 
-* **[Configuration in Console](#configuration-in-console)**
+* **[Event Dashboard in Console](#event-dashboard-in-console)**
 * **[Tracking Events using the SDK](#tracking-events-using-the-sdk)**
 
 ---
@@ -15,9 +15,27 @@ To facilitate this insight, Gamedock needs to know the events that require track
 
 > No changes or additions should be made to the specified event-tracking calls without prior discussion and approval from your Gamedock Account Manager.
 
-### Configuration in Console
+### Event Dashboard in Console
 
-**To Be Added Soon**
+In order to monitor events in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Go to **Reporting->Event Dashboard** to access the feature.
+2. Retrieve your device id via the SDK methods, and then go to **Devices** and add your device by clicking the **"Create Device"** button and pasting in your device id.
+
+<!-- div:right-panel -->
+![github pages](_images/EventDashboard1.png)
+
+<!-- div:left-panel -->
+3. Go to **Live Stream** and click on the + button, then select your newly created **Device**. Then start the game, and you should see events from the game/SDK start populating the view.
+4. Each event can be inspected and there are various details that can be observed such as the payload of each event, the response for that event or which segment the event/user fell into.
+
+<!-- div:right-panel -->
+![github pages](_images/EventDashboard2.png)
+
+<!-- panels:end -->
 
 ### Tracking Events using the SDK
 

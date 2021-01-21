@@ -17,7 +17,44 @@ Within the Gamedock platform, splash and daily bonus screen support are implemen
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the Splash Screens feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Splash Screens** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/SplashScreens1.png)
+
+<!-- div:left-panel -->
+2. Go to **Monetization->Splashscreens** to access the feature.
+3. In order to receive a **Splash Screen** in the game, a creative is needed for the Splash Screen configuration. When generating a new creative, it will require a template. There are available in the Console already a multitude of templates, but if none fit your need, please contact a Gamedock representative in order to create a new template.
+4. Once created, you can customise the creative with images, text, font, colors and localization.
+
+<!-- div:right-panel -->
+![github pages](_images/SplashScreens2.png)
+
+<!-- div:left-panel -->
+5. The next step that you need to do is create a campaign for your creative by going to the **Campaigns** page and clicking the **"Create campaign"** button.
+6. On the creation page, configure the following attributes for the **Splash Screen** campaign:
+    * **Name**: The name of the campaign.
+    * **Enabled**: Defines if the campaign will be sent to the game.
+    * **Creative**: Select the creative you created in step 3 & 4.
+    * **Start & End Date**: Used for determining when a Splash Screen is returned to the game. If none is provide the Splash Screen will always be provided to the game.
+    * **Delay & Delay Unit**: Determines the time the Console waits until the Splash Screen is shown again after a successful showing.
+    * **Priority**: Determines if the Splash Screen should be shown immediately or it should wait until the game decides to show it. By default Splash Screens are show immediately. The sliders is used for multiple splashscreens that are triggered that can be shown on a time picked by the game before the game shows them. In that case the one with the highest priority will be shown.
+    * **Platform**: Refers to the platform that the Splash Screen will be sent to. Here you can also configure the versions of the game that the Splash Screens will be sent.
+    * **Rule Groups, Triggers, Entity Triggers & Conditions** affect the cases in which the Splash Screen is show and to which users it will be distributed to. (ex.: Only users from the Netherlands that have over 100 Diamonds and have finished level 10). Here you can also configure if you want to specifically request the Splash Screen from the game (not triggered through a tracking event).
+
+<!-- div:right-panel -->
+![github pages](_images/SplashScreens3.png)
+![github pages](_images/SplashScreens4.png)
+![github pages](_images/SplashScreens5.png)
+
+<!-- panels:end -->
+
+7. With the campaign configured, you can now track/request it in the game and display it.
 
 ### Controlling Splash Screens from the SDK
 

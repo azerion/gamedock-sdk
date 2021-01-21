@@ -17,7 +17,58 @@ The Gamedock SDK (iOS) automatically ask users for their permission to receive p
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the Push Notification feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Go to **Content->Push Notifications** to access the feature.
+2. The first step is to set up the secrets. The secrets can be found on the respective services (Firebase - Google, APNS - Apple).
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications3.png)
+
+<!-- div:left-panel -->
+3. If you want to be able to test the notifications you should then create a **“Notification Group”**, the notification groups is just a grouping mechanism that gives you the power to send a notification to that groups users.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications4.png)
+
+<!-- div:left-panel -->
+4. Next is the **Notifications** listing, here you can see all the notifications by name and create new or edit/delete/activate/deactivate existing ones.
+5. When creating a new Push Notification the following attributes can be modified:
+    * **Name**: The name should be something detailed and meaningful that will help the users identify/search the specific push notification, it is not unique.
+    * **Min/Max inactive days**: This defines the minimum and the maximum days of inactivity a user should have to receive the push notification. Ex.: you want to send to the users that are inactive for three to five days a notification that says "Don’t give up so easily!" and to the users that are from seven to fifteen days another that says “We miss you :(” - The reason that this is a range and not just a single number is that if it was a single number it would be either “exactly” or “above of” where in the first case the notifications would be sent to the user that match the inactivity at the moment the notification is sent, and in the second case it would send it to almost all inactive users, both of the cases defeat the purpose in both the examples that we gave above.
+    * **Test group id**: If set, the notification will be sent only in the specific test group.
+    * **Platforms**: For which platforms and version range should the notification be sent.
+    * **Notification Data**: JSON data that will be sent along with the notification. This data can be read by the game.
+    * **Messages**: Here you can add the content of the notification. You can set different content per locale.
+    * The message form:
+        * **Locale**: The target locale.
+        * **Title**: The title of the notification.
+        * **Body**: The body of the notification, on Android devices, if the body exceeds 35 characters, the notification will be expandable.
+        * **Type**: We have three types of notifications Normal, Custom, and with image:
+            * **Normal**: The default notification style 
+            * **Custom**: Here you can set the background image and also the text color (black or white), make sure to choose a background-text color combination that would make enough contrast with the background for users to be able to read it. 
+            * **With Image**: Show an image along with the notification, this is different from the custom, since in the custom option the image is a background.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications5.png)
+
+<!-- div:left-panel -->
+6. You will need to also create a **Schedule**. There are two types of schedules, repeating and one-time in both cases you can add multiple schedules - but all of them of the same type - you can also enable/disable schedules individually.
+    * **Repeating**: The repeating schedules are sent periodically depending on the frequency that is set to the schedule.
+        * **Date Range**: The date range in which the notification schedule will be active. Here you can also set if the range is in users local time or UTC.
+        * **Send time**: The time that you want to send the push notification to the user, you can set the time in fifteen minute intervals.
+        * **Frequency**: You can set the frequency to Daily, Weekly - where you can also choose which days of the week, and Monthly - where you can choose which days of the month.
+    * **One Time**: The one time schedules are sent to the user a single time at the defined time, here you can also define if it will be send on local or UTC time.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications6.png)
+
+<!-- panels:end -->
+
+7. Having all of this, you should be able to send push notifications to your game!
 
 ### Handling Push Notification Permission Requests
 

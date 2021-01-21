@@ -17,7 +17,40 @@ Within the Gamedock platform, splash and daily bonus screen support are implemen
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the Daily Bonus feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Daily Bonus** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/DailyBonus1.png)
+
+<!-- div:left-panel -->
+2. Go to **Content->Daily Bonus** to access the feature.
+3. Configure the following aspects about the **Daily Bonus** screen:
+    * **Type**: Can be web view or asset bundle.
+    * **URL/Asset bundle File**: Depending on the type, you will need to provide a link to the daily bonus web view template or to upload an asset bundle that has been built with daily bonus support. Contact a Gamedock representative for more information about this.
+    * **Enabled**: If the daily bonus can be served in the game.
+    * **Cycle type**: Specifies the behaviour of the daily bonus screen once the user has reached the last day. The screen can either repeat the last day or reset and start from day 1.
+    * **Display type**: Specifies the behaviour of the daily bonus screen when displaying the days. The screen can either be centred with two days passed and two days to come, or show all days.
+    * **Consecutive days**: Toggles if advancing the days requires the user to claim the rewards on consecutive days or not.
+
+<!-- div:right-panel -->
+![github pages](_images/DailyBonus2.png)
+
+<!-- div:left-panel -->
+4. Add the days that the user can collect by clicking the **"Create Day"** button.
+5. Configure the day by adding currencies and items that the user can collect.
+
+<!-- div:right-panel -->
+![github pages](_images/DailyBonus3.png)
+![github pages](_images/DailyBonus4.png)
+
+<!-- panels:end -->
+
+6. With all the days configured you can request and display a daily bonus screen using the SDK.
 
 ### Controlling Daily Bonus Screens from the SDK
 

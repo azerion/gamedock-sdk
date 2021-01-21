@@ -18,7 +18,39 @@ We recommend the following:
 
 ### Setting up the Game Config in the Console
 
-**To Be Added Soon**
+In order to setup the Game Config feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Config** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/GameConfig1.png)
+
+<!-- div:left-panel -->
+3. Go to **Content->Game Config** to access the feature.
+4. Select your **Platform**, **Game Version** and **Segment**, then click on the **"Create New"** button.
+
+<!-- div:right-panel -->
+![github pages](_images/GameConfig2.png)
+
+<!-- div:left-panel -->
+5. In this new window, add your desired Game Config JSON data. You can switch between **Tree view** (which doesn't allow pasting of JSON code) and **Code view**. Once you are finished with adding the JSON data, **Save** the current information.
+
+<!-- div:right-panel -->
+![github pages](_images/GameConfig3.png)
+
+<!-- div:left-panel -->
+6. A new entry in the table will appear with your Game Config data. You can **Edit**, **Activate**, **Duplicate**, **Read** and **Delete** the Game Config entry.
+
+<!-- div:right-panel -->
+![github pages](_images/GameConfig4.png)
+
+<!-- panels:end -->
+
+7. The Game Config entry with its data will only be delivered to the game after it has been **activated**.
+8. Once activated, make sure to also create the default json configuration file in your game build. You are now ready to use the **Game Config** from the SDK.
 
 ### Requesting a Configuration File from the SDK
 

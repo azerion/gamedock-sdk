@@ -55,7 +55,38 @@ The SDK currently has the following Ad Networks implemented:
 
 ### Configuration in Console
 
-**To Be Added Soon**
+In order to setup the Advertisement feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Ads** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/Advertisement1.png)
+
+<!-- div:left-panel -->
+2. Go to **Monetization->Advertising** to access the feature.
+3. Select the platform and configure the following fields:
+    * Make sure to toggle Enabled on.
+    * Configure your AdMob App Id.
+    * Depending on the features, such as banners, interstitials and rewarded videos, configure the specific ad unit id and enable the feature.
+    * If you are using Priority Ads, make sure to configure those in the Priority Ads section. Priority Ads will be displayed for each feature before showing the standard AdMob stack.
+
+<!-- div:right-panel -->
+![github pages](_images/Advertisement2.png)
+
+<!-- div:left-panel -->
+4. If you want to trigger interstitials based on different events triggered in the game (ex.: levelComplete, milestoneAchieved, etc.), access the Interstitials tab and click on the **"Create Interstitial"** button. Once created, you can configure different aspects of the triggering of the interstitial such as the triggers and conditions.
+
+<!-- div:right-panel -->
+![github pages](_images/Advertisement3.png)
+![github pages](_images/Advertisement4.png)
+
+<!-- panels:end -->
+
+> [!WARNING]
+> Make sure to enable the conditional event in the Events->Conditional events section if you plan on triggering interstitials based on that event.
 
 ### Advertisement Initialization in the SDK
 

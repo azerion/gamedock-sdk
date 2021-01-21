@@ -38,7 +38,114 @@ Table 6: SDK-Managed Objects.
 
 ### Configuration in the Console
 
-**To Be Added Soon**
+#### Wallet & Inventory
+
+In order to setup the Wallet & Inventory feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Virtual Goods** feature in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop1.png)
+
+<!-- div:left-panel -->
+2. Go to **Content->Virtual Goods** to access the feature.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop2.png)
+
+<!-- div:left-panel -->
+3. Creating a **Currency** you can configure the following attributes:
+    * **Name:** The name for the Currency. It can also be used to retrieve it in the SDK.
+    * **Initial Value:** The value with which the SDK will initialize when the game will start first time. This step is done automatically.
+    * **Type:** It specifies if the Currency can be acquired with real-world money or not.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop3.png)
+![github pages](_images/WalletInventoryShop4.png)
+
+<!-- div:left-panel -->
+4. Creating an **Item** you can configure the following attributes:
+    * **Name:** The name for the Item. It can also be used to retrieve it in the SDK.
+    * **Item Group:** Only used for Console display and managing purposes.
+    * **Price & Currency:** Specifies the cost and the Currency associated with the cost if the Item would be purchased.
+    * **Type:** Specifies if the Item is a consumable, booster or permanent. This is used for analytics purposes.
+    * **Initial Value:** The value with which the SDK will initialize when the game will start first time. This step is done automatically.
+    * **Is Unique:** Tells if this item will be a Unique Item or not.
+5. You can edit the **Item** to add any additional **JSON properties**.
+6. When creating an **Item**, a **Bundle** will automatically be created for this Item as well. This Bundle cannot be edited.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop5.png)
+![github pages](_images/WalletInventoryShop6.png)
+
+<!-- div:left-panel -->
+7. Creating a **Gacha** you can configure the following attributes:
+    * **Name:** The name for the Gacha. It can also be used to retrieve it in the SDK.
+    * **Price & Currency:** Specifies the cost and the Currency associated with the cost if the Gacha would be purchased.
+    * **Initial Value:** The value with which the SDK will initialize when the game will start first time. This step is done automatically.
+    * **Allow duplicates:** Specifies if the Gacha should allow giving out duplicates or not. If not, the SDK will check if the user already has the received Item for the Gacha or not.
+    * Edit the Gacha in order to add Entities to it that will be rolled when the Gacha is opened. The weight determines the probability that the item will be received.
+8. You can edit the **Gacha** to add any additional **JSON properties**.
+9. When creating a **Gacha**, a **Bundle** will automatically be created for this Gacha as well. This Bundle cannot be edited.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop7.png)
+![github pages](_images/WalletInventoryShop8.png)
+![github pages](_images/WalletInventoryShop9.png)
+
+<!-- div:left-panel -->
+10. Creating a **Bundle** you can configure the following attributes:
+    * **Name:** The name for the Bundle. It can also be used to retrieve it in the SDK.
+    * **Price & Currency:** Specifies the cost and the Currency associated with the cost if the Bundle would be purchased.
+    * Edit the Bundle in order to add Entities to it that will be given to the user when the Bundle is bought.
+11. You can edit the **Bundle** to add any additional **JSON properties**.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop10.png)
+![github pages](_images/WalletInventoryShop11.png)
+![github pages](_images/WalletInventoryShop12.png)
+
+<!-- panels:end -->
+
+12. Once you have configured all your **Currencies, Items, Gachas and Bundles** you can retrieve them in your game via the SDK. This will also allow the possibility to do operations with the **Wallet & Inventory**.
+
+#### Shop
+
+In order to setup the Shop feature in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Enable the **Virtual Goods** and **User Data** features in the features list.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop1.png)
+
+<!-- div:left-panel -->
+2. Go to **Content->Shop Management** to access the feature.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop13.png)
+
+<!-- div:left-panel -->
+3. Select your **Platform, Game Version and Segment**, then click on the **"Create tab"**. Provide a name to the **Tab**, and if needed add any additional JSON properties.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop14.png)
+
+<!-- div:left-panel -->
+4. Select the newly created Tab, and the click on the **"Create entry"**. You can configure either a **Bundle** or a **Package** for your Shop **Entry**, and if needed add any additional JSON properties.
+
+<!-- div:right-panel -->
+![github pages](_images/WalletInventoryShop15.png)
+
+<!-- panels:end -->
+
+5. Both **Tabs** and **Entries** can be re-arranged as need in order to be displayed in the correct order in the game.
+6. You can now retrieve the **Shop** configuration in your game and display it.
 
 ### Implementation in the SDK
 

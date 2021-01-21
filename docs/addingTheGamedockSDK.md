@@ -1,19 +1,7 @@
 # Adding the Gamedock SDK
 
-* **[Configuration in Console](#configuration-in-console)**
-* **[Addition of the SDK](#addition-of-the-sdk)**
-
----
-
 > [!NOTE]
 > As the Gamedock SDK grows and expands, new SDK versions with additional features will be made available. These new versions can update or improve your game. However, previous versions will still be available for legacy games. It is recommended that you update your games to the latest SDK.
-
-
-### Configuration in Console
-
-**To Be Added Soon**
-
-### Addition of the SDK
 
 In order to add the SDK follow the steps below depending on the platform/game engine of your game.
 

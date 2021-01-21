@@ -48,7 +48,35 @@ gamedockSDK.getGamedockDeviceId();
 
 ### Find user in the Console
 
-**To Be Added Soon**
+In order to find the user in the console go through the following steps:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Go to Users->User data to retrieve information about a user.
+2. Search the user id in the search bar, either by typing the first few characters or copying and pasting it.
+3. If you want to remember the UID, you can create an Alias for it once you have Searched it.
+
+<!-- div:right-panel -->
+![github pages](_images/UserIdentification1.png)
+
+<!-- panels:end -->
+
+4. The details of each user information section is as follows:
+    * **Event Profile**: Information regarding specific event tracking done by the user.
+    * **User Profile**: Information tailored specifically to certain games.
+    * **Experiment Status**: The current status of the user in relation to experiments that are running in the game (which segments he has fallen into).
+    * **Wallet**: Information related to the wallet details of the user as well as the possibility to change the values of the user's currencies.
+    * **Inventory**: Information related to the inventory details of the user as well as the possibility to change the values of the user's items.
+    * **History**: Overview about all the transaction that the user has done for his Wallet and Inventory.
+    * **Push Notifications**: Information regarding push notifications as well as ability to put the user in different push notification groups.
+    * **Private Gamestate**: Contains the information regarding the private gamestate blob.
+    * **Public Gamestate**: Contains the information regarding the private gamestate blob. This can also be retrieved by other users.
+    * **Daily Bonus**: Information regarding the current progress of the user's daily bonus. It also provides functionality to modify the progress.
+    * **Convert User**: Tool to change the user's UID to a different one.
+    * **Data**: Contains all the data stored by the backend services.
+    * **Hashes**: Information about the user's connected UIDs, Device Ids, and backend generated hashes (used for connection between the different ids). 
+    * **Social Account**: Information about the social login status of the user. It also provides functionality to logout the user or to unlink the UID from the social account.
 
 ### Setting External IDs
 
