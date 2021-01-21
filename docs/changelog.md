@@ -195,7 +195,42 @@
 
 #### ** Console **
 
-### 01.09.2020 - 31.09.2020
+### 01.01.2021 - 31.01.2021
+
+* Added game and sdk version overview for management and organisation page.
+* Refactored the Notification pages.
+* Improved certain UX/UI aspects of the Localization feature.
+* Added release overview page and add release notes link.
+
+### 01.12.2020 - 31.12.2020
+
+* Changed AppsFlyer attribution versioning to an ignore list.
+* Revamped data view modal, change jsonviewer to vue and add url renderer.
+* Completed Localization feature.
+
+### 01.11.2020 - 30.11.2020
+
+* Added wildcard permissions. 
+* Fixed visual bug in User roles page.
+* Updated the Tiered Events pages to match latest visual standards.
+* Added default versions and SDK config for new created games.
+* Improved Virtual Goods navigation flow.
+* Fixed several form related bugs.
+* Added AppsFlyer whitelisted flag to tracked devices.
+* Added game deletion for organisations.
+* Added first parts of the Localization feature.
+
+### 01.10.2020 - 31.10.2020
+
+* Updated GDPR popup partner list.
+* Added redirect for user to Store page when no stores present on IAP Validation page.
+* Fixed test devices labelled wrongly as 'None' in Campaigns.
+* Removed Chartboost configuration.
+* Added custom types for push notifications.
+* Improved User Permission feedback.
+* Additional UX improvements.
+
+### 01.09.2020 - 30.09.2020
 
 * Added description to event game versions and properties.
 * Added pushNotification statistics to the user page.
@@ -205,7 +240,7 @@
 * Added possibility for user to manually configure IAP validation.
 * Additional UX improvements.
 
-### 01.08.2020 - 30.08.2020
+### 01.08.2020 - 31.08.2020
 
 * Removed Franchises field from the games.
 * Removed DFP entries from the Advertisement page.
