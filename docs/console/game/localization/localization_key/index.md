@@ -29,7 +29,7 @@ To edit an existing Localization Key for a game:
 2. You can edit the values for the Localization Key as explained on the Create Localization Key section
 
 ### Show/Hide Localization Key
-Hiding a Localization Key will hide it on the list of Localization Values and not served when the locale is published.
+Hiding a Localization Key will hide it on the list of Localization Values and is not served when the locale is published.
 
 To hide or show a Localization Key for a game:
 1. On the row from the key you want to show or hide click the button **Show Localization Key** ![eye-open](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/eye-open.png) or **Hide Localization Key** ![eye-close](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/eye-close.png) depending on the intention
