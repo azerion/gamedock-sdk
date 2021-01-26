@@ -10,6 +10,8 @@ A functionality for importing and exporting a locale translation, in CSV format,
 
 Selecting several rows will allow you to export and publish multiple locales at the same time
 
+Also there is a **Usage Statistics** section about the different Language Locales served by Gamedock SDK for the selected Game
+
 ## Contents
 - [View Translation Status](#view-translation-status)
 - [Publish a Locale](#publish-a-locale)
@@ -18,6 +20,7 @@ Selecting several rows will allow you to export and publish multiple locales at 
 - [Export Locale](#export-locale)
 - [Publish several Locales](#publish-several-locales)
 - [Unpublished Changes](#unpublished-changes)
+- [Show Usage stats](show-usage-stats)
 
 
 ### View Translation Status
@@ -65,3 +68,9 @@ File example:
 
 ### Unpublished Changes
 In case a Locale has an accepted value that has been changed but it is not published, it will be reflected here with a warning icon ![warning-sign](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/warning-sign.png). It is recommended to publish the Locale in order to see these changes reflected on the localization.
+
+### Show Usage Stats
+1. On the top right corner, select the Date Range that you want to be displayed
+2. On the left table, **Usage per locale**, the total number of requests per locale is displayed for each enabled locale
+3. On the rigth table, **Usages timeline**, the same information is displayed showing per day how often the locale is requested
+4. Note that you can hide or show each line clicking on each locale legend on top of the chart
