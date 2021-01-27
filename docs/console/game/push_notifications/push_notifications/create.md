@@ -4,6 +4,28 @@ In this page you can create new Push Notifications
 
 ## Contents
 
+- [Name](#name)
+- [Min/Max inactive days](#min-max-inactive-days)
+- [Test group id](#test-group-id)
+- [Platforms](#platforms)
+- [Notification Data](#notification-data)
+- [Messages](#messages)
+    * [The message form](#the-message-form)
+        + [Locale](#locale)
+        + [Title](#title)
+        + [Body](#body)
+        + [Type](#type)
+            - [Normal](#normal)
+            - [Custom](#custom)
+            - [With Image](#with-image)
+- [Schedule type](#schedule-type)
+    * [Repeating](#repeating)
+        + [Date Range](#date-range)
+        + [Send time](#send-time)
+        + [Frequency](#frequency)
+    * [One Time](#one-time)
+    * [About “Users Local Time” and UTC](#about--users-local-time--and-utc)
+    
 ### Name
 
 The name should be something detailed and meaningful that will help the users identify/search the specific push
