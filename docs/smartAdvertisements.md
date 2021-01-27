@@ -42,7 +42,7 @@ The SDK currently has the following Ad Networks implemented:
 | AdManager                         | 7.66.0                                         | Mediator           | ✓         | ✓              | ✓                | ✓              |
 | Gamedock Ads                      | 4.0.0                                          | Mediation          | ✓         | ✓              | ✓                | x              |
 | Unity Ads                         | 3.5.0                                          | Mediation          | ✓         | ✓              | ✓                | x              |
-| Facebook Audience Network         | 6.2.0                                          | Mediation          | ✓         | ✓              | ✓                | x              |
+| Facebook Audience Network         | 6.2.1                                          | Mediation          | ✓         | ✓              | ✓                | x              |
 | Vungle                            | 6.8.0                                          | Mediation          | ✓         | ✓              | ✓                | ✓              |
 | Applovin                          | 6.14.4                                         | Mediation          | ✓         | ✓              | ✓                | x              |
 | InMobi                            | 9.1.0                                          | Mediation          | ✓         | ✓              | ✓                | ✓              |

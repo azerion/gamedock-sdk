@@ -5,6 +5,27 @@
 #### ** SDK **
 
 
+###  Version 4.1.0 *(28-01-2021)*
+
+**New Features**
+ * _Localization_: This feature provides localization for your games. In order to configure localizations for your games please consult the documentation for both the Console and the SDK.
+
+**Bug fixes**
+ * Android: Fixed issue with incorrect tracking of session stops and heartbeats when ads and splash screens are shown.
+ * Android: Fixed several minor crashes.
+ * Unity Editor iOS: Fixed issue with the Privacy Policy not initializing the SDK.
+ * Unity: Refactored and fixed the WebGL platform support.
+
+**Other**
+ * Android/iOS/Unity/Cordova: Implemented logic to filter out events using the Gamedock backend.
+ * Android/iOS/Unity/Cordova: Implemented logic to disable event sending (archiving a game).
+ * Android/iOS/Unity: Added method to show the app settings screen.
+ * Android/iOS/Unity/Cordova: Removed Adjust module.
+ * Unity: Removed AAR support for the Android dependency management.
+ * Unity: Added new functionality to easily import or update the Android dependencies via Gradle, using only the Unity supplied gradle (or your own custom one).
+ * iOS: Added functionality to request ATTracking permission without using the Privacy Policy.
+ * iOS: Added functionality for Rich Push Notifications.
+
 ###  Version 4.0.2 *(02-12-2020)*
 
 **Bug fixes**
@@ -194,6 +215,7 @@
  * Unity: Exposed the Android Crashlytics/Fabric api key to the manifest. If you are using a different Fabric account then the old Spilgames one, make sure to update this key.
 
 #### ** Console **
+
 
 ### 01.01.2021 - 31.01.2021
 

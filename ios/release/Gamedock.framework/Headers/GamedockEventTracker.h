@@ -24,7 +24,6 @@ typedef NS_ENUM(int, GamedockPrivacyStatus) {
 @property (atomic) BOOL hasNetworkConnection;
 @property (nonatomic) BOOL isUnity;
 @property (nonatomic) BOOL privacyPolicyEnabled;
-@property (nonatomic, retain) NSString *adjustId;
 
 // --- Singleton ---
 
@@ -43,6 +42,7 @@ typedef NS_ENUM(int, GamedockPrivacyStatus) {
 -(void)setPrivValueWithContentValue:(bool)contentValue adsValue:(bool)adsValue completion:(void (^)(GamedockPrivacyStatus))completion;
 
 -(NSString*)getBundleId;
+-(NSString*)getBuildType;
 -(NSString*)getSessionId;
 -(NSString*)getEndPointPath;
 -(NSString*)getPushKey;

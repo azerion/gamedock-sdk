@@ -46,10 +46,11 @@
 #import <Gamedock/ErrorContext.h>
 #import <Gamedock/InitializationOptions.h>
 #import <Gamedock/UserDataTransaction.h>
+#import <Gamedock/EnvironmentDetector.h>
 #import "HookBridge.h"
 #import "GAI.h"
 
-#define GAMEDOCK_SDK_VERSION @"4.0.2"
+#define GAMEDOCK_SDK_VERSION @"4.1.0"
 
 @class Gamedock;
 @class InitializationOptions;
@@ -189,8 +190,14 @@
 -(void)gameVersionStatus:(nonnull NSString*)status;
 
 //ATTracking
--(void)attStatus:(int)status;
+-(void)attPermissionStatus:(int)status;
 -(void)privValueChangeForced:(int)priv;
+
+//Localization
+///Callback if localization is available (contains also the locale in case the default locale is returned)
+-(void)onLocalizationAvailable:(NSString*)locale isDefaultLocale:(BOOL)isDefaultLocale;
+-(void)onLocalizationNotAvailable;
+-(void)onLocalizationError:(NSString*)error;
 
 @end
 
@@ -207,6 +214,9 @@
 @property (nonatomic, retain) NSDictionary * _Nullable privacySettingsToSendAfterInit;
 @property (nonatomic, strong, nullable) InitializationOptions *initializationOptions;
 @property (nonatomic, retain, nullable) NSArray *features;
+@property (nonatomic, retain, nullable) NSArray *whitelistedEvents;
+@property (nonatomic, assign) EnvironmentType buildType;
+@property (nonatomic, assign) BOOL isUnpublished;
 @property (nonatomic, retain, nullable) NSMutableDictionary *featuresVersionIds;
 
 +(nonnull Gamedock*)sharedInstance;
@@ -251,6 +261,9 @@
 +(void)setFeatureVersionId:(nonnull NSString*)featureName withVersionId:(NSNumber*)versionId;
 
 +(NSNumber*)getFeaturesVersionId:(nonnull NSString*)featureName;
+
++(BOOL)isEventEnabled:(NSString *)eventName;
+
 /**
  * Method to set a custom bundle id, useful during debugging.
  * @param The custom bundle id to use
@@ -378,7 +391,7 @@
  * @param userInfo        Reference to the push notification payload
  */
 +(void)application:(nullable UIApplication *)application didReceiveRemoteNotification:(nullable NSDictionary *)userInfo;
-
++(void)application:(nullable UIApplication *)application didReceiveRemoteNotification:(nullable NSDictionary *)userInfo fetchCompletionHandler:(void(^)(UIBackgroundFetchResult))completionHandler;
 /**
  * Forwarding Delegate method to let the Gamedock framework handle deeplinks
  * @param Application          Reference to the UIApplication object
@@ -652,13 +665,26 @@
 /**
  * Helper functions to register for app transparency tracking
  */
-+(void)registerATTracking;
++(void)requestATTPermission;
 
 +(void)showAppSettings;
+
+#pragma mark Localization
+///Request translation for specific locale
++(void)requestLocalization:(NSString*)locale fallbackToDefaultLocale:(BOOL)fallbackToDefaultLocale;
+
+///Methods used to retrive a localization key
++(NSString*)getLocalization:(NSString*)localizationKey defaultValue:(NSString*)defaultValue;
++(NSString*)getLocalization:(NSString*)localizationKey defaultValue:(NSString*)defaultValue args:(NSArray<NSString*>*)args;
++(NSString*)getLocalization:(NSString*)localizationKey defaultValue:(NSString*)defaultValue argumentsDictionary:(NSDictionary*)argumentsDictionary;
+
+//Build properties
++ (EnvironmentType)getBuildType;
+
 /**
  * Helper function to forward the app delegate listener on the deviceToken
  */
-+(void)didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData*)deviceToken;
++(void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken;
 
 #pragma mark Token claiming
 

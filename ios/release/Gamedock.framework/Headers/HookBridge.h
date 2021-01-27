@@ -126,7 +126,7 @@ extern "C" {
     
     // --- ATTracking ---
         
-    void registerForATTrackingNative();
+    void requestATTPermissionNative();
     
     void showAppSettingsNative();
 
@@ -376,7 +376,18 @@ extern "C" {
     void showAppRatePopupNative();
     
     // --- Features ---
+    
     long getFeaturesVersionIdNative(char* featureName);
+    
+    // --- Localization ---
+    
+    void requestLocalizationNative(char* locale, bool fallbackToDefaultLocale);
+
+    char* getLocalizationNative(char* key, char* defaultValue);
+    
+    char* getLocalizationArgsNative(char* key, char* defaultValue, const char* args);
+    
+    char* getLocalizationDictNative(char* key, char* defaultValue, const char* args);
 }
 
 #endif

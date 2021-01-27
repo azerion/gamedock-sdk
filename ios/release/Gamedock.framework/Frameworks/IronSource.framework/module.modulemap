@@ -41,6 +41,8 @@ framework module IronSource {
     header "ISSupersonicAdsConfiguration.h"
     header "ISImpressionDataDelegate.h"
     header "ISImpressionData.h"
-
+    header "ISConsentViewDelegate.h"
+    header "ISConsentView.h"
+    header "ISConsentViewTemplateType.h"
     
 }

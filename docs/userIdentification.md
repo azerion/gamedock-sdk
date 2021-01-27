@@ -4,6 +4,7 @@
 * **[Setting External IDs](#setting-external-ids)**
 * **[User ID modifications from the Console](#user-id-modifications-from-the-console)**
 * **[Informing the user about a required game update](#informing-the-user-about-a-required-game-update)**
+* **[Requesting ATTracking permission (IDFA Tracking) for iOS](#requesting-attracking-permission-idfa-tracking-for-ios)**
 
 ---
 
@@ -233,5 +234,54 @@ private function onGameVersionStatusEvent(evt:GameVersionStatusEvent) : void
 #### ** Cordova **
 
 > This feature is currently not supported on Cordova.
+
+<!-- tabs:end -->
+
+### Requesting ATTracking permission (IDFA Tracking) for iOS
+
+By default the SDK requests the ATTracking permission for iOS when using the built in GDPR popup. The permission request happens after the user has accepted the GDPR popup. If you want to request the permission manually, independent of the GDPR popup use the following code:
+
+<!-- tabs:start -->
+
+#### ** Unity **
+
+~~~csharp
+//Register the callback in order to receive the response for the user
+//Should be registered before making the request call
+Gamedock.Instance.ATTrackingCallbacks.OnATTPermissionStatus -= OnATTPermissionStatus;
+Gamedock.Instance.ATTrackingCallbacks.OnATTPermissionStatus += OnATTPermissionStatus;
+
+public void OnATTPermissionStatus(ATTrackingCallbacks.ATTPermissionStatusEnum status)
+{
+    
+}
+
+public enum ATTPermissionStatusEnum
+{
+    NotDetermined = 0,
+    Restricted = 1,
+    Denied = 2,
+    Authorized = 3
+}
+
+//Method to request ATTTracking permission
+Gamedock.Instance.RequestATTPermission();
+~~~
+
+#### ** AIR **
+
+> This feature is currently not supported on Cordova.
+
+#### ** Cordova **
+
+~~~javascript
+//Request permission
+gamedockSDK.requestATTPermission();
+
+//Callback
+gamedockSDK.on('ATTPermissionStatus', (status) => {
+    console.log('ATTPermissions status: ', status);
+});
+~~~
 
 <!-- tabs:end -->

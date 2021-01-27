@@ -83,4 +83,8 @@
 +(GamedockError*)OperationTooFrequent;
 
 +(GamedockError*)TransactionOperation;
+
++(GamedockError*)LocalizationError;
++(GamedockError*)ConnectionError;
+
 @end
