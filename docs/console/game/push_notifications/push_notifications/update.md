@@ -1,10 +1,10 @@
-# Create Push Notification
+# Edit Push Notification
 
-In this page you can create new Push Notifications.
+In this page you can edit a Push Notifications.
 
 ## Contents
 
-- [The create Push Notification Form](#the-create-push-notification-form)
+- [The Push Notification Form](#the-push-notification-form)
     * [Name](#name)
     * [Min/Max inactive days](#minmax-inactive-days)
     * [Test group id](#test-group-id)
@@ -26,9 +26,9 @@ In this page you can create new Push Notifications.
             - [Frequency](#frequency)
         + [One Time](#one-time)
         + [About “Users Local Time” and UTC](#about-users-local-time-and-utc)
+- [Sending a test Push Notification](#sending-a-test-push-notification)
 
-
-## The create Push Notification Form
+## The Push Notification Form
 
 ### Name
 
@@ -130,3 +130,8 @@ sent on local or UTC time.
 > Let’s say that we set the notification to be sent at 17:00, if it is to be sent at “Users Local Time”, then the users
 > will get the notification when it is 17:00 in their country/time zone, if it is to be sent at UTC, all the users all
 > over the world will get the notification at the same time when it is 17:00 UTC - you will probably wake up some people.
+
+## Sending a test Push Notification
+On the three dots menu in the top right corner of the form, you can choose to send a test push notification. Once clicked,
+a modal will appear where you will be asked to choose a test group to send the notification. This notification will be
+sent in the next cycle and only to the selected groups users ignoring schedules,platforms and inactive days.
