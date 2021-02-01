@@ -44,7 +44,7 @@ notification** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs
 to activate it, or the **Deactivate push
 notification** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/remove-circle.png)
 button to deactivate it. Once deactivated, a Push Notification will keep all it's configuration but won't be pushed to
-the users, it can then be activated at any point. otifications
+the users, it can then be activated at any point.
 
 > **Adding users to Push Notification Groups**
 >
