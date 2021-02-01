@@ -7,11 +7,11 @@ removed.
 ## Contents
 
 - [Table listing](#table-listing)
-- [Create new SDK Config](#create-new-sdk-config)
-- [Edit SDK Config](#edit-sdk-config)
-- [Remove SDK Config](#remove-sdk-config)
-- [Activate SDK Config](#activate-sdk-config)
-- [Create new based on this](#create-new-based-on-this)
+- [Create new SDK Config](#create-a-new-sdk-config)
+- [Edit SDK Config](#edit-a-sdk-config)
+- [Remove SDK Config](#remove-a-sdk-config)
+- [Activate SDK Config](#activate-a-sdk-config)
+- [Create new based on this](#create-a-new-sdk-config-based-on-existing-one)
 
 ## Table listing
 

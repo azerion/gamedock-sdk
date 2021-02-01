@@ -6,9 +6,9 @@ android devices. These secrets can be found on the respective services (Firebase
 ## Contents
 
 - [iOS](#ios)
-    * [Update iOS Secret](#update-ios-secret)
+    * [Update iOS Secret](#update-the-ios-secret)
 - [android](#android)
-    * [Update android Secret](#update-android-secret)
+    * [Update android Secret](#update-the-android-secret)
 
 ## iOS
 
