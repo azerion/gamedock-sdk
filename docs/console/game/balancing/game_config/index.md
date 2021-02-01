@@ -6,12 +6,12 @@ removed.
 
 ## Contents
 - [Table listing](#table-listing)
-- [Create new Game Config](#create-a-new-game-config)
-- [Delete version](#delete-a-version)
-- [Edit Game Config](#edit-a-game-config)
-- [Remove Game Config](#remove-a-game-config)
-- [Activate Game Config](#activate-a-game-config)
-- [Create new based on this:](#create-a-new-game-config-based-on-existing-one)
+- [Create a new Game Config](#create-a-new-game-config)
+- [Delete a version](#delete-a-version)
+- [Edit a Game Config](#edit-a-game-config)
+- [Remove a Game Config](#remove-a-game-config)
+- [Activate a Game Config](#activate-a-game-config)
+- [Create a new based on this:](#create-a-new-game-config-based-on-existing-one)
 
 ## Table listing
 

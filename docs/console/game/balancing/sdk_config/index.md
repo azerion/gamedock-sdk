@@ -7,11 +7,11 @@ removed.
 ## Contents
 
 - [Table listing](#table-listing)
-- [Create new SDK Config](#create-a-new-sdk-config)
-- [Edit SDK Config](#edit-a-sdk-config)
-- [Remove SDK Config](#remove-a-sdk-config)
-- [Activate SDK Config](#activate-a-sdk-config)
-- [Create new based on this](#create-a-new-sdk-config-based-on-existing-one)
+- [Create a new SDK Config](#create-a-new-sdk-config)
+- [Edit an SDK Config](#edit-an-sdk-config)
+- [Remove an SDK Config](#remove-an-sdk-config)
+- [Activate an SDK Config](#activate-an-sdk-config)
+- [Create a new SDK Config based on existing one](#create-a-new-sdk-config-based-on-existing-one)
 
 ## Table listing
 
@@ -35,7 +35,7 @@ To create a new SDK Config:
     - **segment data**: The segment that this SDK Config will target.
     - **config**: The actual config as JSON.
 
-## Edit a SDK Config
+## Edit an SDK Config
 
 At the right, on the action column, click the **Edit SDK
 Config** ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for the
@@ -48,13 +48,13 @@ further), a modal will appear with the edit SDK Config form, the form has the fo
   with the appropriate keys and values. Moving them again on the left will undo this action - depending on the key, you
   may or may not have to set the value.
 
-## Remove a SDK Config
+## Remove an SDK Config
 
 At the right, on the action column, click the **Remove SDK
 Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/trash.png) button to remove
 it. You will be prompted to verify this action. Removal is permanent.
 
-## Activate a SDK Config
+## Activate an SDK Config
 
 At the right, on the action column, click the **Activate SDK
 Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/ok-circle.png) button to

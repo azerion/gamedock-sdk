@@ -10,13 +10,13 @@ On the second tab (auto imports) you can define auto importing of the data from 
 - [Create a key](#create-a-key)
 - [Edit a key](#edit-a-key)
 
-### Create a key
+## Create a key
 To create a key:
 1. Click on the button **Create keys**
 2. Fill in the Key
 3. Click **Save**
 
-### Edit a key
+## Edit a key
 To edit a key:
 1. Find the keu that you want to edit in the list of keys (by using the search button ![search](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/search.png) on the top left for example)
 2. Click the ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for that row

@@ -6,10 +6,10 @@ also edit, delete, activate, and deactivate them.
 ## Contents
 
 - [Table listing](#table-listing)
-- [Create Push Notification](#create-a-push-notification)
-- [Edit Push Notification](#edit-a-push-notification)
-- [Remove Push Notification](#remove-a-push-notification)
-- [Activate/Deactivate Push Notification](#activatedeactivate-a-push-notification)
+- [Create a Push Notification](#create-a-push-notification)
+- [Edit a Push Notification](#edit-a-push-notification)
+- [Remove a Push Notification](#remove-a-push-notification)
+- [Activate/Deactivate a Push Notification](#activatedeactivate-a-push-notification)
 
 ## Table listing
 

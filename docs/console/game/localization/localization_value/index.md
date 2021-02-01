@@ -6,13 +6,13 @@ You can edit the draft value for a particular key in a Locale and also accept th
 
 ## Contents
 - [Table Listing](#table-listing)
-- [Select Source/Target Locale](#select-sourcetarget-locale)
-- [Edit Localization Value](#edit-localization-value)
-- [Accept Localization Value](#accept-localization-value)
-- [Accept Several Localization Values](#accept-several-localization-values)
+- [Select a Source/Target Locale](#select-a-sourcetarget-locale)
+- [Edit a Localization Value](#edit-a-localization-value)
+- [Accept a Localization Value](#accept-a-localization-value)
+- [Accept several Localization Values](#accept-several-localization-values)
 
 
-### Table Listing
+## Table Listing
 This table lists the following data for each Localization Value that exists :
 - **Key** : Localization Key (which is unique)
 - **Source** : The **accepted value** from the selected **Source Locale** (This row will not be shown if the Source Locale and Target Locale are the same)
@@ -21,13 +21,13 @@ This table lists the following data for each Localization Value that exists :
 
 You can filter the table clicking on the dropdown **filter** ![filter](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/filter.png) , to show only certain values depending on their status
 
-### Select Source/Target Locale
+## Select a Source/Target Locale
 In order to be able to change a particular Locale you'll need to select them properly on the locale dropdown selectors
 1. Select the Source Locale from the first Dropdown control at the top of the Table
 2. Select the Target Locale from the second Dropdown control at the top of the Table
 3. The Table will be rendered with the Localization Values based on the two Locales selected
 
-### Edit Localization Value
+## Edit a Localization Value
 1. At the right, on the action column, click **Edit localization value** ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for the row to edit
 2. On the popup , details for the selected Localization Key will be displayed:
 	- Key 
@@ -37,14 +37,14 @@ In order to be able to change a particular Locale you'll need to select them pro
 3. Fill in Draft Value field and optionally Max Length field
 4. Press **Save** to reflect the changes
 
-### Accept Localization Value
+## Accept a Localization Value
 If you want to accept a draft value and mark it as accepted value:
 
 1. On the row where you want to accept the value, at the right, on the action column, click **Accept draft value** ![ok-circle](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/ok-circle.png)
 2. On the confirmation popup that appears press **Ok**.
 3. It will accept the value and it will remove the contents of draft value
 
-### Accept Several Localization Values
+## Accept Several Localization Values
 1. Select, using the checkboxes on the left, the rows for each Locale you want to accept
 2. Click on the button **Accept selected** that appears on the top when selecting rows
 3. Click **Ok** on the confirmation modal that follows

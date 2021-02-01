@@ -4,18 +4,18 @@ This page lists all localization keys for the selected game
 
 ## Contents
 - [Table Listing](#table-listing)
-- [Create Localization Key](#create-localization-key)
-- [Edit Localization Key](#edit-localization-key)
-- [Show/Hide Localization Key](#showhide-localization-key)
+- [Create a Localization Key](#create-a-localization-key)
+- [Edit a Localization Key](#edit-a-localization-key)
+- [Show/Hide a Localization Key](#showhide-a-localization-key)
 
 
-### Table Listing
+## Table Listing
 The Table lists the following data for each Localization Key that exists :
 - **Key** : Localization Key (which is unique)
 - **Description** : Localization Key Description field, that is optional
 - **Tags** : Different tags used for grouping keys and related
 
-### Create Localization Key
+## Create a Localization Key
 To create a new Localization Key for a game:
 1. Click on button **Create Localization Key**
 2. On the popup, fill in **Key** field with a unique name 
@@ -23,12 +23,12 @@ To create a new Localization Key for a game:
 4. On the popup, fill in **Tags** field with one or more tags for better categorizing
 5. Press **Save** to reflect the changes
 
-### Edit Localization Key
+## Edit a Localization Key
 To edit an existing Localization Key for a game:
 1. On the row from the key you want to edit click the button **Edit Localization Key** ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png)
 2. You can edit the values for the Localization Key as explained on the Create Localization Key section
 
-### Show/Hide Localization Key
+## Show/Hide a Localization Key
 Hiding a Localization Key will hide it on the list of Localization Values and is not served when the locale is published.
 
 To hide or show a Localization Key for a game:

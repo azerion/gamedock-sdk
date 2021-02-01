@@ -16,8 +16,8 @@ Also there is a **Usage Statistics** section about the different Language Locale
 - [View Translation Status](#view-translation-status)
 - [Publish a Locale](#publish-a-locale)
 - [Show Locale details](#show-locale-details)
-- [Import Locale](#import-locale)
-- [Export Locale](#export-locale)
+- [Import a Locale](#import-a-locale)
+- [Export a Locale](#export-a-locale)
 - [Publish several Locales](#publish-several-locales)
 - [Unpublished Changes](#unpublished-changes)
 - [Show Usage stats](show-usage-stats)
@@ -38,7 +38,7 @@ To Publish a Language Locale:
 1. Click on the action button **Info** ![info-sign](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/info-sign.png)
 2. A popup will show details for the Locale published including a link to the actual translation JSON file
 
-### Import Locale
+### Import a Locale
 For importing a locale, you'll need to have the data in CSV file with the following format:
 **`localization_key, source_locale, target_locale, Description, String Length`**
 
@@ -55,7 +55,7 @@ File example:
 3. If there's no error (shown on the popup), click on **upload** and the file will be imported. Please note that if the locale is not enabled, it will be enabled automatically
 4. You will need to refresh the page to view the changes on the table listing
 
-### Export Locale
+### Export a Locale
 1. Select, using the checkboxes ![checkbox](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/checkbox.png) on the left, the rows for each Locale you want to export
 2. Click on the button **Export Selected Languages** that appears on the top when selecting rows
 3. Click **Ok** on the confirmation modal that follows

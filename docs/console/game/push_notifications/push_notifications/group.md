@@ -6,10 +6,10 @@ In this page you can view the list of groups, create new groups, and edit, remov
 ## Contents
 
 - [Table listing](#table-listing)
-- [Create Push Notification Group](#create-a-push-notification-group)
-- [Edit Push Notification Group](#edit-a-push-notification-group)
-- [Remove Push Notification Group](#remove-a-push-notification-group)
-- [View Group's Details](#view-a-groups-details)
+- [Create a Push Notification Group](#create-a-push-notification-group)
+- [Edit a Push Notification Group](#edit-a-push-notification-group)
+- [Remove a Push Notification Group](#remove-a-push-notification-group)
+- [View a Group's Details](#view-a-groups-details)
 
 ## Table listing
 This table lists the following data for each group:
