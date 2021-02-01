@@ -18,26 +18,26 @@ This table lists the following data for each Push Notification that exists:
 - **Id** The unique Id of the Push Notification - This is given automatically
 - **Name** The name that was given to the Push Notification
 
-## Create Push Notification
+## Create a Push Notification
 
 To create a new Push Notification:
 
 1. Click on the button **Create Push Notification**.
 2. You will be navigated to the Push Notification creation page.
 
-## Edit Push Notification
+## Edit a Push Notification
 
 At the right, on the action column, click the **Edit push
 notification** ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for
 the row to edit, you will be navigated to the edit page.
 
-## Remove Push Notification
+## Remove a Push Notification
 
 At the right, on the action column, click the **Remove push
 notification** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/trash.png) button to
 remove it. You will be prompted to verify this action. Removal is permanent.
 
-## Activate/Deactivate Push Notification
+## Activate/Deactivate a Push Notification
 
 At the right, on the action column, click the **Activate push
 notification** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/ok-circle.png) button

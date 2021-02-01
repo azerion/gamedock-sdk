@@ -23,7 +23,7 @@ combination:
 - **Last updated at** The date of the last update
 - **Last status change at** The date of the last status change (activated/deactivated)
 
-## Create new SDK Config
+## Create a new SDK Config
 
 To create a new SDK Config:
 
@@ -35,7 +35,7 @@ To create a new SDK Config:
     - **segment data**: The segment that this SDK Config will target.
     - **config**: The actual config as JSON.
 
-## Edit SDK Config
+## Edit a SDK Config
 
 At the right, on the action column, click the **Edit SDK
 Config** ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for the
@@ -48,13 +48,13 @@ further), a modal will appear with the edit SDK Config form, the form has the fo
   with the appropriate keys and values. Moving them again on the left will undo this action - depending on the key, you
   may or may not have to set the value.
 
-## Remove SDK Config
+## Remove a SDK Config
 
 At the right, on the action column, click the **Remove SDK
 Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/trash.png) button to remove
 it. You will be prompted to verify this action. Removal is permanent.
 
-## Activate SDK Config
+## Activate a SDK Config
 
 At the right, on the action column, click the **Activate SDK
 Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/ok-circle.png) button to
@@ -66,7 +66,7 @@ There can be only one SDK Config activated per platform/version/segment combinat
 cannot be deactivated, you can only activate another SDK config instead. The currently active SDK config would be marked
 green.
 
-## Create new based on this
+## Create a new SDK Config based on existing one
 
 At the right, on the action column, click the **Create new based on
 this** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/duplicate.png) button. A popup

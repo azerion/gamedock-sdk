@@ -23,7 +23,7 @@ combination:
 - **Last updated at** The date of the last update
 - **Last status change at** The date of the last status change (activated/deactivated)
 
-## Create new Game Config
+## Create a new Game Config
 
 To create a new Game Config:
 
@@ -35,7 +35,7 @@ To create a new Game Config:
     - **segment data**: The segment that this Game Config will target.
     - **config**: The actual config as JSON.
 
-## Delete version
+## Delete a version
 
 To delete the whole version of Game Config:
 1. Click on the three dots on the top right of the panel
@@ -43,7 +43,7 @@ To delete the whole version of Game Config:
 3. You will be prompted to verify your action.
 This action will delete all the Game Configs for the selected version. Deletion is permanent.
    
-## Edit Game Config
+## Edit a Game Config
 
 At the right, on the action column, click the **Edit Game
 Config** ![pencil](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/pencil.png) button for the
@@ -52,13 +52,13 @@ further), a modal will appear with the edit Game Config form, the form has the f
 
 - **config**: The config as JSON.
 
-## Remove Game Config
+## Remove a Game Config
 
 At the right, on the action column, click the **Remove Game
 Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/trash.png) button to remove
 it. You will be prompted to verify this action. Removal is permanent.
 
-## Activate Game Config
+## Activate a Game Config
 
 At the right, on the action column, click the **Activate Game
 Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/ok-circle.png) button to
@@ -70,7 +70,7 @@ There can be only one Game Config activated per platform/version/segment combina
 cannot be deactivated, you can only activate another Game config instead. The currently active Game config would be marked
 green.
 
-## Create new based on this
+## Create a new Game Config based on existing one
 
 At the right, on the action column, click the **Create new based on
 this** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/duplicate.png) button. A popup
