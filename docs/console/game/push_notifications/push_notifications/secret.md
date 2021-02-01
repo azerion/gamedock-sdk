@@ -6,13 +6,13 @@ android devices. These secrets can be found on the respective services (Firebase
 ## Contents
 
 - [iOS](#ios)
-    * [Update iOS Secret](#update-ios-secret)
+    * [Update the iOS Secret](#update-the-ios-secret)
 - [android](#android)
-    * [Update android Secret](#update-android-secret)
+    * [Update the android Secret](#update-the-android-secret)
 
 ## iOS
 
-### Update iOS Secret
+### Update the iOS Secret
 
 1. Click on the button **Update iOS Secret**.
 2. A modal will appear with the Update iOS Secret form.
@@ -20,7 +20,7 @@ android devices. These secrets can be found on the respective services (Firebase
 
 ## android
 
-### Update android Secret
+### Update the android Secret
 
 1. Click on the button **Update android Secret**.
 2. A modal will appear with the Update android Secret form.
