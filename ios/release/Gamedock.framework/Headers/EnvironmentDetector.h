@@ -7,16 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIApplication+EnvironmentDetector.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-//Environment enum
-typedef enum {
-    development = 0,
-    adhoc,
-    distribution
-} EnvironmentType;
-
 
 @interface EnvironmentDetector : NSObject
 + (EnvironmentType)getBuildType;
