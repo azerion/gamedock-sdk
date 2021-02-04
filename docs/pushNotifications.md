@@ -3,7 +3,8 @@
 * **[Configuration in Console](#configuration-in-console)**
 * **[Handling Push Notification Permission Requests](#handling-push-notification-permission-requests)**
 * **[Adding Custom Notification Icons](#adding-custom-notification-icons)**
-* **[iOS capabilities & entitlements](#ios-capabilities-amp-entitlements)**
+* **[iOS Capabilities & Entitlements](#ios-capabilities-amp-entitlements)**
+* **[iOS Notification Service](#ios-notification-service)**
 
 ---
 
@@ -114,4 +115,133 @@ Before submitting a build to QA please make sure in XCode to enable the Push Not
 
 Also set the push notifications environment entitlement to ‘production’. XCode does not do this automatically for you, but it is required to be able to get a valid push token from iOS:
 
-![github pages](_images/PushNotifications1.png)  
+![github pages](_images/PushNotifications1.png)
+
+### iOS Notification Service
+
+If you want to receive rich push notifications for iOS please follow the steps below:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Make sure the **Push Notifications** capability is present in the capabilities list.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications7.png)
+
+<!-- div:left-panel -->
+2. Create a new target by clicking **File ▸ New ▸ Target…**. After, filter for the **Notification Service Extension** and click **Next**.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications8.png)
+
+<!-- div:left-panel -->
+3. Name the extension **Notification Service**.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications9.png)
+
+<!-- div:left-panel -->
+4. Make sure you have the same minimum version in deployment info for main target as well as for push notification extension.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications10.png)
+![github pages](_images/PushNotifications11.png)
+
+<!-- div:left-panel -->
+5. Find the files in an extension folder.
+
+<!-- div:right-panel -->
+![github pages](_images/PushNotifications12.png)
+
+<!-- panels:end -->
+
+6. Open NotificationService.swift file and replace it with the code below:
+
+~~~swift
+import UserNotifications
+
+@available(iOS 10.0, *)
+class NotificationService: UNNotificationServiceExtension {
+
+    var contentHandler: ((UNNotificationContent) -> Void)?
+    var bestAttemptContent: UNMutableNotificationContent?
+
+    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+        self.contentHandler = contentHandler
+        bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        print("HANDLE PUSH, didReceiveNotificationRequest")
+        
+        let userInfo = request.content.userInfo
+        guard !userInfo.isEmpty else {contentComplete();return}
+        guard let userInfoValue = userInfo["userInfo"] as? [AnyHashable : Any], let mediaUrl = userInfoValue["imageUrl"] as? String else {contentComplete();return}
+        // load the attachment
+        loadAttachmentForUrlString(urlString: mediaUrl, type: "jpg") { (attachment) in
+                self.bestAttemptContent?.attachments = [attachment]
+            self.contentComplete()
+        }
+    }
+    
+    override func serviceExtensionTimeWillExpire() {
+        // Called just before the extension will be terminated by the system.
+        // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.
+        if let contentHandler = contentHandler, let bestAttemptContent =  bestAttemptContent {
+            contentHandler(bestAttemptContent)
+        }
+    }
+
+    func contentComplete() {
+        guard let bestAttemptContent = bestAttemptContent else {return}
+        self.contentHandler?(bestAttemptContent)
+    }
+
+    func fileExtensionForMediaType(type: String) -> String {
+        var ext = type
+        if type == "image" {
+            ext = "jpg"
+        }
+        if type == "video" {
+            ext = "mp4"
+        }
+        if type == "audio" {
+            ext = "mp3"
+        }
+        return "."+ext
+    }
+
+    func loadAttachmentForUrlString(urlString: String, type: String, completionHandler:@escaping(UNNotificationAttachment)->()) {
+        
+        var attachment: UNNotificationAttachment?
+        guard let attachmentURL = URL(string:urlString) else {return}
+        let fileExt = fileExtensionForMediaType(type: type)
+        
+        
+        let session = URLSession.init(configuration: .default)
+        session.downloadTask(with: attachmentURL) { (temporaryFileLocation, response, error) in
+            if let error = error {print("[NotificationService]",error.localizedDescription)} else
+            {
+                let fileManager = FileManager.default
+                guard let temporaryFileLocation = temporaryFileLocation else {return}
+                let localUrl = URL.init(fileURLWithPath: temporaryFileLocation.path+fileExt)
+                do {
+                try fileManager.moveItem(at: temporaryFileLocation, to: localUrl)
+                    do {
+                        try attachment = UNNotificationAttachment.init(identifier: "", url: localUrl, options: nil)
+                        if let attachment = attachment {
+                        completionHandler(attachment)
+                        } else {
+                            print("[NotificationService] Error")
+                        }
+                    } catch let error {
+                        print("[NotificationService]",error.localizedDescription)
+                    }
+                } catch let error {
+                    print("[NotificationService]",error.localizedDescription)
+                }
+            }
+        }.resume()
+    }
+}
+~~~
+
+7. Now you are ready to receive push notifications with images.
