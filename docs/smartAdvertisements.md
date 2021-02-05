@@ -1,7 +1,7 @@
 # Advertisement
 
 * **[Configuration in Console](#configuration-in-console)**
-* **[Advertisement Initialization in the SDK](#advertisement-initialization-in-the-sdk)**
+* **[Advertisement in the SDK](#advertisement-in-the-sdk)**
 
 ---
 Typically, the monetization of your games comes through advertising. Showing the right ads to the right users at the right time can highly influence the revenues you can earn per ad.
@@ -88,7 +88,51 @@ In order to setup the Advertisement feature in the console go through the follow
 > [!WARNING]
 > Make sure to enable the conditional event in the Events->Conditional events section if you plan on triggering interstitials based on that event.
 
-### Advertisement Initialization in the SDK
+#### Priority Ads Configuration
+
+The Priority Ads feature in the Console and the SDK allows you to prioritize certain Ad providers above the standard AdMob advertisement stack (with its mediations), thus bypassing the way AdMob handles mediations. 
+
+With this feature you can set the amount of impressions you want to have for a specific placement, be it **Banners**, **Interstitials** or **Rewarded Videos**. After those impressions have been fulfilled, the system will either fallback to the next priority configuration in the waterfall or move to displaying the standard AdMob setup.
+
+In order to configure Priority Ads in the Console follow the steps below:
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+1. Go to your **Advertisement**->**Config** page and click on the button **"Add Priority Ad"** in order to add a Priority Ad configuration. (In the screenshot you can also see already configured priority ads. You can click and drag on the configuration to re-order them in the waterfall.)
+
+<!-- div:right-panel -->
+![github pages](_images/Advertisement5.png)
+
+<!-- div:left-panel -->
+2. In the configuration window you can setup the following values:
+    * **Name**: The name used for the configuration so that it is easily identifiable in the Console.
+    * **Network**: The ad provider that should serve this priority ad. The values can be **AdMob**, **AdManager** or **Improve Digital**.
+    * **Impressions per session**: The number of impressions that should be served by the SDK **per game session** for this configuration, before the next item in the waterfall is picked up, or it falls back to the standard AdMob stack.
+    * **Date Range**: The dates while this configuration will be sent to the SDK.
+    * **Ad Unit Id/Placement Id(s)**: The Ad Unit or Placment Ids required by the ad provider. Depending on the placement this field might change.
+    * **Active**: Signifies if the configuration is active and if it should be sent to the SDK.
+
+<!-- div:right-panel -->
+![github pages](_images/Advertisement6.png)
+
+<!-- panels:end -->
+
+> [!TIP]
+> Currently the Priority Ads system supports the following ad providers:
+>  * **AdMob** - The ad unit id that will be configured needs to be part of the same application as the standard AdMob application associated with this account
+>  
+>  * **AdManager** - You can configure any Ad Manager ad unit ids regardless of the AdMob application. For more information on how to get your ad unit id check this documentation: [https://support.google.com/admanager/answer/6026938?hl=en](https://support.google.com/admanager/answer/6026938?hl=en).
+>
+>  * **Improve Digital** - In order to properly configure Improve Digital, please make sure to contact an Improve Digital representative. In the case of **Interstitials** for this ad provider, two placement ids are required, one for **VAST Video** specific content and one for **WebView** and **Image** content. The SDK will always try to first fetch **VAST Video** content, then fallback to **WebView** and **Image**. Also follow the configuration guidelines for the Improve Console found in this document: [Improve Digital Mobile Setup](https://docs.google.com/document/d/15ww8-Es2_0XuPcmCHDmRxfpp8Snm4z200BNAoimb_74/edit?usp=sharing)
+
+> [!TIP]
+> Priority ads support all of the standard placement types: **Banners**, **Interstitials** and **Rewarded Videos**.
+
+> [!TIP]
+> If any or all of the priority ad providers do not fill the request with an ad, the system will always fallback to the next ad provider in the waterfall (if present) or to the standard AdMob stack. The goal is to always present an ad to the user.
+
+### Advertisement in the SDK
 
 The Gamedock SDK initializes automatically the advertisement module, if the feature has been enabled and configured correctly in the Gamedock Console, and if the module has been enabled in the SDK. When advertisement is initialized, the following callback will be fired:
 

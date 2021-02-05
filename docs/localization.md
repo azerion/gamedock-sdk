@@ -59,9 +59,7 @@ In order to configure the localization feature in the console go through the fol
 > If you have a template filled with locales, localization keys and values (in a CSV format) you can import that file in the Overview page (within the Localization area).
 
 > [!TIP]
-> You can view the amount of times each locale has been requested and retrieved by the game in the Locale Usage Stats page (within the Localization area).
->
-> ![github pages](_images/Localization8.png ':size=70%')
+> You can view the amount of times each locale has been requested and retrieved by the game in the Overview page.
 
 > [!TIP]
 > You can view all the unconfigured keys that your game request but have not been configured or translated yet in the Console in the Unconfigured page (within the Localization area).

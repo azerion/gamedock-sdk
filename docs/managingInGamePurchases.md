@@ -1,4 +1,4 @@
-# Managing In-Game Purchases
+# In-App Purchase Packages
 
 * **[Understanding the in-app Purchasing Strategy](#understanding-the-in-app-purchasing-strategy)**
 * **[Configuration in Console](#configuration-in-console)**
@@ -6,9 +6,9 @@
 
 ---
 
-In-app purchases refer to items or points that a player can buy for use within a game to improve a character or enhance the playing experience. These, together with the use of smart ads (described in “Smart Advertisements Support”) are the primary means by which games produce revenue for their makers. The Gamedock platform supports near real-time price changes and timed promotions.
+In-app purchases refer to items or points that a player can buy for use within a game to improve a character or enhance the playing experience. These, together with the use of smart ads (described in “Advertisement”) are the primary means by which games produce revenue for their makers. The Gamedock platform supports near real-time price changes and timed promotions.
 
-### Understanding the in-app Purchasing Strategy
+### Understanding the In-App Purchasing Strategy
 
 It is important to understand that within the Gamedock platform in-app purchases cannot be added on-the-fly or solely through the appropriate game’s store. The following strategy is used:
 
