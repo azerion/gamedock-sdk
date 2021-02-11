@@ -60,7 +60,7 @@
 **Other**
  * Android/iOS/Unity/Cordova: Updated GDPR flow to now by default have personalized content and ads be disabled by default. Changed the button from "Accept" to "Accept All" and updated the flow for saving the user's options to take into account the change.
  * Android/iOS: Updated AdMob mediation adapters and networks.
- * Android/iOS/Unity: Opening a gacha will not return the position of the received gacha content in the PlayerDataUpdated callback.
+ * Android/iOS/Unity: Opening a gacha will now return the position of the received gacha content in the PlayerDataUpdated callback.
  * Android/iOS/Unity: Added additional claim method for tiered events.
  * Android/iOS: Added additional tracking for ad events (available/not available).
  * Android/iOS/Unity/Cordova: Retrieving the game config will no longer also return the SDK config.

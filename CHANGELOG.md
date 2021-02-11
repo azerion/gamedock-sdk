@@ -1,6 +1,27 @@
 Change Log
 ==========
 
+Version 4.1.0 *(28-01-2021)*
+----------------------------
+**New Features**
+ * _Localization_: This feature provides localization for your games. In order to configure localizations for your games please consult the documentation for both the Console and the SDK.
+
+**Bug fixes**
+ * Android: Fixed issue with incorrect tracking of session stops and heartbeats when ads and splash screens are shown.
+ * Android: Fixed several minor crashes.
+ * Unity Editor iOS: Fixed issue with the Privacy Policy not initializing the SDK.
+ * Unity: Refactored and fixed the WebGL platform support.
+
+**Other**
+ * Android/iOS/Unity/Cordova: Implemented logic to filter out events using the Gamedock backend.
+ * Android/iOS/Unity/Cordova: Implemented logic to disable event sending (archiving a game).
+ * Android/iOS/Unity: Added method to show the app settings screen.
+ * Android/iOS/Unity/Cordova: Removed Adjust module.
+ * Unity: Removed AAR support for the Android dependency management.
+ * Unity: Added new functionality to easily import or update the Android dependencies via Gradle, using only the Unity supplied gradle (or your own custom one).
+ * iOS: Added functionality to request ATTracking permission without using the Privacy Policy.
+ * iOS: Added functionality for Rich Push Notifications.
+
 Version 4.0.2 *(02-12-2020)*
 ----------------------------
 **Bug fixes**
@@ -35,7 +56,7 @@ Version 4.0.0 *(07-11-2020)*
 **Other**
  * Android/iOS/Unity/Cordova: Updated GDPR flow to now by default have personalized content and ads be disabled by default. Changed the button from "Accept" to "Accept All" and updated the flow for saving the user's options to take into account the change.
  * Android/iOS: Updated AdMob mediation adapters and networks.
- * Android/iOS/Unity: Opening a gacha will not return the position of the received gacha content in the PlayerDataUpdated callback.
+ * Android/iOS/Unity: Opening a gacha will now return the position of the received gacha content in the PlayerDataUpdated callback.
  * Android/iOS/Unity: Added additional claim method for tiered events.
  * Android/iOS: Added additional tracking for ad events (available/not available).
  * Android/iOS/Unity/Cordova: Retrieving the game config will no longer also return the SDK config.
