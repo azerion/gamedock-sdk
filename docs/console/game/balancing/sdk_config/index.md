@@ -51,15 +51,15 @@ further), a modal will appear with the edit SDK Config form, the form has the fo
 ## Remove an SDK Config
 
 At the right, on the action column, click the **Remove SDK
-Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/trash.png) button to remove
+Config** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/trash.png) button to remove
 it. You will be prompted to verify this action. Removal is permanent.
 
 ## Activate an SDK Config
 
 At the right, on the action column, click the **Activate SDK
-Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/ok-circle.png) button to
+Config** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/ok-circle.png) button to
 activate it, or the **Deactivate SDK
-Config** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/remove-circle.png)
+Config** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/remove-circle.png)
 button to deactivate it.
 
 There can be only one SDK Config activated per platform/version/segment combination. Once activated, an SDK config
@@ -69,6 +69,6 @@ green.
 ## Create a new SDK Config based on existing one
 
 At the right, on the action column, click the **Create new based on
-this** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/duplicate.png) button. A popup
+this** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/duplicate.png) button. A popup
 will appear with the cloning form, here you can choose a new version and segment data, you are also able to do config
 changes at this point. 
