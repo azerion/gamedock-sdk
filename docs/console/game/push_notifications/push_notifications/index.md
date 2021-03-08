@@ -34,15 +34,15 @@ the row to edit, you will be navigated to the edit page.
 ## Remove a Push Notification
 
 At the right, on the action column, click the **Remove push
-notification** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/trash.png) button to
+notification** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/trash.png) button to
 remove it. You will be prompted to verify this action. Removal is permanent.
 
 ## Activate/Deactivate a Push Notification
 
 At the right, on the action column, click the **Activate push
-notification** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/ok-circle.png) button
+notification** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/ok-circle.png) button
 to activate it, or the **Deactivate push
-notification** ![trash](https://github.com/azerion/gamedock-sdk/blob/master/docs/console/_images/remove-circle.png)
+notification** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/remove-circle.png)
 button to deactivate it. Once deactivated, a Push Notification will keep all it's configuration but won't be pushed to
 the users, it can then be activated at any point.
 
