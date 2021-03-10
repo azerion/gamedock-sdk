@@ -7,4 +7,4 @@ On this page you see a list of views without any permissions associated
 
 ### Table Listing
 
-- **View** View without permissions
+- **View** View without any permissions associated

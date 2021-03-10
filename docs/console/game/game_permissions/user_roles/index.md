@@ -31,22 +31,21 @@ To create a new User Role:
       - **Game Editor**: Editor role for selected game
       - **Game Viewer**: Viewer role for selected game
       - **Custom**: Custom permissions per section :
-        | Section | Permission Level |
-        | ------------- |:-------------:|
-        | Game Options      |  Viewer / Editor      |
-        | Content      |  Viewer / Editor      |
-        | Monetization      |  Viewer / Editor     |
-        | Users     | Viewer / Editor     |
-        | Reporting      | Viewer / Editor     |
-        | Marketing      | Viewer / Editor     |
-        | Corporate      | Viewer / Editor     |
-        | Release Management | Viewer / Editor     |
-        
-        with two levels of access: 
+          - **Sections**:
+            - Game Options
+            - Content
+            - Monetization
+            - Users
+            - Reporting
+            - Marketing
+            - Corporate
+            - Release Management
+
+            with two levels of access: 
         - ***Viewer***, with only permission to view data
         - ***Editor***, that has permission to edit the data
 
-Please note that a user with Editor role has also by default Viewer role
+Please note that a user with Editor role has also by default Viewer role included
 
 ## Edit a User Role
 
