@@ -24,8 +24,8 @@ To create a new User Role:
 
 1. Click on the button **Create new**.
 2. A modal will appear with the create Game Config form, the form contains the following fields:
-    - **email**: User mail used as identifier
-    - **Game Role**: The different roles available in the system. They are as follows:"
+    - **email**: User's mail used as identifier
+    - **Game Role**: The different roles available in the system. They are as follows:
       - **Gamedock Admin**: Admin role for selected game
       - **Game Owner**: Owner role for selected game
       - **Game Editor**: Editor role for selected game
