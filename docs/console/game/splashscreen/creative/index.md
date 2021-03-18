@@ -18,7 +18,7 @@ This page shows the different splashscreens
 ## Create creative
 
 1. Click on **Create creative**
-2. An Create creative modal will appear with the following fields:
+2. A Create creative modal will appear with the following fields:
     - **Name** Name of the new creative
     - **Template** Dropdown to select the template for the Creative
 3. Click on **Save** to store the changes and optionally select the **Create another** checkbox in order to create another creative

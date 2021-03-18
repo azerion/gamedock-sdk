@@ -23,7 +23,7 @@ This page shows the different campaigns created for the game
 
 ## Create Campaign
 1. Click on **Create campaign**
-2. An Create new campaign form will appear with the following fields:
+2. A Create new campaign form will appear with the following fields:
     - **Name** Name of the new campaign. This is mandatory
     - **Enabled** Check for enabling the campaign
     - **Creative** The Creative template the campaign will use
@@ -52,7 +52,7 @@ This page shows the different campaigns created for the game
     - **Start Date** Campaign Start Date
     - **End Date** Campaign End Date
         -***Check for UTC*** - Note that you can set in the dropdown the send parameter to use user's local time or UTC time
-    - **Delay** Splashscreen from the campaign will not be shown for this period
+    - **Delay** Splashscreen from the campaign will not be shown for this period. This is the delay the server will take to resend the splashscreen
     - **Delay unit** The time unit for the delay. This can range from second to month
         -***Show on game demand*** - Note that you can set in the dropdown if the campaign will be shown immidiately or on game demand
     - **Priority** Set the priority whenever multiple splashscreens are triggered at the same time

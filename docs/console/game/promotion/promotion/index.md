@@ -1,5 +1,5 @@
 # Promotions
-On this page you see a list of campaign Promotions that are existing.
+On this page you see a list of existing campaign Promotions
 
 ## Content
 - [Table listing](#table-listing)
