@@ -7,7 +7,7 @@ This page shows the different Asset bundles created for the game
 - [Create asset bundle](#create-campaign)
 - [Edit asset bundle](#edit-asset-bundle)
 - [Remove asset bundle](#remove-asset-bundle)
-- [Deactivate asset bundle](#deactivate-asset-bundle)
+- [Activate/Deactivate asset bundle](#activate-deactivate-asset-bundle)
 
 ## Table Listing
 
@@ -46,3 +46,9 @@ This page shows the different Asset bundles created for the game
 1. Click on **Remove asset bundle** ![trash](https://github.com/azerion/gamedock-sdk/raw/master/docs/console/_images/trash.png) button 
 2. You will be prompted to verify your action or with a reject message detailing the reasons for the rejection.
    This action will delete the creative. 
+
+
+## Activate/Deactivate Asset Bundle
+
+1. Click on **Activate/Deactivate asset bundle**
+2. You will be prompted to verify your action depending on the status of the asset bundle
