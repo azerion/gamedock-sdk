@@ -17,7 +17,7 @@
 //    4. [adsManager start];
 //    5. delegate.adsManagerDidRequestContentPause: is called. The content
 //       playback should pause now.
-//    6. Ad display container master view is unhidden and playback starts.
+//    6. Ad display container main view is unhidden and playback starts.
 //    7. delegate.didReceiveAdEvent is called with ad events.
 //    8. Ad finishes.
 //    9. delegate.adsManagerDidRequestContentResume: is called. The content

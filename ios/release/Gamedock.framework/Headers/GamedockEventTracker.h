@@ -55,6 +55,9 @@ typedef NS_ENUM(int, GamedockPrivacyStatus) {
 -(NSString*)getAppVersion;
 -(GamedockPrivacyStatus)getPrivValue;
 -(BOOL)isReservedEvent:(NSString*)name;
+-(BOOL)isLotameAdvertisementEvent:(NSString*)name;
+-(BOOL)isLotamePurchaseEvent:(NSString*)name;
+
 // --- Event tracking ---
 
 -(void)trackEvent:(NSString*)name;

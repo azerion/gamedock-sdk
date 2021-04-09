@@ -17,6 +17,7 @@
 
 -(NSDictionary*)toJSONObject;
 -(NSString*)toJson;
+-(NSString*)toJson:(nullable NSString*)callbackId;
 
 +(GamedockError*)LoadFailed:(NSString*)message;
 +(GamedockError*)ItemNotFound:(NSString*)message;

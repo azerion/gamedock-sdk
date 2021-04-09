@@ -12,10 +12,14 @@
 #import "PlayerDataController.h"
 #import <Gamedock/GamedockError.h>
 #import "JsonUtil.h"
+#import "UserDataCustomCallback.h"
+
+@class UserDataCustomCallback;
 
 @interface UserDataTransaction : NSObject
 
 @property (strong, nonatomic) NSMutableArray *transactions; // Transactions
+@property (strong, nonatomic) UserDataCustomCallback *callback;
 
 -(instancetype)init;
 -(void)addCurrency:(int)currencyId withAmount:(int)amount;
@@ -26,6 +30,7 @@
 -(void)addUniqueItem:(UniquePlayerItem*)uniquePlayerItem;
 -(void)removeUniqueItem:(UniquePlayerItem*)uniquePlayerItem;
 -(void)updateUniqueItem:(UniquePlayerItem*)uniquePlayerItem;
+-(void)addCallback:(UserDataCustomCallback*)callback;
 -(void)submit:(NSString*)reason withReasonDetails:(NSString*)reasonDetails withLocation:(NSString*)location withTransactionId:(NSString*)transactionId;
 -(BOOL)validateTransactions:(NSMutableArray*)transactions;
 -(void)updateTransactionData:(NSMutableDictionary*)currentData withNewData:(NSMutableDictionary*)newData;

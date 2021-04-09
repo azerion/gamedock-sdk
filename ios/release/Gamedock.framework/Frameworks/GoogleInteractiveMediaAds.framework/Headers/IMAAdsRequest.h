@@ -23,7 +23,7 @@
  * Specifies the full URL to use for ads loading from an ad server. Required
  * for any <code>adsRequest</code>. For details on constructing the ad tag url,
  * see <a href="https://support.google.com/dfp_premium/answer/1068325">
- * Create a master video tag manually</a>.
+ * Create a main ad video tag manually</a>.
  */
 @property(nonatomic, copy, readonly) NSString *adTagUrl;
 

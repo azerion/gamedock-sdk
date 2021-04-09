@@ -75,7 +75,16 @@
 > The reason why you would get duplicate library (aar files) erros could be that you have both these libraries imported as files in the "Assets/Plugins/Android" folder as well as imported through the "mainTemplate.gradle" file. The first thing you can do to spot duplicates is to use the "Verify Android Setup" option from Gamedock. This can be found in the Gamedock SDK->Configuration->Android->Verify Android Setup. If no errors appear in the Editor Console, investigate manually the "Assets/Plugins/Android" folder an make sure you have as little ".aar" files as possible and instead import those dependencies through the "mainTemplate.gradle" file. If you are using the Play Resolver also make sure to disable automatic importing of ".aar" files when resolving dependencies.
 
 </details>
+<br>
 
+**For Android, when building the game/app I get a gradle error that contains this message: *AAPT: error: unexpected element <queries> found in <manifest>*.**
+
+<details>
+ <summary>Answer</summary>
+
+> This gradle build error is caused by the newer versions of AdMob. In order to fix it make sure you use one of the following Gradle built tools version: 3.3.3, 3.4.3, 3.5.4, 3.6.4, 4.0.1 or newer. Make sure these version are configured in your mainTemplate.gradle file and in the baseProjectTemplate.gradle file (if the Unity version supports it). More info on the versions that fix the issue can be found here: [https://stackoverflow.com/a/62969918](https://stackoverflow.com/a/62969918).
+
+</details>
 
 #### ** AIR **
 
@@ -87,7 +96,16 @@
 > There are several common mistakes that might be causing this issue. The first is that as of 3.9.x or above, it is required that you do any ad related requests/operations only after the callback OnAdsInitialized has been fired (you need to listen to this callback). Another mistake could be that the advertisement configuration was not yet added for your game in the Gamedock Console. In this case contact your Game Producer/Gamedock Representative.
 
 </details>
+<br>
 
+**For Android, when building the game/app I get a gradle error that contains this message: *AAPT: error: unexpected element <queries> found in <manifest>*.**
+
+<details>
+ <summary>Answer</summary>
+
+> This gradle build error is caused by the newer versions of AdMob. In order to fix it make sure you use one of the following Gradle built tools version: 3.3.3, 3.4.3, 3.5.4, 3.6.4, 4.0.1 or newer. More info on the versions that fix the issue can be found here: [https://stackoverflow.com/a/62969918](https://stackoverflow.com/a/62969918).
+
+</details>
 
 #### ** Cordova **
 
@@ -119,6 +137,15 @@
 > In general missing text in the Age Gate or Privacy Policy(GDPR) windows is related to either missing the "defaultGameConfig.json" in the build or not having setup properly the SDK Config in the Gamedock Console.
 
 </details>
+<br>
 
+**For Android, when building the game/app I get a gradle error that contains this message: *AAPT: error: unexpected element <queries> found in <manifest>*.**
+
+<details>
+ <summary>Answer</summary>
+
+> This gradle build error is caused by the newer versions of AdMob. In order to fix it make sure you use one of the following Gradle built tools version: 3.3.3, 3.4.3, 3.5.4, 3.6.4, 4.0.1 or newer. More info on the versions that fix the issue can be found here: [https://stackoverflow.com/a/62969918](https://stackoverflow.com/a/62969918).
+
+</details>
 
 <!-- tabs:end -->

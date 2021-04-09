@@ -5,6 +5,23 @@
 #### ** SDK **
 
 
+###  Version 4.2.1 *(12-04-2021)*
+
+**New Features**
+ * _Lotame Module_: Added new module that incorporates the Lotame SDK used for tracking IAP and advertisement analytics.
+
+**Bug fixes**
+ * Android/iOS: Fixed several issues regarding advertising.
+ * Unity Editor: Fixed displaying issue with dummy banner placements.
+
+**Other**
+ * Android: Added support for Billing Library v3. Both old AIDL implementation as well as the new Billing Library will be supported by the SDK.
+ * Android/iOS/Unity/Cordova: Added support for first time offline usage for the Localization feature. When building the game, make sure that the 'defaultLocalizationData.json' file is present in your assets in order for this to work. The local file will always contain the default language.
+ * Android/iOS/Unity: Added support of custom callbacks per PlayerData operations for Wallet and Inventory (Add, Subtract, Open Gacha, Buy Bundle). For more information check the the Wallet and Inventory documentation.
+ * Android/iOS: Updated AdMob to latest version and all ad mediation networks.
+ * Android/iOS: Updated to the latest AppsFlyer SDK.
+ * Android: Migrated the SDK from Bintray to MavenCentral.
+
 ###  Version 4.1.0 *(28-01-2021)*
 
 **New Features**

@@ -207,27 +207,34 @@ Inventory Inventory = Gamedock.Instance.PlayerData.Inventory;
 Helper methods for doing operations with the Wallet and the Inventory.
 ~~~csharp
 ///Wallet Operations
+
+//You can create a custom callback if you don't want to use the global one for Player Data operations
+UserDataCallbackAction UserDataCallbackAction = new UserDataCallbackAction(
+    playerDataUpdate => {}, //Fired once the operation was successful. The "playerDataUpdate" object contains all the new information
+    userDataError => {} // Fired if an error occurred during the operation
+);
+
 //Adding Currency to the User's Wallet
-Gamedock.Instance.PlayerData.Wallet.Add(Currency ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
+Gamedock.Instance.PlayerData.Wallet.Add(Currency ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null, UserDataCallbackAction = null);
 
 //Subtracting Currency to the User's Wallet
-Gamedock.Instance.PlayerData.Wallet.Subtract(Currency ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
+Gamedock.Instance.PlayerData.Wallet.Subtract(Currency ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null, UserDataCallbackAction = null);
 
 //Method to set a currency limit
 Gamedock.Instance.SetCurrencyLimit(int currencyId, int limit);
 
 ///Inventory Operations
 //Adding Item to the User's Inventory
-Gamedock.Instance.PlayerData.Inventory.Add(Item ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
+Gamedock.Instance.PlayerData.Inventory.Add(Item ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null, UserDataCallbackAction = null);
 
 //Subtracting Item to the User's Inventory
-Gamedock.Instance.PlayerData.Inventory.Subtract(Item ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null);
+Gamedock.Instance.PlayerData.Inventory.Subtract(Item ID, Amount, Reason, Location, ReasonDetails = null, TransactionId = null, UserDataCallbackAction = null);
 
 //Consuming a bundle
-Gamedock.Instance.PlayerData.BuyBundle(Bundle ID, Reason, Location, ReasonDetails = null, TransactionId = null, List<PerkItem> perkItems = null);
+Gamedock.Instance.PlayerData.BuyBundle(Bundle ID, Reason, Location, ReasonDetails = null, TransactionId = null, List<PerkItem> perkItems = null, UserDataCallbackAction = null);
 
 //Opening a Gacha Item
-Gamedock.Instance.PlayerData.OpenGacha(Gacha ID, Reason, Location, ReasonDetail = null, List<PerkItem> perkItems = null);
+Gamedock.Instance.PlayerData.OpenGacha(Gacha ID, Reason, Location, ReasonDetail = null, List<PerkItem> perkItems = null, UserDataCallbackAction = null);
 
 //Method to set an item limit
 Gamedock.Instance.SetItemLimit(int itemId, int limit);
@@ -238,14 +245,14 @@ UniquePlayerItem uniqueItem = Gamedock.Instance.PlayerData.Inventory.CreateUniqu
 UniquePlayerItem uniqueItem = Gamedock.Instance.PlayerData.Inventory.CreateUniqueItem(itemId, uniqueId);
 
 //Add Unique Item to the inventory
-Gamedock.Instance.PlayerData.Inventory.AddUniqueItemToInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+Gamedock.Instance.PlayerData.Inventory.AddUniqueItemToInventory(uniqueItem, reason, reasonDetails, location, transactionId, userDataCallbackAction);
 
 //Update Unique Item with new properties
 uniqueItem.uniqueProperties.Add("test", "test");
-Gamedock.Instance.PlayerData.Inventory.UpdateUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+Gamedock.Instance.PlayerData.Inventory.UpdateUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId, userDataCallbackAction);
 
 //Remove Unique Item from the Inventory
-Gamedock.Instance.PlayerData.Inventory.RemoveUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId);
+Gamedock.Instance.PlayerData.Inventory.RemoveUniqueItemFromInventory(uniqueItem, reason, reasonDetails, location, transactionId, userDataCallbackAction);
 ~~~
 
 Helper methods for retrieving specific entries in the Game Data lists (ID represents the id generated in the Console, NAME represents the name given by you to the specific entity when it was created).
@@ -289,6 +296,7 @@ By default each operation done on the Wallet or Inventory sends their own events
 Gamedock.Instance.PlayerData.TransactionBuilder
     .AddCurrency(currencyId, amount)
     .SubtractItem(itemId, amount)
+    .AddCallback(userDataCallbackAction) //For custom callbacks, otherwise update will be fired on the delegate
     .Submit(reason, reasonDetails, location, transactionId);
     
 //Supported operations

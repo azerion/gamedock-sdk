@@ -209,19 +209,19 @@ extern "C" {
     
     char* getInventoryNative();
     
-    void processUserDataTransactionsNative(char* transactionsValue, char* reasonName, char* locationName, char* reasonDetails, char* transactionId);
+    void processUserDataTransactionsNative(char* transactionsValue, char* reasonName, char* locationName, char* reasonDetails, char* transactionId, char* customCallbackId);
     
-    void addCurrencyToWalletNative(int currencyId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId);
+    void addCurrencyToWalletNative(int currencyId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId, char* customCallbackId);
     
-    void subtractCurrencyFromWalletNative(int currencyId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId);
+    void subtractCurrencyFromWalletNative(int currencyId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId, char* customCallbackId);
     
-    void addItemToInventoryNative(int itemId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId);
+    void addItemToInventoryNative(int itemId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId, char* customCallbackId);
     
-    void subtractItemFromInventoryNative(int itemId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId);
+    void subtractItemFromInventoryNative(int itemId, int amount, char* reasonName, char* location, char* reasonDetails, char* transactionId, char* customCallbackId);
     
-    void buyBundleNative(int itemId, char* reasonName, char* location, char* reasonDetails, char* transactionId, char* perkItemJson);
+    void buyBundleNative(int itemId, char* reasonName, char* location, char* reasonDetails, char* transactionId, char* perkItemJson, char* customCallbackId);
     
-    void openGachaNative(int itemId, char* reasonName, char* reasonDetails, char* location, char* perkItemJson);
+    void openGachaNative(int itemId, char* reasonName, char* reasonDetails, char* location, char* perkItemJson, char* customCallbackId);
     
     void resetPlayerDataNative();
     
@@ -251,11 +251,11 @@ extern "C" {
     
     char* createUniqueItemNative(int itemId, char* uniqueId);
     
-    void addUniqueItemToInventoryNative(char* uniquePlayerItemJSON, char* reason, char* reasonDetails, char* location, char* transactionId);
+    void addUniqueItemToInventoryNative(char* uniquePlayerItemJSON, char* reason, char* reasonDetails, char* location, char* transactionId, char* customCallbackId);
     
-    void updateUniqueItemFromInventoryNative(char* uniquePlayerItemJSON, char* reason, char* reasonDetails, char* location, char* transactionId);
+    void updateUniqueItemFromInventoryNative(char* uniquePlayerItemJSON, char* reason, char* reasonDetails, char* location, char* transactionId, char* customCallbackId);
     
-    void removeUniqueItemFromInventoryNative(char* uniquePlayerItemJSON, char* reason, char* reasonDetails, char* location, char* transactionId);
+    void removeUniqueItemFromInventoryNative(char* uniquePlayerItemJSON, char* reason, char* reasonDetails, char* location, char* transactionId, char* customCallbackId);
     
     // --- Customer support ---
     

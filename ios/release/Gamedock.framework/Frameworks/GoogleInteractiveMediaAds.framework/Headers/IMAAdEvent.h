@@ -49,7 +49,8 @@ typedef NS_ENUM(NSInteger, IMAAdEventType){
    */
   kIMAAdEvent_AD_PERIOD_STARTED,
   /**
-   * All ads managed by the ads manager have completed.
+   * All valid ads managed by the ads manager have completed or the ad response
+   * did not return any valid ads.
    */
   kIMAAdEvent_ALL_ADS_COMPLETED,
   /**
