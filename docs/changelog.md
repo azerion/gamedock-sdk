@@ -234,6 +234,18 @@
 #### ** Console **
 
 
+### 01.03.2021 - 31.03.2021
+
+* Added filtering on tags for localization texts.
+* Added highlighting for template variables in localization texts.
+
+### 01.02.2021 - 28.02.2021
+
+* Added "create another" option in modals.
+* Improve configuration for the Unknown Keys section of Localization.
+* Add images to the keys description in Localization.
+* Redesign the datatable Modals.
+
 ### 01.01.2021 - 31.01.2021
 
 * Added game and sdk version overview for management and organisation page.
