@@ -16,14 +16,17 @@
 // Initialization flow completed
 -(void)initializationCompleted;
 
-//Ads Events
--(void)adsInitialized; // Ads component fully initialized
--(void)adAvailable:(nonnull NSString*)type; // An ad is available
--(void)adNotAvailable:(nonnull NSString*)type; // An ad is unavailable or did fail to load
--(void)adStart:(nonnull NSString*)type; // An ad has started
--(void)adFinished:(nonnull NSString*)type reason:(nonnull NSString*)reason reward:(nonnull NSString*)reward network:(nonnull NSString*)network; // An ad has finished (dismissed or an reward was granted)
--(void)openParentalGate; // The ad requires a parental gate check to continue, present the parental gate in this method and call the closedParentalGate method to pass the result back to the GamedockSDK.
-
+////Ads Events
+//-(void)adsInitialized; // Ads component fully initialized
+//-(void)adAvailable:(nonnull NSString*)type; // An ad is available
+//-(void)adNotAvailable:(nonnull NSString*)type; // An ad is unavailable or did fail to load
+//-(void)adStart:(nonnull NSString*)type; // An ad has started
+//-(void)adFinished:(nonnull NSString*)type reason:(nonnull NSString*)reason reward:(nonnull NSString*)reward network:(nonnull NSString*)network; // An ad has finished (dismissed or an reward was granted)
+//-(void)openParentalGate; // The ad requires a parental gate check to continue, present the parental gate in this method and call the closedParentalGate method to pass the result back to the GamedockSDK.
+//More Apps Events
+- (void)noMoreAppsAvailable:(nonnull NSString*)type;
+- (void)moreAppsAvailable:(nonnull NSString*)type;
+- (void)didDismissMoreApps:(nonnull NSString*)type network:(nonnull NSString*)network;
 // Notification events
 -(void)grantReward:(nonnull NSDictionary*)data;
 

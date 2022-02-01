@@ -5,7 +5,7 @@ This CHANGELOG documents all changes for the Gamedock SDK.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.0.0] - unreleased
+## [5.0.0] - 01-01-2022
 
 ### Changed
 - Update .gitignore to match modern day
@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Android / iOS] AppsFlyer SDK has been removed, maintenance shifted towards game projects
 - [Android / iOS] Ads and Admob SDK (including all Mediation adapters) have been removed, they are to be replaced with the new Azerion AD SDK in the game projects
 - [Android] Removed all jcenter and bintray gradle references, because these have been [closed](https://developer.android.com/studio/build/jcenter-migration)
+- [Unity] Removed newtonsoft dll file, can be installed via Unity package manager instead
 
 ### Fixed
 - [Android / iOS] Text bug in GDPR / Privacy Policy screen

@@ -19,17 +19,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(void)setExternalUserId:(nonnull NSString*)userId forProviderId:(nonnull NSString*)providerId;
 
-/**
- * NOTE: Those methods are exposed just for ad testing, they should not be referenced in the final implementation, params:
- * adProvider: admob|dfp
- * adType: interstitial|rewardVideo|moreApps
- * parentalGate: not implemented yet (always false)
- */
-
-+(void)devRequestAd:(nonnull NSString*)provider withAdType:(nonnull NSString*)adType withParentalGate:(BOOL)parentalGate withLocation:(nonnull NSString*)location;
-
-/// Method to a raw providers data
-+(nullable NSString*)getRawAdProvidersData;
+///**
+// * NOTE: Those methods are exposed just for ad testing, they should not be referenced in the final implementation, params:
+// * adProvider: admob|dfp
+// * adType: interstitial|rewardVideo|moreApps
+// * parentalGate: not implemented yet (always false)
+// */
+//
+//+(void)devRequestAd:(nonnull NSString*)provider withAdType:(nonnull NSString*)adType withParentalGate:(BOOL)parentalGate withLocation:(nonnull NSString*)location;
+//
+///// Method to a raw providers data
+//+(nullable NSString*)getRawAdProvidersData;
 
 @end
 

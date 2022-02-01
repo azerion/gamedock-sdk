@@ -172,32 +172,32 @@ extern "C" {
     // --- ADS ---
     
     void requestMoreAppsNative();
-    
+
     void showMoreAppsNative();
     
-    void requestRewardVideoNative(const char* location, const char* rewardType);
-
-    void playRewardVideoNative(const char* location, const char* rewardType);
-    
-    void showToastOnVideoReward(const bool enabled);
+//    void requestRewardVideoNative(const char* location, const char* rewardType);
+//
+//    void playRewardVideoNative(const char* location, const char* rewardType);
+//
+//    void showToastOnVideoReward(const bool enabled);
     
     void closedParentalGateNative(const bool pass);
     
-    void requestBannerAdNative(const char* position, const char* format);
+//    void requestBannerAdNative(const char* position, const char* format);
+//
+//    void requestInterstitialNative();
+//
+//    void showInterstitialAdNative(const char* adProvider);
     
-    void requestInterstitialNative();
+//    void showBannerAdNative();
+//
+//    void hideBannerAdNative();
     
-    void showInterstitialAdNative(const char* adProvider);
+//    bool isAdAvailableNative(char* adTypeName);
     
-    void showBannerAdNative();
+//    void setAdTestDeviceNative(char* deviceId);
     
-    void hideBannerAdNative();
-    
-    bool isAdAvailableNative(char* adTypeName);
-    
-    void setAdTestDeviceNative(char* deviceId);
-    
-    void devRequestAdNative(const char* providerName, const char* adTypeName, const bool parentalGate);
+//    void devRequestAdNative(const char* providerName, const char* adTypeName, const bool parentalGate);
     
     // --- Game & Player data ---
     
