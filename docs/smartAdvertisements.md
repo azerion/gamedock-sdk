@@ -1,5 +1,30 @@
 # Advertisement
 
+## Advertisements in v5.0.0
+
+> [!WARNING]
+> Advertisements have been removed from the Gamedock SDK starting v5.0.0 and will be available via the new Upcomming Azerion Ad SDK
+> It's still possible to trigger ads via Gamedock events as configured in the console by listening to the event as configured in the snippet below
+
+~~~csharp
+Gamedock.Instance.OnGamedockEvent += OnGamedockResponseEventReceived;
+
+ /// <summary>
+ /// Method which checks the event that has been received
+ /// </summary>
+ private void OnGamedockResponseEventReceived(GamedockResponse ev)
+ {
+     if (ev.type != null && ev.type.ToLower().Trim() == "advertisement" && ev.action.Equals("show"))
+     {
+         Debug.Log("Showing ad based on Gd response");
+
+         ShowInterstitial();
+     }
+ }
+~~~
+
+## Advertisement in 4.2.1
+
 * **[Configuration in Console](#configuration-in-console)**
 * **[Advertisement in the SDK](#advertisement-in-the-sdk)**
 
