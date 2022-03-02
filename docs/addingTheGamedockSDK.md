@@ -183,8 +183,8 @@ Example (including privacy policy / GDPR, Google Play Games and external id's fo
 
 You can include the latest Cordova package by running the following commands into your main project folder:
 ~~~javascript
-//Download the plugin from this [page](https://github.com/azerion/gamedock-sdk/releases) and include it manually into your project
-cordova plugin add <path-where-you-downloaded-the-plugin>
+//Add the project from the registry
+cordova plugin add @gamedock/cordova-sdk
 
 //If you have not yet create a build for your platform run
 cordova platform add android

@@ -15,10 +15,10 @@ Currently supported platforms/engines for Gamedock 5.0.0:
 * Unity (Android, iOS, Standalone)
 * Native Android
 * Native iOS
+* Cordova/Javascript (Android, iOS)
 
 For the moment the following platform engines only support Gamedock 4.2.1
 * AIR (Adobe Flash) (Android, iOS)
-* Cordova/Javascript (Android, iOS)
 
 Current versions of the modules used in the SDK:
 
