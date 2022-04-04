@@ -1,0 +1,6 @@
+framework module Gamedock {
+  umbrella header "Gamedock.h"
+
+  export *
+  module * { export * }
+}
