@@ -22,8 +22,8 @@ Gamedock.Instance.UserLogin(string socialId, string socialProvider, string socia
 ~~~
 
 where:
-* *socialProvider* should be SocialLoginNetworks.GooglePlayGames, SocialLoginNetworks.GameCenter or SocialLoginNetworks.Facebook. Because this parameter is used across multiple methods, it is recommended that you maintain consistency by defining it statically.
-* *socialId* should be the Facebook user ID, Google Play Games User Id or Game Center User Id.socialToken should be the Facebook access token retrieved earlier from Facebook, token from Google Play Games or Game Center authentication information (should be passed in the optional parameter). 
+* *socialProvider* should be SocialLoginNetworks.AzerionConnect. Because this parameter is used across multiple methods, it is recommended that you maintain consistency by defining it statically.
+* *socialId* should be the Azerion Connect token 
 
 #### ** AIR **
 
@@ -32,8 +32,8 @@ Gamedock.GetInstance().UserLogin(socialId:String, socialProvider:String, socialT
 ~~~
 
 where:
-* *socialProvider* should be SocialLoginNetworks.GooglePlayGames, SocialLoginNetworks.GameCenter or SocialLoginNetworks.Facebook. Because this parameter is used across multiple methods, it is recommended that you maintain consistency by defining it statically.
-* *socialId* should be the Facebook user ID, Google Play Games User Id or Game Center User Id.socialToken should be the Facebook access token retrieved earlier from Facebook, token from Google Play Games or Game Center authentication information (should be passed in the optional parameter). 
+* *socialProvider* should be SocialLoginNetworks.AzerionConnect. Because this parameter is used across multiple methods, it is recommended that you maintain consistency by defining it statically.
+* *socialId* should be the Azerion Connect token
 
 #### ** Cordova **
 

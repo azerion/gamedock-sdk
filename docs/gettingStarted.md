@@ -10,14 +10,14 @@ This section will guide you through:
 * Setting up platform specific requirements.
 * How to use the Unity editor mode.
 
-Currently supported platforms/engines for Gamedock 5.0.0:
+Currently supported platforms/engines for Gamedock 5.x.x:
 
 * Unity (Android, iOS, Standalone)
 * Native Android
 * Native iOS
 * Cordova/Javascript (Android, iOS)
 
-For the moment the following platform engines only support Gamedock 4.2.1
+For the moment the following platform engines only support Gamedock 4.x.x
 * AIR (Adobe Flash) (Android, iOS)
 
 Current versions of the modules used in the SDK:
@@ -29,6 +29,5 @@ Current versions of the modules used in the SDK:
 | Module                            | Android Version         | iOS Version        |
 |:----------------------------------|:------------------------|:-------------------|
 | Firebase                          | 18.0.2                  | 7.9.0              |
-| Lotame                            | 2.3.0.4                 | 4.2.0              |
 
 

@@ -4,6 +4,34 @@
 
 #### ** SDK **
 
+## [5.1.0] - 04-04-2022
+
+### Added
+- Added Support for Azerion Connect
+- Added Device ID to ZendeskWebview
+
+### Removed
+- Removed Lotame SDK support
+
+
+## [5.0.0] - 01-01-2022
+
+### Changed
+- Update .gitignore to match modern day
+- Updated Changelog, [2.1.0] to [3.5.0] are documented in CHANGELOG.old, [3.5.0] to [4.2.1] can be found on github as combined log for all SDK targets
+- [iOS] Adjusted flow for Apple ATT popup to comply with Apple's rules
+- [Unity] Adjusted Privacy Policy Prefab to work in correct flow with new Apple ATT popup
+
+### Removed
+- [Android / iOS] AppsFlyer SDK has been removed, maintenance shifted towards game projects
+- [Android / iOS] Ads and Admob SDK (including all Mediation adapters) have been removed, they are to be replaced with the new Azerion AD SDK in the game projects
+- [Android] Removed all jcenter and bintray gradle references, because these have been [closed](https://developer.android.com/studio/build/jcenter-migration)
+- [Unity] Removed newtonsoft dll file, can be installed via Unity package manager instead
+
+### Fixed
+- [Android / iOS] Text bug in GDPR / Privacy Policy screen
+- [Android] Fixed an issue where the AndroidBuildPostProcessor would incorrectly overwrite the gradle properties
+
 
 ###  Version 4.2.1 *(12-04-2021)*
 
