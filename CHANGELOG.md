@@ -5,6 +5,16 @@ This CHANGELOG documents all changes for the Gamedock SDK.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.1.0] - 04-04-2022
+
+### Added
+- Added Support for Azerion Connect
+- Added Device ID to ZendeskWebview
+
+### Removed
+- Removed Lotame SDK support
+
+
 ## [5.0.0] - 01-01-2022
 
 ### Changed
